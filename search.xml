@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[[object Object]]]></title>
-    <url>%2F2018%2F01%2F29%2Fpost%2F</url>
-    <content type="text"></content>
+    <title><![CDATA['测试']]></title>
+    <url>%2F2018%2F01%2F29%2F11%2F</url>
+    <content type="text"><![CDATA[asdas]]></content>
+      <categories>
+        <category>啊</category>
+      </categories>
+      <tags>
+        <tag>出</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA['测试1']]></title>
+    <url>%2F2018%2F01%2F29%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[测试 asda fgf]]></content>
+      <categories>
+        <category>测试分类</category>
+      </categories>
+      <tags>
+        <tag>标签1</tag>
+      </tags>
   </entry>
 </search>

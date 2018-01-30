@@ -10,4 +10,4 @@ Allow: /css/
 Allow: /images/
 Allow: /js/
 Allow: /lib/
-Sitemap: www.catkin.moe/sitemap.xml
+Sitemap: blog.catkin.moe/sitemap.xml

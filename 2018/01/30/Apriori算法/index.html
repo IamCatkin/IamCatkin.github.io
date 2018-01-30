@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnyu9usyqlj20li0as3yt.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnyw0zqdkwj20kg0dbwf8.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnyy3ojcrwj20fe09iabo.jpg">
-<meta property="og:updated_time" content="2018-01-30T13:56:39.147Z">
+<meta property="og:updated_time" content="2018-01-30T16:03:53.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apriori算法">
 <meta name="twitter:description" content="很多人都听说过“尿布和啤酒”的故事：据说，美国中西部的一家连锁店发现，男人们去超市买尿布的同时，往往会顺便给自己购买啤酒。由此，卖场开始把啤酒和尿布摆放在相同区域，让男人可以同时找到这两件商品，从而获得了很好的销售收入。虽然并没有商店真的把这两样东西放在一起，但是很多商家确实将大家经常购买的物品放在一起捆绑销售以鼓励大家购买。那么我们如何在繁杂的数据发现这些隐含关系呢？这就需要关联分析（ass">
@@ -384,8 +384,8 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习心得/" itemprop="url" rel="index">
-                    <span itemprop="name">学习心得</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -469,7 +469,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <p><img src="http://ww1.sinaimg.cn/mw690/41287145ly1fnyswqqlyrj20fe0emq4v.jpg" alt="2.1项集组合"></p>
 <p>　　如何对一条给定的集合，如{0,3}，来计算其支持度？通常我们遍历每条记录并检查该记录包含0和3，如果记录确实包含两项，那么就增加总计数值。在扫描完每条数据后，使用统计的总数除以总交易记录数，就可以得到支持率。同样地，如果要获得每种可能集合的支持度就要多次重复上述过程。对于包含4种物品的集合，需要遍历数据15次。而随着物品数目的增加，遍历次数会急剧增长。对于包含N中物品的数据集共有2<sup>N</sup>−1中项集组合，对于只出售100中商品的商店也会有1.26×10<sup>30</sup>中可能的项集组合。对于现代计算机，需要很长的时间才能完成运算。</p>
 <p>　　Apriori原理可以帮助我们减少感兴趣的项集。Apriori原理是指如果某个项集是频繁的，那么它的所有子集也是频繁的。反过来，如果一个项集是非频繁集，那么它的所有超集也是非频繁的。</p>
-<p>　　依旧是上述例子，已知阴影项集{2，3}是非频繁的。利用这个知识，我们就知道项集{0,2,3} ，{1,2,3}以及{0,1,2,3}也是非频繁的。这也就是说，一旦计算出了{2,3}的支持度，知道它是非频繁的之后，就不需要再计算{0,2,3}、{1,2,3}和{0,1,2,3}的支持度，因为我们知道这些集合不会满足我们的要求。使用该原理就可以避免项集数目的指数增长，从而在合理时间内计算出频繁项集。</p>
+<p>　　上述例子中，已知阴影项集{2，3}是非频繁的。利用这个知识，我们就知道项集{0,2,3} ，{1,2,3}以及{0,1,2,3}也是非频繁的。这也就是说，一旦计算出了{2,3}的支持度，知道它是非频繁的之后，就不需要再计算{0,2,3}、{1,2,3}和{0,1,2,3}的支持度，因为我们知道这些集合不会满足我们的要求。使用该原理就可以避免项集数目的指数增长，从而在合理时间内计算出频繁项集。</p>
 <p><img src="http://ww1.sinaimg.cn/mw690/41287145ly1fnyt7o07knj20fe0eqwhc.jpg" alt="2.2apriori"></p>
 <h1 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h1><p>　　<img src="http://ww1.sinaimg.cn/large/41287145ly1fnyu9usyqlj20li0as3yt.jpg" alt="3.1算法过程"></p>
 <p>　　发现频繁项集的过程如上图所示：</p>
@@ -478,14 +478,14 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <li>将L1的数据项两两拼接成C2。</li>
 <li>从候选项集C2开始，通过支持度过滤生成L2。L2根据Apriori原理拼接成候选项集C3；C3通过支持度过滤生成L3……直到Lk中仅有一个或没有数据项为止。</li>
 </ol>
-<p>　　依然是上面的杂货店例子，令最小支持度为0.5，结果如下图：</p>
+<p>　　回到上面的杂货店例子，令最小支持度为0.5，结果如下图：</p>
 <p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnyw0zqdkwj20kg0dbwf8.jpg" alt="3.2示例"></p>
 <p>　　值得注意的是L2到C3这一步只得到了｛豆奶，莴苣，尿布｝，这是由于Apriori算法由两部分组成（在这里假定购买商品是有顺序的）。</p>
 <ul>
 <li>连接：对K-1项集中的每个项集中的项排序，只有在前K-1项相同时才将这两项合并，形成候选K项集（因为必须形成K项集，所以只有在前K-1项相同，第K项不相同的情况下才合并。）</li>
 <li>剪枝：对于候选K项集，要验证所有项集的所有K-1子集是否频繁（是否在K-1项集中），去掉不满足的项集，就形成了K项集。比如｛莴苣，尿布，葡萄酒｝的子集｛莴苣，葡萄酒｝不存在，因此要去掉。</li>
 </ul>
-<h2 id="实现Apriori代码"><a href="#实现Apriori代码" class="headerlink" title="实现Apriori代码"></a>实现Apriori代码</h2><p>　　根据以上原理构造Python代码，其伪代码大致如下：</p>
+<h2 id="实现Apriori代码"><a href="#实现Apriori代码" class="headerlink" title="实现Apriori代码"></a>实现Apriori代码</h2><p>　　根据以上原理构造数据集扫描的Python代码，其伪代码大致如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">对数据集中的每条交易记录tran</span><br><span class="line">对每个候选项集can :</span><br><span class="line">    检查一下can是否是tran的子集 :</span><br><span class="line">    如果是，则增加can的计数值</span><br><span class="line">对每个候选项集 :</span><br><span class="line">如果其支持度不低于最小值，则保留该项集</span><br><span class="line">返回所有频繁项集列表</span><br></pre></td></tr></table></figure>
 <p>　　建立辅助函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个简单的测试数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">()</span> :</span></span><br><span class="line">    <span class="keyword">return</span> [[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>], [<span class="number">2</span>,<span class="number">5</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建集合C1，C1是大小为1的所有候选项集的集合。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createC1</span><span class="params">(dataSet)</span> :</span></span><br><span class="line">    <span class="comment"># C1是空列表，用来存储所有不重复的项值。如果某个物品项没有在C1中出现，则将其添加到C1中。</span></span><br><span class="line">    <span class="comment"># 这里并不是简单地每个物品项，而是添加只包含该物品项的一个列表。Python不能创建只有一个整</span></span><br><span class="line">    <span class="comment"># 数的集合，因此这里实现必须使用列表</span></span><br><span class="line">    C1 = []</span><br><span class="line">    <span class="keyword">for</span> transaction <span class="keyword">in</span> dataSet :</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> transaction :</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> [item] <span class="keyword">in</span> C1 :</span><br><span class="line">                C1.append([item])</span><br><span class="line">    C1.sort()</span><br><span class="line">    <span class="comment"># frozenset是指被“冰冻”的集合，就是说它们是不可改变</span></span><br><span class="line">    <span class="keyword">return</span> list(map(frozenset,C1)) </span><br><span class="line"></span><br><span class="line"><span class="comment"># D: 数据集</span></span><br><span class="line"><span class="comment"># Ck: 候选项集列表</span></span><br><span class="line"><span class="comment"># minSupport: 感兴趣集的最小支持度minSupport</span></span><br><span class="line"><span class="comment"># 该函数会返回一个包含支持度的字典以备后用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scanD</span><span class="params">(D, Ck, minSupport)</span> :</span></span><br><span class="line">    ssCnt = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> tid <span class="keyword">in</span> D :</span><br><span class="line">        <span class="keyword">for</span> can <span class="keyword">in</span> Ck :</span><br><span class="line">            <span class="keyword">if</span> can.issubset(tid) :</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> can <span class="keyword">in</span> ssCnt: ssCnt[can]=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span> : ssCnt[can] += <span class="number">1</span></span><br><span class="line">    numItems = float(len(D))</span><br><span class="line">    retList = []</span><br><span class="line">    supportData = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> ssCnt :</span><br><span class="line">        <span class="comment"># 计算所有项集的支持度</span></span><br><span class="line">        support = ssCnt[key]/numItems</span><br><span class="line">        <span class="keyword">if</span> support &gt;= minSupport :</span><br><span class="line">            <span class="comment"># 在列表的首部插入新的集合</span></span><br><span class="line">            retList.insert(<span class="number">0</span>, key)</span><br><span class="line">        supportData[key] = support</span><br><span class="line">    <span class="keyword">return</span> retList, supportData</span><br></pre></td></tr></table></figure>
@@ -630,7 +630,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

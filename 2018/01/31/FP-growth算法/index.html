@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Machine Learning,Data Mining,Association Analysis,Python,FP-growth," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="隔江人在雨声中,晚风菰叶生秋怨。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="寒光亭下水如天">
-<meta property="og:url" content="http://blog.catkin.moe/tags/Machine-Learning/index.html">
+<meta name="description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
+<meta name="keywords" content="Machine Learning,Data Mining,Association Analysis,Python,FP-growth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FP-growth算法">
+<meta property="og:url" content="http://blog.catkin.moe/2018/01/31/FP-growth算法/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="隔江人在雨声中,晚风菰叶生秋怨。">
+<meta property="og:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-31T14:13:17.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒光亭下水如天">
-<meta name="twitter:description" content="隔江人在雨声中,晚风菰叶生秋怨。">
+<meta name="twitter:title" content="FP-growth算法">
+<meta name="twitter:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.catkin.moe/tags/Machine-Learning/"/>
+  <link rel="canonical" href="http://blog.catkin.moe/2018/01/31/FP-growth算法/"/>
 
 
 
 
 
-  <title>标签: Machine Learning | 寒光亭下水如天</title>
+  <title>FP-growth算法 | 寒光亭下水如天</title>
   
 
 
@@ -172,7 +174,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,82 +312,189 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Machine Learning<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.catkin.moe/2018/01/31/FP-growth算法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Catkin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寒光亭下水如天">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/01/31/FP-growth算法/" itemprop="url">
-              
-                <span itemprop="name">FP-growth算法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">FP-growth算法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T21:29:51+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T21:29:51+08:00">
+                2018-01-31
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/30/Apriori算法/" itemprop="url">
-              
-                <span itemprop="name">Apriori算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-30T13:58:56+08:00"
-              content="2018-01-30" >
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>　　你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种比Apriori执行速度更快的算法，能高效地发现频繁项集，但不能用于发现关联规则。</p>
+<a id="more"></a>
+<p>　　FP-growth算法只需要对数据库进行两次扫描，而Apriori算法对于每个潜在的频繁项集都会扫描数据集判定给定模式是否频繁，因此FP-growth算法的速度比Apriori算法快。在小规模数据上，这不是什么问题，但当处理更大数据集时，就会产生较大问题。FP-growth算法只会扫描数据集两次，它不会生成候选项集，其发现频繁项集的基本过程如下：</p>
+<ol>
+<li>构建FP树</li>
+<li>从FP树中挖掘频繁项集</li>
+</ol>
+<h1 id="FP-growth原理"><a href="#FP-growth原理" class="headerlink" title="FP-growth原理"></a>FP-growth原理</h1><p>　　FP-growth算法将数据存储在一种成为FP树的紧凑数据结构中。FP代表频繁模式（Frequent Pattern）。一颗FP树与计算机科学中其他树结构类似，但它通过链接（link）来连接相似元素，被连起来的元素可以看成一个链表。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
+          
+            <a href="/tags/Data-Mining/" rel="tag"><i class="fa fa-tag"></i> Data Mining</a>
+          
+            <a href="/tags/Association-Analysis/" rel="tag"><i class="fa fa-tag"></i> Association Analysis</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/FP-growth/" rel="tag"><i class="fa fa-tag"></i> FP-growth</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/30/Apriori算法/" rel="next" title="Apriori算法">
+                <i class="fa fa-chevron-left"></i> Apriori算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -393,6 +502,15 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY3MC8xMDIyNQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -413,8 +531,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -506,6 +633,22 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FP-growth原理"><span class="nav-number">1.</span> <span class="nav-text">FP-growth原理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -686,6 +829,10 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -714,6 +861,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

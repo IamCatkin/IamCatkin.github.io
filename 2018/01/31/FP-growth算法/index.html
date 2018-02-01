@@ -87,12 +87,14 @@
 <meta property="og:site_name" content="寒光亭下水如天">
 <meta property="og:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fo0rfx41xfj206708d74i.jpg">
-<meta property="og:updated_time" content="2018-02-01T03:34:36.749Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10iiurb7j206708d74i.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10j9pakxj20ad08fjrs.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10jnt627j20f508st90.jpg">
+<meta property="og:updated_time" content="2018-02-01T08:13:20.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FP-growth算法">
 <meta name="twitter:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/41287145ly1fo0rfx41xfj206708d74i.jpg">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10iiurb7j206708d74i.jpg">
 
 
 
@@ -418,7 +420,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,326
+                  2,686
                 </span>
               
 
@@ -487,7 +489,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tbody>
 </table>
 <p>　　由此可以生成一棵FP树：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fo0rfx41xfj206708d74i.jpg" alt="1.1FP树"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10iiurb7j206708d74i.jpg" alt="1-1FP树"></p>
 <p>　　仔细来看这棵FP树，同搜索树不同，一个元素项可以在一棵FP树中出现多次。FP树会存储项集的出现频率，而每个项集会以路径的方式存储在树中。存在相似元素的集合会共享树的一部分。只有当集合之间完全不同时，树才会分叉。树节点上给出集合中单个元素及其在序列中的出现次数，路径会给出该序列的出现次数。相似项之间的链接，即节点链接（node link），用于快速发现相似项的位置。</p>
 <p>　　上图中，元素项z出现了5次，集合{r, z}出现了1次。于是可以知道：z一定是自己本身或者和其他符号一起出现了4次。再看看其他可能，集合{t, s, y, x, z}出现了2次，集合{t, r, y, x, z}出现了1次。元素项z的右边是5，表示z出现了5次，其中刚才已经给出了4次出现，所以它一定单独出现过1次。005号记录是{y, r, x, z, q, t, p}，那么q、p去哪儿了呢？</p>
 <p>　　这里使用第11章给出的支持度定义，该指标对应一个最小阈值，低于最小阈值的元素项被认为是不频繁的。若将最小支持度设为3，然后应用频繁项分析算法，就会获得出现3次或3次以上的项集。图中FP树的最小支持度是3，因此p、q并没有出现在树中。</p>
@@ -495,7 +497,58 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <h1 id="构建FP树"><a href="#构建FP树" class="headerlink" title="构建FP树"></a>构建FP树</h1><p>　　首先先用一个容器来保存FP树。</p>
 <h2 id="创建FP树的数据结构"><a href="#创建FP树的数据结构" class="headerlink" title="创建FP树的数据结构"></a>创建FP树的数据结构</h2><p>　　创造一个类保存树的每个节点，创建文件fpGrowth.py并加入以下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">treeNode</span> :</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nameValue, numOccur, parentNode)</span> :</span></span><br><span class="line">        <span class="comment"># 节点名称</span></span><br><span class="line">        self.name = nameValue</span><br><span class="line">        self.count = numOccur</span><br><span class="line">        <span class="comment"># 用于链接相似的元素项</span></span><br><span class="line">        self.nodeLink = <span class="keyword">None</span></span><br><span class="line">        <span class="comment"># 当前节点的父节点</span></span><br><span class="line">        self.parent = parentNode</span><br><span class="line">        <span class="comment"># 用于存放节点的子节点</span></span><br><span class="line">        self.children = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 对count变量增加给定值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inc</span><span class="params">(self, numOccur)</span> :</span></span><br><span class="line">        self.count += numOccur</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将树以文本的形式显示</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp</span><span class="params">(self, ind=<span class="number">1</span>)</span> :</span></span><br><span class="line">        print(<span class="string">' '</span>*ind, self.name, <span class="string">' '</span>, self.count)</span><br><span class="line">        <span class="keyword">for</span> child <span class="keyword">in</span> self.children.values() :</span><br><span class="line">            child.disp(ind+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>　　上面的程序给出了FP树中节点的类定义。类中包含用于存放节点名字的变量和1个计数值，nodeLink变量用于链接相似的元素项（参考上图中的虚线）。类中还使用了父变量parent来指向当前节点的父节点。通常情况并不需要这个变量，因为通常是从上往下迭代访问节点的。如果需要根据给定</p>
+<p>　　上面的程序给出了FP树中节点的类定义。类中包含用于存放节点名字的变量和1个计数值，nodeLink变量用于链接相似的元素项（参考上图中的虚线）。类中还使用了父变量parent来指向当前节点的父节点。通常情况并不需要这个变量，因为通常是从上往下迭代访问节点的。如果需要根据给定叶子节点上溯整棵树，这时候就需要指向父节点的指针。最后，类中还包含一个空字典变量，用于存放节点的子节点。</p>
+<p>　　运行一下如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fpGrowth</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rootNode = fpGrowth.treeNode(<span class="string">'pyramid'</span>,<span class="number">9</span>,<span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># 已创建一个单节点，接下来增加一个子节点</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rootNode.children[<span class="string">'eye'</span>] = fpGrowth.treeNode(<span class="string">'eye'</span>,<span class="number">13</span>,<span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># 显示子节点</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rootNode.disp()</span><br><span class="line">  pyramid   <span class="number">9</span></span><br><span class="line">   eye   <span class="number">13</span></span><br><span class="line"><span class="comment"># 再添加一个节点</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rootNode.children[<span class="string">'phoenix'</span>]=fpGrowth.treeNode(<span class="string">'phoenix'</span>,<span class="number">3</span>,<span class="keyword">None</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rootNode.disp()</span><br><span class="line">  pyramid   <span class="number">9</span></span><br><span class="line">   eye   <span class="number">13</span></span><br><span class="line">   phoenix   <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="构建FP树-1"><a href="#构建FP树-1" class="headerlink" title="构建FP树"></a>构建FP树</h2><p>　　除上图给出的FP树之外，还需要一个头指针表来指向给定类型的第一个实例。利用头指针表，可快速访问FP树中一个给定类型的所有元素。下图给出了一个头指针表的示意图。</p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10j9pakxj20ad08fjrs.jpg" alt="2-2头指针"></p>
+<p>　　这里使用一个字典作为数据结构来保存头指针表。除了存放指针外，头指针表还可以用来保存FP树中每类元素的总数。</p>
+<p>　　第一次遍历数据集会获得每个元素项的出现频率。接着去掉不满足最小支持度的元素项，再来构建FP树。在构建时，读入每个项集并将其添加到一条已经存在的路径中。如果该路径不存在，则创建一条新路径。每个事务就是一个无序集合。假设有集合{z, x, y}和{y, z, r}，那么在FP树中，相同项会只表示一次。为了解决此问题，在将集合添加到树之前，需要对每个集合进行排序。排序基于元素项的绝对出现频率来进行。使用上图中头指针节点值，对前表中数据进行过滤、重排序后的数据显示如下。</p>
+<table>
+<thead>
+<tr>
+<th>事务ID</th>
+<th>事务中的元素项</th>
+<th>过滤及重排序后的事务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>r, z, h, j, p</td>
+<td>z, r</td>
+</tr>
+<tr>
+<td>002</td>
+<td>z, y, x, w, v, u, t, s</td>
+<td>z, x, y, s, t</td>
+</tr>
+<tr>
+<td>003</td>
+<td>z</td>
+<td>z</td>
+</tr>
+<tr>
+<td>004</td>
+<td>r, x, n, o, s</td>
+<td>x, s, r</td>
+</tr>
+<tr>
+<td>005</td>
+<td>y, r, x, z, q, t, p</td>
+<td>z, x, y, r, t</td>
+</tr>
+<tr>
+<td>006</td>
+<td>y, z, x, e, q, s, t, m</td>
+<td>z, x, y, s, t</td>
+</tr>
+</tbody>
+</table>
+<p>　　在对事务记录过滤和排序之后，就可以构建FP树了。从空集（符号为∅）开始，向其中不断添加频繁项集。过滤、排序后的事务依次添加到树中，如果树中已存在现有元素，则增加现有元素的值；如果现有元素不存在，则向树添加一个分枝。对上表前两条事务进行添加的过程显示如下。</p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10jnt627j20f508st90.jpg" alt="2-3添加"></p>
+<p>　　接下来通过代码实现上述过程。在fpGrowth.py加入以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># FP树构建函数</span></span><br><span class="line"><span class="comment"># 使用数据集以及最小支持度作为参数来构建FP树，树构建过程会遍历数据集两次</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createTree</span><span class="params">(dataSet, minSup=<span class="number">1</span>)</span> :</span></span><br><span class="line">    headerTable = &#123;&#125;</span><br><span class="line">    <span class="comment"># 第一次遍历扫描数据集并统计每个元素项出现的频度，这些信息被保存在头指针中</span></span><br><span class="line">    <span class="keyword">for</span> trans <span class="keyword">in</span> dataSet :</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> trans :</span><br><span class="line">            headerTable[item] = headerTable.get(item, <span class="number">0</span>) + dataSet[trans]</span><br><span class="line">    <span class="comment"># 接着扫描头指针表删除那些出现次数小于minSup的项，由于字典不能在遍历中修改，转成集合</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> list(headerTable.keys()):</span><br><span class="line">        <span class="keyword">if</span> headerTable[k] &lt; minSup :</span><br><span class="line">            <span class="keyword">del</span>(headerTable[k])</span><br><span class="line">    freqItemSet = set(headerTable.keys())</span><br><span class="line">    <span class="comment"># 如果所有项都不频繁，无需下一步处理</span></span><br><span class="line">    <span class="keyword">if</span> len(freqItemSet) == <span class="number">0</span> : <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span></span><br><span class="line">    <span class="comment"># 对头指针表稍加扩展以便可以保存计数值及指向每种类型第一个元素项的指针</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> headerTable :</span><br><span class="line">        headerTable[k] = [headerTable[k], <span class="keyword">None</span>]</span><br><span class="line">    <span class="comment"># 创建只包含空集合的根节点</span></span><br><span class="line">    retTree = treeNode(<span class="string">'Null Set'</span>, <span class="number">1</span>, <span class="keyword">None</span>)</span><br><span class="line">    <span class="keyword">for</span> tranSet, count <span class="keyword">in</span> dataSet.items() :</span><br><span class="line">        localD = &#123;&#125;</span><br><span class="line">        <span class="comment"># 根据全局频率对每个事务中的元素进行排序</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> tranSet :</span><br><span class="line">            <span class="keyword">if</span> item <span class="keyword">in</span> freqItemSet :</span><br><span class="line">                localD[item] = headerTable[item][<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> len(localD) &gt; <span class="number">0</span> :</span><br><span class="line">            orderedItems = [v[<span class="number">0</span>] <span class="keyword">for</span> v <span class="keyword">in</span> sorted(localD.items(), key=<span class="keyword">lambda</span> p : p[<span class="number">1</span>], reverse=<span class="keyword">True</span>)]</span><br><span class="line">            <span class="comment"># 排序后，调用updateTree()方法</span></span><br><span class="line">            updateTree(orderedItems, retTree, headerTable, count)</span><br><span class="line">    <span class="keyword">return</span> retTree, headerTable</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了让FP树生长，需调用updateTree函数。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">updateTree</span><span class="params">(items, inTree, headerTable, count)</span> :</span></span><br><span class="line">    <span class="comment"># 该函数首先测试事务中的第一个元素项是否作为子节点存在。</span></span><br><span class="line">    <span class="keyword">if</span> items[<span class="number">0</span>] <span class="keyword">in</span> inTree.children :</span><br><span class="line">        <span class="comment"># 如果存在，则更新该元素项的计数</span></span><br><span class="line">        inTree.children[items[<span class="number">0</span>]].inc(count)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        <span class="comment"># 如果不存在，则创建一个新的treeNode并将其作为一个子节点添加到树中，这时，头指针表也要更新以指向新的节点。</span></span><br><span class="line">        inTree.children[items[<span class="number">0</span>]] = treeNode(items[<span class="number">0</span>], count, inTree)</span><br><span class="line">        <span class="keyword">if</span> headerTable[items[<span class="number">0</span>]][<span class="number">1</span>] == <span class="keyword">None</span> :</span><br><span class="line">            headerTable[items[<span class="number">0</span>]][<span class="number">1</span>] = inTree.children[items[<span class="number">0</span>]]</span><br><span class="line">        <span class="keyword">else</span> :</span><br><span class="line">            <span class="comment"># 更新头指针表需要调用函数updateHeader</span></span><br><span class="line">            updateHeader(headerTable[items[<span class="number">0</span>]][<span class="number">1</span>], inTree.children[items[<span class="number">0</span>]])</span><br><span class="line">    <span class="comment"># updateTree()完成的最后一件事是不断迭代调用自身，每次调用时会去掉列表中的第一个元素</span></span><br><span class="line">    <span class="keyword">if</span> len(items) &gt; <span class="number">1</span> :</span><br><span class="line">        updateTree(items[<span class="number">1</span>::], inTree.children[items[<span class="number">0</span>]], headerTable, count)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 确保节点链接指向树中该元素项的每一个实例，从头指针的nodeLink开始，一直沿着nodeLink直到到达链表末尾。</span></span><br><span class="line"><span class="comment"># 当处理树的时候，一种自然的反应就是迭代完整每一件事。当以相同方式处理链表时可能会遇到一些问题，</span></span><br><span class="line"><span class="comment"># 原因是如果链表很长可能会遇到迭代调用的次数限制</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">updateHeader</span><span class="params">(nodeToTest, targetNode)</span> :</span></span><br><span class="line">    <span class="keyword">while</span> (nodeToTest.nodeLink != <span class="keyword">None</span>) :</span><br><span class="line">        nodeToTest = nodeToTest.nodeLink</span><br><span class="line">    nodeToTest.nodeLink = targetNode</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -711,7 +764,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FP-growth原理"><span class="nav-number">1.</span> <span class="nav-text">FP-growth原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建FP树"><span class="nav-number">2.</span> <span class="nav-text">构建FP树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建FP树的数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">创建FP树的数据结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FP-growth原理"><span class="nav-number">1.</span> <span class="nav-text">FP-growth原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建FP树"><span class="nav-number">2.</span> <span class="nav-text">构建FP树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建FP树的数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">创建FP树的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建FP树-1"><span class="nav-number">2.2.</span> <span class="nav-text">构建FP树</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -745,7 +798,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.4k</span>
+    <span title="Site words total count">8.7k</span>
   
 </div>
 

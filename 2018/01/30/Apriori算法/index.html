@@ -87,20 +87,20 @@
 <meta property="og:site_name" content="寒光亭下水如天">
 <meta property="og:description" content="很多人都听说过“尿布和啤酒”的故事：据说，美国中西部的一家连锁店发现，男人们去超市买尿布的同时，往往会顺便给自己购买啤酒。由此，卖场开始把啤酒和尿布摆放在相同区域，让男人可以同时找到这两件商品，从而获得了很好的销售收入。虽然并没有商店真的把这两样东西放在一起，但是很多商家确实将大家经常购买的物品放在一起捆绑销售以鼓励大家购买。那么我们如何在繁杂的数据发现这些隐含关系呢？这就需要关联分析（ass">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/41287145ly1fnyswqqlyrj20fe0emq4v.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/41287145ly1fnyt7o07knj20fe0eqwhc.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnzoy6bnvuj20ky0acaad.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fo032mjg1rj20p50e6gmv.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnyy3ojcrwj20fe09iabo.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnzrgrc5hmj20if060weo.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnzsagxkafj20ms0b60th.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnzszmcfb6j20ob09uwfc.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fnzu6ecqedj20o70az757.jpg">
-<meta property="og:updated_time" content="2018-01-31T13:17:49.369Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10c1kfeoj20fe0em75a.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10cooefoj20fe0eqjsi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10dj6p4aj20ky0acaad.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10e29gjjj20p50e6gmv.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10esj9dxj20fe09imyl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10fbi8cqj20if060weo.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10gant2vj20ms0b60th.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10gwv1qaj20ob09uwfc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10hgnw6dj20o70az757.jpg">
+<meta property="og:updated_time" content="2018-02-01T08:11:14.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apriori算法">
 <meta name="twitter:description" content="很多人都听说过“尿布和啤酒”的故事：据说，美国中西部的一家连锁店发现，男人们去超市买尿布的同时，往往会顺便给自己购买啤酒。由此，卖场开始把啤酒和尿布摆放在相同区域，让男人可以同时找到这两件商品，从而获得了很好的销售收入。虽然并没有商店真的把这两样东西放在一起，但是很多商家确实将大家经常购买的物品放在一起捆绑销售以鼓励大家购买。那么我们如何在繁杂的数据发现这些隐含关系呢？这就需要关联分析（ass">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/41287145ly1fnyswqqlyrj20fe0emq4v.jpg">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/41287145ly1fo10c1kfeoj20fe0em75a.jpg">
 
 
 
@@ -491,12 +491,12 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <li>可信度或置信度（confidence）：是针对一条关联规则来定义的。例如：我们要讨论｛尿布｝→｛葡萄酒｝的关联规则，它的可信度被定义为“支持度（｛尿布，葡萄酒｝） / 支持度（｛尿布｝）”。因为｛尿布, 葡萄酒｝的支持度为3/5，｛尿布｝的支持度为4/5，所以“尿布→葡萄酒”的可信度为3/4=0.75。</li>
 </ul>
 <h1 id="Apriori原理"><a href="#Apriori原理" class="headerlink" title="Apriori原理"></a>Apriori原理</h1><p>　　假设我们在经营一家商品种类并不多的杂货店，我们对那些经常一起被购买的商品很感兴趣。我们只有4种商品：商品0，商品1，商品2和商品3。那么所有可能被一起购买的商品组合有哪些？下图显示了物品之间所有可能的组合。</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/41287145ly1fnyswqqlyrj20fe0emq4v.jpg" alt="2.1项集组合"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10c1kfeoj20fe0em75a.jpg" alt="2-1项集组合"></p>
 <p>　　如何对一条给定的集合，如{0,3}，来计算其支持度？通常我们遍历每条记录并检查该记录包含0和3，如果记录确实包含两项，那么就增加总计数值。在扫描完每条数据后，使用统计的总数除以总交易记录数，就可以得到支持率。同样地，如果要获得每种可能集合的支持度就要多次重复上述过程。对于包含4种物品的集合，需要遍历数据15次。而随着物品数目的增加，遍历次数会急剧增长。对于包含N中物品的数据集共有2<sup>N</sup>−1中项集组合，对于只出售100中商品的商店也会有1.26×10<sup>30</sup>中可能的项集组合。对于现代计算机，需要很长的时间才能完成运算。</p>
 <p>　　Apriori原理可以帮助我们减少感兴趣的项集。Apriori原理是指如果某个项集是频繁的，那么它的所有子集也是频繁的。反过来，如果一个项集是非频繁集，那么它的所有超集也是非频繁的。</p>
 <p>　　上述例子中，已知阴影项集{2，3}是非频繁的。利用这个知识，我们就知道项集{0,2,3} ，{1,2,3}以及{0,1,2,3}也是非频繁的。这也就是说，一旦计算出了{2,3}的支持度，知道它是非频繁的之后，就不需要再计算{0,2,3}、{1,2,3}和{0,1,2,3}的支持度，因为我们知道这些集合不会满足我们的要求。使用该原理就可以避免项集数目的指数增长，从而在合理时间内计算出频繁项集。</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/41287145ly1fnyt7o07knj20fe0eqwhc.jpg" alt="2.2apriori"></p>
-<h1 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h1><p>　　<img src="http://ww1.sinaimg.cn/large/41287145ly1fnzoy6bnvuj20ky0acaad.jpg" alt="3.1算法过程"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10cooefoj20fe0eqjsi.jpg" alt="2-2apriori"></p>
+<h1 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h1><p>　　<img src="https://ws1.sinaimg.cn/large/41287145ly1fo10dj6p4aj20ky0acaad.jpg" alt="3-1算法过程"></p>
 <p>　　发现频繁项集的过程如上图所示：</p>
 <ol>
 <li>由数据集生成候选项集C1（1表示每个候选项仅有一个数据项）；再由C1通过支持度过滤，生成频繁项集L1（1表示每个频繁项仅有一个数据项）。</li>
@@ -504,7 +504,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <li>从候选项集C2开始，通过支持度过滤生成L2。L2根据Apriori原理拼接成候选项集C3；C3通过支持度过滤生成L3……直到Lk中仅有一个或没有数据项为止。</li>
 </ol>
 <p>　　回到上面的杂货店例子，令最小支持度为0.4，结果如下图：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fo032mjg1rj20p50e6gmv.jpg" alt="3.2示例"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10e29gjjj20p50e6gmv.jpg" alt="3.2示例"></p>
 <p>　　值得注意的是L3到C4这一步并没有得到候选项集，这是由于Apriori算法由两部分组成（在这里假定购买商品是有顺序的）。</p>
 <ul>
 <li>连接：对K-1项集中的每个项集中的项排序，只有在前K-1项相同时才将这两项合并，形成候选K项集（因为必须形成K项集，所以只有在前K-1项相同，第K项不相同的情况下才合并。）</li>
@@ -526,16 +526,16 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <h2 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h2><p>　　关联分析的两个重要目标是发现<strong>频繁项集</strong>与<strong>关联规则</strong>。要找到关联规则，首先从一个频繁项集开始，集合中的元素是不重复的，但我们想知道基于这些元素能否获得其他内容。某个元素或者某个元素集合可能会推导出另一个元素。例如，一个频繁项集｛豆奶, 莴苣｝，可能有一条关联规则“豆奶→莴苣”，这意味着如果有人购买了豆奶，那么在统计上他购买莴苣的概率较大。但是这条反过来并不总是成立。换言之，即使“豆奶→莴苣”统计上显著，那么“莴苣→豆奶”也不一定成立。箭头的左边集合称作<strong>前件</strong>，箭头右边的集合称为<strong>后件</strong>。</p>
 <p>　　上节我们给出了繁琐项集的量化定义，即它满足最小支持度要求。对于关联规则，我们也有类似量化方法，这种量化标准称为可信度。一条规则P→H的可信度定义为support(P | H) / support(P)。在前面我们已经计算了所有繁琐项集支持度，要想获得可信度，只需要再做一次除法运算。</p>
 <p>　　从一个繁琐项集中可以产生多少条关联规则？下图给出了从项集{0,1,2,3}产生的所有关联规则。为了找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则可信度。如果可信度不满足最小要求，则去掉该规则。</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnyy3ojcrwj20fe09iabo.jpg" alt="3-3可信度"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10esj9dxj20fe09imyl.jpg" alt="3-3可信度"></p>
 <p>　　可以观察到，如果某条规则并不满足最小可信度要求，那么该规则的所有子集也不会满足最小可信度要求。具体而言，如果012→3是一条低可信度规则，则所有其它3为后件的规则都是低可信度。这需要从可信度的概念去理解，Confidence(012→3) = P(3|0,1,2), Confidence(01→23)=P(2,3|0,1)，P(3|0,1,2) &gt;= P(2,3|0,1)。由此可以对关联规则做剪枝处理。</p>
 <p>　　还是以之前的杂货店交易数据为例，我们发现了以下频繁项集：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnzrgrc5hmj20if060weo.jpg" alt="3-4发现"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10fbi8cqj20if060weo.jpg" alt="3-4发现"></p>
 <p>　　对于寻找关联规则来说，频繁1项集L1没有用处，因为L1中的每个集合仅有一个数据项，至少有两个数据项才能生成A→B这样的关联规则。取置信度为0.7，最终从L2发掘出10条关联规则：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnzsagxkafj20ms0b60th.jpg" alt="3.5L2"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10gant2vj20ms0b60th.jpg" alt="3-5L2"></p>
 <p>　　接下来是L3：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnzszmcfb6j20ob09uwfc.jpg" alt="3.6L3"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10gwv1qaj20ob09uwfc.jpg" alt="3-6L3"></p>
 <p>　　假设有一个L4项集（文中的数据不能生成L4），其挖掘过程如下：</p>
-<p><img src="http://ww1.sinaimg.cn/large/41287145ly1fnzu6ecqedj20o70az757.jpg" alt="3.7L4"></p>
+<p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10hgnw6dj20o70az757.jpg" alt="3-7L4"></p>
 <p>　　利用此性质来减少测试的规则数目，可以先从一个频繁项集开始，接着创建一个规则列表，其中规则右部只包含一个元素，然后对这些规则测试。接下来合并所有剩余规则来创建一个新的规则列表，其中右部包含两个元素。这种方法称为<strong>分级法</strong>。打开apriori.py，加入如下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关联规则生成函数，此函数调用其他两个函数rulesFromConseq、calcConf</span></span><br><span class="line"><span class="comment"># L: 频繁项集列表</span></span><br><span class="line"><span class="comment"># supportData: 包含那些频繁项集支持数据的字典</span></span><br><span class="line"><span class="comment"># minConf: 最小可信度阈值，默认是0.7</span></span><br><span class="line"><span class="comment"># 函数最后要生成一个包含可信度的规则列表，后面可以基于可信度对它们进行排序</span></span><br><span class="line"><span class="comment"># 这些规则存放在bigRuleList中。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generateRules</span><span class="params">(L, supportData, minConf=<span class="number">0.7</span>)</span> :</span></span><br><span class="line">    bigRuleList = []</span><br><span class="line">    <span class="comment"># 遍历L中的每一个频繁项集并对每个频繁项集创建只包含单个元素集合的列表H1，</span></span><br><span class="line">    <span class="comment"># 因为无法从单元素项集中构建关联规则，所以要从包含两个或者更多元素的项集开始规则构建过程。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 只获取有两个或更多元素的集合</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(L)) :</span><br><span class="line">        <span class="keyword">for</span> freqSet <span class="keyword">in</span> L[i] :</span><br><span class="line">            H1 = [frozenset([item]) <span class="keyword">for</span> item <span class="keyword">in</span> freqSet]</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">1</span> :</span><br><span class="line">                <span class="comment"># 如果频繁项集的元素数目超过2，那么会考虑对它做进一步的合并，合并通过</span></span><br><span class="line">                <span class="comment"># rulesFromConseq来完成</span></span><br><span class="line">                rulesFromConseq(freqSet, H1, supportData, bigRuleList, minConf)</span><br><span class="line">            <span class="keyword">else</span> :</span><br><span class="line">                <span class="comment"># 如果项集中只有两个元素，那么需要使用calcConf()来计算可信度值</span></span><br><span class="line">                calcConf(freqSet, H1, supportData, bigRuleList, minConf)</span><br><span class="line">    <span class="keyword">return</span> bigRuleList</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对规则进行评估</span></span><br><span class="line"><span class="comment"># 目标是计算规则的可信度以及找到满足最小可信度要求的规则</span></span><br><span class="line"><span class="comment"># 函数会返回一个满足最小可信度要求的规则列表，空列表prunedH保存这些规则</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calcConf</span><span class="params">(freqSet, H, supportData, brl, minConf=<span class="number">0.7</span>)</span> :</span></span><br><span class="line">    prunedH = []</span><br><span class="line">    <span class="comment"># 遍历H中的所有项集并计算它们的可信度值</span></span><br><span class="line">    <span class="keyword">for</span> conseq <span class="keyword">in</span> H :</span><br><span class="line">        <span class="comment"># 可信度计算时使用supportData中的支持度数据</span></span><br><span class="line">        conf = supportData[freqSet] / supportData[freqSet - conseq]</span><br><span class="line">        <span class="comment"># 规则满足最小可信度值，将这些规则输出到屏幕显示</span></span><br><span class="line">        <span class="keyword">if</span> conf &gt;= minConf :</span><br><span class="line">            print(freqSet-conseq, <span class="string">'--&gt;'</span>, conseq, <span class="string">'conf:'</span>, conf)</span><br><span class="line">            brl.append((freqSet-conseq, conseq, conf))</span><br><span class="line">            prunedH.append(conseq)</span><br><span class="line">    <span class="keyword">return</span> prunedH</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于生成候选规则集合，从最初的项集中生成更多的关联规则</span></span><br><span class="line"><span class="comment"># freqSet: 频繁项集</span></span><br><span class="line"><span class="comment"># H: 可以出现在规则右部的元素列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rulesFromConseq</span><span class="params">(freqSet, H, supportData, brl, minConf=<span class="number">0.7</span>)</span> :</span></span><br><span class="line">    <span class="comment"># H中频繁项集大小m</span></span><br><span class="line">    m = len(H[<span class="number">0</span>])</span><br><span class="line">    <span class="comment"># 查看该频繁项集是否大到可以移除大小为m的子集</span></span><br><span class="line">    <span class="keyword">if</span> (len(freqSet) &gt; (m+<span class="number">1</span>)) :</span><br><span class="line">        <span class="comment"># 生成H中元素的无重复组合，结果存储在Hmp1，这也是下一次迭代的H列表</span></span><br><span class="line">        Hmp1 = aprioriGen(H, m+<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># Hmp1包含所有可能的规则，利用calcConf()来测试它们的可信度以确定是否满足要求</span></span><br><span class="line">        Hmp1 = calcConf(freqSet, Hmp1, supportData, brl, minConf)</span><br><span class="line">        <span class="comment"># 如果不止一条规则满足要求，那么使用Hmp1迭代调用函数rulesFromConseq</span></span><br><span class="line">        <span class="keyword">if</span> (len(Hmp1) &gt; <span class="number">1</span>) :</span><br><span class="line">            rulesFromConseq(freqSet, Hmp1, supportData, brl, minConf)</span><br></pre></td></tr></table></figure>
 <p>　　检验运行效果：</p>
@@ -802,7 +802,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.4k</span>
+    <span title="Site words total count">8.7k</span>
   
 </div>
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.catkin.moe/2018/01/31/FP-growth%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-01-31T14:13:17.168Z</lastmod>
+    <data>
+        <display>
+        <title>FP-growth算法</title>
+        <pubTime>2018-01-31T13:29:51.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>Association Analysis</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>FP-growth</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.catkin.moe/2018/01/30/Apriori%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-01-31T13:17:49.369Z</lastmod>
+    <data>
+        <display>
+        <title>Apriori算法</title>
+        <pubTime>2018-01-30T05:58:56.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>Association Analysis</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>Apriori</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>

@@ -1,13 +1,20 @@
 User-agent: *
-Disallow: /CNAME
-Disallow: /README
 Allow: /
 Allow: /about/
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
-Allow: /css/
-Allow: /images/
-Allow: /js/
-Allow: /lib/
-Sitemap: blog.catkin.moe/sitemap.xml
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Disallow: /CNAME
+Disallow: /README
+
+
+Sitemap: https://blog.catkin.moe/sitemap.xml
+Sitemap: https://blog.catkin.moe/baidusitemap.xml
+

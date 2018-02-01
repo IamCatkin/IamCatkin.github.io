@@ -88,7 +88,7 @@
 <meta property="og:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/41287145ly1fo0rfx41xfj206708d74i.jpg">
-<meta property="og:updated_time" content="2018-02-01T03:05:47.393Z">
+<meta property="og:updated_time" content="2018-02-01T03:34:36.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FP-growth算法">
 <meta name="twitter:description" content="你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种">
@@ -418,7 +418,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,036
+                  1,326
                 </span>
               
 
@@ -492,6 +492,10 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <p>　　上图中，元素项z出现了5次，集合{r, z}出现了1次。于是可以知道：z一定是自己本身或者和其他符号一起出现了4次。再看看其他可能，集合{t, s, y, x, z}出现了2次，集合{t, r, y, x, z}出现了1次。元素项z的右边是5，表示z出现了5次，其中刚才已经给出了4次出现，所以它一定单独出现过1次。005号记录是{y, r, x, z, q, t, p}，那么q、p去哪儿了呢？</p>
 <p>　　这里使用第11章给出的支持度定义，该指标对应一个最小阈值，低于最小阈值的元素项被认为是不频繁的。若将最小支持度设为3，然后应用频繁项分析算法，就会获得出现3次或3次以上的项集。图中FP树的最小支持度是3，因此p、q并没有出现在树中。</p>
 <p>　　FP-growth算法的工作流程：首先构建FP树，然后利用它来挖掘频繁项集。为了构建FP树，需要对原始数据集扫描两遍。第一遍对所有元素项的出现次数进行计数。记住Apriori原理：如果某元素是不频繁的，那么包含该元素的超集也是不频繁的，所以就不需要考虑超集。数据库的第一遍扫描用来统计出现的频率，第二遍扫描中只考虑那些频繁元素。</p>
+<h1 id="构建FP树"><a href="#构建FP树" class="headerlink" title="构建FP树"></a>构建FP树</h1><p>　　首先先用一个容器来保存FP树。</p>
+<h2 id="创建FP树的数据结构"><a href="#创建FP树的数据结构" class="headerlink" title="创建FP树的数据结构"></a>创建FP树的数据结构</h2><p>　　创造一个类保存树的每个节点，创建文件fpGrowth.py并加入以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">treeNode</span> :</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nameValue, numOccur, parentNode)</span> :</span></span><br><span class="line">        <span class="comment"># 节点名称</span></span><br><span class="line">        self.name = nameValue</span><br><span class="line">        self.count = numOccur</span><br><span class="line">        <span class="comment"># 用于链接相似的元素项</span></span><br><span class="line">        self.nodeLink = <span class="keyword">None</span></span><br><span class="line">        <span class="comment"># 当前节点的父节点</span></span><br><span class="line">        self.parent = parentNode</span><br><span class="line">        <span class="comment"># 用于存放节点的子节点</span></span><br><span class="line">        self.children = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 对count变量增加给定值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inc</span><span class="params">(self, numOccur)</span> :</span></span><br><span class="line">        self.count += numOccur</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将树以文本的形式显示</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp</span><span class="params">(self, ind=<span class="number">1</span>)</span> :</span></span><br><span class="line">        print(<span class="string">' '</span>*ind, self.name, <span class="string">' '</span>, self.count)</span><br><span class="line">        <span class="keyword">for</span> child <span class="keyword">in</span> self.children.values() :</span><br><span class="line">            child.disp(ind+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>　　上面的程序给出了FP树中节点的类定义。类中包含用于存放节点名字的变量和1个计数值，nodeLink变量用于链接相似的元素项（参考上图中的虚线）。类中还使用了父变量parent来指向当前节点的父节点。通常情况并不需要这个变量，因为通常是从上往下迭代访问节点的。如果需要根据给定</p>
 
       
     </div>
@@ -707,7 +711,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FP-growth原理"><span class="nav-number">1.</span> <span class="nav-text">FP-growth原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FP-growth原理"><span class="nav-number">1.</span> <span class="nav-text">FP-growth原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建FP树"><span class="nav-number">2.</span> <span class="nav-text">构建FP树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建FP树的数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">创建FP树的数据结构</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -741,7 +745,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.1k</span>
+    <span title="Site words total count">7.4k</span>
   
 </div>
 

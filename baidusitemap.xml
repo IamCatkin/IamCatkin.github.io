@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://blog.catkin.moe/2018/01/31/FP-growth%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-02-01T08:13:20.552Z</lastmod>
+    <lastmod>2018-02-03T08:40:49.704Z</lastmod>
     <data>
         <display>
         <title>FP-growth算法</title>
@@ -25,6 +25,28 @@
            
              
               <breadCrumb title="学习笔记" url="http://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.catkin.moe/2018/02/03/%E8%AE%B0%E5%BD%95%E5%AE%9E%E7%94%A8%E7%9A%84python%E5%BA%93/</loc>
+    <lastmod>2018-02-03T08:36:58.724Z</lastmod>
+    <data>
+        <display>
+        <title>记录实用的python库</title>
+        <pubTime>2018-02-03T03:40:57.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>效率</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率工具" url="http://blog.catkin.moe/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>

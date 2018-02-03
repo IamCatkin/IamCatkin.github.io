@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,效率," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="隔江人在雨声中,晚风菰叶生秋怨。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="寒光亭下水如天">
-<meta property="og:url" content="http://blog.catkin.moe/index.html">
+<meta name="description" content="本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。">
+<meta name="keywords" content="Python,效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录实用的python库">
+<meta property="og:url" content="http://blog.catkin.moe/2018/02/03/记录实用的python库/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="隔江人在雨声中,晚风菰叶生秋怨。">
+<meta property="og:description" content="本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-03T08:36:58.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒光亭下水如天">
-<meta name="twitter:description" content="隔江人在雨声中,晚风菰叶生秋怨。">
+<meta name="twitter:title" content="记录实用的python库">
+<meta name="twitter:description" content="本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.catkin.moe/"/>
+  <link rel="canonical" href="http://blog.catkin.moe/2018/02/03/记录实用的python库/"/>
 
 
 
 
 
-  <title>寒光亭下水如天</title>
+  <title>记录实用的python库 | 寒光亭下水如天</title>
   
 
 
@@ -172,8 +174,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,9 +311,9 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -342,9 +343,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/记录实用的python库/" itemprop="url">记录实用的python库</a></h1>
+          <h1 class="post-title" itemprop="name headline">记录实用的python库</h1>
         
 
         <div class="post-meta">
@@ -398,6 +397,11 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -437,16 +441,26 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
       
 
       
-        
-          <p>　　本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/记录实用的python库/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>　　本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。</p>
+<a id="more"></a>
+<h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><p>　　在爬虫和机器学习等工作中，可能需要有一个进度条能够反馈当前程序运行速度或者进度，可以考虑用以下方法实现：</p>
+<h2 id="ShowProcess类"><a href="#ShowProcess类" class="headerlink" title="ShowProcess类"></a>ShowProcess类</h2><p>　　在网上找到别人写的一个方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立一个ShowProcess类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShowProcess</span><span class="params">()</span>:</span></span><br><span class="line">    i = <span class="number">0</span> </span><br><span class="line">    max_steps = <span class="number">0</span> </span><br><span class="line">    max_arrow = <span class="number">50</span> </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, max_steps)</span>:</span></span><br><span class="line">        self.max_steps = max_steps</span><br><span class="line">        self.i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_process</span><span class="params">(self, i=None)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            self.i = i</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.i += <span class="number">1</span></span><br><span class="line">        num_arrow = int(self.i * self.max_arrow / self.max_steps) </span><br><span class="line">        num_line = self.max_arrow - num_arrow </span><br><span class="line">        percent = self.i * <span class="number">100.0</span> / self.max_steps </span><br><span class="line">        process_bar = <span class="string">'['</span> + <span class="string">'&gt;'</span> * num_arrow + <span class="string">'-'</span> * num_line + <span class="string">']'</span>\</span><br><span class="line">                      + <span class="string">'%.2f'</span> % percent + <span class="string">'%'</span></span><br><span class="line">        print(<span class="string">'\r'</span>,process_bar,end=<span class="string">''</span>,flush=<span class="keyword">True</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self, words=<span class="string">'done'</span>)</span>:</span></span><br><span class="line">        print(<span class="string">''</span>)</span><br><span class="line">        print(words)</span><br><span class="line">        self.i = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>　　使用示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    max_steps = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    process_bar = ShowProcess(max_steps)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(max_steps):</span><br><span class="line">        process_bar.show_process()</span><br><span class="line">        time.sleep(<span class="number">0.05</span>)</span><br><span class="line">    process_bar.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 效果如下 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;]<span class="number">100.00</span>%</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>done</span><br></pre></td></tr></table></figure>
+<p>　　在命令窗口下使用正常，但是在IDLE和Spyder中显示存在问题，考虑使用其他方法。</p>
+<h2 id="tqdm"><a href="#tqdm" class="headerlink" title="tqdm"></a>tqdm</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最基本的用法</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(range(<span class="number">9</span>)):</span><br><span class="line">	time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="comment"># 效果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span>&lt;<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="comment"># trange类似于tqdm</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> trange</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> trange(<span class="number">10</span>):</span><br><span class="line">	time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="comment"># 效果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span>&lt;<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入list</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>])  </span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> pbar:  </span><br><span class="line">    pbar.set_description(<span class="string">"Processing %s"</span> % char) </span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="comment"># 效果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Processing <span class="number">10</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span>&lt;<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.49</span>it/s]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 手动控制更新</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">with</span> tqdm(total=<span class="number">10</span>) <span class="keyword">as</span> pbar:  </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):  </span><br><span class="line">        pbar.update(<span class="number">1</span>)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="comment"># 效果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">00</span>&lt;<span class="number">00</span>:<span class="number">00</span>, <span class="number">10.10</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以这样</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm(total=<span class="number">10</span>)  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):  </span><br><span class="line">    pbar.update(<span class="number">1</span>)</span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br><span class="line">pbar.close()  </span><br><span class="line"><span class="comment"># 效果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">00</span>&lt;<span class="number">00</span>:<span class="number">00</span>, <span class="number">10.10</span>it/s]</span><br></pre></td></tr></table></figure>
+<p>　　在Spyder下正常了，然而在命令窗口有问题。</p>
+<h1 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h1><p>　　进行爬虫的时候，很容易因为网络问题导致失败，这里有2个库可以很轻松地实现这个功能。</p>
+<h2 id="retry"><a href="#retry" class="headerlink" title="retry"></a>retry</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install retry</span><br></pre></td></tr></table></figure>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p>　　只需要在函数定义前加上@retry就行了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> retry <span class="keyword">import</span> retry</span><br><span class="line"></span><br><span class="line"><span class="meta">@retry()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''重试直到成功'''</span></span><br><span class="line"><span class="meta">@retry(ZeroDivisionError, tries=3, delay=2)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="meta">@retry((ValueError, TypeError), delay=1, backoff=2)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 8, ...秒'''</span></span><br><span class="line"><span class="meta">@retry((ValueError, TypeError), delay=1, backoff=2, max_delay=4)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 4, ...秒，最高间隔为4秒'''</span></span><br><span class="line"><span class="meta">@retry(ValueError, delay=1, jitter=1)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''出现ValueError时重试,每次间隔1, 2, 3, 4, ... 秒'''</span></span><br></pre></td></tr></table></figure>
+<h2 id="Tenacity"><a href="#Tenacity" class="headerlink" title="Tenacity"></a>Tenacity</h2><p>　　使用类似于retry。同样只需要在函数定义前加上@retry就行了。</p>
+<h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tenacity</span><br></pre></td></tr></table></figure>
+<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tenacity <span class="keyword">import</span> retry, retry_if_exception_type, wait_fixed, stop_after_attempt, stop_after_delay,</span><br><span class="line"></span><br><span class="line"><span class="meta">@retry()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''重试直到成功'''</span></span><br><span class="line"><span class="meta">@retry(retry=retry_if_exception_type(ZeroDivisionError), wait=wait_fixed(2), 	stop=stop_after_attempt(3))</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="meta">@retry(stop=(stop_after_delay(10) | stop_after_attempt(5)))</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''重试10秒或者5次'''</span>    </span><br><span class="line"><span class="meta">@retry(wait=wait_random(min=1, max=2))</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''重试间隔在随机1-2秒'''</span></span><br><span class="line"><span class="meta">@retry(wait=wait_chain(*[wait_fixed(3) for i in range(3)] +</span></span><br><span class="line">                       [wait_fixed(<span class="number">7</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>)] +</span><br><span class="line">                       [wait_fixed(<span class="number">9</span>)]))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_trouble</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''前三次重试每次间隔3秒，接下来2次间隔7秒，之后重试间隔9秒'''</span></span><br></pre></td></tr></table></figure>
+<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>　　待填坑……</p>
+
       
     </div>
     
@@ -461,348 +475,38 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.catkin.moe/2018/01/31/FP-growth算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Catkin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="寒光亭下水如天">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/31/FP-growth算法/" itemprop="url">FP-growth算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T21:29:51+08:00">
-                2018-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-
+            <a href="/tags/效率/" rel="tag"><i class="fa fa-tag"></i> 效率</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,686
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>　　你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种比Apriori执行速度更快的算法，能高效地发现频繁项集，但不能用于发现关联规则。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/31/FP-growth算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/31/FP-growth算法/" rel="next" title="FP-growth算法">
+                <i class="fa fa-chevron-left"></i> FP-growth算法
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.catkin.moe/2018/01/30/Apriori算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Catkin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="寒光亭下水如天">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/30/Apriori算法/" itemprop="url">Apriori算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T13:58:56+08:00">
-                2018-01-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  6,036
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>　　很多人都听说过“尿布和啤酒”的故事：据说，美国中西部的一家连锁店发现，男人们去超市买尿布的同时，往往会顺便给自己购买啤酒。由此，卖场开始把啤酒和尿布摆放在相同区域，让男人可以同时找到这两件商品，从而获得了很好的销售收入。虽然并没有商店真的把这两样东西放在一起，但是很多商家确实将大家经常购买的物品放在一起捆绑销售以鼓励大家购买。那么我们如何在繁杂的数据发现这些隐含关系呢？这就需要关联分析（association analysis），本文所讨论的Apriori便是其中一种关联分析算法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/30/Apriori算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -812,10 +516,11 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -823,6 +528,15 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY3MC8xMDIyNQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -843,8 +557,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -936,6 +659,22 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进度条"><span class="nav-number">1.</span> <span class="nav-text">进度条</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ShowProcess类"><span class="nav-number">1.1.</span> <span class="nav-text">ShowProcess类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tqdm"><span class="nav-number">1.2.</span> <span class="nav-text">tqdm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重试"><span class="nav-number">2.</span> <span class="nav-text">重试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#retry"><span class="nav-number">2.1.</span> <span class="nav-text">retry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tenacity"><span class="nav-number">2.2.</span> <span class="nav-text">Tenacity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-2"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步"><span class="nav-number">3.</span> <span class="nav-text">异步</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1129,6 +868,10 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1157,6 +900,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

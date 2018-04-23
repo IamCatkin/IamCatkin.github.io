@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[将SMILES转成InChiKey]]></title>
     <url>%2F2018%2F04%2F21%2F%E5%B0%86SMILES%E8%BD%AC%E6%88%90InChiKey%2F</url>
-    <content type="text"><![CDATA[最近在项目中需要将SMILES转成InChiKey，通常可以在OpenBabelGUI中操作完成，但是对于大量数据在OpenBabelGUI中操作就有些不方便且容易失误。这里记录一下我解决这个问题的过程。 安装相关包 先建立一个虚拟环境，安装RDKit： 1conda create -c rdkit -n my-rdkit-env rdkit 然后在虚拟环境下安装OpenBabel： 1conda install -n my-rdkit-env -c openbabel openbabel 出现的问题 最初想用Pybel实现，然而发现Pybel并不支持输出格式为InChiKey，既然这条路走不通，就换个方案吧。于是想查看OpenBabel的文档看看能不能实现，然而发现这玩意的python接口只是寥寥几言，也没有具体的文档。不过Google到了一个轮子写了如何将SMILES转成InChiKey，代码如下： 1234567import openbabel as obconv = ob.OBConversion()conv.SetInAndOutFormats("smi", "inchi")conv.SetOptions("K", conv.OUTOPTIONS)mol = ob.OBMol()conv.ReadString(mol, "CC(=O)Cl")inchikey = conv.WriteString(mol): 本想着问题解决了，不过试了一下发现并不能用。而且可耻的找不到原因…… 不过也问题不大，RDKit可以把SMILES转成InChi，然后再把InChi变成InChiKey就行了，于是写了个函数实现: 1234567from rdkit import Chemfrom rdkit.Chem.inchi import rdinchidef smiletoinchikey(smile): mol = Chem.MolFromSmiles(smile) inchi = rdinchi.MolToInchi(mol) inchikey = rdinchi.InchiToInchiKey(inchi[0]) return inchikey 然而在处理项目文件时发现，有些SMILES式RDKit不能识别，导致程序出错。如Clc1c([C@@H]2[C@@H]([N+H3])CC(CN3CCC(C(=O)O)CC3)=CC2)ccc(Cl)c1，于是写了个函数利用Pybel将其转成Canonical SMILES。最后还是有一些剩余问题，比如Oc1ccc([C+2]2345[B-2]678[B-3]9%10%11([C-3])[C+]%12%13%14[B-2]%15%169[B-2]26%10[B-2]23%15[B-2]364[B-2]457[B-2]8%11%12[B-2]%1334[B-2]%14%1626)cc1转成Canonical SMILES依然无法读取，又或者O=BOB(OB(OB=O)[O-])[O-]没转换前能读取，转换后不能读取，只能按例外处理。 最后代码如下： 12345678910111213141516171819202122#!/usr/bin/env python3# -*- coding: utf-8 -*-# @Time : Thu Apr 20 16:12:41 2018# @Author : Catkin# @Website : blog.catkin.moeimport pybelfrom rdkit import Chemfrom rdkit.Chem.inchi import rdinchidef smitosmile(smi): mol = pybel.readstring("smi", smi) smile = mol.write('can') return smile def smiletoinchikey(smile): mol = Chem.MolFromSmiles(smile) if mol is None: smi = smitosmile(smile) mol = Chem.MolFromSmiles(smi) inchi = rdinchi.MolToInchi(mol) inchikey = rdinchi.InchiToInchiKey(inchi[0]) return inchikey]]></content>
+    <content type="text"><![CDATA[最近在项目中需要将SMILES转成InChiKey，通常可以在OpenBabelGUI中操作完成，但是对于大量数据在OpenBabelGUI中操作就有些不方便且容易失误。这里记录一下我解决这个问题的过程。 安装相关包 先建立一个虚拟环境，安装RDKit： 1conda create -c rdkit -n my-rdkit-env rdkit 然后在虚拟环境下安装OpenBabel： 1conda install -n my-rdkit-env -c openbabel openbabel 出现的问题 最初想用Pybel实现，然而发现Pybel并不支持输出格式为InChiKey，既然这条路走不通，就换个方案吧。于是想查看OpenBabel的文档看看能不能实现，然而发现这玩意的python接口只是寥寥几言，也没有具体的文档。不过Google到了一个轮子写了如何将SMILES转成InChiKey，代码如下： 1234567import openbabel as obconv = ob.OBConversion()conv.SetInAndOutFormats("smi", "inchi")conv.SetOptions("K", conv.OUTOPTIONS)mol = ob.OBMol()conv.ReadString(mol, "CC(=O)Cl")inchikey = conv.WriteString(mol): 本想着问题解决了，不过试了一下发现并不能用。而且可耻的找不到原因…… 不过也问题不大，RDKit可以把SMILES转成InChi，然后再把InChi变成InChiKey就行了，于是写了个函数实现: 1234567from rdkit import Chemfrom rdkit.Chem.inchi import rdinchidef smiletoinchikey(smile): mol = Chem.MolFromSmiles(smile) inchi = rdinchi.MolToInchi(mol) inchikey = rdinchi.InchiToInchiKey(inchi[0]) return inchikey 然而在处理项目文件时发现，有些SMILES式RDKit不能识别，导致程序出错。如Clc1c([C@@H]2[C@@H]([N+H3])CC(CN3CCC(C(=O)O)CC3)=CC2)ccc(Cl)c1，于是写了个函数利用Pybel将其转成Canonical SMILES。最后还是有一些剩余问题，比如Oc1ccc([C+2]2345[B-2]678[B-3]9%10%11([C-3])[C+]%12%13%14[B-2]%15%169[B-2]26%10[B-2]23%15[B-2]364[B-2]457[B-2]8%11%12[B-2]%1334[B-2]%14%1626)cc1转成Canonical SMILES依然无法读取，又或者O=BOB(OB(OB=O)[O-])[O-]没转换前能读取，转换后不能读取，只能按例外处理。 最后代码如下： 123456789101112131415161718192021222324#!/usr/bin/env python3# -*- coding: utf-8 -*-# @Time : Thu Apr 20 16:12:41 2018# @Author : Catkin# @Website : blog.catkin.moeimport pybelfrom rdkit import Chemfrom rdkit.Chem.inchi import rdinchidef smitosmile(smi): mol = pybel.readstring("smi", smi) smile = mol.write('can') smile = smile.replace('\t\n', '') return smile def smiletoinchikey(smile): mol = Chem.MolFromSmiles(smile) if mol is None: smi = smitosmile(smile) mol = Chem.MolFromSmiles(smi) inchi = rdinchi.MolToInchi(mol) inchikey = rdinchi.InchiToInchiKey(inchi[0]) return inchikey 用OpenBabel同样也可以把SMILES转成Canonical SMILES： 12345678910import openbabel as obdef obsmitosmile(smi): conv = ob.OBConversion() conv.SetInAndOutFormats("smi", "can") conv.SetOptions("K", conv.OUTOPTIONS) mol = ob.OBMol() conv.ReadString(mol, smi) smile = conv.WriteString(mol) smile = smile.replace('\t\n', '') return smile]]></content>
       <categories>
         <category>心得体会</category>
       </categories>
@@ -35,10 +35,10 @@
         <category>学习笔记</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
         <tag>Association Analysis</tag>
-        <tag>Python</tag>
         <tag>FP-growth</tag>
       </tags>
   </entry>
@@ -47,11 +47,11 @@
     <url>%2F2018%2F02%2F03%2F%E8%AE%B0%E5%BD%95%E5%AE%9E%E7%94%A8%E7%9A%84python%E5%BA%93%2F</url>
     <content type="text"><![CDATA[本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。 进度条 在爬虫和机器学习等工作中，可能需要有一个进度条能够反馈当前程序运行速度或者进度，可以考虑用以下方法实现： ShowProcess类 在网上找到别人写的一个方法如下： 1234567891011121314151617181920212223242526# 建立一个ShowProcess类class ShowProcess(): i = 0 max_steps = 0 max_arrow = 50 def __init__(self, max_steps): self.max_steps = max_steps self.i = 0 def show_process(self, i=None): if i is not None: self.i = i else: self.i += 1 num_arrow = int(self.i * self.max_arrow / self.max_steps) num_line = self.max_arrow - num_arrow percent = self.i * 100.0 / self.max_steps process_bar = '[' + '&gt;' * num_arrow + '-' * num_line + ']'\ + '%.2f' % percent + '%' print('\r',process_bar,end='',flush=True) def close(self, words='done'): print('') print(words) self.i = 0 使用示例： 12345678910111213if __name__=='__main__': max_steps = 100 process_bar = ShowProcess(max_steps) for i in range(max_steps): process_bar.show_process() time.sleep(0.05) process_bar.close()# 效果如下 &gt;&gt;&gt; [&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;]100.00%&gt;&gt;&gt; done 在命令窗口下使用正常，但是在IDLE和Spyder中显示存在问题，考虑使用其他方法。 tqdm安装1pip install tqdm 使用12345678910111213141516171819202122232425262728293031323334353637383940414243444546# 最基本的用法import timefrom tqdm import tqdmfor i in tqdm(range(9)): time.sleep(0.1)# 效果如下&gt;&gt;&gt; 100%|██████████| 10/10 [00:01&lt;00:00, 9.79it/s]# trange类似于tqdmimport timefrom tqdm import trangefor i in trange(10): time.sleep(0.1)# 效果如下&gt;&gt;&gt; 100%|██████████| 10/10 [00:01&lt;00:00, 9.79it/s]# 传入listimport timefrom tqdm import tqdmpbar = tqdm([1,2,3,4,5,6,7,8,9,10]) for char in pbar: pbar.set_description("Processing %s" % char) time.sleep(0.1)# 效果如下&gt;&gt;&gt; Processing 10: 100%|██████████| 10/10 [00:01&lt;00:00, 9.49it/s] # 手动控制更新import timefrom tqdm import tqdmwith tqdm(total=10) as pbar: for i in range(10): pbar.update(1) time.sleep(0.1)# 效果如下&gt;&gt;&gt; 100%|██████████| 10/10 [00:00&lt;00:00, 10.10it/s]# 也可以这样import timefrom tqdm import tqdmpbar = tqdm(total=10) for i in range(10): pbar.update(1) time.sleep(0.1)pbar.close() # 效果如下&gt;&gt;&gt; 100%|██████████| 10/10 [00:00&lt;00:00, 10.10it/s] 在Spyder下正常了，然而在命令窗口有问题。 重试 进行爬虫的时候，很容易因为网络问题导致失败，这里有2个库可以很轻松地实现这个功能。 retry安装1pip install retry 使用 只需要在函数定义前加上@retry就行了。 1234567891011121314151617from retry import retry@retry()def make_trouble(): '''重试直到成功'''@retry(ZeroDivisionError, tries=3, delay=2)def make_trouble(): '''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''@retry((ValueError, TypeError), delay=1, backoff=2)def make_trouble(): '''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 8, ...秒'''@retry((ValueError, TypeError), delay=1, backoff=2, max_delay=4)def make_trouble(): '''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 4, ...秒，最高间隔为4秒'''@retry(ValueError, delay=1, jitter=1)def make_trouble(): '''出现ValueError时重试,每次间隔1, 2, 3, 4, ... 秒''' Tenacity 使用类似于retry。同样只需要在函数定义前加上@retry就行了。 安装1pip install tenacity 使用12345678910111213141516171819from tenacity import retry, retry_if_exception_type, wait_fixed, stop_after_attempt, stop_after_delay,@retry()def make_trouble(): '''重试直到成功'''@retry(retry=retry_if_exception_type(ZeroDivisionError), wait=wait_fixed(2), stop=stop_after_attempt(3))def make_trouble(): '''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''@retry(stop=(stop_after_delay(10) | stop_after_attempt(5)))def make_trouble(): '''重试10秒或者5次''' @retry(wait=wait_random(min=1, max=2))def make_trouble(): '''重试间隔在随机1-2秒'''@retry(wait=wait_chain(*[wait_fixed(3) for i in range(3)] + [wait_fixed(7) for i in range(2)] + [wait_fixed(9)]))def make_trouble(): '''前三次重试每次间隔3秒，接下来2次间隔7秒，之后重试间隔9秒''' 异步 待填坑……]]></content>
       <categories>
-        <category>效率工具</category>
+        <category>心得体会</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>效率</tag>
+        <tag>Efficiency</tag>
       </tags>
   </entry>
   <entry>
@@ -62,10 +62,10 @@
         <category>学习笔记</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
         <tag>Association Analysis</tag>
-        <tag>Python</tag>
         <tag>Apriori</tag>
       </tags>
   </entry>

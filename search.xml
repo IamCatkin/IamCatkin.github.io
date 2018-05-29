@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AirPods开箱]]></title>
+    <url>%2F2018%2F05%2F29%2FAirPods%E5%BC%80%E7%AE%B1%2F</url>
+    <content type="text"><![CDATA[懒癌发作，好久没更博客了，发一篇开箱（伪）凑数吧…… 一直挺想用蓝牙耳机的，之前在索尼的降噪豆和AirPods之间纠结，考虑到对于降噪需求并不是很大，所以最终还是选了AirPods，就是喜欢白色的，颜值即正义。 首先是盒子： 打开后来个全家福，正好之前的原装数据线坏了，可以做个备用。必须吐槽苹果的垃圾原装线，用久了要么就是一面不能充电，要么就是开胶，质量还不如几十块的。 盒子内： 拿出来： 说下使用体会吧，感觉上还是挺好用的，戴着很舒服，不容易掉。和Iphone完美契合，配对很方便，使用中拿下一边耳机自动暂停播放，放回去自动开始。虽然只能设置简单的控制，对我来说基本够用。连接电脑声音有点小，得调很大才行，这点不太好，勉强可以接受吧。至于音质，也就听个响的样子，不能指望有多强了~ 希望不会丢……]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>Unboxing</tag>
+        <tag>Earphone</tag>
+        <tag>Apple</tag>
+        <tag>AirPods</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[类似“超强智商”之类的答题游戏作弊思路]]></title>
     <url>%2F2018%2F05%2F08%2F%E7%B1%BB%E4%BC%BC%E2%80%9C%E8%B6%85%E5%BC%BA%E6%99%BA%E5%95%86%E2%80%9D%E4%B9%8B%E7%B1%BB%E7%9A%84%E7%AD%94%E9%A2%98%E6%B8%B8%E6%88%8F%E4%BD%9C%E5%BC%8A%E6%80%9D%E8%B7%AF%2F</url>
     <content type="text"><![CDATA[今年年初时答题游戏比较火，对于一些比较热门的游戏，已经有不少成熟的辅助程序了。然而这个实验室同学转给我的这个小程序，似乎热度还达不到做辅助的标准，而题目又比较恶心，自己答起来比较费劲，所以在这里探讨一下作弊的思路。 利用图像识别的思路 很容易想到的一个思路就是把手机屏幕投射到屏幕，这里可以用模拟器/ADB/TeamViewer等方案，然后截图，利用tesseract-ocr将图片识别成文字，最后调用百度搜题。 安装必要库就不赘叙了，有需要日后再补。我是采用了模拟器的方案，简单写出代码如下： 12345678910111213141516171819202122import win32gui, win32ui, win32con, win32apifrom PIL import Imageimport pytesseractimport webbrowserdef window_capture(filename): hwnd = 0 hwndDC = win32gui.GetWindowDC(hwnd) mfcDC = win32ui.CreateDCFromHandle(hwndDC) saveDC = mfcDC.CreateCompatibleDC() saveBitMap = win32ui.CreateBitmap() w = 480 h = 120 saveBitMap.CreateCompatibleBitmap(mfcDC,w,h) saveDC.SelectObject(saveBitMap) saveDC.BitBlt((0,0),(w,h),mfcDC,(50,320),win32con.SRCCOPY) saveBitMap.SaveBitmapFile(saveDC,filename)window_capture('cqzs.jpg')text=pytesseract.image_to_string(Image.open('cqzs.jpg'),lang='chi_sim')new_text =''.join(text.split())url = 'http://www.baidu.com/s?wd=%s' % new_textwebbrowser.open(url) 其中w，h为截图框大小参数，还需要根据实际情况调整定位，以便完整截图。 实际使用情况图片识别大致能让人满意，然而效率上有点低，整个过程大概要3-5秒，只剩一半左右的时间答题，所以希望有更好的方案。 利用抓包的思路 通过Fiddler抓包发现，每次12道题以json的形式一次性直接传递过来，因此可以在答题倒计时时就直接把12道题一块搜，这样每道题基本上有10秒时间作答，比上面的方案充裕了不少。 安装的过程略，需要修改FiddlerScript使其输出题目。代码如下： 123456789101112131415161718import jsonimport webbrowserstat = Truewhile stat == True: try: file = open("d:\\python\\temp\\cqzs.txt","r",encoding="utf-8") j = json.loads(file.read()) if 'game' in j['data']: question_list = j['data']['game']['question_list'] for q in question_list: title = q['title'] url = 'http://www.baidu.com/s?wd=%s' % title webbrowser.open(url) stat = False file.close() except: pass 进一步改进方案 这样只是把每道题用百度搜了一下，还需要人工判断，可以考虑用通过词频比对选择答案，或者多平台搜索集合之类的方案。以后有机会再补。 结局 奖品虽然最低只需要通关5次，但是不包邮，强烈怀疑奖品价值够不上邮费。想免邮费最低需要通关25次，考虑到麻烦程度，溜了溜了~]]></content>

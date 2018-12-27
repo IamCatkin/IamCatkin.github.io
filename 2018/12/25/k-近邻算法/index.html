@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Machine Learning,Data Mining,KNN,Python," />
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="世路如今已惯，此心到处悠然。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="寒光亭下水如天">
-<meta property="og:url" content="http://blog.catkin.moe/tags/Apriori/index.html">
+<meta name="description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
+<meta name="keywords" content="Machine Learning,Data Mining,KNN,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="k-近邻算法">
+<meta property="og:url" content="http://blog.catkin.moe/2018/12/25/k-近邻算法/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="世路如今已惯，此心到处悠然。">
+<meta property="og:description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9qs2vmhj30yj0mbjui.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg">
+<meta property="og:updated_time" content="2018-12-27T09:06:56.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒光亭下水如天">
-<meta name="twitter:description" content="世路如今已惯，此心到处悠然。">
+<meta name="twitter:title" content="k-近邻算法">
+<meta name="twitter:description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.catkin.moe/tags/Apriori/"/>
+  <link rel="canonical" href="http://blog.catkin.moe/2018/12/25/k-近邻算法/"/>
 
 
 
 
 
-  <title>标签: Apriori | 寒光亭下水如天</title>
+  <title>k-近邻算法 | 寒光亭下水如天</title>
   
 
 
@@ -172,7 +178,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,54 +316,376 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Apriori<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.catkin.moe/2018/12/25/k-近邻算法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Catkin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寒光亭下水如天">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/01/30/Apriori算法/" itemprop="url">
-              
-                <span itemprop="name">Apriori算法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">k-近邻算法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-30T13:58:56+08:00"
-              content="2018-01-30" >
-          01-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T15:58:23+08:00">
+                2018-12-25
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,596
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　 最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。</p>
+<a id="more"></a>
+<h1 id="k-近邻算法概述"><a href="#k-近邻算法概述" class="headerlink" title="k-近邻算法概述"></a>k-近邻算法概述</h1><p>　　k-近邻算法（K-Nearest Neighbor ）的工作原理是：存在一个样本数据集合，也称为训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类对应的关系。输入没有标签的新数据后，将新数据中的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据，这就是k-近邻算法中k的出处，通常k是不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。 </p>
+<p>　　以使用k-近邻算法分类爱情片和动作片，有人统计过很多电影的打斗镜头和接吻镜头如下表，假如有一部未看过的电影，以？来表示，如何确定它是爱情片和动作片呢？ </p>
+<table>
+<thead>
+<tr>
+<th>电影名称</th>
+<th>打斗镜头</th>
+<th>接吻镜头</th>
+<th>电影类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Califoria Man</td>
+<td>3</td>
+<td>104</td>
+<td>爱情片</td>
+</tr>
+<tr>
+<td>He’s Not Really into Dudes</td>
+<td>2</td>
+<td>100</td>
+<td>爱情片</td>
+</tr>
+<tr>
+<td>Beautigul Woman</td>
+<td>1</td>
+<td>81</td>
+<td>爱情片</td>
+</tr>
+<tr>
+<td>Kevin Longblade</td>
+<td>101</td>
+<td>10</td>
+<td>动作片</td>
+</tr>
+<tr>
+<td>Robo Slayer 3000</td>
+<td>99</td>
+<td>5</td>
+<td>动作片</td>
+</tr>
+<tr>
+<td>Amped II</td>
+<td>98</td>
+<td>2</td>
+<td>动作片</td>
+</tr>
+<tr>
+<td>?</td>
+<td>18</td>
+<td>90</td>
+<td>未知</td>
+</tr>
+</tbody>
+</table>
+<p>　　在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg" alt="1"></p>
+<p>　　我们用欧氏距离来得到如下距离值：</p>
+<table>
+<thead>
+<tr>
+<th>电影名称</th>
+<th>与未知电影的距离</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Califoria Man</td>
+<td>20.5</td>
+</tr>
+<tr>
+<td>He’s Not Really into Dudes</td>
+<td>18.7</td>
+</tr>
+<tr>
+<td>Beautigul Woman</td>
+<td>19.2</td>
+</tr>
+<tr>
+<td>Kevin Longblade</td>
+<td>115.3</td>
+</tr>
+<tr>
+<td>Robo Slayer 3000</td>
+<td>117.4</td>
+</tr>
+<tr>
+<td>Amped II</td>
+<td>118.9</td>
+</tr>
+</tbody>
+</table>
+<p>　　按照距离递增排序，可以找到k个距离最近的电影。假设k=3，则三个最靠近的电影依次是He’s Not Really into Dudes、Beautigul Woman和Califoria Man。k-近邻算法按照距离最近的三部电影的类型，决定未知电影的类型，而这三部电影全是爱情片，因此我们判定未知电影是爱情片。</p>
+<h2 id="准备：使用Python导入数据"><a href="#准备：使用Python导入数据" class="headerlink" title="准备：使用Python导入数据"></a>准备：使用Python导入数据</h2><p>　　首先，创建名为KNN.py的python模块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    group = np.array([[<span class="number">1.0</span>,<span class="number">1.1</span>],[<span class="number">1.0</span>,<span class="number">1.0</span>],[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0.1</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>,<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group, labels</span><br></pre></td></tr></table></figure>
+<p>　　这里我们准备了4组数据，每组数据有两个我们已知的属性或者特征值。接下来我们将完成分类任务。</p>
+<h2 id="实施KNN分类算法"><a href="#实施KNN分类算法" class="headerlink" title="实施KNN分类算法"></a>实施KNN分类算法</h2><p>　　定义函数classify0()如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX, dataSet, labels, k)</span>:</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">#用于计算欧氏距离</span></span><br><span class="line">    <span class="comment">#将intX在纵向重复dataSetSize次</span></span><br><span class="line">    diffMat = np.tile(inX, (dataSetSize,<span class="number">1</span>)) - dataSet</span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span></span><br><span class="line">    <span class="comment">#返回从小到大的索引值</span></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    <span class="comment">#按第二个元素的次序，对元组进行逆序排序，即从大到小排序，返回发生频率最高的元素标签</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>　　至此，我们构建了第一个分类器。</p>
+<h1 id="示例：使用k-近邻算法改进约会网站的配对效果"><a href="#示例：使用k-近邻算法改进约会网站的配对效果" class="headerlink" title="示例：使用k-近邻算法改进约会网站的配对效果"></a>示例：使用k-近邻算法改进约会网站的配对效果</h1><p>　　海伦一直使用在线约会网站寻找自己的约会对象，她把自己交往过的对象分为以下三类：</p>
+<ul>
+<li>不喜欢的人</li>
+<li>魅力一般的人</li>
+<li>极具魅力的人</li>
+</ul>
+<p>　　因此，她希望更好地将她匹配的对象分类。</p>
+<h2 id="准备数据：从文本文件中解析数据"><a href="#准备数据：从文本文件中解析数据" class="headerlink" title="准备数据：从文本文件中解析数据"></a>准备数据：从文本文件中解析数据</h2><p>　　她把数据存放在文本文件datingTestSet2.txt中，每个样本数据占据一行，主要包含以下3种特征：</p>
+<ul>
+<li>每年获得的飞行常客里程数</li>
+<li>玩视频游戏所耗时间百分比</li>
+<li>每周消费的冰淇淋公升数</li>
+</ul>
+<p>　　创建名为file2matrix的函数，把数据转变为分类器可以接受的格式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file2matrix</span><span class="params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename)</span><br><span class="line">    arrayOlines = fr.readlines()</span><br><span class="line">    <span class="comment"># 得到文件行数</span></span><br><span class="line">    numberOfLines = len(arrayOlines)</span><br><span class="line">    <span class="comment"># 创建返回的NumPy矩阵</span></span><br><span class="line">    returnMat = np.zeros((numberOfLines,<span class="number">3</span>))</span><br><span class="line">    classLabelVector = []</span><br><span class="line">    index = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 解析文件数据到列表</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> arrayOlines:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        listFromLine = line.split(<span class="string">'\t'</span>)</span><br><span class="line">        returnMat[index,:] = listFromLine[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">        classLabelVector.append(int(listFromLine[<span class="number">-1</span>]))</span><br><span class="line">        index += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> returnMat,classLabelVector</span><br></pre></td></tr></table></figure>
+<p>　　接下来图形化展示数据内容。</p>
+<h2 id="分析数据：使用Matplotlib创建散点图"><a href="#分析数据：使用Matplotlib创建散点图" class="headerlink" title="分析数据：使用Matplotlib创建散点图"></a>分析数据：使用Matplotlib创建散点图</h2><p>　　定义一个scatterPlot函数进行可视化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scatterPlot</span><span class="params">()</span>:</span></span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">    p = ax.scatter(datingDateMat[:,<span class="number">1</span>], datingDateMat[:,<span class="number">2</span>],</span><br><span class="line">               <span class="number">15.0</span>*np.array(datingLabels), <span class="number">15.0</span>*np.array(datingLabels))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+<p>　　得到了玩视频游戏所耗时间百分比和每周消费的冰淇淋公升数的关系散点图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9qs2vmhj30yj0mbjui.jpg" alt="2"></p>
+<p>　　同理也能得到每年获得的飞行常客里程数和玩视频游戏所耗时间百分比的关系散点图，可以得到更好的展示效果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg" alt="3"></p>
+<p>　　可以知道具有不同的爱好的人其类别区域也不同。</p>
+<h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">玩视频游戏所耗时间百分比</th>
+<th style="text-align:center">每年获得的飞行常客里程数</th>
+<th style="text-align:center">每周消费的冰淇淋公升数</th>
+<th style="text-align:center">样本分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0.8</td>
+<td style="text-align:center">400</td>
+<td style="text-align:center">0.5</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">134000</td>
+<td style="text-align:center">0.9</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20000</td>
+<td style="text-align:center">1.1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">67</td>
+<td style="text-align:center">32000</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：<br>$$<br>\sqrt{(0-67)^{2}+(20000-32000)^{2}+(1.1-0.1)^{2}}<br>$$<br>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
+<p>　　增加函数autoNorm用于归一化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    minVals = dataSet.min(<span class="number">0</span>)</span><br><span class="line">    maxVals = dataSet.max(<span class="number">0</span>)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    normDateSet = np.zeros(np.shape(dataSet))</span><br><span class="line">    m = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    normDateSet = dataSet - np.tile(minVals, (m,<span class="number">1</span>))</span><br><span class="line">    normDateSet = normDateSet/np.tile(ranges, (m,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normDateSet, ranges, minVals</span><br></pre></td></tr></table></figure>
+<h2 id="测试算法：作为完整程序验证分类器"><a href="#测试算法：作为完整程序验证分类器" class="headerlink" title="测试算法：作为完整程序验证分类器"></a>测试算法：作为完整程序验证分类器</h2><p>　　创建函数datingClassTest以测试分类器效果：</p>
+<hr>
+<p>参考资料：《机器学习实战》</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
+          
+            <a href="/tags/Data-Mining/" rel="tag"><i class="fa fa-tag"></i> Data Mining</a>
+          
+            <a href="/tags/KNN/" rel="tag"><i class="fa fa-tag"></i> KNN</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/24/NS开箱/" rel="next" title="NS开箱">
+                <i class="fa fa-chevron-left"></i> NS开箱
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/26/一些可能用得上的点/" rel="prev" title="一些可能用得上的点">
+                一些可能用得上的点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +693,15 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY3MC8xMDIyNQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -385,8 +722,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -490,6 +836,22 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-近邻算法概述"><span class="nav-number">1.</span> <span class="nav-text">k-近邻算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备：使用Python导入数据"><span class="nav-number">1.1.</span> <span class="nav-text">准备：使用Python导入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实施KNN分类算法"><span class="nav-number">1.2.</span> <span class="nav-text">实施KNN分类算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例：使用k-近邻算法改进约会网站的配对效果"><span class="nav-number">2.</span> <span class="nav-text">示例：使用k-近邻算法改进约会网站的配对效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：从文本文件中解析数据"><span class="nav-number">2.1.</span> <span class="nav-text">准备数据：从文本文件中解析数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析数据：使用Matplotlib创建散点图"><span class="nav-number">2.2.</span> <span class="nav-text">分析数据：使用Matplotlib创建散点图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：归一化数值"><span class="nav-number">2.3.</span> <span class="nav-text">准备数据：归一化数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试算法：作为完整程序验证分类器"><span class="nav-number">2.4.</span> <span class="nav-text">测试算法：作为完整程序验证分类器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -683,6 +1045,10 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -711,6 +1077,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

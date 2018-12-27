@@ -4,23 +4,47 @@
 
     
   <url>
-    <loc>http://blog.catkin.moe/2018/12/03/%E4%BA%B2%E8%BA%AB%E9%AA%8C%E8%AF%8110%E5%A4%A9%E8%83%8C%E5%8D%95%E8%AF%8D%E6%B3%95/</loc>
-    <lastmod>2018-12-03T01:19:22.341Z</lastmod>
+    <loc>http://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-12-27T09:06:56.797Z</lastmod>
     <data>
         <display>
-        <title>亲身验证10天背单词法</title>
-        <pubTime>2018-12-03T01:03:16.000Z</pubTime>
+        <title>k-近邻算法</title>
+        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
         
-        <tag>Postgraduate</tag>
+        <tag>Machine Learning</tag>
          
-        <tag>English</tag>
+        <tag>Data Mining</tag>
          
-        <tag>Words</tag>
+        <tag>KNN</tag>
+         
+        <tag>Python</tag>
          
          
            
              
-              <breadCrumb title="心得体会" url="http://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+              <breadCrumb title="学习笔记" url="http://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
+    <lastmod>2018-12-27T03:18:41.534Z</lastmod>
+    <data>
+        <display>
+        <title>一些可能用得上的点</title>
+        <pubTime>2018-12-26T12:12:36.000Z</pubTime>
+        
+        <tag>Cheminformatics</tag>
+         
+        <tag>MOE</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -186,9 +210,9 @@
          
         <tag>Data Mining</tag>
          
-        <tag>Association Analysis</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Association Analysis</tag>
          
         <tag>FP-growth</tag>
          
@@ -214,9 +238,9 @@
          
         <tag>Data Mining</tag>
          
-        <tag>Association Analysis</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Association Analysis</tag>
          
         <tag>Apriori</tag>
          

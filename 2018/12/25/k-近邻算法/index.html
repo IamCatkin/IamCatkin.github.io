@@ -90,7 +90,8 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9qs2vmhj30yj0mbjui.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg">
-<meta property="og:updated_time" content="2018-12-27T09:06:56.797Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fylf3fnvy7j30cv01x3yd.jpg">
+<meta property="og:updated_time" content="2019-01-03T03:42:50.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k-近邻算法">
 <meta name="twitter:description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
@@ -420,7 +421,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,596
+                  1,864
                 </span>
               
 
@@ -611,10 +612,17 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
-<p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：<br>$$<br>\sqrt{(0-67)^{2}+(20000-32000)^{2}+(1.1-0.1)^{2}}<br>$$<br>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
+<p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fylf3fnvy7j30cv01x3yd.jpg" alt="22"></p>
+<p>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
 <p>　　增加函数autoNorm用于归一化：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    minVals = dataSet.min(<span class="number">0</span>)</span><br><span class="line">    maxVals = dataSet.max(<span class="number">0</span>)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    normDateSet = np.zeros(np.shape(dataSet))</span><br><span class="line">    m = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    normDateSet = dataSet - np.tile(minVals, (m,<span class="number">1</span>))</span><br><span class="line">    normDateSet = normDateSet/np.tile(ranges, (m,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normDateSet, ranges, minVals</span><br></pre></td></tr></table></figure>
 <h2 id="测试算法：作为完整程序验证分类器"><a href="#测试算法：作为完整程序验证分类器" class="headerlink" title="测试算法：作为完整程序验证分类器"></a>测试算法：作为完整程序验证分类器</h2><p>　　创建函数datingClassTest以测试分类器效果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hoRatio = <span class="number">0.10</span>      </span><br><span class="line">    datingDataMat,datingLabels = file2matrix(<span class="string">'datingTestSet2.txt'</span>)</span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    m = normMat.shape[<span class="number">0</span>]</span><br><span class="line">    numTestVecs = int(m*hoRatio)</span><br><span class="line">    errorCount = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d, the real answer is: %d"</span> % (classifierResult, datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span> (classifierResult != datingLabels[i]): errorCount += <span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"the total error rate is: %f"</span> % (errorCount/float(numTestVecs)))</span><br></pre></td></tr></table></figure>
+<p>　　通过分类器可得错误率为5%，结果还不错，也可以改变hoRatio和k来得到不同结果。</p>
+<p>　　这个例子表明我们可以得到较好的分类结果，海伦可以输入未知对象的属性，由分类软件来帮助她判定某一对象的可交往程度：讨厌、一般喜欢、非常喜欢。</p>
+<h1 id="示例：手写识别系统"><a href="#示例：手写识别系统" class="headerlink" title="示例：手写识别系统"></a>示例：手写识别系统</h1><p>　　上面的例子使用的数据比较容易理解，如何在人不太容易看懂的数据上使用分类器呢？我们将使用k-近邻分类器用于手写数字识别。</p>
+<h2 id="准备数据：将图像转换为测试向量"><a href="#准备数据：将图像转换为测试向量" class="headerlink" title="准备数据：将图像转换为测试向量"></a>准备数据：将图像转换为测试向量</h2><p>　　首先把图像格式化处理为一个向量。即将32×32的二进制</p>
 <hr>
 <p>参考资料：《机器学习实战》</p>
 
@@ -751,7 +759,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -773,7 +781,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -846,7 +854,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-近邻算法概述"><span class="nav-number">1.</span> <span class="nav-text">k-近邻算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备：使用Python导入数据"><span class="nav-number">1.1.</span> <span class="nav-text">准备：使用Python导入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实施KNN分类算法"><span class="nav-number">1.2.</span> <span class="nav-text">实施KNN分类算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例：使用k-近邻算法改进约会网站的配对效果"><span class="nav-number">2.</span> <span class="nav-text">示例：使用k-近邻算法改进约会网站的配对效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：从文本文件中解析数据"><span class="nav-number">2.1.</span> <span class="nav-text">准备数据：从文本文件中解析数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析数据：使用Matplotlib创建散点图"><span class="nav-number">2.2.</span> <span class="nav-text">分析数据：使用Matplotlib创建散点图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：归一化数值"><span class="nav-number">2.3.</span> <span class="nav-text">准备数据：归一化数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试算法：作为完整程序验证分类器"><span class="nav-number">2.4.</span> <span class="nav-text">测试算法：作为完整程序验证分类器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-近邻算法概述"><span class="nav-number">1.</span> <span class="nav-text">k-近邻算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备：使用Python导入数据"><span class="nav-number">1.1.</span> <span class="nav-text">准备：使用Python导入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实施KNN分类算法"><span class="nav-number">1.2.</span> <span class="nav-text">实施KNN分类算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例：使用k-近邻算法改进约会网站的配对效果"><span class="nav-number">2.</span> <span class="nav-text">示例：使用k-近邻算法改进约会网站的配对效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：从文本文件中解析数据"><span class="nav-number">2.1.</span> <span class="nav-text">准备数据：从文本文件中解析数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析数据：使用Matplotlib创建散点图"><span class="nav-number">2.2.</span> <span class="nav-text">分析数据：使用Matplotlib创建散点图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：归一化数值"><span class="nav-number">2.3.</span> <span class="nav-text">准备数据：归一化数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试算法：作为完整程序验证分类器"><span class="nav-number">2.4.</span> <span class="nav-text">测试算法：作为完整程序验证分类器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例：手写识别系统"><span class="nav-number">3.</span> <span class="nav-text">示例：手写识别系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备数据：将图像转换为测试向量"><span class="nav-number">3.1.</span> <span class="nav-text">准备数据：将图像转换为测试向量</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -866,7 +874,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -880,7 +888,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.3k</span>
+    <span title="Site words total count">17.8k</span>
   
 </div>
 

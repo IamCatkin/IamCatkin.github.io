@@ -467,6 +467,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </ol>
 <h1 id="FP-growth原理"><a href="#FP-growth原理" class="headerlink" title="FP-growth原理"></a>FP-growth原理</h1><p>　　FP-growth算法将数据存储在一种成为FP树的紧凑数据结构中。FP代表频繁模式（Frequent Pattern）。一颗FP树与计算机科学中其他树结构类似，但它通过链接（link）来连接相似元素，被连起来的元素可以看成一个链表。</p>
 <p>　　下面用一个例子来说明，给出一组数据如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -501,6 +502,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　由此可以生成一棵FP树：</p>
 <p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10iiurb7j206708d74i.jpg" alt="1-1FP树"></p>
 <p>　　仔细来看这棵FP树，同搜索树不同，一个元素项可以在一棵FP树中出现多次。FP树会存储项集的出现频率，而每个项集会以路径的方式存储在树中。存在相似元素的集合会共享树的一部分。只有当集合之间完全不同时，树才会分叉。树节点上给出集合中单个元素及其在序列中的出现次数，路径会给出该序列的出现次数。相似项之间的链接，即节点链接（node link），用于快速发现相似项的位置。</p>
@@ -517,6 +519,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10j9pakxj20ad08fjrs.jpg" alt="2-2头指针"></p>
 <p>　　这里使用一个字典作为数据结构来保存头指针表。除了存放指针外，头指针表还可以用来保存FP树中每类元素的总数。</p>
 <p>　　第一次遍历数据集会获得每个元素项的出现频率。接着去掉不满足最小支持度的元素项，再来构建FP树。在构建时，读入每个项集并将其添加到一条已经存在的路径中。如果该路径不存在，则创建一条新路径。每个事务就是一个无序集合。假设有集合{z, x, y}和{y, z, r}，那么在FP树中，相同项会只表示一次。为了解决此问题，在将集合添加到树之前，需要对每个集合进行排序。排序基于元素项的绝对出现频率来进行。使用上图中头指针节点值，对前表中数据进行过滤、重排序后的数据显示如下。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -558,6 +561,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　在对事务记录过滤和排序之后，就可以构建FP树了。从空集（符号为∅）开始，向其中不断添加频繁项集。过滤、排序后的事务依次添加到树中，如果树中已存在现有元素，则增加现有元素的值；如果现有元素不存在，则向树添加一个分枝。对上表前两条事务进行添加的过程显示如下。</p>
 <p><img src="https://ws1.sinaimg.cn/large/41287145ly1fo10jnt627j20f508st90.jpg" alt="2-3添加"></p>
 <p>　　接下来通过代码实现上述过程。在fpGrowth.py加入以下代码：</p>
@@ -574,6 +578,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <p>　　重点关注第1步，即寻找条件模式基的过程。之后，为每一条件模式基创建对应的条件FP树。最后需构造少许代码来封装上述两个函数，并从FP树中获得频繁项集。</p>
 <h2 id="抽取条件模式基"><a href="#抽取条件模式基" class="headerlink" title="抽取条件模式基"></a>抽取条件模式基</h2><p>　　首先从之前保存在头指针中的单个频繁元素项开始。对于每一个元素项，获得其对应的条件模式(conditional pattern base)。条件模式基是以所查找元素项为结尾的路径集合。每一条路径其实都是一条前缀路径(prefix path)。简而言之，一条前缀路径是介于所查找元素项与树根节点之间的所有内容。</p>
 <p>　　回到图2中，符号r的前缀路径是{x, s}、{z, x, y}和{z}。每条前缀路径都与一个计数值关联。该计数值等于起始元素项的计数值，该计数值给了每条路径上r的数目。下表列出了上例当中每一个频繁项的所有前缀路径：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -608,6 +613,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　前缀路径被用于构建条件FP树，但是暂时先不需要考虑这件事。为了获得这些前缀路径，可以对树进行穷举式搜索，直到获得想要的频繁项为止，或使用一个更有效的方法来加速搜索过程。可以利用先前创建的头指针来得到一种更有效的方法。头指针表包含相同类型元素链表的起始指针。一旦到达了每一个元素项，就可以上溯这棵树直到根节点为止。下面代码给出了如何发现前缀路径，将其添加到文件fpGrowth.py中。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ascendTree</span><span class="params">(leafNode, prefixPath)</span> :</span></span><br><span class="line">    <span class="comment"># 迭代上溯整棵树</span></span><br><span class="line">    <span class="keyword">if</span> leafNode.parent != <span class="keyword">None</span> :</span><br><span class="line">        prefixPath.append(leafNode.name)</span><br><span class="line">        ascendTree(leafNode.parent, prefixPath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历链表直到到达结尾。每遇到一个元素项都会调用ascendTree()来上溯FP树，并收集所有遇到的元素项的名称。</span></span><br><span class="line"><span class="comment"># 该列表返回之后添加到条件模式基字典condPats中</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findPrefixPath</span><span class="params">(basePat, treeNode)</span> :</span></span><br><span class="line">    condPats = &#123;&#125;</span><br><span class="line">    <span class="keyword">while</span> treeNode != <span class="keyword">None</span> :</span><br><span class="line">        prefixPath = []</span><br><span class="line">        ascendTree(treeNode, prefixPath)</span><br><span class="line">        <span class="keyword">if</span> len(prefixPath) &gt; <span class="number">1</span> :</span><br><span class="line">            condPats[frozenset(prefixPath[<span class="number">1</span>:])] = treeNode.count</span><br><span class="line">        treeNode = treeNode.nodeLink</span><br><span class="line">    <span class="keyword">return</span> condPats</span><br></pre></td></tr></table></figure>
 <p>　　运行结果</p>
@@ -1465,6 +1471,8 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
   
 
   
+  
+
 
   
 

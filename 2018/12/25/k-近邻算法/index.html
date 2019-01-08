@@ -462,6 +462,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <a id="more"></a>
 <h1 id="k-近邻算法概述"><a href="#k-近邻算法概述" class="headerlink" title="k-近邻算法概述"></a>k-近邻算法概述</h1><p>　　k-近邻算法（K-Nearest Neighbor ）的工作原理是：存在一个样本数据集合，也称为训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类对应的关系。输入没有标签的新数据后，将新数据中的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据，这就是k-近邻算法中k的出处，通常k是不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。 </p>
 <p>　　以使用k-近邻算法分类爱情片和动作片，有人统计过很多电影的打斗镜头和接吻镜头如下表，假如有一部未看过的电影，以？来表示，如何确定它是爱情片和动作片呢？ </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -516,9 +517,11 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg" alt="1"></p>
 <p>　　我们用欧氏距离来得到如下距离值：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -553,6 +556,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　按照距离递增排序，可以找到k个距离最近的电影。假设k=3，则三个最靠近的电影依次是He’s Not Really into Dudes、Beautigul Woman和Califoria Man。k-近邻算法按照距离最近的三部电影的类型，决定未知电影的类型，而这三部电影全是爱情片，因此我们判定未知电影是爱情片。</p>
 <h2 id="准备：使用Python导入数据"><a href="#准备：使用Python导入数据" class="headerlink" title="准备：使用Python导入数据"></a>准备：使用Python导入数据</h2><p>　　首先，创建名为KNN.py的python模块：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    group = np.array([[<span class="number">1.0</span>,<span class="number">1.1</span>],[<span class="number">1.0</span>,<span class="number">1.0</span>],[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0.1</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>,<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group, labels</span><br></pre></td></tr></table></figure>
@@ -583,7 +587,8 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <p>　　同理也能得到每年获得的飞行常客里程数和玩视频游戏所耗时间百分比的关系散点图，可以得到更好的展示效果：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg" alt="3"></p>
 <p>　　可以知道具有不同的爱好的人其类别区域也不同。</p>
-<h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><table>
+<h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
@@ -624,6 +629,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fylf3fnvy7j30cv01x3yd.jpg" alt="22"></p>
 <p>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
@@ -1474,6 +1480,8 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
   
 
   
+  
+
 
   
 

@@ -467,6 +467,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <a id="more"></a>
 <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>　　关联分析是一种在大规模数据集中寻找有趣关系的任务。这些关系有两种形式：频繁项集、关联规则。频繁项集（frequent item sets）是经常出现在一块的物品的集合；关联规则（association rules）暗示两种物品之间可能存在很强的关系。</p>
 <p>　　以下是某个杂货店的交易清单：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -497,6 +498,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>频繁项集：经常出现在一起的物品集合，如｛葡萄酒，尿布，豆奶｝就是一个频繁项集。</li>
 <li>支持度（support）：如何有效定义频繁？其中最重要的两个概念是支持度和可信度。一个项集的支持度被定义为数据集中包含该项集的记录所占的比例。还是上面的例子，豆奶在5条交易中出现了4次，因此｛豆奶｝的支持度为4/5，同理可知，｛豆奶，尿布｝的支持度为3/5。我们可以定义一个最小支持度，从而只保留满足最小支持度的项集。</li>
@@ -1400,6 +1402,8 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
   
 
   
+  
+
 
   
 

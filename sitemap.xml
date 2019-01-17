@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
+    
+    <lastmod>2019-01-13T07:54:33.229Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/photos/photoslist.json</loc>
     
     <lastmod>2019-01-13T02:19:31.550Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-01-03T03:51:47.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
-    
-    <lastmod>2018-12-28T03:16:35.968Z</lastmod>
     
   </url>
   

@@ -22,7 +22,7 @@
   <entry>
     <title><![CDATA[一些可能用得上的点]]></title>
     <url>%2F2018%2F12%2F26%2F%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9%2F</url>
-    <content type="text"><![CDATA[记录一下以后可能用得上的点。 MOE相关Lipinski的五倍律 满足下面标准中的至少两条，则该化合物的被动吸收能力或者膜渗透性将较差，难以通过口服吸收： Weight：相对分子质量大于500Da logP(o/w)：具有高亲脂性即clgP&gt;5 lip_don：氢键供体数大于5（—OH和—NH之和） lip_acc：氢键受体数大于10（O原子和N原子之和） b_rotN：含有多于5个可旋转键，以限制其构象柔性 此外，moe还有一项lip_violation，以提示Lipinski五倍律违反数。 计算cats描述符 SVL输入： 12db_cats [,3]// 后面为切片，以1为起始]]></content>
+    <content type="text"><![CDATA[记录一下以后可能用得上的点。 MOE相关Lipinski的五倍律 满足下面标准中的至少两条，则该化合物的被动吸收能力或者膜渗透性将较差，难以通过口服吸收： Weight：相对分子质量大于500Da logP(o/w)：具有高亲脂性即clgP&gt;5 lip_don：氢键供体数大于5（—OH和—NH之和） lip_acc：氢键受体数大于10（O原子和N原子之和） b_rotN：含有多于5个可旋转键，以限制其构象柔性 此外，moe还有一项lip_violation，以提示Lipinski五倍律违反数。 以多mpu运行 CMD下运行，%MOE%为MOE根目录： 12%MOE%\bin\moe -mpu 2// 数字为调用mpu数目 计算cats描述符 SVL输入： 12db_cats [,3]// 后面为切片，以1为起始]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

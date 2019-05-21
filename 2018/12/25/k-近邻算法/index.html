@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Machine Learning,Data Mining,Python,KNN," />
+  <meta name="keywords" content="Python,Machine Learning,Data Mining,KNN," />
 
 
 
@@ -82,22 +82,22 @@
 
 
 <meta name="description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
-<meta name="keywords" content="Machine Learning,Data Mining,Python,KNN">
+<meta name="keywords" content="Python,Machine Learning,Data Mining,KNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k-近邻算法">
 <meta property="og:url" content="https://blog.catkin.moe/2018/12/25/k-近邻算法/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
 <meta property="og:description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9qs2vmhj30yj0mbjui.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fylf3fnvy7j30cv01x3yd.jpg">
-<meta property="og:updated_time" content="2019-01-08T13:40:13.353Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/4.jpg">
+<meta property="og:updated_time" content="2019-05-20T09:18:56.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k-近邻算法">
 <meta name="twitter:description" content="最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/1.jpg">
 
 
 
@@ -519,7 +519,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </table>
 </div>
 <p>　　在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyj2skaeo2j30qw033wfu.jpg" alt="1"></p>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/1.jpg" alt="1"></p>
 <p>　　我们用欧氏距离来得到如下距离值：</p>
 <div class="table-container">
 <table>
@@ -583,9 +583,9 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 <h2 id="分析数据：使用Matplotlib创建散点图"><a href="#分析数据：使用Matplotlib创建散点图" class="headerlink" title="分析数据：使用Matplotlib创建散点图"></a>分析数据：使用Matplotlib创建散点图</h2><p>　　定义一个scatterPlot函数进行可视化。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scatterPlot</span><span class="params">()</span>:</span></span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">    p = ax.scatter(datingDateMat[:,<span class="number">1</span>], datingDateMat[:,<span class="number">2</span>],</span><br><span class="line">               <span class="number">15.0</span>*np.array(datingLabels), <span class="number">15.0</span>*np.array(datingLabels))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
 <p>　　得到了玩视频游戏所耗时间百分比和每周消费的冰淇淋公升数的关系散点图：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9qs2vmhj30yj0mbjui.jpg" alt="2"></p>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/2.jpg" alt="2"></p>
 <p>　　同理也能得到每年获得的飞行常客里程数和玩视频游戏所耗时间百分比的关系散点图，可以得到更好的展示效果：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fyk9tdht7lj30xw0mqgnu.jpg" alt="3"></p>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/3.jpg" alt="3"></p>
 <p>　　可以知道具有不同的爱好的人其类别区域也不同。</p>
 <h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><div class="table-container">
 <table>
@@ -631,7 +631,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 </table>
 </div>
 <p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006SuOdngy1fylf3fnvy7j30cv01x3yd.jpg" alt="22"></p>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/4.jpg" alt="22"></p>
 <p>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
 <p>　　增加函数autoNorm用于归一化：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    minVals = dataSet.min(<span class="number">0</span>)</span><br><span class="line">    maxVals = dataSet.max(<span class="number">0</span>)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    normDateSet = np.zeros(np.shape(dataSet))</span><br><span class="line">    m = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    normDateSet = dataSet - np.tile(minVals, (m,<span class="number">1</span>))</span><br><span class="line">    normDateSet = normDateSet/np.tile(ranges, (m,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normDateSet, ranges, minVals</span><br></pre></td></tr></table></figure>
@@ -671,11 +671,11 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
       
         <div class="post-tags">
           
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
             <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
           
             <a href="/tags/Data-Mining/" rel="tag"><i class="fa fa-tag"></i> Data Mining</a>
-          
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
             <a href="/tags/KNN/" rel="tag"><i class="fa fa-tag"></i> KNN</a>
           
@@ -788,7 +788,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -810,7 +810,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -935,7 +935,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.9k</span>
+    <span title="Site words total count">22.9k</span>
   
 </div>
 

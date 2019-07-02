@@ -4,6 +4,64 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
+    <lastmod>2019-07-02T14:53:44.968Z</lastmod>
+    <data>
+        <display>
+        <title>一些可能用得上的点</title>
+        <pubTime>2018-12-26T12:12:36.000Z</pubTime>
+        
+        <tag>Cheminformatics</tag>
+         
+        <tag>MOE</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-07-02T14:50:24.926Z</lastmod>
+    <data>
+        <display>
+        <title>相似度计算的python实现</title>
+        <pubTime>2019-01-03T01:00:00.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>Similarity</tag>
+         
+        <tag>Euclidean distance</tag>
+         
+        <tag>Manhattan distance</tag>
+         
+        <tag>Pearson coefficient</tag>
+         
+        <tag>Jaccard coefficient</tag>
+         
+        <tag>Tanimoto coefficient</tag>
+         
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-07-02T14:39:56.267Z</lastmod>
     <data>
@@ -46,42 +104,6 @@
            
              
               <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2019-05-20T09:21:43.147Z</lastmod>
-    <data>
-        <display>
-        <title>相似度计算的python实现</title>
-        <pubTime>2019-01-03T01:00:00.000Z</pubTime>
-        
-        <tag>Machine Learning</tag>
-         
-        <tag>Data Mining</tag>
-         
-        <tag>Similarity</tag>
-         
-        <tag>Euclidean distance</tag>
-         
-        <tag>Manhattan distance</tag>
-         
-        <tag>Pearson coefficient</tag>
-         
-        <tag>Jaccard coefficient</tag>
-         
-        <tag>Tanimoto coefficient</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>
@@ -212,28 +234,6 @@
            
              
               <breadCrumb title="生活记录" url="https://blog.catkin.moe/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
-    <lastmod>2019-04-17T06:16:47.391Z</lastmod>
-    <data>
-        <display>
-        <title>一些可能用得上的点</title>
-        <pubTime>2018-12-26T12:12:36.000Z</pubTime>
-        
-        <tag>Cheminformatics</tag>
-         
-        <tag>MOE</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>

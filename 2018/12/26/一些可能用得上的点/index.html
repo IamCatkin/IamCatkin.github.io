@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="寒光亭下水如天">
 <meta property="og:description" content="记录一下以后可能用得上的点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.catkin.moe/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-17T06:16:47.391Z">
+<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/mokou.jpg">
+<meta property="og:updated_time" content="2019-07-02T14:53:44.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些可能用得上的点">
 <meta name="twitter:description" content="记录一下以后可能用得上的点。">
-<meta name="twitter:image" content="https://blog.catkin.moe/images/og_image.png">
+<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/mokou.jpg">
 
 
 
@@ -126,6 +126,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -140,6 +144,12 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/mokou.jpg" alt="一些可能用得上的点">
+        </span>
+    </div>
     
     <div class="card-content article ">
         
@@ -175,6 +185,7 @@
         <div class="content">
             <p>　　记录一下以后可能用得上的点。</p>
 <a id="more"></a>
+
 <h1 id="MOE相关"><a href="#MOE相关" class="headerlink" title="MOE相关"></a>MOE相关</h1><h2 id="Lipinski的五倍律"><a href="#Lipinski的五倍律" class="headerlink" title="Lipinski的五倍律"></a>Lipinski的五倍律</h2><p>　　满足下面标准中的至少两条，则该化合物的被动吸收能力或者膜渗透性将较差，难以通过口服吸收：</p>
 <ul>
 <li>Weight：相对分子质量大于500Da</li>
@@ -186,10 +197,13 @@
 <p>　　此外，moe还有一项lip_violation，以提示Lipinski五倍律违反数。</p>
 <h2 id="以多mpu运行"><a href="#以多mpu运行" class="headerlink" title="以多mpu运行"></a>以多mpu运行</h2><p>　　 CMD下运行，%MOE%为MOE根目录：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%MOE%\bin\moe -mpu <span class="hljs-number">2</span></span><br><span class="line"><span class="hljs-comment">// 数字为调用mpu数目</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="计算cats描述符"><a href="#计算cats描述符" class="headerlink" title="计算cats描述符"></a>计算cats描述符</h2><p>　　SVL输入：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db_cats [,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-comment">// 后面为切片，以1为起始</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="RDKit相关"><a href="#RDKit相关" class="headerlink" title="RDKit相关"></a>RDKit相关</h1><h2 id="计算Morgan指纹"><a href="#计算Morgan指纹" class="headerlink" title="计算Morgan指纹"></a>计算Morgan指纹</h2><p>　　当radius=2时，即为ECFP4 ，nBits为长度。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> rdkit <span class="hljs-keyword">import</span> Chem</span><br><span class="line">m1 = Chem.MolFromSmiles(<span class="hljs-string">'Cc1ccccc1'</span>)</span><br><span class="line">fp1 = Chem.AllChem.GetMorganFingerprintAsBitVect(m1,<span class="hljs-number">2</span>,nBits=<span class="hljs-number">1024</span>)</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -350,6 +364,41 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#MOE相关">
+        <span class="has-mr-6">1</span>
+        <span>MOE相关</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Lipinski的五倍律">
+        <span class="has-mr-6">1.1</span>
+        <span>Lipinski的五倍律</span>
+        </a></li><li>
+        <a class="is-flex" href="#以多mpu运行">
+        <span class="has-mr-6">1.2</span>
+        <span>以多mpu运行</span>
+        </a></li><li>
+        <a class="is-flex" href="#计算cats描述符">
+        <span class="has-mr-6">1.3</span>
+        <span>计算cats描述符</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#RDKit相关">
+        <span class="has-mr-6">2</span>
+        <span>RDKit相关</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#计算Morgan指纹">
+        <span class="has-mr-6">2.1</span>
+        <span>计算Morgan指纹</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -488,7 +537,7 @@
             
             <a href="/2019/01/03/相似度计算的python实现/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="相似度计算的python实现">
+                    <img class="thumbnail" src="/gallery/thumbnails/twins.jpg" alt="相似度计算的python实现">
                 </p>
             </a>
             
@@ -507,7 +556,7 @@
             
             <a href="/2018/12/26/一些可能用得上的点/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些可能用得上的点">
+                    <img class="thumbnail" src="/gallery/thumbnails/mokou.jpg" alt="一些可能用得上的点">
                 </p>
             </a>
             
@@ -943,7 +992,7 @@
             
             <a href="/2019/01/03/相似度计算的python实现/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="相似度计算的python实现">
+                    <img class="thumbnail" src="/gallery/thumbnails/twins.jpg" alt="相似度计算的python实现">
                 </p>
             </a>
             
@@ -962,7 +1011,7 @@
             
             <a href="/2018/12/26/一些可能用得上的点/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些可能用得上的点">
+                    <img class="thumbnail" src="/gallery/thumbnails/mokou.jpg" alt="一些可能用得上的点">
                 </p>
             </a>
             

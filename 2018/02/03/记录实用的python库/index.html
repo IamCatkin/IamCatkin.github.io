@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="寒光亭下水如天">
 <meta property="og:description" content="本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.catkin.moe/images/og_image.png">
-<meta property="og:updated_time" content="2018-04-23T05:09:47.710Z">
+<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/miku.jpg">
+<meta property="og:updated_time" content="2019-07-02T15:41:33.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录实用的python库">
 <meta name="twitter:description" content="本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。">
-<meta name="twitter:image" content="https://blog.catkin.moe/images/og_image.png">
+<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/miku.jpg">
 
 
 
@@ -126,6 +126,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -140,6 +144,12 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/miku.jpg" alt="记录实用的python库">
+        </span>
+    </div>
     
     <div class="card-content article ">
         
@@ -175,22 +185,31 @@
         <div class="content">
             <p>　　本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。</p>
 <a id="more"></a>
+
 <h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><p>　　在爬虫和机器学习等工作中，可能需要有一个进度条能够反馈当前程序运行速度或者进度，可以考虑用以下方法实现：</p>
 <h2 id="ShowProcess类"><a href="#ShowProcess类" class="headerlink" title="ShowProcess类"></a>ShowProcess类</h2><p>　　在网上找到别人写的一个方法如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 建立一个ShowProcess类</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShowProcess</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    i = <span class="hljs-number">0</span> </span><br><span class="line">    max_steps = <span class="hljs-number">0</span> </span><br><span class="line">    max_arrow = <span class="hljs-number">50</span> </span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, max_steps)</span>:</span></span><br><span class="line">        self.max_steps = max_steps</span><br><span class="line">        self.i = <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show_process</span><span class="hljs-params">(self, i=None)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> i <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            self.i = i</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            self.i += <span class="hljs-number">1</span></span><br><span class="line">        num_arrow = int(self.i * self.max_arrow / self.max_steps) </span><br><span class="line">        num_line = self.max_arrow - num_arrow </span><br><span class="line">        percent = self.i * <span class="hljs-number">100.0</span> / self.max_steps </span><br><span class="line">        process_bar = <span class="hljs-string">'['</span> + <span class="hljs-string">'&gt;'</span> * num_arrow + <span class="hljs-string">'-'</span> * num_line + <span class="hljs-string">']'</span>\</span><br><span class="line">                      + <span class="hljs-string">'%.2f'</span> % percent + <span class="hljs-string">'%'</span></span><br><span class="line">        print(<span class="hljs-string">'\r'</span>,process_bar,end=<span class="hljs-string">''</span>,flush=<span class="hljs-keyword">True</span>) </span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">close</span><span class="hljs-params">(self, words=<span class="hljs-string">'done'</span>)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">''</span>)</span><br><span class="line">        print(words)</span><br><span class="line">        self.i = <span class="hljs-number">0</span></span><br></pre></td></tr></table></figure>
+
 <p>　　使用示例：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">'__main__'</span>:</span><br><span class="line">    max_steps = <span class="hljs-number">100</span></span><br><span class="line"></span><br><span class="line">    process_bar = ShowProcess(max_steps)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(max_steps):</span><br><span class="line">        process_bar.show_process()</span><br><span class="line">        time.sleep(<span class="hljs-number">0.05</span>)</span><br><span class="line">    process_bar.close()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 效果如下 </span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>[&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;]<span class="hljs-number">100.00</span>%</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>done</span><br></pre></td></tr></table></figure>
+
 <p>　　在命令窗口下使用正常，但是在IDLE和Spyder中显示存在问题，考虑使用其他方法。</p>
 <h2 id="tqdm"><a href="#tqdm" class="headerlink" title="tqdm"></a>tqdm</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 最基本的用法</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(range(<span class="hljs-number">9</span>)):</span><br><span class="line">	time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># trange类似于tqdm</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> trange</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> trange(<span class="hljs-number">10</span>):</span><br><span class="line">	time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 传入list</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])  </span><br><span class="line"><span class="hljs-keyword">for</span> char <span class="hljs-keyword">in</span> pbar:  </span><br><span class="line">    pbar.set_description(<span class="hljs-string">"Processing %s"</span> % char) </span><br><span class="line">    time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>Processing <span class="hljs-number">10</span>: <span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.49</span>it/s]</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment"># 手动控制更新</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line"><span class="hljs-keyword">with</span> tqdm(total=<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> pbar:  </span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):  </span><br><span class="line">        pbar.update(<span class="hljs-number">1</span>)</span><br><span class="line">        time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">00</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>, <span class="hljs-number">10.10</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 也可以这样</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm(total=<span class="hljs-number">10</span>)  </span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):  </span><br><span class="line">    pbar.update(<span class="hljs-number">1</span>)</span><br><span class="line">    time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line">pbar.close()  </span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">00</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>, <span class="hljs-number">10.10</span>it/s]</span><br></pre></td></tr></table></figure>
+
 <p>　　在Spyder下正常了，然而在命令窗口有问题。</p>
 <h1 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h1><p>　　进行爬虫的时候，很容易因为网络问题导致失败，这里有2个库可以很轻松地实现这个功能。</p>
 <h2 id="retry"><a href="#retry" class="headerlink" title="retry"></a>retry</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install retry</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p>　　只需要在函数定义前加上@retry就行了。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> retry <span class="hljs-keyword">import</span> retry</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@retry()</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试直到成功'''</span></span><br><span class="line"><span class="hljs-meta">@retry(ZeroDivisionError, tries=3, delay=2)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry((ValueError, TypeError), delay=1, backoff=2)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 8, ...秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry((ValueError, TypeError), delay=1, backoff=2, max_delay=4)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 4, ...秒，最高间隔为4秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(ValueError, delay=1, jitter=1)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError时重试,每次间隔1, 2, 3, 4, ... 秒'''</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Tenacity"><a href="#Tenacity" class="headerlink" title="Tenacity"></a>Tenacity</h2><p>　　使用类似于retry。同样只需要在函数定义前加上@retry就行了。</p>
 <h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tenacity</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> tenacity <span class="hljs-keyword">import</span> retry, retry_if_exception_type, wait_fixed, stop_after_attempt, stop_after_delay,</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@retry()</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试直到成功'''</span></span><br><span class="line"><span class="hljs-meta">@retry(retry=retry_if_exception_type(ZeroDivisionError), wait=wait_fixed(2), 	stop=stop_after_attempt(3))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(stop=(stop_after_delay(10) | stop_after_attempt(5)))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试10秒或者5次'''</span>    </span><br><span class="line"><span class="hljs-meta">@retry(wait=wait_random(min=1, max=2))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试间隔在随机1-2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(wait=wait_chain(*[wait_fixed(3) for i in range(3)] +</span></span><br><span class="line">                       [wait_fixed(<span class="hljs-number">7</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>)] +</span><br><span class="line">                       [wait_fixed(<span class="hljs-number">9</span>)]))</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''前三次重试每次间隔3秒，接下来2次间隔7秒，之后重试间隔9秒'''</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>　　待填坑……</p>
 
         </div>
@@ -352,6 +371,69 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#进度条">
+        <span class="has-mr-6">1</span>
+        <span>进度条</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ShowProcess类">
+        <span class="has-mr-6">1.1</span>
+        <span>ShowProcess类</span>
+        </a></li><li>
+        <a class="is-flex" href="#tqdm">
+        <span class="has-mr-6">1.2</span>
+        <span>tqdm</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#安装">
+        <span class="has-mr-6">1.2.1</span>
+        <span>安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用">
+        <span class="has-mr-6">1.2.2</span>
+        <span>使用</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#重试">
+        <span class="has-mr-6">2</span>
+        <span>重试</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#retry">
+        <span class="has-mr-6">2.1</span>
+        <span>retry</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#安装-1">
+        <span class="has-mr-6">2.1.1</span>
+        <span>安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用-1">
+        <span class="has-mr-6">2.1.2</span>
+        <span>使用</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Tenacity">
+        <span class="has-mr-6">2.2</span>
+        <span>Tenacity</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#安装-2">
+        <span class="has-mr-6">2.2.1</span>
+        <span>安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用-2">
+        <span class="has-mr-6">2.2.2</span>
+        <span>使用</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#异步">
+        <span class="has-mr-6">3</span>
+        <span>异步</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 

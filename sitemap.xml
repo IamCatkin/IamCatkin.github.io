@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/about/index.html</loc>
+    
+    <lastmod>2019-07-02T13:18:13.955Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2019-07-02T12:35:51.334Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
     
     <lastmod>2019-04-17T06:16:47.391Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/about/index.html</loc>
-    
-    <lastmod>2019-02-01T12:30:53.292Z</lastmod>
     
   </url>
   

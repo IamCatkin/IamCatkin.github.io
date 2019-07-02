@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-07-02T12:35:51.334Z</lastmod>
+    <data>
+        <display>
+        <title>k-近邻算法</title>
+        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
+        
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>KNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-05-21T08:53:58.523Z</lastmod>
+    <lastmod>2019-05-28T06:31:42.394Z</lastmod>
     <data>
         <display>
         <title>Django学习笔记</title>
@@ -33,8 +59,6 @@
         <title>相似度计算的python实现</title>
         <pubTime>2019-01-03T01:00:00.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
@@ -50,6 +74,8 @@
         <tag>Jaccard coefficient</tag>
          
         <tag>Tanimoto coefficient</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -86,32 +112,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2019-05-20T09:18:56.726Z</lastmod>
-    <data>
-        <display>
-        <title>k-近邻算法</title>
-        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Data Mining</tag>
-         
-        <tag>KNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2018/02/06/FP-growth%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-05-20T09:17:50.640Z</lastmod>
     <data>
@@ -119,11 +119,11 @@
         <title>FP-growth算法</title>
         <pubTime>2018-02-06T13:29:51.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
          
         <tag>Association Analysis</tag>
          
@@ -147,11 +147,11 @@
         <title>Apriori算法</title>
         <pubTime>2018-01-30T05:58:56.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
          
         <tag>Association Analysis</tag>
          
@@ -240,7 +240,6 @@
 
     
     
-    
   <url>
     <loc>https://blog.catkin.moe/2018/01/31/%E9%87%91%E7%BC%95%E6%9B%B2/</loc>
     <lastmod>2019-01-11T01:19:51.625Z</lastmod>
@@ -284,7 +283,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://blog.catkin.moe/2018/05/08/%E7%B1%BB%E4%BC%BC%E2%80%9C%E8%B6%85%E5%BC%BA%E6%99%BA%E5%95%86%E2%80%9D%E4%B9%8B%E7%B1%BB%E7%9A%84%E7%AD%94%E9%A2%98%E6%B8%B8%E6%88%8F%E4%BD%9C%E5%BC%8A%E6%80%9D%E8%B7%AF/</loc>

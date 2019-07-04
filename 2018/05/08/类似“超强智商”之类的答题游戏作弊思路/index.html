@@ -185,14 +185,17 @@
         <div class="content">
             <p>　　今年年初时答题游戏比较火，对于一些比较热门的游戏，已经有不少成熟的辅助程序了。然而这个实验室同学转给我的这个小程序，似乎热度还达不到做辅助的标准，而题目又比较恶心，自己答起来比较费劲，所以在这里探讨一下作弊的思路。</p>
 <a id="more"></a>
+
 <h1 id="利用图像识别的思路"><a href="#利用图像识别的思路" class="headerlink" title="利用图像识别的思路"></a>利用图像识别的思路</h1><p>　　很容易想到的一个思路就是把手机屏幕投射到屏幕，这里可以用模拟器/ADB/TeamViewer等方案，然后截图，利用tesseract-ocr将图片识别成文字，最后调用百度搜题。</p>
 <p>　　安装必要库就不赘叙了，有需要日后再补。我是采用了模拟器的方案，简单写出代码如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> win32gui, win32ui, win32con, win32api</span><br><span class="line"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image</span><br><span class="line"><span class="hljs-keyword">import</span> pytesseract</span><br><span class="line"><span class="hljs-keyword">import</span> webbrowser</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">window_capture</span><span class="hljs-params">(filename)</span>:</span></span><br><span class="line">    hwnd = <span class="hljs-number">0</span></span><br><span class="line">    hwndDC = win32gui.GetWindowDC(hwnd)</span><br><span class="line">    mfcDC = win32ui.CreateDCFromHandle(hwndDC)</span><br><span class="line">    saveDC = mfcDC.CreateCompatibleDC()</span><br><span class="line">    saveBitMap = win32ui.CreateBitmap()</span><br><span class="line">    w = <span class="hljs-number">480</span></span><br><span class="line">    h = <span class="hljs-number">120</span></span><br><span class="line">    saveBitMap.CreateCompatibleBitmap(mfcDC,w,h)</span><br><span class="line">    saveDC.SelectObject(saveBitMap)</span><br><span class="line">    saveDC.BitBlt((<span class="hljs-number">0</span>,<span class="hljs-number">0</span>),(w,h),mfcDC,(<span class="hljs-number">50</span>,<span class="hljs-number">320</span>),win32con.SRCCOPY)</span><br><span class="line">    saveBitMap.SaveBitmapFile(saveDC,filename)</span><br><span class="line">window_capture(<span class="hljs-string">'cqzs.jpg'</span>)</span><br><span class="line">text=pytesseract.image_to_string(Image.open(<span class="hljs-string">'cqzs.jpg'</span>),lang=<span class="hljs-string">'chi_sim'</span>)</span><br><span class="line">new_text =<span class="hljs-string">''</span>.join(text.split())</span><br><span class="line">url = <span class="hljs-string">'http://www.baidu.com/s?wd=%s'</span> % new_text</span><br><span class="line">webbrowser.open(url)</span><br></pre></td></tr></table></figure>
+
 <p>　　其中w，h为截图框大小参数，还需要根据实际情况调整定位，以便完整截图。</p>
 <p>　　实际使用情况图片识别大致能让人满意，然而效率上有点低，整个过程大概要3-5秒，只剩一半左右的时间答题，所以希望有更好的方案。</p>
 <h1 id="利用抓包的思路"><a href="#利用抓包的思路" class="headerlink" title="利用抓包的思路"></a>利用抓包的思路</h1><p>　　通过Fiddler抓包发现，每次12道题以json的形式一次性直接传递过来，因此可以在答题倒计时时就直接把12道题一块搜，这样每道题基本上有10秒时间作答，比上面的方案充裕了不少。</p>
 <p>　　安装的过程略，需要修改FiddlerScript使其输出题目。代码如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> json</span><br><span class="line"><span class="hljs-keyword">import</span> webbrowser</span><br><span class="line"></span><br><span class="line">stat = <span class="hljs-keyword">True</span></span><br><span class="line"><span class="hljs-keyword">while</span> stat == <span class="hljs-keyword">True</span>:</span><br><span class="line">    <span class="hljs-keyword">try</span>:</span><br><span class="line">        file = open(<span class="hljs-string">"d:\\python\\temp\\cqzs.txt"</span>,<span class="hljs-string">"r"</span>,encoding=<span class="hljs-string">"utf-8"</span>)</span><br><span class="line">        j = json.loads(file.read())</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'game'</span> <span class="hljs-keyword">in</span> j[<span class="hljs-string">'data'</span>]:</span><br><span class="line">            question_list = j[<span class="hljs-string">'data'</span>][<span class="hljs-string">'game'</span>][<span class="hljs-string">'question_list'</span>]</span><br><span class="line">            <span class="hljs-keyword">for</span> q <span class="hljs-keyword">in</span> question_list:</span><br><span class="line">                title = q[<span class="hljs-string">'title'</span>]</span><br><span class="line">                url = <span class="hljs-string">'http://www.baidu.com/s?wd=%s'</span> % title</span><br><span class="line">                webbrowser.open(url)</span><br><span class="line">            stat = <span class="hljs-keyword">False</span></span><br><span class="line">        file.close()</span><br><span class="line">    <span class="hljs-keyword">except</span>:</span><br><span class="line">        <span class="hljs-keyword">pass</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="进一步改进方案"><a href="#进一步改进方案" class="headerlink" title="进一步改进方案"></a>进一步改进方案</h1><p>　　这样只是把每道题用百度搜了一下，还需要人工判断，可以考虑用通过词频比对选择答案，或者多平台搜索集合之类的方案。以后有机会再补。</p>
 <h1 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h1><p>　　奖品虽然最低只需要通关5次，但是不包邮，强烈怀疑奖品价值够不上邮费。想免邮费最低需要通关25次，考虑到麻烦程度，溜了溜了~</p>
 
@@ -303,7 +306,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        15
                     </p>
                 </div>
             </div>
@@ -313,7 +316,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -323,7 +326,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        32
+                        35
                     </p>
                 </div>
             </div>
@@ -461,6 +464,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/个人盘点/">
+            <span class="level-start">
+                <span class="level-item">个人盘点</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/学习笔记/">
             <span class="level-start">
                 <span class="level-item">学习笔记</span>
@@ -504,7 +515,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a>
+        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 10px;">Lattice resoning</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a>
     </div>
 </div>
 
@@ -518,6 +529,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/04/看过的推理小说/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/Susato.jpg" alt="看过的推理小说">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:16:28.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/看过的推理小说/" class="has-link-black-ter is-size-6">看过的推理小说</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人盘点/">个人盘点</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -595,25 +625,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/07/24/NS开箱/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pokemon2.jpg" alt="NS开箱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-24T11:50:20.000Z">2018-07-24</time></div>
-                    <a href="/2018/07/24/NS开箱/" class="has-link-black-ter is-size-6">NS开箱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活记录/">生活记录</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -625,6 +636,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
@@ -770,6 +792,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Detective-story/">
+                        <span class="tag">Detective story</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Django/">
                         <span class="tag">Django</span>
                         <span class="tag is-grey">1</span>
@@ -840,6 +869,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Lattice-resoning/">
+                        <span class="tag">Lattice resoning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Literature/">
                         <span class="tag">Literature</span>
                         <span class="tag is-grey">2</span>
@@ -884,6 +920,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Pearson-coefficient/">
                         <span class="tag">Pearson coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Penetralium/">
+                        <span class="tag">Penetralium</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -976,6 +1019,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/04/看过的推理小说/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/Susato.jpg" alt="看过的推理小说">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:16:28.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/看过的推理小说/" class="has-link-black-ter is-size-6">看过的推理小说</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人盘点/">个人盘点</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/12/Django学习笔记/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/django.jpg" alt="Django学习笔记">
@@ -1050,25 +1112,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/07/24/NS开箱/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/pokemon2.jpg" alt="NS开箱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-24T11:50:20.000Z">2018-07-24</time></div>
-                    <a href="/2018/07/24/NS开箱/" class="has-link-black-ter is-size-6">NS开箱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活记录/">生活记录</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1080,6 +1123,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
@@ -1225,6 +1279,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Detective-story/">
+                        <span class="tag">Detective story</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Django/">
                         <span class="tag">Django</span>
                         <span class="tag is-grey">1</span>
@@ -1295,6 +1356,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Lattice-resoning/">
+                        <span class="tag">Lattice resoning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Literature/">
                         <span class="tag">Literature</span>
                         <span class="tag is-grey">2</span>
@@ -1339,6 +1407,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Pearson-coefficient/">
                         <span class="tag">Pearson coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Penetralium/">
+                        <span class="tag">Penetralium</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

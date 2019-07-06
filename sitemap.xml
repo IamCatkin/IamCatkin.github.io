@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/about/index.html</loc>
+    
+    <lastmod>2019-07-06T08:56:53.913Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2019/07/04/%E7%9C%8B%E8%BF%87%E7%9A%84%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4/</loc>
     
     <lastmod>2019-07-06T08:40:13.553Z</lastmod>
@@ -96,13 +103,6 @@
     <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-07-02T14:39:56.267Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/about/index.html</loc>
-    
-    <lastmod>2019-07-02T13:18:13.955Z</lastmod>
     
   </url>
   

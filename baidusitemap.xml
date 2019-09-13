@@ -128,11 +128,11 @@
         <title>Apriori算法</title>
         <pubTime>2018-01-30T05:58:56.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
          
         <tag>Association Analysis</tag>
          
@@ -156,11 +156,11 @@
         <title>FP-growth算法</title>
         <pubTime>2018-02-06T13:29:51.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
          
         <tag>Association Analysis</tag>
          
@@ -304,8 +304,6 @@
         <title>相似度计算的python实现</title>
         <pubTime>2019-01-03T01:00:00.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
@@ -321,6 +319,8 @@
         <tag>Jaccard coefficient</tag>
          
         <tag>Tanimoto coefficient</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -362,11 +362,11 @@
         <title>k-近邻算法</title>
         <pubTime>2018-12-25T07:58:23.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Data Mining</tag>
+         
+        <tag>Python</tag>
          
         <tag>KNN</tag>
          

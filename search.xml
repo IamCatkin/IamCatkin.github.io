@@ -33,7 +33,6 @@
         <category>心得体会</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
         <tag>Similarity</tag>
@@ -42,6 +41,7 @@
         <tag>Pearson coefficient</tag>
         <tag>Jaccard coefficient</tag>
         <tag>Tanimoto coefficient</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -64,9 +64,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
+        <tag>Python</tag>
         <tag>KNN</tag>
       </tags>
   </entry>
@@ -145,9 +145,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
+        <tag>Python</tag>
         <tag>Association Analysis</tag>
         <tag>FP-growth</tag>
       </tags>
@@ -196,9 +196,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
+        <tag>Python</tag>
         <tag>Association Analysis</tag>
         <tag>Apriori</tag>
       </tags>

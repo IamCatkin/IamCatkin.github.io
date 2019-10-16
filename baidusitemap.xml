@@ -4,23 +4,21 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2019/09/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2019-10-04T12:02:47.662Z</lastmod>
+    <loc>https://blog.catkin.moe/2019/10/16/%E5%8F%AF%E6%80%9C%E9%A3%8E%E7%B5%AE%E8%90%BD%E6%BA%AA%E6%B4%A5/</loc>
+    <lastmod>2019-10-16T14:57:32.170Z</lastmod>
     <data>
         <display>
-        <title>推理小说记录</title>
-        <pubTime>2019-09-05T12:16:28.000Z</pubTime>
+        <title>可怜风絮落溪津</title>
+        <pubTime>2019-10-16T07:49:03.000Z</pubTime>
         
-        <tag>Detective story</tag>
+        <tag>Daily</tag>
          
-        <tag>Lattice resoning</tag>
-         
-        <tag>Penetralium</tag>
+        <tag>Feeling</tag>
          
          
            
              
-              <breadCrumb title="个人盘点" url="https://blog.catkin.moe/categories/%E4%B8%AA%E4%BA%BA%E7%9B%98%E7%82%B9/"/>
+              <breadCrumb title="负尽年华" url="https://blog.catkin.moe/categories/%E8%B4%9F%E5%B0%BD%E5%B9%B4%E5%8D%8E/"/>
           
         </display>
     </data>
@@ -29,24 +27,70 @@
     
   <url>
     <loc>https://blog.catkin.moe/2019/03/25/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2019-10-04T10:17:12.904Z</lastmod>
+    <lastmod>2019-10-16T07:30:08.869Z</lastmod>
     <data>
         <display>
         <title>悬疑推理向游戏记录</title>
         <pubTime>2019-03-25T03:16:28.000Z</pubTime>
         
-        <tag>Lattice resoning</tag>
-         
         <tag>Game</tag>
          
         <tag>Visual novel</tag>
+         
+        <tag>Lattice resoning</tag>
          
         <tag>Galgame</tag>
          
          
            
              
-              <breadCrumb title="个人盘点" url="https://blog.catkin.moe/categories/%E4%B8%AA%E4%BA%BA%E7%9B%98%E7%82%B9/"/>
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/09/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2019-10-16T07:30:00.107Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2019-09-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2018/01/31/%E9%87%91%E7%BC%95%E6%9B%B2/</loc>
+    <lastmod>2019-10-16T06:38:13.550Z</lastmod>
+    <data>
+        <display>
+        <title>金缕曲</title>
+        <pubTime>2018-01-31T13:23:18.000Z</pubTime>
+        
+        <tag>Literature</tag>
+         
+        <tag>Poetry</tag>
+         
+         
+           
+             
+              <breadCrumb title="诗词遗珠" url="https://blog.catkin.moe/categories/%E8%AF%97%E8%AF%8D%E9%81%97%E7%8F%A0/"/>
           
         </display>
     </data>
@@ -96,28 +140,6 @@
            
              
               <breadCrumb title="生活记录" url="https://blog.catkin.moe/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2018/01/31/%E9%87%91%E7%BC%95%E6%9B%B2/</loc>
-    <lastmod>2019-07-02T15:41:02.153Z</lastmod>
-    <data>
-        <display>
-        <title>金缕曲</title>
-        <pubTime>2018-01-31T13:23:18.000Z</pubTime>
-        
-        <tag>Literature</tag>
-         
-        <tag>Poetry</tag>
-         
-         
-           
-             
-              <breadCrumb title="诗词遗珠" url="https://blog.catkin.moe/categories/%E8%AF%97%E8%AF%8D%E9%81%97%E7%8F%A0/"/>
           
         </display>
     </data>

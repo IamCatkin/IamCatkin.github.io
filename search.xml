@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端学习笔记]]></title>
+    <url>%2F2019%2F10%2F19%2F%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[平生不学WEB，便称编程也枉然 ！ HTML5pass]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+        <tag>CSS3</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[可怜风絮落溪津]]></title>
     <url>%2F2019%2F10%2F16%2F%E5%8F%AF%E6%80%9C%E9%A3%8E%E7%B5%AE%E8%90%BD%E6%BA%AA%E6%B4%A5%2F</url>
     <content type="text"><![CDATA[木落吴江矣，正萧条、西风南雁，碧云千里。落魄江湖还载酒，一种悲凉滋味。重回首、莫弹酸泪。不是天公教弃置，是南华、误却方城尉。飘泊处，谁相慰。别来我亦伤孤寄。更那堪、冰霜摧折，壮怀都废。天远难穷劳望眼，欲上高楼还已。君莫恨、埋愁无地。秋雨秋花关塞冷，且殷勤、好作加餐计。人岂得，长无谓。 ——纳兰性德《金缕曲·寄梁汾》 如果要我从历史长河里面选一位最喜欢的词人，纳兰性德肯定身处一个尴尬的位置。年少的时候被纳兰的“人生若只如初见”、“当时只道是寻常”吸引，那段时间的作文频频引用他的词句，连QQ签名都改成”我是人间惆怅客“了。后来读的词多了，对纳兰词的喜爱渐渐减了，按叶嘉莹先生所说读纳兰词的三个阶段，怕是我已经到了第二个阶段——见山不是山，见水不是水的境界，以致逐渐无感了。 不过客观的说，纳兰的小令在中国词史上还是有一席之地的。这两天长沙天气转凉，读到这首金缕曲时，也有几分感同身受。纳兰性德尚且同顾贞观互为知己，被世人传为佳话。转念一想，我还挺羡慕他的，毕竟我自己心中郁结之气都不知道能和谁诉说，只能在这胡言乱语了。 前段时间有同学问我做什么兼职能赚钱，我本想说运营自媒体，君不见 Ayawawa 、咪蒙、Hugo等靠一篇篇朋友圈爆款赚的盆满钵满，本以为我对这些贩卖焦虑的自媒体已经免疫了，现在看来我也不知不觉着了道。 说到焦虑，从小到大我一直觉得这个词和我没什么关系。幸运的是，每个阶段都有老师对我青眼有加，让我享受”别人家的孩子“的待遇。当然我也不是全无对手，毕竟还有《哈佛女孩刘亦婷》。于是我顺风顺水，没怎么费力就走到了今天。 于是现在就遭了报应，我厌倦了父母一遍遍将我和别人比较，厌倦了无穷无尽的数落，也厌倦了逼婚。我开始渴望离开家的牢笼，哪怕是进入另一个牢笼。 进组一个多月，也算是经历了不少，参加了一个国际会议的筹办，也打破了我对某些事物的幻想。我是从什么时候开始变得焦虑的呢？是看到同龄人一步步走上正轨，而我却陷入温水煮青蛙的境地的时候吗？说来也可笑，在我想振作的地方，却被弃之如敝屣；另一头又想不断压榨我的剩余价值，三个月不长也不短，足以把我榨干。 当然我也不是水果，榨干我没有任何好处，对我自己也是。我安慰自己，这是我的兴趣，在这样的阿Q精神的指引下继续前进。其实这两年也并不是毫无收获，比如现实彻底把我从转行IT的美梦给砸醒，比如IntelliJ IDEA到底是卸载还是不卸载的困扰，再比如今晚的呢喃呓语让我忘掉了明天依然还要早起签到的痛苦。 之前和师姐说到课题的事，她说你研一就好好玩，反正也不会有课题的，不要每天担心不能毕业的事。我问那研二就有课题了吗，她说研二你就会接受延毕的命运了。呵，真操蛋。 说不出现在是后悔还是不后悔，两年以前，当我还是一位保险人时，恐怕也没想到今天我还会重返课堂，就跟我一年前也没想到我的研究生之路会如此曲折一样，这就是生活，永远会往我想不到的方向前进。 话又说回来，人还是得活的洒脱一点，就算落魄江湖，至少我还有酒喝。]]></content>
@@ -59,6 +72,7 @@
         <category>心得体会</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
         <tag>Similarity</tag>
@@ -67,7 +81,6 @@
         <tag>Pearson coefficient</tag>
         <tag>Jaccard coefficient</tag>
         <tag>Tanimoto coefficient</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -90,9 +103,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
-        <tag>Python</tag>
         <tag>KNN</tag>
       </tags>
   </entry>
@@ -171,9 +184,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
-        <tag>Python</tag>
         <tag>Association Analysis</tag>
         <tag>FP-growth</tag>
       </tags>
@@ -222,9 +235,9 @@
         <category>学习笔记</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Machine Learning</tag>
         <tag>Data Mining</tag>
-        <tag>Python</tag>
         <tag>Association Analysis</tag>
         <tag>Apriori</tag>
       </tags>

@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2019/10/22/%E5%86%B0%E5%86%BB%E5%88%87%E7%89%87%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2019-10-22T05:51:49.377Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2019/10/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2019-10-19T08:08:30.770Z</lastmod>
+    <lastmod>2019-10-19T08:50:33.763Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2019-10-19T08:45:22.642Z</lastmod>
     
   </url>
   
@@ -117,13 +131,6 @@
     <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2019-07-02T14:50:24.926Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2019-07-02T14:39:56.267Z</lastmod>
     
   </url>
   

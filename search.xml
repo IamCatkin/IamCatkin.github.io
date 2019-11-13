@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Flask学习笔记]]></title>
     <url>%2F2019%2F11%2F13%2FFlask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[Django有点繁琐，俺打算转战Flask了。 初始化安装 在虚拟环境下安装。 12conda create -n flaskconda install flask Hello，Flask Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python 的name变量就是所需的值。 12from flask import Flaskapp = Flask(__name__) 以上即为一个最简单的实例创建。]]></content>
+    <content type="text"><![CDATA[Django有点繁琐，俺打算转战Flask了。 初始化安装 在虚拟环境下安装。 12conda create -n flaskconda install flask Hello，Flask Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python 的__name__变量就是所需的值。 12from flask import Flaskapp = Flask(__name__) 以上即为一个最简单的实例创建。]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

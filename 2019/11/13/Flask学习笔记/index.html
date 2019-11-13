@@ -2,23 +2,25 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>分类: 生活记录 - 寒光亭下水如天</title>
+<title>Flask学习笔记 - 寒光亭下水如天</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="世路如今已惯，此心到处悠然。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="寒光亭下水如天">
-<meta property="og:url" content="https://blog.catkin.moe/categories/生活记录/index.html">
+    <meta name="description" content="Django有点繁琐，俺打算转战Flask了。">
+<meta name="keywords" content="Python,Flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flask学习笔记">
+<meta property="og:url" content="https://blog.catkin.moe/2019/11/13/Flask学习笔记/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="世路如今已惯，此心到处悠然。">
+<meta property="og:description" content="Django有点繁琐，俺打算转战Flask了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.catkin.moe/images/og_image.png">
+<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
+<meta property="og:updated_time" content="2019-11-13T04:25:49.210Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒光亭下水如天">
-<meta name="twitter:description" content="世路如今已惯，此心到处悠然。">
-<meta name="twitter:image" content="https://blog.catkin.moe/images/og_image.png">
+<meta name="twitter:title" content="Flask学习笔记">
+<meta name="twitter:description" content="Django有点繁琐，俺打算转战Flask了。">
+<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
 
 
 
@@ -96,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Catkin.png" alt="寒光亭下水如天" height="28">
+                <img src="/images/Catkin.png" alt="Flask学习笔记" height="28">
             
             </a>
         </div>
@@ -124,6 +126,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -138,191 +144,113 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/flask-logo.png" alt="Flask学习笔记">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-13T02:16:20.000Z">2019-11-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/学习笔记/">学习笔记</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 120 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Flask学习笔记
+            
+        </h1>
+        <div class="content">
+            <p>　　Django有点繁琐，俺打算转战Flask了。</p>
+<a id="more"></a>
+
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>　　在虚拟环境下安装。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n flask</span><br><span class="line">conda install flask</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hello，Flask"><a href="#Hello，Flask" class="headerlink" title="Hello，Flask"></a>Hello，Flask</h2><p>　　Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python 的</p><p><strong>name</strong></p>变量就是所需的值。<p></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br></pre></td></tr></table></figure>
+
+<p>　　以上即为一个最简单的实例创建。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Flask/">Flask</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/25/尼氏染色操作流程/">
+                <span class="level-item">尼氏染色操作流程</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">生活记录</a></li>
-        </ul>
-        </nav>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '8323a58c0a8710fd55c3',
+        clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
+        id: '5842248aa5ded9dea468b577a3c83c52',
+        repo: 'myblogcomments',
+        owner: 'IamCatkin',
+        admin: "IamCatkin"
+    })
+    gitalk.render('comment-container')
+</script>
+
     </div>
 </div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2018/07/24/NS开箱/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/pokemon2.jpg" alt="NS开箱">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-07-24T11:50:20.000Z">2018-07-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/生活记录/">生活记录</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 436 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/07/24/NS开箱/">NS开箱</a>
-            
-        </h1>
-        <div class="content">
-            <p>　　想买NS很久了，之前一直听说NS品控不好，还存在变弯风险。所以想等第二代，不过最近价格回落，正好把steam套了点现，就剁手了NS。感觉近来一直在放飞自我，没好好学习，十分惭愧，希望从今天开始好好复习……</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/07/24/NS开箱/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2018/05/29/AirPods开箱/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/airpods.png" alt="AirPods开箱">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-05-29T13:07:27.000Z">2018-05-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/生活记录/">生活记录</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 401 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/05/29/AirPods开箱/">AirPods开箱</a>
-            
-        </h1>
-        <div class="content">
-            <p>　　懒癌发作，好久没更博客了，发一篇开箱（伪）凑数吧……</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/05/29/AirPods开箱/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2018/04/17/Aero15x开箱/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/aero15.jpg" alt="Aero15x开箱">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-04-17T05:09:11.000Z">2018-04-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/生活记录/">生活记录</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 565 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/04/17/Aero15x开箱/">Aero15x开箱</a>
-            
-        </h1>
-        <div class="content">
-            <p>　　之前一直在gs65和aero15x中摇摆不定，在已经付了gs65的定金后还是选择了aero15x。主要原因就是aero15x比较好拆，实在不想装个内存、固态或者清灰都跑一趟售后，于是就损失了100定金~  \ (╯-╰) /  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/04/17/Aero15x开箱/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -440,6 +368,29 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#初始化">
+        <span class="has-mr-6">1</span>
+        <span>初始化</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#安装">
+        <span class="has-mr-6">1.1</span>
+        <span>安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#Hello，Flask">
+        <span class="has-mr-6">1.2</span>
+        <span>Hello，Flask</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1771,7 +1722,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Catkin.png" alt="寒光亭下水如天" height="28">
+                    <img src="/images/Catkin.png" alt="Flask学习笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -5,15 +5,15 @@
     
   <url>
     <loc>https://blog.catkin.moe/2019/10/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-11-20T09:21:57.453Z</lastmod>
+    <lastmod>2019-11-21T06:04:41.361Z</lastmod>
     <data>
         <display>
         <title>前端学习笔记</title>
         <pubTime>2019-10-19T07:41:54.000Z</pubTime>
         
-        <tag>HTML5</tag>
+        <tag>HTML</tag>
          
-        <tag>CSS3</tag>
+        <tag>CSS</tag>
          
         <tag>JavaScript</tag>
          
@@ -35,11 +35,11 @@
         <title>数字切片扫描仪操作流程</title>
         <pubTime>2019-11-13T10:13:55.000Z</pubTime>
         
+        <tag>Manual</tag>
+         
         <tag>NanoZoomer</tag>
          
         <tag>Pathology</tag>
-         
-        <tag>Manual</tag>
          
          
            
@@ -107,6 +107,8 @@
         <title>冰冻切片机操作流程</title>
         <pubTime>2019-10-22T05:49:02.000Z</pubTime>
         
+        <tag>Manual</tag>
+         
         <tag>Histopathology</tag>
          
         <tag>Cryostat</tag>
@@ -114,8 +116,6 @@
         <tag>Leica</tag>
          
         <tag>CM1860</tag>
-         
-        <tag>Manual</tag>
          
          
            

@@ -8,7 +8,7 @@
 
 
     <meta name="description" content="平生不学WEB，便称编程也枉然 ！">
-<meta name="keywords" content="HTML5,CSS3,JavaScript">
+<meta name="keywords" content="HTML,CSS,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端学习笔记">
 <meta property="og:url" content="https://blog.catkin.moe/2019/10/19/前端学习笔记/index.html">
@@ -16,7 +16,7 @@
 <meta property="og:description" content="平生不学WEB，便称编程也枉然 ！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/web.jpg">
-<meta property="og:updated_time" content="2019-11-20T09:21:57.453Z">
+<meta property="og:updated_time" content="2019-11-21T06:04:41.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记">
 <meta name="twitter:description" content="平生不学WEB，便称编程也枉然 ！">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    27 分钟 读完 (大约 4049 个字)
+                    27 分钟 读完 (大约 4101 个字)
                 </span>
                 
                 
@@ -186,7 +186,7 @@
             <p>　　平生不学WEB，便称编程也枉然 ！</p>
 <a id="more"></a>
 
-<h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><p>　　HTML（HyperText Markup Language）是一种标记语言以便于浏览器正确展示网页给用户。HTML使用标签（tags）来区分用户所能看到的内容和便于浏览器解释的指示。</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>　　HTML（HyperText Markup Language）是一种标记语言以便于浏览器正确展示网页给用户。HTML使用标签（tags）来区分用户所能看到的内容和便于浏览器解释的指示。</p>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>　　常见的IDE比如 Sublime、 VS code都支持一些智能生成HTML代码，简化输入。</p>
 <ul>
 <li><p>用于生成一个html页面，包含head和body。</p>
@@ -827,14 +827,17 @@
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">    div&#123;</span></span><br><span class="line"><span class="hljs-undefined">        width: 100px;</span></span><br><span class="line"><span class="hljs-undefined">        height: 100px;</span></span><br><span class="line"><span class="hljs-undefined">        border: 1px solid red;</span></span><br><span class="line"><span class="hljs-undefined">        margin: 15px 10px 20px 30px;</span></span><br><span class="line"><span class="hljs-undefined">    &#125;</span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box1"</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box2"</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>　　平时我们对图片文字水平居中，通常用<code>text-align:center;</code>，而div水平居中，可以用<code>margin:0 auto;</code>，浏览器自动计算。</p>
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="文档流flow"><a href="#文档流flow" class="headerlink" title="文档流flow"></a>文档流flow</h3><p> 　　除非专门指定，否则所有框均以此来定位。</p>
+<h3 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h3><p>　　通过<strong>float</strong>属性来定位。</p>
+<h3 id="层layer"><a href="#层layer" class="headerlink" title="层layer"></a>层layer</h3><p>　　通过<strong>position</strong>属性来定位。</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/CSS3/">CSS3</a>, <a class="has-link-grey -link" href="/tags/HTML5/">HTML5</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>
+                    <a class="has-link-grey -link" href="/tags/CSS/">CSS</a>, <a class="has-link-grey -link" href="/tags/HTML/">HTML</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>
                 </div>
             </div>
         </div>
@@ -1016,9 +1019,9 @@
                 目录
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#HTML5">
+        <a class="is-flex" href="#HTML">
         <span class="has-mr-6">1</span>
-        <span>HTML5</span>
+        <span>HTML</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#基础">
         <span class="has-mr-6">1.1</span>
@@ -1167,7 +1170,19 @@
         <a class="is-flex" href="#定位">
         <span class="has-mr-6">2.7</span>
         <span>定位</span>
-        </a></li></ul></li></ul>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#文档流flow">
+        <span class="has-mr-6">2.7.1</span>
+        <span>文档流flow</span>
+        </a></li><li>
+        <a class="is-flex" href="#浮动float">
+        <span class="has-mr-6">2.7.2</span>
+        <span>浮动float</span>
+        </a></li><li>
+        <a class="is-flex" href="#层layer">
+        <span class="has-mr-6">2.7.3</span>
+        <span>层layer</span>
+        </a></li></ul></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -1291,7 +1306,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a>
+        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a>
     </div>
 </div>
 
@@ -1583,8 +1598,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CSS3/">
-                        <span class="tag">CSS3</span>
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1688,8 +1703,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/HTML5/">
-                        <span class="tag">HTML5</span>
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2211,8 +2226,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CSS3/">
-                        <span class="tag">CSS3</span>
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2316,8 +2331,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/HTML5/">
-                        <span class="tag">HTML5</span>
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

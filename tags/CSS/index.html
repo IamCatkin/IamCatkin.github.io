@@ -2,25 +2,23 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>Flask学习笔记 - 寒光亭下水如天</title>
+<title>标签: CSS - 寒光亭下水如天</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Django有点繁琐，俺打算转战Flask了。">
-<meta name="keywords" content="Python,Flask">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Flask学习笔记">
-<meta property="og:url" content="https://blog.catkin.moe/2019/11/13/Flask学习笔记/index.html">
+    <meta name="description" content="世路如今已惯，此心到处悠然。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="寒光亭下水如天">
+<meta property="og:url" content="https://blog.catkin.moe/tags/CSS/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="Django有点繁琐，俺打算转战Flask了。">
+<meta property="og:description" content="世路如今已惯，此心到处悠然。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
-<meta property="og:updated_time" content="2019-11-13T04:29:02.708Z">
+<meta property="og:image" content="https://blog.catkin.moe/images/og_image.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flask学习笔记">
-<meta name="twitter:description" content="Django有点繁琐，俺打算转战Flask了。">
-<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
+<meta name="twitter:title" content="寒光亭下水如天">
+<meta name="twitter:description" content="世路如今已惯，此心到处悠然。">
+<meta name="twitter:image" content="https://blog.catkin.moe/images/og_image.png">
 
 
 
@@ -98,7 +96,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Catkin.png" alt="Flask学习笔记" height="28">
+                <img src="/images/Catkin.png" alt="寒光亭下水如天" height="28">
             
             </a>
         </div>
@@ -126,10 +124,6 @@
             <div class="navbar-end">
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -144,18 +138,29 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">CSS</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/flask-logo.png" alt="Flask学习笔记">
-        </span>
+        <a href="/2019/10/19/前端学习笔记/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/web.jpg" alt="前端学习笔记">
+        </a>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T02:16:20.000Z">2019-11-13</time>
+                <time class="level-item has-text-grey" datetime="2019-10-19T07:41:54.000Z">2019-10-19</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/学习笔记/">学习笔记</a>
@@ -165,48 +170,32 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 120 个字)
+                    27 分钟 读完 (大约 4101 个字)
                 </span>
                 
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Flask学习笔记
+                <a class="has-link-black-ter" href="/2019/10/19/前端学习笔记/">前端学习笔记</a>
             
         </h1>
         <div class="content">
-            <p>　　Django有点繁琐，俺打算转战Flask了。</p>
-<a id="more"></a>
-
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>　　在虚拟环境下安装。</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n flask</span><br><span class="line">conda install flask</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hello，Flask"><a href="#Hello，Flask" class="headerlink" title="Hello，Flask"></a>Hello，Flask</h2><p>　　Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python 的<code>__name__</code>变量就是所需的值。</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br></pre></td></tr></table></figure>
-
-<p>　　以上即为一个最简单的实例创建。</p>
-
+            <p>　　平生不学WEB，便称编程也枉然 ！</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Flask/">Flask</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                <a class="button is-size-7 is-light" href="/2019/10/19/前端学习笔记/#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
@@ -214,43 +203,9 @@
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/25/尼氏染色操作流程/">
-                <span class="level-item">尼氏染色操作流程</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '8323a58c0a8710fd55c3',
-        clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
-        id: '5842248aa5ded9dea468b577a3c83c52',
-        repo: 'myblogcomments',
-        owner: 'IamCatkin',
-        admin: "IamCatkin"
-    })
-    gitalk.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -294,7 +249,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -314,7 +269,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        49
+                        52
                     </p>
                 </div>
             </div>
@@ -368,29 +323,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                目录
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#初始化">
-        <span class="has-mr-6">1</span>
-        <span>初始化</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#安装">
-        <span class="has-mr-6">1.1</span>
-        <span>安装</span>
-        </a></li><li>
-        <a class="is-flex" href="#Hello，Flask">
-        <span class="has-mr-6">1.2</span>
-        <span>Hello，Flask</span>
-        </a></li></ul></li></ul>
-        </div>
-    </div>
-</div>
-
     
         
 
@@ -401,6 +333,17 @@
             链接
         </h3>
         <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://yukgan.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">菜神</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">yukgan.com</span>
+                    </span>
+                </a>
+            </li>
         
             <li>
                 <a class="level is-mobile" href="https://blog.moyule.me/" target="_blank">
@@ -461,7 +404,7 @@
                 <span class="level-item">心得体会</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活记录/">
@@ -499,7 +442,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a>
+        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a>
     </div>
 </div>
 
@@ -516,7 +459,7 @@
         
         <article class="media">
             
-            <a href="/2019/11/13/Flask学习笔记/" class="media-left">
+            <a href="/2019/11/14/Flask学习笔记/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/flask-logo.png" alt="Flask学习笔记">
                 </p>
@@ -524,10 +467,29 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T02:16:20.000Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Flask学习笔记/" class="has-link-black-ter is-size-6">Flask学习笔记</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T02:16:20.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/Flask学习笔记/" class="has-link-black-ter is-size-6">Flask学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/学习笔记/">学习笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/13/数字切片扫描仪操作流程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nano.jpg" alt="数字切片扫描仪操作流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T10:13:55.000Z">2019-11-13</time></div>
+                    <a href="/2019/11/13/数字切片扫描仪操作流程/" class="has-link-black-ter is-size-6">数字切片扫描仪操作流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
                 </div>
             </div>
@@ -590,25 +552,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/29/悬疑推理向游戏记录/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/Usami.jpg" alt="悬疑推理向游戏记录">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T03:16:28.000Z">2019-09-29</time></div>
-                    <a href="/2019/09/29/悬疑推理向游戏记录/" class="has-link-black-ter is-size-6">悬疑推理向游戏记录</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -627,7 +570,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -791,8 +734,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CSS3/">
-                        <span class="tag">CSS3</span>
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -896,8 +839,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/HTML5/">
-                        <span class="tag">HTML5</span>
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -980,6 +923,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Manual/">
+                        <span class="tag">Manual</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoZoomer/">
+                        <span class="tag">NanoZoomer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Neurons/">
                         <span class="tag">Neurons</span>
                         <span class="tag is-grey">1</span>
@@ -1003,6 +960,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/OpenBabel/">
                         <span class="tag">OpenBabel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pathology/">
+                        <span class="tag">Pathology</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1123,7 +1087,7 @@
         
         <article class="media">
             
-            <a href="/2019/11/13/Flask学习笔记/" class="media-left">
+            <a href="/2019/11/14/Flask学习笔记/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/flask-logo.png" alt="Flask学习笔记">
                 </p>
@@ -1131,10 +1095,29 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T02:16:20.000Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Flask学习笔记/" class="has-link-black-ter is-size-6">Flask学习笔记</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T02:16:20.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/Flask学习笔记/" class="has-link-black-ter is-size-6">Flask学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/学习笔记/">学习笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/13/数字切片扫描仪操作流程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nano.jpg" alt="数字切片扫描仪操作流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T10:13:55.000Z">2019-11-13</time></div>
+                    <a href="/2019/11/13/数字切片扫描仪操作流程/" class="has-link-black-ter is-size-6">数字切片扫描仪操作流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
                 </div>
             </div>
@@ -1197,25 +1180,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/09/29/悬疑推理向游戏记录/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/Usami.jpg" alt="悬疑推理向游戏记录">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T03:16:28.000Z">2019-09-29</time></div>
-                    <a href="/2019/09/29/悬疑推理向游戏记录/" class="has-link-black-ter is-size-6">悬疑推理向游戏记录</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1234,7 +1198,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1398,8 +1362,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CSS3/">
-                        <span class="tag">CSS3</span>
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1503,8 +1467,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/HTML5/">
-                        <span class="tag">HTML5</span>
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1587,6 +1551,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Manual/">
+                        <span class="tag">Manual</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoZoomer/">
+                        <span class="tag">NanoZoomer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Neurons/">
                         <span class="tag">Neurons</span>
                         <span class="tag is-grey">1</span>
@@ -1610,6 +1588,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/OpenBabel/">
                         <span class="tag">OpenBabel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pathology/">
+                        <span class="tag">Pathology</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1722,7 +1707,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Catkin.png" alt="Flask学习笔记" height="28">
+                    <img src="/images/Catkin.png" alt="寒光亭下水如天" height="28">
                 
                 </a>
                 <p class="is-size-7">

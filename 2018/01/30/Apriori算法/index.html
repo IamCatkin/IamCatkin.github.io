@@ -185,9 +185,9 @@
         <div class="content">
             <p>　　很多人都听说过“尿布和啤酒”的故事：据说，美国中西部的一家连锁店发现，男人们去超市买尿布的同时，往往会顺便给自己购买啤酒。由此，卖场开始把啤酒和尿布摆放在相同区域，让男人可以同时找到这两件商品，从而获得了很好的销售收入。虽然并没有商店真的把这两样东西放在一起，但是很多商家确实将大家经常购买的物品放在一起捆绑销售以鼓励大家购买。那么我们如何在繁杂的数据发现这些隐含关系呢？这就需要关联分析（association analysis），本文所讨论的Apriori便是其中一种关联分析算法。</p>
 <a id="more"></a>
+
 <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>　　关联分析是一种在大规模数据集中寻找有趣关系的任务。这些关系有两种形式：频繁项集、关联规则。频繁项集（frequent item sets）是经常出现在一块的物品的集合；关联规则（association rules）暗示两种物品之间可能存在很强的关系。</p>
 <p>　　以下是某个杂货店的交易清单：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -195,8 +195,7 @@
 <th>商品</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>0</td>
 <td>豆奶，莴苣</td>
 </tr>
@@ -216,9 +215,7 @@
 <td>4</td>
 <td>莴苣，豆奶，尿布，橙汁</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>频繁项集：经常出现在一起的物品集合，如｛葡萄酒，尿布，豆奶｝就是一个频繁项集。</li>
 <li>支持度（support）：如何有效定义频繁？其中最重要的两个概念是支持度和可信度。一个项集的支持度被定义为数据集中包含该项集的记录所占的比例。还是上面的例子，豆奶在5条交易中出现了4次，因此｛豆奶｝的支持度为4/5，同理可知，｛豆奶，尿布｝的支持度为3/5。我们可以定义一个最小支持度，从而只保留满足最小支持度的项集。</li>
@@ -246,17 +243,23 @@
 </ul>
 <h2 id="实现Apriori代码"><a href="#实现Apriori代码" class="headerlink" title="实现Apriori代码"></a>实现Apriori代码</h2><p>　　根据以上原理构造数据集扫描的Python代码，其伪代码大致如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">对数据集中的每条交易记录tran</span><br><span class="line">对每个候选项集can :</span><br><span class="line">    检查一下can是否是tran的子集 :</span><br><span class="line">    如果是，则增加can的计数值</span><br><span class="line">对每个候选项集 :</span><br><span class="line">如果其支持度不低于最小值，则保留该项集</span><br><span class="line">返回所有频繁项集列表</span><br></pre></td></tr></table></figure>
+
 <p>　　建立辅助函数：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 创建一个简单的测试数据集</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loadDataSet</span><span class="hljs-params">()</span> :</span></span><br><span class="line">    <span class="hljs-keyword">return</span> [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 构建集合C1，C1是大小为1的所有候选项集的集合。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createC1</span><span class="hljs-params">(dataSet)</span> :</span></span><br><span class="line">    <span class="hljs-comment"># C1是空列表，用来存储所有不重复的项值。如果某个物品项没有在C1中出现，则将其添加到C1中。</span></span><br><span class="line">    <span class="hljs-comment"># 这里并不是简单地每个物品项，而是添加只包含该物品项的一个列表。Python不能创建只有一个整</span></span><br><span class="line">    <span class="hljs-comment"># 数的集合，因此这里实现必须使用列表</span></span><br><span class="line">    C1 = []</span><br><span class="line">    <span class="hljs-keyword">for</span> transaction <span class="hljs-keyword">in</span> dataSet :</span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> transaction :</span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> [item] <span class="hljs-keyword">in</span> C1 :</span><br><span class="line">                C1.append([item])</span><br><span class="line">    C1.sort()</span><br><span class="line">    <span class="hljs-comment"># frozenset是指被“冰冻”的集合，就是说它们是不可改变</span></span><br><span class="line">    <span class="hljs-keyword">return</span> list(map(frozenset,C1)) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># D: 数据集</span></span><br><span class="line"><span class="hljs-comment"># Ck: 候选项集列表</span></span><br><span class="line"><span class="hljs-comment"># minSupport: 感兴趣集的最小支持度minSupport</span></span><br><span class="line"><span class="hljs-comment"># 该函数会返回一个包含支持度的字典以备后用</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scanD</span><span class="hljs-params">(D, Ck, minSupport)</span> :</span></span><br><span class="line">    ssCnt = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> tid <span class="hljs-keyword">in</span> D :</span><br><span class="line">        <span class="hljs-keyword">for</span> can <span class="hljs-keyword">in</span> Ck :</span><br><span class="line">            <span class="hljs-keyword">if</span> can.issubset(tid) :</span><br><span class="line">                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> can <span class="hljs-keyword">in</span> ssCnt: ssCnt[can]=<span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-keyword">else</span> : ssCnt[can] += <span class="hljs-number">1</span></span><br><span class="line">    numItems = float(len(D))</span><br><span class="line">    retList = []</span><br><span class="line">    supportData = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> ssCnt :</span><br><span class="line">        <span class="hljs-comment"># 计算所有项集的支持度</span></span><br><span class="line">        support = ssCnt[key]/numItems</span><br><span class="line">        <span class="hljs-keyword">if</span> support &gt;= minSupport :</span><br><span class="line">            <span class="hljs-comment"># 在列表的首部插入新的集合</span></span><br><span class="line">            retList.insert(<span class="hljs-number">0</span>, key)</span><br><span class="line">        supportData[key] = support</span><br><span class="line">    <span class="hljs-keyword">return</span> retList, supportData</span><br></pre></td></tr></table></figure>
+
 <p>　　保存为apriori.py，运行效果如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> apriori</span><br><span class="line"><span class="hljs-comment"># 导入数据集</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>dataSet = apriori.loadDataSet()</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>dataSet</span><br><span class="line">[[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]]</span><br><span class="line"><span class="hljs-comment"># 构建第一个候选项集集合C1</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>C1 = apriori.createC1(dataSet)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>C1</span><br><span class="line">[frozenset([<span class="hljs-number">1</span>]), frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">4</span>]), frozenset([<span class="hljs-number">5</span>])]</span><br><span class="line"><span class="hljs-comment"># 构建集合表示的数据集D</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>D = list(map(set, dataSet))</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>D</span><br><span class="line">[&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-number">5</span>&#125;]</span><br><span class="line"><span class="hljs-comment"># 去掉不满足最小支持度的项集，0.5为最小支持度</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L1, suppData0 = apriori.scanD(D, C1, <span class="hljs-number">0.5</span>)</span><br><span class="line"><span class="hljs-comment"># 下面四个项集构成了L1列表，该列表中每个单物品项集至少出现在50%以上的记录中</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L1</span><br><span class="line">[frozenset([<span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">1</span>])]</span><br></pre></td></tr></table></figure>
+
 <p>　　整个Apriori算法的伪代码如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当集合中项的个数大于0时</span><br><span class="line">    构建一个k个项组成的候选项集的列表</span><br><span class="line">    检查数据以确认每个项集都是频繁的</span><br><span class="line">    保留频繁项集并构建k+1项组成的候选项集的列表</span><br></pre></td></tr></table></figure>
+
 <p>　　将如下算法代码加入apriori.py：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 创建候选项集Ck</span></span><br><span class="line"><span class="hljs-comment"># Lk，频繁项集列表</span></span><br><span class="line"><span class="hljs-comment"># k，项集元素的个数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aprioriGen</span><span class="hljs-params">(Lk, k)</span> :</span> <span class="hljs-comment"># create Ck</span></span><br><span class="line">    <span class="hljs-comment"># 创建一个空列表</span></span><br><span class="line">    retList = []</span><br><span class="line">    <span class="hljs-comment"># 计算Lk中的元素</span></span><br><span class="line">    lenLk = len(Lk)</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(lenLk) :</span><br><span class="line">        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i+<span class="hljs-number">1</span>, lenLk) :</span><br><span class="line">            <span class="hljs-comment"># 当前k-2个项相同时，将两个集合合并</span></span><br><span class="line">            L1 = list(Lk[i])[:k<span class="hljs-number">-2</span>]</span><br><span class="line">            L2 = list(Lk[j])[:k<span class="hljs-number">-2</span>]</span><br><span class="line">            L1.sort()</span><br><span class="line">            L2.sort()</span><br><span class="line">            <span class="hljs-keyword">if</span> L1==L2 :</span><br><span class="line">                <span class="hljs-comment"># python中集合的并操作对应的操作符为|</span></span><br><span class="line">                retList.append(Lk[i] | Lk[j])</span><br><span class="line">    <span class="hljs-keyword">return</span> retList</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># dataSet，数据集</span></span><br><span class="line"><span class="hljs-comment"># minSupport，支持度</span></span><br><span class="line"><span class="hljs-comment"># 此函数会生成候选项集的列表</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">apriori</span><span class="hljs-params">(dataSet, minSupport = <span class="hljs-number">0.5</span>)</span> :</span></span><br><span class="line">    C1 = createC1(dataSet)</span><br><span class="line">    <span class="hljs-comment"># map函数将set()映射到dataSet列表中的每一项</span></span><br><span class="line">    D = list(map(set, dataSet))</span><br><span class="line">    L1, supportData = scanD(D, C1, minSupport)</span><br><span class="line">    <span class="hljs-comment"># 将L1放入L列表中</span></span><br><span class="line">    L = [L1]</span><br><span class="line">    k = <span class="hljs-number">2</span></span><br><span class="line">    <span class="hljs-comment"># while循环将L2, L3, L4, ... 放入L列表中，直到下一个大的项集为空</span></span><br><span class="line">    <span class="hljs-keyword">while</span> (len(L[k<span class="hljs-number">-2</span>]) &gt; <span class="hljs-number">0</span>) :</span><br><span class="line">        <span class="hljs-comment"># 调用aprioriGen()创建候选项集Ck</span></span><br><span class="line">        Ck = aprioriGen(L[k<span class="hljs-number">-2</span>], k)</span><br><span class="line">        <span class="hljs-comment"># 扫描数据集，从Ck得到Lk</span></span><br><span class="line">        Lk, supK = scanD(D, Ck, minSupport)</span><br><span class="line">        supportData.update(supK)</span><br><span class="line">        L.append(Lk)</span><br><span class="line">        k += <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">return</span> L, supportData</span><br></pre></td></tr></table></figure>
+
 <p>　　上面的k-2可能会令人困惑，接下来讨论其细节。当利用{0}、{1}、{2}构建{0,1}、{0,2}、{1,2}时，实际上是将单个项组合到一块。现在如果想利用{0,1}、{0,2}、{1,2}来创建三元素项集，应该怎么做？如果将每两个集合合并，就会得到{0,1,2}、{0,1,2}、{0,1,2}。也就是同样的结果集合会重复3次。接下来需要扫描三元素项集列表来得到非重复结果，我们要做的是确保遍历列表的次数最少。现在，如果比较集合{0,1}、{0,2}、{1,2}的第一个元素并只对第一个元素相同的集合求并操作，又会得到什么结果？{0,1,2}，而且只有一次操作，这样就不用遍历列表来寻找非重复值了。</p>
 <p>　　保存后运行效果如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L, supportData = apriori.apriori(dataSet)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[[frozenset([<span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">1</span>])], [frozenset([<span class="hljs-number">2</span></span><br><span class="line">, <span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>])], [frozenset([<span class="hljs-number">2</span>,</span><br><span class="line"><span class="hljs-number">3</span>, <span class="hljs-number">5</span>])], []]</span><br><span class="line"><span class="hljs-comment"># L包含满足最小支持度为0.5的频率项集列表，下面看一下具体值：</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L[<span class="hljs-number">0</span>]</span><br><span class="line">[frozenset([<span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">1</span>])]</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L[<span class="hljs-number">1</span>]</span><br><span class="line">[frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]), frozenset([<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>])]</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L[<span class="hljs-number">2</span>]</span><br><span class="line">[frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>])]</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L[<span class="hljs-number">3</span>]</span><br><span class="line">[]</span><br><span class="line"><span class="hljs-comment"># 每个项集都是在函数apriori()中调用函数aprioriGen()来生成的。下面看一下aprioriGen()函数的工作流程：</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>apriori.aprioriGen(L[<span class="hljs-number">0</span>], <span class="hljs-number">2</span>)</span><br><span class="line">[frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">1</span>, <span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]), fro</span><br><span class="line">zenset([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>])]</span><br><span class="line"><span class="hljs-comment"># 这里的6个集合是候选项集Ck中的元素。其中4个集合在L[1]中，剩下2个集合被函数scanD()过滤掉。</span></span><br><span class="line"><span class="hljs-comment"># 下面再尝试70%的支持度：</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L,support = apriori.apriori(dataSet, minSupport=<span class="hljs-number">0.7</span>)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[[frozenset([<span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">3</span>])], [frozenset([<span class="hljs-number">2</span>, <span class="hljs-number">5</span>])], []]</span><br></pre></td></tr></table></figure>
+
 <h2 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h2><p>　　关联分析的两个重要目标是发现<strong>频繁项集</strong>与<strong>关联规则</strong>。要找到关联规则，首先从一个频繁项集开始，集合中的元素是不重复的，但我们想知道基于这些元素能否获得其他内容。某个元素或者某个元素集合可能会推导出另一个元素。例如，一个频繁项集｛豆奶, 莴苣｝，可能有一条关联规则“豆奶→莴苣”，这意味着如果有人购买了豆奶，那么在统计上他购买莴苣的概率较大。但是这条反过来并不总是成立。换言之，即使“豆奶→莴苣”统计上显著，那么“莴苣→豆奶”也不一定成立。箭头的左边集合称作<strong>前件</strong>，箭头右边的集合称为<strong>后件</strong>。</p>
 <p>　　上节我们给出了繁琐项集的量化定义，即它满足最小支持度要求。对于关联规则，我们也有类似量化方法，这种量化标准称为可信度。一条规则P→H的可信度定义为support(P | H) / support(P)。在前面我们已经计算了所有繁琐项集支持度，要想获得可信度，只需要再做一次除法运算。</p>
 <p>　　从一个繁琐项集中可以产生多少条关联规则？下图给出了从项集{0,1,2,3}产生的所有关联规则。为了找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则可信度。如果可信度不满足最小要求，则去掉该规则。</p>
@@ -272,14 +275,18 @@
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Apriori%E7%AE%97%E6%B3%95/9.jpg" alt="3-7L4"></p>
 <p>　　利用此性质来减少测试的规则数目，可以先从一个频繁项集开始，接着创建一个规则列表，其中规则右部只包含一个元素，然后对这些规则测试。接下来合并所有剩余规则来创建一个新的规则列表，其中右部包含两个元素。这种方法称为<strong>分级法</strong>。打开apriori.py，加入如下代码：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 关联规则生成函数，此函数调用其他两个函数rulesFromConseq、calcConf</span></span><br><span class="line"><span class="hljs-comment"># L: 频繁项集列表</span></span><br><span class="line"><span class="hljs-comment"># supportData: 包含那些频繁项集支持数据的字典</span></span><br><span class="line"><span class="hljs-comment"># minConf: 最小可信度阈值，默认是0.7</span></span><br><span class="line"><span class="hljs-comment"># 函数最后要生成一个包含可信度的规则列表，后面可以基于可信度对它们进行排序</span></span><br><span class="line"><span class="hljs-comment"># 这些规则存放在bigRuleList中。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateRules</span><span class="hljs-params">(L, supportData, minConf=<span class="hljs-number">0.7</span>)</span> :</span></span><br><span class="line">    bigRuleList = []</span><br><span class="line">    <span class="hljs-comment"># 遍历L中的每一个频繁项集并对每个频繁项集创建只包含单个元素集合的列表H1，</span></span><br><span class="line">    <span class="hljs-comment"># 因为无法从单元素项集中构建关联规则，所以要从包含两个或者更多元素的项集开始规则构建过程。</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 只获取有两个或更多元素的集合</span></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(L)) :</span><br><span class="line">        <span class="hljs-keyword">for</span> freqSet <span class="hljs-keyword">in</span> L[i] :</span><br><span class="line">            H1 = [frozenset([item]) <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> freqSet]</span><br><span class="line">            <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">1</span> :</span><br><span class="line">                <span class="hljs-comment"># 如果频繁项集的元素数目超过2，那么会考虑对它做进一步的合并，合并通过</span></span><br><span class="line">                <span class="hljs-comment"># rulesFromConseq来完成</span></span><br><span class="line">                rulesFromConseq(freqSet, H1, supportData, bigRuleList, minConf)</span><br><span class="line">            <span class="hljs-keyword">else</span> :</span><br><span class="line">                <span class="hljs-comment"># 如果项集中只有两个元素，那么需要使用calcConf()来计算可信度值</span></span><br><span class="line">                calcConf(freqSet, H1, supportData, bigRuleList, minConf)</span><br><span class="line">    <span class="hljs-keyword">return</span> bigRuleList</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 对规则进行评估</span></span><br><span class="line"><span class="hljs-comment"># 目标是计算规则的可信度以及找到满足最小可信度要求的规则</span></span><br><span class="line"><span class="hljs-comment"># 函数会返回一个满足最小可信度要求的规则列表，空列表prunedH保存这些规则</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calcConf</span><span class="hljs-params">(freqSet, H, supportData, brl, minConf=<span class="hljs-number">0.7</span>)</span> :</span></span><br><span class="line">    prunedH = []</span><br><span class="line">    <span class="hljs-comment"># 遍历H中的所有项集并计算它们的可信度值</span></span><br><span class="line">    <span class="hljs-keyword">for</span> conseq <span class="hljs-keyword">in</span> H :</span><br><span class="line">        <span class="hljs-comment"># 可信度计算时使用supportData中的支持度数据</span></span><br><span class="line">        conf = supportData[freqSet] / supportData[freqSet - conseq]</span><br><span class="line">        <span class="hljs-comment"># 规则满足最小可信度值，将这些规则输出到屏幕显示</span></span><br><span class="line">        <span class="hljs-keyword">if</span> conf &gt;= minConf :</span><br><span class="line">            print(freqSet-conseq, <span class="hljs-string">'--&gt;'</span>, conseq, <span class="hljs-string">'conf:'</span>, conf)</span><br><span class="line">            brl.append((freqSet-conseq, conseq, conf))</span><br><span class="line">            prunedH.append(conseq)</span><br><span class="line">    <span class="hljs-keyword">return</span> prunedH</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 用于生成候选规则集合，从最初的项集中生成更多的关联规则</span></span><br><span class="line"><span class="hljs-comment"># freqSet: 频繁项集</span></span><br><span class="line"><span class="hljs-comment"># H: 可以出现在规则右部的元素列表</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rulesFromConseq</span><span class="hljs-params">(freqSet, H, supportData, brl, minConf=<span class="hljs-number">0.7</span>)</span> :</span></span><br><span class="line">    <span class="hljs-comment"># H中频繁项集大小m</span></span><br><span class="line">    m = len(H[<span class="hljs-number">0</span>])</span><br><span class="line">    <span class="hljs-comment"># 查看该频繁项集是否大到可以移除大小为m的子集</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (len(freqSet) &gt; (m+<span class="hljs-number">1</span>)) :</span><br><span class="line">        <span class="hljs-comment"># 生成H中元素的无重复组合，结果存储在Hmp1，这也是下一次迭代的H列表</span></span><br><span class="line">        Hmp1 = aprioriGen(H, m+<span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-comment"># Hmp1包含所有可能的规则，利用calcConf()来测试它们的可信度以确定是否满足要求</span></span><br><span class="line">        Hmp1 = calcConf(freqSet, Hmp1, supportData, brl, minConf)</span><br><span class="line">        <span class="hljs-comment"># 如果不止一条规则满足要求，那么使用Hmp1迭代调用函数rulesFromConseq</span></span><br><span class="line">        <span class="hljs-keyword">if</span> (len(Hmp1) &gt; <span class="hljs-number">1</span>) :</span><br><span class="line">            rulesFromConseq(freqSet, Hmp1, supportData, brl, minConf)</span><br></pre></td></tr></table></figure>
+
 <p>　　检验运行效果：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> apriori</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>dataSet = apriori.loadDataSet()</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>dataSet</span><br><span class="line">[[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]]</span><br><span class="line"><span class="hljs-comment"># 生成一个最小支持度为0.5的频繁项集的集合</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L, supportData = apriori.apriori(dataSet, minSupport=<span class="hljs-number">0.5</span>)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rules = apriori.generateRules(L, supportData, minConf=<span class="hljs-number">0.7</span>)</span><br><span class="line">frozenset([5]) --&gt; frozenset([2]) conf: 1.0</span><br><span class="line">frozenset([2]) --&gt; frozenset([5]) conf: 1.0</span><br><span class="line">frozenset([1]) --&gt; frozenset([3]) conf: 1.0</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rules</span><br><span class="line">[(frozenset([<span class="hljs-number">5</span>]), frozenset([<span class="hljs-number">2</span>]), <span class="hljs-number">1.0</span>), (frozenset([<span class="hljs-number">2</span>]), frozenset([<span class="hljs-number">5</span>]), <span class="hljs-number">1.0</span>), (</span><br><span class="line">frozenset([<span class="hljs-number">1</span>]), frozenset([<span class="hljs-number">3</span>]), <span class="hljs-number">1.0</span>)]</span><br><span class="line"><span class="hljs-comment"># 得到了3条规则：&#123;5&#125;→&#123;2&#125;、&#123;2&#125;→&#123;5&#125;、&#123;1&#125;→&#123;3&#125;，可见包含2和5的规则可以互换前后件，包含1和3的不行</span></span><br><span class="line"><span class="hljs-comment"># 接下来降低可信度阈值，可以得到结果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rules = apriori.generateRules(L, supportData, minConf=<span class="hljs-number">0.5</span>)</span><br><span class="line">frozenset([3]) --&gt; frozenset([2]) conf: 0.666666666667</span><br><span class="line">frozenset([2]) --&gt; frozenset([3]) conf: 0.666666666667</span><br><span class="line">frozenset([5]) --&gt; frozenset([3]) conf: 0.666666666667</span><br><span class="line">frozenset([3]) --&gt; frozenset([5]) conf: 0.666666666667</span><br><span class="line">frozenset([5]) --&gt; frozenset([2]) conf: 1.0</span><br><span class="line">frozenset([2]) --&gt; frozenset([5]) conf: 1.0</span><br><span class="line">frozenset([3]) --&gt; frozenset([1]) conf: 0.666666666667</span><br><span class="line">frozenset([1]) --&gt; frozenset([3]) conf: 1.0</span><br><span class="line">frozenset([5]) --&gt; frozenset([2, 3]) conf: 0.666666666667</span><br><span class="line">frozenset([3]) --&gt; frozenset([2, 5]) conf: 0.666666666667</span><br><span class="line">frozenset([2]) --&gt; frozenset([3, 5]) conf: 0.666666666667</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rules</span><br><span class="line">[(frozenset(&#123;<span class="hljs-number">3</span>&#125;), frozenset(&#123;<span class="hljs-number">2</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">2</span>&#125;), frozenset(&#123;<span class="hljs-number">3</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">5</span>&#125;), frozenset(&#123;<span class="hljs-number">3</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">3</span>&#125;), frozenset(&#123;<span class="hljs-number">5</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">5</span>&#125;), frozenset(&#123;<span class="hljs-number">2</span>&#125;), <span class="hljs-number">1.0</span>), (frozenset(&#123;<span class="hljs-number">2</span>&#125;), frozenset(&#123;<span class="hljs-number">5</span>&#125;), <span class="hljs-number">1.0</span>), (frozenset(&#123;<span class="hljs-number">3</span>&#125;), frozenset(&#123;<span class="hljs-number">1</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">1</span>&#125;), frozenset(&#123;<span class="hljs-number">3</span>&#125;), <span class="hljs-number">1.0</span>), (frozenset(&#123;<span class="hljs-number">5</span>&#125;), frozenset(&#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">3</span>&#125;), frozenset(&#123;<span class="hljs-number">2</span>, <span class="hljs-number">5</span>&#125;), <span class="hljs-number">0.6666666666666666</span>), (frozenset(&#123;<span class="hljs-number">2</span>&#125;), frozenset(&#123;<span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;), <span class="hljs-number">0.6666666666666666</span>)]</span><br><span class="line"><span class="hljs-comment"># 一旦降低可信度阈值，就可以获得更多的规则</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="Apriori应用"><a href="#Apriori应用" class="headerlink" title="Apriori应用"></a>Apriori应用</h1><p>　　之前我们在小数据上应用了apriori算法，接下来要在更大的真实数据集上测试效果。那么可以使用什么样的数据呢？比如：购物篮分析，搜索引擎的查询词，国会投票，毒蘑菇的相似特征提取等；</p>
 <h2 id="示例：发现毒蘑菇的相似特征"><a href="#示例：发现毒蘑菇的相似特征" class="headerlink" title="示例：发现毒蘑菇的相似特征"></a>示例：发现毒蘑菇的相似特征</h2><p>　　从<a href="fimi.ua.ac.be/data">此处</a>下载mushroom.dat，其前几行如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 3 9 13 23 25 34 36 38 40 52 54 59 63 67 76 85 86 90 93 98 107 113 </span><br><span class="line">2 3 9 14 23 26 34 36 39 40 52 55 59 63 67 76 85 86 90 93 99 108 114 </span><br><span class="line">2 4 9 15 23 27 34 36 39 41 52 55 59 63 67 76 85 86 90 93 99 108 115 </span><br><span class="line">1 3 10 15 23 25 34 36 38 41 52 54 59 63 67 76 85 86 90 93 98 107 113 </span><br><span class="line">2 3 9 16 24 28 34 37 39 40 53 54 59 63 67 76 85 86 90 94 99 109 114 </span><br><span class="line">2 3 10 14 23 26 34 36 39 41 52 55 59 63 67 76 85 86 90 93 98 108 114 </span><br><span class="line">2 4 9 15 23 26 34 36 39 42 52 55 59 63 67 76 85 86 90 93 98 108 115</span><br></pre></td></tr></table></figure>
+
 <p>　　第一个特征表示有毒或者可食用，有毒为2，无毒为1。下一个特征是蘑菇伞的形状，有六种可能的值，分别用整数3-8来表示。</p>
 <p>　　为了找到毒蘑菇中存在的公共特征，可以运行Apriori算法来寻找包含特征值为2的频繁项集。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> apriori</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>mushDatSet = [line.split() <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> open(<span class="hljs-string">'mushroom.dat'</span>).readlines()]</span><br><span class="line"><span class="hljs-comment"># 在数据集上运行Apriori算法</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>L, suppData = apriori.apriori(mushDatSet, minSupport=<span class="hljs-number">0.3</span>)</span><br><span class="line"><span class="hljs-comment"># 在结果中可以搜索包含有独特征2的频繁项集：</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> L[<span class="hljs-number">1</span>] :</span><br><span class="line">...		<span class="hljs-keyword">if</span> item.intersection(<span class="hljs-string">'2'</span>): print(item)</span><br><span class="line">...</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'28'</span>, <span class="hljs-string">'2'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'53'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'23'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'34'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'36'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'59'</span>, <span class="hljs-string">'2'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'67'</span>, <span class="hljs-string">'2'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'76'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'85'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'90'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'93'</span>, <span class="hljs-string">'2'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line"><span class="hljs-comment"># 对更大项集来重复上述过程</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> L[<span class="hljs-number">3</span>] :</span><br><span class="line"><span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> item.intersection(<span class="hljs-string">'2'</span>) : print(item)</span><br><span class="line">...</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>, <span class="hljs-string">'34'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>, <span class="hljs-string">'85'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>, <span class="hljs-string">'90'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'34'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'59'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'63'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>, <span class="hljs-string">'34'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'34'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'34'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'90'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>, <span class="hljs-string">'90'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'90'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'34'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'90'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'34'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'53'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'85'</span>, <span class="hljs-string">'53'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'86'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'53'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'90'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'53'</span>&#125;)</span><br><span class="line">frozenset(&#123;<span class="hljs-string">'2'</span>, <span class="hljs-string">'28'</span>, <span class="hljs-string">'53'</span>, <span class="hljs-string">'39'</span>&#125;)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
 <p>　　接下来你需要观察这些特征，以便知道蘑菇的各个方面，如果看到其中任何一个特征，那么这些蘑菇就很有可能有毒。</p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>　　关联特征是用于发现大数据集元素间有趣关系的一个工具集，可以采用两种方法来量化这些有趣关系。第一种方法是使用频繁项集，它会给出经常在一起出现的元素项。第二种方式是关联规则，每条关联规则意味着元素之前的“如果……那么”关系。</p>
 <p>　　发现元素间不同的组合是个非常耗时的任务，不可避免需要大量昂贵的计算资源，这就需要一些更智能的方法在合适的时间范围内找到频繁项集。其中一个方法是Apriori算法，它使用Apriori原理减少在数据库上进行检查的集合的数目。Apriori原理是说如果一个元素项是不频繁的，那么那些包含该元素的超集也是不频繁的。Apriori算法从单元项集开始，通过组合满足最小支持度要求的项集来形成更大的集合。支持度用来度量一个集合在原始数据中出现的频率。</p>
@@ -388,7 +395,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        23
+                        24
                     </p>
                 </div>
             </div>
@@ -408,7 +415,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        56
+                        63
                     </p>
                 </div>
             </div>
@@ -597,7 +604,7 @@
                 <span class="level-item">心得体会</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活记录/">
@@ -643,7 +650,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a>
+        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
     </div>
 </div>
 
@@ -657,6 +664,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
+                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -734,25 +760,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/25/尼氏染色操作流程/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/Nissl.jpg" alt="尼氏染色操作流程">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T08:12:47.000Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/尼氏染色操作流程/" class="has-link-black-ter is-size-6">尼氏染色操作流程</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -764,6 +771,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -967,6 +985,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/DESeq/">
+                        <span class="tag">DESeq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Data-Mining/">
                         <span class="tag">Data Mining</span>
                         <span class="tag is-grey">4</span>
@@ -1032,6 +1057,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flask/">
                         <span class="tag">Flask</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GEO/">
+                        <span class="tag">GEO</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1235,7 +1267,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/R/">
+                        <span class="tag">R</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1249,6 +1288,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/STRING/">
+                        <span class="tag">STRING</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1268,8 +1314,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/StarBase/">
+                        <span class="tag">StarBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Switch/">
                         <span class="tag">Switch</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TCGA/">
+                        <span class="tag">TCGA</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1298,6 +1358,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/miRanda/">
+                        <span class="tag">miRanda</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1327,6 +1394,25 @@
         
         <article class="media">
             
+            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
+                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/31/2019年末的碎碎念/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/original.jpg" alt="2019年末的碎碎念">
@@ -1401,25 +1487,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/25/尼氏染色操作流程/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/Nissl.jpg" alt="尼氏染色操作流程">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T08:12:47.000Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/尼氏染色操作流程/" class="has-link-black-ter is-size-6">尼氏染色操作流程</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1431,6 +1498,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1634,6 +1712,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/DESeq/">
+                        <span class="tag">DESeq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Data-Mining/">
                         <span class="tag">Data Mining</span>
                         <span class="tag is-grey">4</span>
@@ -1699,6 +1784,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flask/">
                         <span class="tag">Flask</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GEO/">
+                        <span class="tag">GEO</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1902,7 +1994,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/R/">
+                        <span class="tag">R</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1916,6 +2015,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/STRING/">
+                        <span class="tag">STRING</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1935,8 +2041,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/StarBase/">
+                        <span class="tag">StarBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Switch/">
                         <span class="tag">Switch</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TCGA/">
+                        <span class="tag">TCGA</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1965,6 +2085,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/miRanda/">
+                        <span class="tag">miRanda</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

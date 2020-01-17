@@ -4,19 +4,57 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2019/12/31/2019%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2019-12-30T08:01:35.615Z</lastmod>
+    <loc>https://blog.catkin.moe/2020/01/17/%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO/</loc>
+    <lastmod>2020-01-17T13:58:26.776Z</lastmod>
     <data>
         <display>
-        <title>2019年末的碎碎念</title>
-        <pubTime>2019-12-31T14:43:09.000Z</pubTime>
+        <title>一个生信挖掘的DEMO</title>
+        <pubTime>2020-01-17T13:35:49.000Z</pubTime>
         
-        <tag>Review</tag>
+        <tag>Python</tag>
+         
+        <tag>GEO</tag>
+         
+        <tag>TCGA</tag>
+         
+        <tag>R</tag>
+         
+        <tag>StarBase</tag>
+         
+        <tag>DESeq</tag>
+         
+        <tag>STRING</tag>
+         
+        <tag>miRanda</tag>
          
          
            
              
-              <breadCrumb title="负尽年华" url="https://blog.catkin.moe/categories/%E8%B4%9F%E5%B0%BD%E5%B9%B4%E5%8D%8E/"/>
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/09/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2020-01-16T12:31:24.422Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2019-09-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>
@@ -25,7 +63,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2019/10/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-12-27T15:07:55.165Z</lastmod>
+    <lastmod>2020-01-09T13:18:46.134Z</lastmod>
     <data>
         <display>
         <title>前端学习笔记</title>
@@ -41,6 +79,26 @@
            
              
               <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/31/2019%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2019-12-30T08:01:35.615Z</lastmod>
+    <data>
+        <display>
+        <title>2019年末的碎碎念</title>
+        <pubTime>2019-12-31T14:43:09.000Z</pubTime>
+        
+        <tag>Review</tag>
+         
+         
+           
+             
+              <breadCrumb title="负尽年华" url="https://blog.catkin.moe/categories/%E8%B4%9F%E5%B0%BD%E5%B9%B4%E5%8D%8E/"/>
           
         </display>
     </data>
@@ -65,30 +123,6 @@
            
              
               <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2019/09/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2019-12-21T06:09:46.973Z</lastmod>
-    <data>
-        <display>
-        <title>推理小说记录</title>
-        <pubTime>2019-09-05T12:16:28.000Z</pubTime>
-        
-        <tag>Lattice resoning</tag>
-         
-        <tag>Detective story</tag>
-         
-        <tag>Penetralium</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>

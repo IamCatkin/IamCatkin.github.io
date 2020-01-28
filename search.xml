@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[一个生信挖掘的DEMO]]></title>
     <url>%2F2020%2F01%2F17%2F%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO%2F</url>
-    <content type="text"><![CDATA[起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。 1 分析GEO数据miRNA表达情况 GSE106452是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。 点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。 2 TCGA差异分析2.1]]></content>
+    <content type="text"><![CDATA[起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。 1 分析GEO数据miRNA表达情况 GSE106452是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。 点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。 2 TCGA差异分析2.1 TCGA数据下载2.1.1 选择数据 访问GDC，在Cases里的Project选择TCGA-LIHC，Files里的Data Category选择transcriptome profiling，如果需要下载临床资料，类似地，Data Category选择Clinical即可。 2.1.2 原始方法 如果大小不超过50M，可以点击右边的Add All Files to Cart，然后再右上角的Cart里面选择Download即可下载。 2.1.3 使用GDC Data Transfer Tool 下载GDC Data Transfer Tool，并配置环境变量。 在之前的页面Data Category选择transcriptome profiling，Experimental Strategy选择RNA-Seq，然后在右边选择下载Manifest，文件命名为gdc_manifest.2020-01-17-LIHC-RNA-Seq.txt，此外Experimental Strategy选择miRNA-Seq，Data Type分别选择miRNA Expression Quantification和Isoform Expression Quantification分别得到另外两个文件gdc_manifest.2020-01-17-LIHC-miRNA-Seq.txt和gdc_manifest.2020-01-17-LIHC-miRNA-Isoform.txt。类似地，Data Category选择Clinical，Data Format选择bcr xml即可获取gdc_manifest.2020-01-17-LIHC-Clinical.txt。 新建一个LIHC文件夹，将上述Manifest拷进去，CMD下输入gdc-client download -m gdc_manifest.2020-01-17-LIHC-Clinical.txt -d Clinical即可下载临床数据，其他的操作同理。不过无力吐槽这个网络可连接性，下载起来比登天还难。]]></content>
       <categories>
         <category>心得体会</category>
       </categories>

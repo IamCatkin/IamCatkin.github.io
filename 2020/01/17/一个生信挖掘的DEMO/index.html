@@ -16,7 +16,7 @@
 <meta property="og:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/machiawaseru.jpg">
-<meta property="og:updated_time" content="2020-01-18T01:52:44.216Z">
+<meta property="og:updated_time" content="2020-01-28T09:15:41.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个生信挖掘的DEMO">
 <meta name="twitter:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
@@ -185,14 +185,13 @@
         <div class="content">
             <p>　　起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。</p>
 <a id="more"></a>
-
-<h1 id="1-分析GEO数据miRNA表达情况"><a href="#1-分析GEO数据miRNA表达情况" class="headerlink" title="1 分析GEO数据miRNA表达情况"></a>1 分析GEO数据miRNA表达情况</h1><p>　　<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE106452" target="_blank" rel="noopener">GSE106452</a>是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。</p>
+<h1 id="分析GEO数据miRNA表达情况"><a href="#分析GEO数据miRNA表达情况" class="headerlink" title="分析GEO数据miRNA表达情况"></a>分析GEO数据miRNA表达情况</h1><p>　　<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE106452" target="_blank" rel="noopener">GSE106452</a>是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。</p>
 <blockquote>
 <p>点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。</p>
 </blockquote>
-<h1 id="2-TCGA差异分析"><a href="#2-TCGA差异分析" class="headerlink" title="2 TCGA差异分析"></a>2 TCGA差异分析</h1><h2 id="2-1-TCGA数据下载"><a href="#2-1-TCGA数据下载" class="headerlink" title="2.1 TCGA数据下载"></a>2.1 TCGA数据下载</h2><h3 id="2-1-1-选择数据"><a href="#2-1-1-选择数据" class="headerlink" title="2.1.1 选择数据"></a>2.1.1 选择数据</h3><p>　　访问<a href="https://portal.gdc.cancer.gov/repository" target="_blank" rel="noopener">GDC</a>，在Cases里的Project选择<strong>TCGA-LIHC</strong>，Files里的Data Category选择<strong>transcriptome profiling</strong>，如果需要下载临床资料，类似地，Data Category选择<strong>Clinical</strong>即可。</p>
-<h3 id="2-1-2-原始方法"><a href="#2-1-2-原始方法" class="headerlink" title="2.1.2 原始方法"></a>2.1.2 原始方法</h3><p>　　如果大小不超过50M，可以点击右边的<strong>Add All Files to Cart</strong>，然后再右上角的<strong>Cart</strong>里面选择<strong>Download</strong>即可下载。</p>
-<h3 id="2-1-3-使用GDC-Data-Transfer-Tool"><a href="#2-1-3-使用GDC-Data-Transfer-Tool" class="headerlink" title="2.1.3 使用GDC Data Transfer Tool"></a>2.1.3 使用GDC Data Transfer Tool</h3><p>　　下载<a href="https://gdc.cancer.gov/access-data/gdc-data-transfer-tool" target="_blank" rel="noopener">GDC Data Transfer Tool</a>，并配置环境变量。</p>
+<h1 id="TCGA差异分析"><a href="#TCGA差异分析" class="headerlink" title="TCGA差异分析"></a>TCGA差异分析</h1><h2 id="TCGA数据下载"><a href="#TCGA数据下载" class="headerlink" title="TCGA数据下载"></a>TCGA数据下载</h2><h3 id="选择数据"><a href="#选择数据" class="headerlink" title="选择数据"></a>选择数据</h3><p>　　访问<a href="https://portal.gdc.cancer.gov/repository" target="_blank" rel="noopener">GDC</a>，在Cases里的Project选择<strong>TCGA-LIHC</strong>，Files里的Data Category选择<strong>transcriptome profiling</strong>，如果需要下载临床资料，类似地，Data Category选择<strong>Clinical</strong>即可。</p>
+<h3 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h3><p>　　如果大小不超过50M，可以点击右边的<strong>Add All Files to Cart</strong>，然后再右上角的<strong>Cart</strong>里面选择<strong>Download</strong>即可下载。</p>
+<h3 id="使用GDC-Data-Transfer-Tool"><a href="#使用GDC-Data-Transfer-Tool" class="headerlink" title="使用GDC Data Transfer Tool"></a>使用GDC Data Transfer Tool</h3><p>　　下载<a href="https://gdc.cancer.gov/access-data/gdc-data-transfer-tool" target="_blank" rel="noopener">GDC Data Transfer Tool</a>，并配置环境变量。</p>
 <p>　　在之前的页面Data Category选择<strong>transcriptome profiling</strong>，Experimental Strategy选择<strong>RNA-Seq</strong>，然后在右边选择下载<strong>Manifest</strong>，文件命名为<code>gdc_manifest.2020-01-17-LIHC-RNA-Seq.txt</code>，此外Experimental Strategy选择<strong>miRNA-Seq</strong>，Data Type分别选择<strong>miRNA Expression Quantification</strong>和<strong>Isoform Expression Quantification</strong>分别得到另外两个文件<code>gdc_manifest.2020-01-17-LIHC-miRNA-Seq.txt</code>和<code>gdc_manifest.2020-01-17-LIHC-miRNA-Isoform.txt</code>。类似地，Data Category选择<strong>Clinical</strong>，Data Format选择<strong>bcr xml</strong>即可获取<code>gdc_manifest.2020-01-17-LIHC-Clinical.txt</code>。</p>
 <p>　　新建一个LIHC文件夹，将上述Manifest拷进去，CMD下输入<code>gdc-client download -m gdc_manifest.2020-01-17-LIHC-Clinical.txt -d Clinical</code>即可下载临床数据，其他的操作同理。不过无力吐槽这个网络可连接性，下载起来比登天还难。</p>
 
@@ -377,29 +376,29 @@
                 目录
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#1-分析GEO数据miRNA表达情况">
+        <a class="is-flex" href="#分析GEO数据miRNA表达情况">
         <span class="has-mr-6">1</span>
-        <span>1 分析GEO数据miRNA表达情况</span>
+        <span>分析GEO数据miRNA表达情况</span>
         </a></li><li>
-        <a class="is-flex" href="#2-TCGA差异分析">
+        <a class="is-flex" href="#TCGA差异分析">
         <span class="has-mr-6">2</span>
-        <span>2 TCGA差异分析</span>
+        <span>TCGA差异分析</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#2-1-TCGA数据下载">
+        <a class="is-flex" href="#TCGA数据下载">
         <span class="has-mr-6">2.1</span>
-        <span>2.1 TCGA数据下载</span>
+        <span>TCGA数据下载</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#2-1-1-选择数据">
+        <a class="is-flex" href="#选择数据">
         <span class="has-mr-6">2.1.1</span>
-        <span>2.1.1 选择数据</span>
+        <span>选择数据</span>
         </a></li><li>
-        <a class="is-flex" href="#2-1-2-原始方法">
+        <a class="is-flex" href="#原始方法">
         <span class="has-mr-6">2.1.2</span>
-        <span>2.1.2 原始方法</span>
+        <span>原始方法</span>
         </a></li><li>
-        <a class="is-flex" href="#2-1-3-使用GDC-Data-Transfer-Tool">
+        <a class="is-flex" href="#使用GDC-Data-Transfer-Tool">
         <span class="has-mr-6">2.1.3</span>
-        <span>2.1.3 使用GDC Data Transfer Tool</span>
+        <span>使用GDC Data Transfer Tool</span>
         </a></li></ul></li></ul></li></ul>
         </div>
     </div>

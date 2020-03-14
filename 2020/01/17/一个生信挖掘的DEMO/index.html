@@ -16,7 +16,7 @@
 <meta property="og:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/machiawaseru.jpg">
-<meta property="og:updated_time" content="2020-01-28T09:15:41.161Z">
+<meta property="og:updated_time" content="2020-03-14T10:28:57.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个生信挖掘的DEMO">
 <meta name="twitter:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 510 个字)
+                    5 分钟 读完 (大约 823 个字)
                 </span>
                 
                 
@@ -185,6 +185,7 @@
         <div class="content">
             <p>　　起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。</p>
 <a id="more"></a>
+
 <h1 id="分析GEO数据miRNA表达情况"><a href="#分析GEO数据miRNA表达情况" class="headerlink" title="分析GEO数据miRNA表达情况"></a>分析GEO数据miRNA表达情况</h1><p>　　<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE106452" target="_blank" rel="noopener">GSE106452</a>是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。</p>
 <blockquote>
 <p>点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。</p>
@@ -193,7 +194,21 @@
 <h3 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h3><p>　　如果大小不超过50M，可以点击右边的<strong>Add All Files to Cart</strong>，然后再右上角的<strong>Cart</strong>里面选择<strong>Download</strong>即可下载。</p>
 <h3 id="使用GDC-Data-Transfer-Tool"><a href="#使用GDC-Data-Transfer-Tool" class="headerlink" title="使用GDC Data Transfer Tool"></a>使用GDC Data Transfer Tool</h3><p>　　下载<a href="https://gdc.cancer.gov/access-data/gdc-data-transfer-tool" target="_blank" rel="noopener">GDC Data Transfer Tool</a>，并配置环境变量。</p>
 <p>　　在之前的页面Data Category选择<strong>transcriptome profiling</strong>，Experimental Strategy选择<strong>RNA-Seq</strong>，然后在右边选择下载<strong>Manifest</strong>，文件命名为<code>gdc_manifest.2020-01-17-LIHC-RNA-Seq.txt</code>，此外Experimental Strategy选择<strong>miRNA-Seq</strong>，Data Type分别选择<strong>miRNA Expression Quantification</strong>和<strong>Isoform Expression Quantification</strong>分别得到另外两个文件<code>gdc_manifest.2020-01-17-LIHC-miRNA-Seq.txt</code>和<code>gdc_manifest.2020-01-17-LIHC-miRNA-Isoform.txt</code>。类似地，Data Category选择<strong>Clinical</strong>，Data Format选择<strong>bcr xml</strong>即可获取<code>gdc_manifest.2020-01-17-LIHC-Clinical.txt</code>。</p>
-<p>　　新建一个LIHC文件夹，将上述Manifest拷进去，CMD下输入<code>gdc-client download -m gdc_manifest.2020-01-17-LIHC-Clinical.txt -d Clinical</code>即可下载临床数据，其他的操作同理。不过无力吐槽这个网络可连接性，下载起来比登天还难。</p>
+<p>　　新建一个LIHC文件夹，将上述Manifest拷进去，CMD下输入<code>gdc-client download -m gdc_manifest.2020-01-17-LIHC-Clinical.txt -d Clinical/ --log-file Clinical.log</code>即可下载临床数据，其他的操作同理。不过无力吐槽这个网络可连接性，下载起来比登天还难。</p>
+<blockquote>
+<p>这里我采用了分割文件&amp;挂代理的策略才把RNA数据下完。</p>
+<p>console下设置代理：set https_proxy=<a href="http://127.0.0.1:10809。" target="_blank" rel="noopener">http://127.0.0.1:10809。</a></p>
+</blockquote>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="Clinical数据合并"><a href="#Clinical数据合并" class="headerlink" title="Clinical数据合并"></a>Clinical数据合并</h3><p>　　主要是xml文件，利用R包来分析。以单个文件为例：</p>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">result = xmlParse(file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/00a9a7f4-06eb-40fb-8d3a-66f5f5d315f7/nationwidechildrens.org_clinical.TCGA-KR-A7K0.xml"</span>)</span><br><span class="line">rootnode = xmlRoot(result)</span><br><span class="line">rootsize = xmlSize(rootnode)</span><br><span class="line">xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">write.table(t(xmldataframe),<span class="hljs-string">'tmp'</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 　　当然具体数据有成百上千个，应该用循环来做。</p>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/"</span></span><br><span class="line">cl = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.xml$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">    result = xmlParse(file=file.path(dir,x))</span><br><span class="line">    rootnode = xmlRoot(result)</span><br><span class="line">	xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">    <span class="hljs-keyword">return</span>(t(xmldataframe))</span><br><span class="line">&#125;)</span><br><span class="line">cl_df = t(do.call(cbind,cl))</span><br><span class="line">save(cl_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_clinical_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="miRNA-Seq数据合并"><a href="#miRNA-Seq数据合并" class="headerlink" title="miRNA-Seq数据合并"></a>miRNA-Seq数据合并</h3><p> 　　类似地，修改处理代码如下：</p>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/miRNA-Seq/"</span></span><br><span class="line">mi = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.mirnas.quantification.txt$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">  result = read.table(file=file.path(dir,x),sep=<span class="hljs-string">"\t"</span>,header=<span class="hljs-literal">T</span>)[,<span class="hljs-number">1</span>:<span class="hljs-number">2</span>]</span><br><span class="line">  <span class="hljs-keyword">return</span>(result)</span><br><span class="line">&#125;)</span><br><span class="line">mi_df = t(do.call(cbind,mi))</span><br><span class="line">colnames(mi_df) = mi_df[<span class="hljs-number">1</span>,]</span><br><span class="line">mi_df = mi_df[seq(<span class="hljs-number">2</span>,nrow(mi_df),by=<span class="hljs-number">2</span>),]</span><br><span class="line">save(mi_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_miRNA-Seq_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 　　这样可以得到一个表达矩阵。</p>
 
         </div>
         
@@ -377,6 +392,18 @@
         <a class="is-flex" href="#使用GDC-Data-Transfer-Tool">
         <span class="has-mr-6">2.1.3</span>
         <span>使用GDC Data Transfer Tool</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#数据处理">
+        <span class="has-mr-6">2.2</span>
+        <span>数据处理</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Clinical数据合并">
+        <span class="has-mr-6">2.2.1</span>
+        <span>Clinical数据合并</span>
+        </a></li><li>
+        <a class="is-flex" href="#miRNA-Seq数据合并">
+        <span class="has-mr-6">2.2.2</span>
+        <span>miRNA-Seq数据合并</span>
         </a></li></ul></li></ul></li></ul>
         </div>
     </div>

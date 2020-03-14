@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/01/17/%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO/</loc>
+    <lastmod>2020-03-14T10:28:57.982Z</lastmod>
+    <data>
+        <display>
+        <title>一个生信挖掘的DEMO</title>
+        <pubTime>2020-01-17T13:35:49.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>GEO</tag>
+         
+        <tag>TCGA</tag>
+         
+        <tag>R</tag>
+         
+        <tag>StarBase</tag>
+         
+        <tag>DESeq</tag>
+         
+        <tag>STRING</tag>
+         
+        <tag>miRanda</tag>
+         
+         
+           
+             
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2019/09/29/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2020-02-07T11:27:25.186Z</lastmod>
     <data>
@@ -47,40 +81,6 @@
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/01/17/%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO/</loc>
-    <lastmod>2020-01-28T09:15:41.161Z</lastmod>
-    <data>
-        <display>
-        <title>一个生信挖掘的DEMO</title>
-        <pubTime>2020-01-17T13:35:49.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>GEO</tag>
-         
-        <tag>TCGA</tag>
-         
-        <tag>R</tag>
-         
-        <tag>StarBase</tag>
-         
-        <tag>DESeq</tag>
-         
-        <tag>STRING</tag>
-         
-        <tag>miRanda</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>

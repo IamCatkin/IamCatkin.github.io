@@ -260,6 +260,28 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '8323a58c0a8710fd55c3',
+        clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
+        id: '5551a08bc3f259df4c28e62de13b9405',
+        repo: 'myblogcomments',
+        owner: 'IamCatkin',
+        admin: "IamCatkin"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 

@@ -185,6 +185,7 @@
         <div class="content">
             <p>　　你用过搜索引擎吗？输入一个单词或者一个单词的一部分，搜索引擎就会自动补全查询词项。用户甚至事先都不知道搜索引擎推荐的东西是否存在，反而会去查找推荐词项。那么这些推荐词项是如何被搜索引擎找到的？那是因为研究人员使用了FP-growth算法，它是基于Apriori构建的，但完成相同任务时将数据集存储在一个特定的称作FP树的结构之后发现频繁项集或频繁项对，即常在一起出现的元素项的集合FP树。这是一种比Apriori执行速度更快的算法，能高效地发现频繁项集，但不能用于发现关联规则。</p>
 <a id="more"></a>
+
 <p>　　FP-growth算法只需要对数据库进行两次扫描，而Apriori算法对于每个潜在的频繁项集都会扫描数据集判定给定模式是否频繁，因此FP-growth算法的速度比Apriori算法快。在小规模数据上，这不是什么问题，但当处理更大数据集时，就会产生较大问题。FP-growth算法只会扫描数据集两次，它不会生成候选项集，其发现频繁项集的基本过程如下：</p>
 <ol>
 <li>构建FP树</li>
@@ -192,7 +193,6 @@
 </ol>
 <h1 id="FP-growth原理"><a href="#FP-growth原理" class="headerlink" title="FP-growth原理"></a>FP-growth原理</h1><p>　　FP-growth算法将数据存储在一种成为FP树的紧凑数据结构中。FP代表频繁模式（Frequent Pattern）。一颗FP树与计算机科学中其他树结构类似，但它通过链接（link）来连接相似元素，被连起来的元素可以看成一个链表。</p>
 <p>　　下面用一个例子来说明，给出一组数据如下：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -200,8 +200,7 @@
 <th>事物中的元素项</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>001</td>
 <td>r,z,h,j,p</td>
 </tr>
@@ -225,9 +224,7 @@
 <td>006</td>
 <td>y,z,x,e,q,s,t,m</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　由此可以生成一棵FP树：</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/FP-growth%E7%AE%97%E6%B3%95/1.jpg" alt="1-1FP树"></p>
 <p>　　仔细来看这棵FP树，同搜索树不同，一个元素项可以在一棵FP树中出现多次。FP树会存储项集的出现频率，而每个项集会以路径的方式存储在树中。存在相似元素的集合会共享树的一部分。只有当集合之间完全不同时，树才会分叉。树节点上给出集合中单个元素及其在序列中的出现次数，路径会给出该序列的出现次数。相似项之间的链接，即节点链接（node link），用于快速发现相似项的位置。</p>
@@ -237,14 +234,15 @@
 <h1 id="构建FP树"><a href="#构建FP树" class="headerlink" title="构建FP树"></a>构建FP树</h1><p>　　首先先用一个容器来保存FP树。</p>
 <h2 id="创建FP树的数据结构"><a href="#创建FP树的数据结构" class="headerlink" title="创建FP树的数据结构"></a>创建FP树的数据结构</h2><p>　　创造一个类保存树的每个节点，创建文件fpGrowth.py并加入以下代码：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">treeNode</span> :</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, nameValue, numOccur, parentNode)</span> :</span></span><br><span class="line">        <span class="hljs-comment"># 节点名称</span></span><br><span class="line">        self.name = nameValue</span><br><span class="line">        self.count = numOccur</span><br><span class="line">        <span class="hljs-comment"># 用于链接相似的元素项</span></span><br><span class="line">        self.nodeLink = <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-comment"># 当前节点的父节点</span></span><br><span class="line">        self.parent = parentNode</span><br><span class="line">        <span class="hljs-comment"># 用于存放节点的子节点</span></span><br><span class="line">        self.children = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 对count变量增加给定值</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inc</span><span class="hljs-params">(self, numOccur)</span> :</span></span><br><span class="line">        self.count += numOccur</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 将树以文本的形式显示</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp</span><span class="hljs-params">(self, ind=<span class="hljs-number">1</span>)</span> :</span></span><br><span class="line">        print(<span class="hljs-string">' '</span>*ind, self.name, <span class="hljs-string">' '</span>, self.count)</span><br><span class="line">        <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> self.children.values() :</span><br><span class="line">            child.disp(ind+<span class="hljs-number">1</span>)</span><br></pre></td></tr></table></figure>
+
 <p>　　上面的程序给出了FP树中节点的类定义。类中包含用于存放节点名字的变量和1个计数值，nodeLink变量用于链接相似的元素项（参考上图中的虚线）。类中还使用了父变量parent来指向当前节点的父节点。通常情况并不需要这个变量，因为通常是从上往下迭代访问节点的。如果需要根据给定叶子节点上溯整棵树，这时候就需要指向父节点的指针。最后，类中还包含一个空字典变量，用于存放节点的子节点。</p>
 <p>　　运行一下如下代码：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> fpGrowth</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rootNode = fpGrowth.treeNode(<span class="hljs-string">'pyramid'</span>,<span class="hljs-number">9</span>,<span class="hljs-keyword">None</span>)</span><br><span class="line"><span class="hljs-comment"># 已创建一个单节点，接下来增加一个子节点</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rootNode.children[<span class="hljs-string">'eye'</span>] = fpGrowth.treeNode(<span class="hljs-string">'eye'</span>,<span class="hljs-number">13</span>,<span class="hljs-keyword">None</span>)</span><br><span class="line"><span class="hljs-comment"># 显示子节点</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rootNode.disp()</span><br><span class="line">  pyramid   <span class="hljs-number">9</span></span><br><span class="line">   eye   <span class="hljs-number">13</span></span><br><span class="line"><span class="hljs-comment"># 再添加一个节点</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rootNode.children[<span class="hljs-string">'phoenix'</span>]=fpGrowth.treeNode(<span class="hljs-string">'phoenix'</span>,<span class="hljs-number">3</span>,<span class="hljs-keyword">None</span>)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>rootNode.disp()</span><br><span class="line">  pyramid   <span class="hljs-number">9</span></span><br><span class="line">   eye   <span class="hljs-number">13</span></span><br><span class="line">   phoenix   <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="构建FP树-1"><a href="#构建FP树-1" class="headerlink" title="构建FP树"></a>构建FP树</h2><p>　　除上图给出的FP树之外，还需要一个头指针表来指向给定类型的第一个实例。利用头指针表，可快速访问FP树中一个给定类型的所有元素。下图给出了一个头指针表的示意图。</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/FP-growth%E7%AE%97%E6%B3%95/2.jpg" alt="2-2头指针"></p>
 <p>　　这里使用一个字典作为数据结构来保存头指针表。除了存放指针外，头指针表还可以用来保存FP树中每类元素的总数。</p>
 <p>　　第一次遍历数据集会获得每个元素项的出现频率。接着去掉不满足最小支持度的元素项，再来构建FP树。在构建时，读入每个项集并将其添加到一条已经存在的路径中。如果该路径不存在，则创建一条新路径。每个事务就是一个无序集合。假设有集合{z, x, y}和{y, z, r}，那么在FP树中，相同项会只表示一次。为了解决此问题，在将集合添加到树之前，需要对每个集合进行排序。排序基于元素项的绝对出现频率来进行。使用上图中头指针节点值，对前表中数据进行过滤、重排序后的数据显示如下。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -253,8 +251,7 @@
 <th>过滤及重排序后的事务</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>001</td>
 <td>r, z, h, j, p</td>
 <td>z, r</td>
@@ -284,15 +281,15 @@
 <td>y, z, x, e, q, s, t, m</td>
 <td>z, x, y, s, t</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　在对事务记录过滤和排序之后，就可以构建FP树了。从空集（符号为∅）开始，向其中不断添加频繁项集。过滤、排序后的事务依次添加到树中，如果树中已存在现有元素，则增加现有元素的值；如果现有元素不存在，则向树添加一个分枝。对上表前两条事务进行添加的过程显示如下。</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/FP-growth%E7%AE%97%E6%B3%95/3.jpg" alt="2-3添加"></p>
 <p>　　接下来通过代码实现上述过程。在fpGrowth.py加入以下代码：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># FP树构建函数</span></span><br><span class="line"><span class="hljs-comment"># 使用数据集以及最小支持度作为参数来构建FP树，树构建过程会遍历数据集两次</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createTree</span><span class="hljs-params">(dataSet, minSup=<span class="hljs-number">1</span>)</span> :</span></span><br><span class="line">    headerTable = &#123;&#125;</span><br><span class="line">    <span class="hljs-comment"># 第一次遍历扫描数据集并统计每个元素项出现的频度，这些信息被保存在头指针中</span></span><br><span class="line">    <span class="hljs-keyword">for</span> trans <span class="hljs-keyword">in</span> dataSet :</span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> trans :</span><br><span class="line">            headerTable[item] = headerTable.get(item, <span class="hljs-number">0</span>) + dataSet[trans]</span><br><span class="line">    <span class="hljs-comment"># 接着扫描头指针表删除那些出现次数小于minSup的项，由于字典不能在遍历中修改，转成集合</span></span><br><span class="line">    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> list(headerTable.keys()):</span><br><span class="line">        <span class="hljs-keyword">if</span> headerTable[k] &lt; minSup :</span><br><span class="line">            <span class="hljs-keyword">del</span>(headerTable[k])</span><br><span class="line">    freqItemSet = set(headerTable.keys())</span><br><span class="line">    <span class="hljs-comment"># 如果所有项都不频繁，无需下一步处理</span></span><br><span class="line">    <span class="hljs-keyword">if</span> len(freqItemSet) == <span class="hljs-number">0</span> : <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span></span><br><span class="line">    <span class="hljs-comment"># 对头指针表稍加扩展以便可以保存计数值及指向每种类型第一个元素项的指针</span></span><br><span class="line">    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> headerTable :</span><br><span class="line">        headerTable[k] = [headerTable[k], <span class="hljs-keyword">None</span>]</span><br><span class="line">    <span class="hljs-comment"># 创建只包含空集合的根节点</span></span><br><span class="line">    retTree = treeNode(<span class="hljs-string">'Null Set'</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">None</span>)</span><br><span class="line">    <span class="hljs-keyword">for</span> tranSet, count <span class="hljs-keyword">in</span> dataSet.items() :</span><br><span class="line">        localD = &#123;&#125;</span><br><span class="line">        <span class="hljs-comment"># 根据全局频率对每个事务中的元素进行排序</span></span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> tranSet :</span><br><span class="line">            <span class="hljs-keyword">if</span> item <span class="hljs-keyword">in</span> freqItemSet :</span><br><span class="line">                localD[item] = headerTable[item][<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">if</span> len(localD) &gt; <span class="hljs-number">0</span> :</span><br><span class="line">            orderedItems = [v[<span class="hljs-number">0</span>] <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> sorted(localD.items(), key=<span class="hljs-keyword">lambda</span> p : p[<span class="hljs-number">1</span>], reverse=<span class="hljs-keyword">True</span>)]</span><br><span class="line">            <span class="hljs-comment"># 排序后，调用updateTree()方法</span></span><br><span class="line">            updateTree(orderedItems, retTree, headerTable, count)</span><br><span class="line">    <span class="hljs-keyword">return</span> retTree, headerTable</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 为了让FP树生长，需调用updateTree函数。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateTree</span><span class="hljs-params">(items, inTree, headerTable, count)</span> :</span></span><br><span class="line">    <span class="hljs-comment"># 该函数首先测试事务中的第一个元素项是否作为子节点存在。</span></span><br><span class="line">    <span class="hljs-keyword">if</span> items[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> inTree.children :</span><br><span class="line">        <span class="hljs-comment"># 如果存在，则更新该元素项的计数</span></span><br><span class="line">        inTree.children[items[<span class="hljs-number">0</span>]].inc(count)</span><br><span class="line">    <span class="hljs-keyword">else</span> :</span><br><span class="line">        <span class="hljs-comment"># 如果不存在，则创建一个新的treeNode并将其作为一个子节点添加到树中，这时，头指针表也要更新以指向新的节点。</span></span><br><span class="line">        inTree.children[items[<span class="hljs-number">0</span>]] = treeNode(items[<span class="hljs-number">0</span>], count, inTree)</span><br><span class="line">        <span class="hljs-keyword">if</span> headerTable[items[<span class="hljs-number">0</span>]][<span class="hljs-number">1</span>] == <span class="hljs-keyword">None</span> :</span><br><span class="line">            headerTable[items[<span class="hljs-number">0</span>]][<span class="hljs-number">1</span>] = inTree.children[items[<span class="hljs-number">0</span>]]</span><br><span class="line">        <span class="hljs-keyword">else</span> :</span><br><span class="line">            <span class="hljs-comment"># 更新头指针表需要调用函数updateHeader</span></span><br><span class="line">            updateHeader(headerTable[items[<span class="hljs-number">0</span>]][<span class="hljs-number">1</span>], inTree.children[items[<span class="hljs-number">0</span>]])</span><br><span class="line">    <span class="hljs-comment"># updateTree()完成的最后一件事是不断迭代调用自身，每次调用时会去掉列表中的第一个元素</span></span><br><span class="line">    <span class="hljs-keyword">if</span> len(items) &gt; <span class="hljs-number">1</span> :</span><br><span class="line">        updateTree(items[<span class="hljs-number">1</span>::], inTree.children[items[<span class="hljs-number">0</span>]], headerTable, count)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 确保节点链接指向树中该元素项的每一个实例，从头指针的nodeLink开始，一直沿着nodeLink直到到达链表末尾。</span></span><br><span class="line"><span class="hljs-comment"># 当处理树的时候，一种自然的反应就是迭代完整每一件事。当以相同方式处理链表时可能会遇到一些问题，</span></span><br><span class="line"><span class="hljs-comment"># 原因是如果链表很长可能会遇到迭代调用的次数限制</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateHeader</span><span class="hljs-params">(nodeToTest, targetNode)</span> :</span></span><br><span class="line">    <span class="hljs-keyword">while</span> (nodeToTest.nodeLink != <span class="hljs-keyword">None</span>) :</span><br><span class="line">        nodeToTest = nodeToTest.nodeLink</span><br><span class="line">    nodeToTest.nodeLink = targetNode</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 载入数据集</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loadSimpDat</span><span class="hljs-params">()</span> :</span></span><br><span class="line">    simpDat = [ [<span class="hljs-string">'r'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'h'</span>, <span class="hljs-string">'j'</span>, <span class="hljs-string">'p'</span> ],</span><br><span class="line">                [<span class="hljs-string">'z'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'w'</span>, <span class="hljs-string">'v'</span>, <span class="hljs-string">'u'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'s'</span> ],</span><br><span class="line">                [<span class="hljs-string">'z'</span> ],</span><br><span class="line">                [<span class="hljs-string">'r'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'n'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'s'</span> ],</span><br><span class="line">                [<span class="hljs-string">'y'</span>, <span class="hljs-string">'r'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'q'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'p'</span> ],</span><br><span class="line">                [<span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'q'</span>, <span class="hljs-string">'s'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'m'</span> ] ]</span><br><span class="line">    <span class="hljs-keyword">return</span> simpDat</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 从列表向字典的类型转换</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createInitSet</span><span class="hljs-params">(dataSet)</span> :</span></span><br><span class="line">    retDict = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> trans <span class="hljs-keyword">in</span> dataSet :</span><br><span class="line">        retDict[frozenset(trans)] = <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">return</span> retDict</span><br></pre></td></tr></table></figure>
+
 <p>　　运行结果：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> fpGrowth</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>simpDat = fpGrowth.loadSimpDat()</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>simpDat</span><br><span class="line">[[<span class="hljs-string">'r'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'h'</span>, <span class="hljs-string">'j'</span>, <span class="hljs-string">'p'</span>], [<span class="hljs-string">'z'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'w'</span>, <span class="hljs-string">'v'</span>, <span class="hljs-string">'u'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'s'</span>], [<span class="hljs-string">'z'</span>], [<span class="hljs-string">'r</span></span><br><span class="line"><span class="hljs-string">'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'n'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'s'</span>], [<span class="hljs-string">'y'</span>, <span class="hljs-string">'r'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'q'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'p'</span>], [<span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'e'</span></span><br><span class="line">, <span class="hljs-string">'q'</span>, <span class="hljs-string">'s'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'m'</span>]]</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>initSet = fpGrowth.createInitSet(simpDat)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>initSet</span><br><span class="line">&#123;frozenset(&#123;<span class="hljs-string">'j'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'h'</span>, <span class="hljs-string">'p'</span>, <span class="hljs-string">'r'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'u'</span>, <span class="hljs-string">'s'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'w'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'v'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'z'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'s'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'n'</span>, <span class="hljs-string">'r'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'q'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'p'</span>, <span class="hljs-string">'r'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'s'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'q'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>, <span class="hljs-string">'m'</span>, <span class="hljs-string">'t'</span>&#125;): <span class="hljs-number">1</span>&#125;</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>myFPtree, myHeaderTab = fpGrowth.createTree(initSet, <span class="hljs-number">3</span>)</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>myFPtree.disp()</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">5</span></span><br><span class="line">    r   <span class="hljs-number">1</span></span><br><span class="line">    x   <span class="hljs-number">3</span></span><br><span class="line">     s   <span class="hljs-number">2</span></span><br><span class="line">      y   <span class="hljs-number">2</span></span><br><span class="line">       t   <span class="hljs-number">2</span></span><br><span class="line">     y   <span class="hljs-number">1</span></span><br><span class="line">      t   <span class="hljs-number">1</span></span><br><span class="line">       r   <span class="hljs-number">1</span></span><br><span class="line">   x   <span class="hljs-number">1</span></span><br><span class="line">    s   <span class="hljs-number">1</span></span><br><span class="line">     r   <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
+
 <p>　　上面给出的是元素项及其对应的频率计数值，其中每个缩进表示所处的树的深度。</p>
 <h1 id="从一棵FP树中挖掘频繁项集"><a href="#从一棵FP树中挖掘频繁项集" class="headerlink" title="从一棵FP树中挖掘频繁项集"></a>从一棵FP树中挖掘频繁项集</h1><p>　　有了FP树之后，就可以抽取频繁项集了。这里的思路与Apriori算法大致类似，首先从单元素项集合开始，然后在此基础上逐步构建更大的集合。当然这里将利用FP树来做实现上述过程，不再需要原始数据集了。从FP树中抽取频繁项集的三个基本步骤如下：</p>
 <ul>
@@ -303,7 +300,6 @@
 <p>　　重点关注第1步，即寻找条件模式基的过程。之后，为每一条件模式基创建对应的条件FP树。最后需构造少许代码来封装上述两个函数，并从FP树中获得频繁项集。</p>
 <h2 id="抽取条件模式基"><a href="#抽取条件模式基" class="headerlink" title="抽取条件模式基"></a>抽取条件模式基</h2><p>　　首先从之前保存在头指针中的单个频繁元素项开始。对于每一个元素项，获得其对应的条件模式(conditional pattern base)。条件模式基是以所查找元素项为结尾的路径集合。每一条路径其实都是一条前缀路径(prefix path)。简而言之，一条前缀路径是介于所查找元素项与树根节点之间的所有内容。</p>
 <p>　　回到图2中，符号r的前缀路径是{x, s}、{z, x, y}和{z}。每条前缀路径都与一个计数值关联。该计数值等于起始元素项的计数值，该计数值给了每条路径上r的数目。下表列出了上例当中每一个频繁项的所有前缀路径：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -311,8 +307,7 @@
 <th>前缀路径</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>z</td>
 <td>{}5</td>
 </tr>
@@ -336,25 +331,29 @@
 <td>t</td>
 <td>{z, x, y, s}2, {z, x, y, r}1</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　前缀路径被用于构建条件FP树，但是暂时先不需要考虑这件事。为了获得这些前缀路径，可以对树进行穷举式搜索，直到获得想要的频繁项为止，或使用一个更有效的方法来加速搜索过程。可以利用先前创建的头指针来得到一种更有效的方法。头指针表包含相同类型元素链表的起始指针。一旦到达了每一个元素项，就可以上溯这棵树直到根节点为止。下面代码给出了如何发现前缀路径，将其添加到文件fpGrowth.py中。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ascendTree</span><span class="hljs-params">(leafNode, prefixPath)</span> :</span></span><br><span class="line">    <span class="hljs-comment"># 迭代上溯整棵树</span></span><br><span class="line">    <span class="hljs-keyword">if</span> leafNode.parent != <span class="hljs-keyword">None</span> :</span><br><span class="line">        prefixPath.append(leafNode.name)</span><br><span class="line">        ascendTree(leafNode.parent, prefixPath)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 遍历链表直到到达结尾。每遇到一个元素项都会调用ascendTree()来上溯FP树，并收集所有遇到的元素项的名称。</span></span><br><span class="line"><span class="hljs-comment"># 该列表返回之后添加到条件模式基字典condPats中</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">findPrefixPath</span><span class="hljs-params">(basePat, treeNode)</span> :</span></span><br><span class="line">    condPats = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">while</span> treeNode != <span class="hljs-keyword">None</span> :</span><br><span class="line">        prefixPath = []</span><br><span class="line">        ascendTree(treeNode, prefixPath)</span><br><span class="line">        <span class="hljs-keyword">if</span> len(prefixPath) &gt; <span class="hljs-number">1</span> :</span><br><span class="line">            condPats[frozenset(prefixPath[<span class="hljs-number">1</span>:])] = treeNode.count</span><br><span class="line">        treeNode = treeNode.nodeLink</span><br><span class="line">    <span class="hljs-keyword">return</span> condPats</span><br></pre></td></tr></table></figure>
+
 <p>　　运行结果</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>fpGrowth.findPrefixPath(<span class="hljs-string">'x'</span>, myHeaderTab[<span class="hljs-string">'x'</span>][<span class="hljs-number">1</span>])</span><br><span class="line">&#123;frozenset(&#123;<span class="hljs-string">'z'</span>&#125;): <span class="hljs-number">3</span>&#125;</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>fpGrowth.findPrefixPath(<span class="hljs-string">'z'</span>, myHeaderTab[<span class="hljs-string">'z'</span>][<span class="hljs-number">1</span>])</span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>fpGrowth.findPrefixPath(<span class="hljs-string">'r'</span>, myHeaderTab[<span class="hljs-string">'r'</span>][<span class="hljs-number">1</span>])</span><br><span class="line">&#123;frozenset(&#123;<span class="hljs-string">'z'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'s'</span>, <span class="hljs-string">'x'</span>&#125;): <span class="hljs-number">1</span>, frozenset(&#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;): <span class="hljs-number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="创建条件FP树"><a href="#创建条件FP树" class="headerlink" title="创建条件FP树"></a>创建条件FP树</h2><p>　　对于每个频繁项，都要创建一棵条件FP树。我们会为z、x以及其他频繁项构建条件树。可以使用刚才发现的条件模式基作为输入数据，并通过相同的建树代码来构建这些树。然后，我们会递归地发现频繁项、发现条件模式基，以及发现另外的条件树。举个例子，假定为频繁项 t 创建一个条件FP树，然后对{t, y}、{t, x}、……重复该过程。元素项t的条件FP树的构建过程如下所示。</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/FP-growth%E7%AE%97%E6%B3%95/4.jpg" alt="3-4 条件FP树"></p>
 <p>　　上图中最初树以空集作为根节点，接着，原始的集合{y, x, s, z}中的集合{y, x, z}被添加进来。因为不满足最小支持度要求，字符s并没有加入进来。类似地，{y, x, z}也从原始集合{y, x, r, z}中添加进来。 元素项s、r是条件模式基的一部分，但它们并不属于条件FP树。单独来看它们都是频繁项，但是在t的条件树中，它们却不是频繁的，也就是说{t, r}、{t, s}是不频繁的。</p>
 <p>　　接下来，对集合{t, z}、{t, x}、{t, y}来挖掘对应的条件树。这会产生更复杂的频繁项集。该过程重复进行，直到条件树中没有元素为止，然后就可以停止了。实现代码很直观，使用一些递归加上之前写的代码即可。具体如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mineTree</span><span class="hljs-params">(inTree, headerTable, minSup, preFix, freqItemList)</span> :</span></span><br><span class="line">    <span class="hljs-comment"># 对头指针表中元素项按照其出现频率进行排序，默认是从小到大</span></span><br><span class="line">    bigL = [v[<span class="hljs-number">0</span>] <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> sorted(headerTable.items(), key=<span class="hljs-keyword">lambda</span> p:p[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>])]</span><br><span class="line">    <span class="hljs-comment"># 默认是从小到大，下面过程是从头指针的底端开始</span></span><br><span class="line">    <span class="hljs-keyword">for</span> basePat <span class="hljs-keyword">in</span> bigL :</span><br><span class="line">        newFreqSet = preFix.copy()</span><br><span class="line">        newFreqSet.add(basePat)</span><br><span class="line">        <span class="hljs-comment"># 将每个频繁项添加到频繁项集列表freqItemList中</span></span><br><span class="line">        freqItemList.append(newFreqSet)</span><br><span class="line">        <span class="hljs-comment"># 使用findPrefixPath()创建条件基</span></span><br><span class="line">        condPattBases = findPrefixPath(basePat, headerTable[basePat][<span class="hljs-number">1</span>])</span><br><span class="line">        <span class="hljs-comment"># 将条件基condPattBases作为新数据集传递给createTree()函数</span></span><br><span class="line">        <span class="hljs-comment"># 这里为函数createTree()添加足够的灵活性，确保它可以被重用于构建条件树</span></span><br><span class="line">        myCondTree, myHead = createTree(condPattBases, minSup)</span><br><span class="line">        <span class="hljs-comment"># 如果树中有元素项的话，递归调用mineTree()函数</span></span><br><span class="line">        <span class="hljs-keyword">if</span> myHead != <span class="hljs-keyword">None</span> :</span><br><span class="line">            print(<span class="hljs-string">'conditional tree for: '</span>, newFreqSet)</span><br><span class="line">            myCondTree.disp()</span><br><span class="line">            mineTree(myCondTree, myHead, minSup, newFreqSet, freqItemList)</span><br></pre></td></tr></table></figure>
+
 <p>　　效果如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>freqItems = []</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>fpGrowth.mineTree(myFPtree, myHeaderTab, <span class="hljs-number">3</span>, set([]), freqItems)</span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'s'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   x   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'y'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">3</span></span><br><span class="line">    x   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'t'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">3</span></span><br><span class="line">    y   <span class="hljs-number">3</span></span><br><span class="line">     x   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'x'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   y   <span class="hljs-number">3</span></span><br><span class="line">    z   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'x'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   y   <span class="hljs-number">3</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'x'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   z   <span class="hljs-number">3</span></span><br><span class="line"><span class="hljs-comment"># 检查返回的项集是否与条件树匹配</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>freqItems</span><br><span class="line">[&#123;<span class="hljs-string">'r'</span>&#125;, &#123;<span class="hljs-string">'s'</span>&#125;, &#123;<span class="hljs-string">'s'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'y'</span>&#125;, &#123;<span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>&#125;, &#123;<span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'t'</span>&#125;, &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'z'</span>&#125;, &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>&#125;, &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'z'</span>&#125;, &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'t'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'z'</span>, <span class="hljs-string">'x'</span>&#125;, &#123;<span class="hljs-string">'z'</span>&#125;]</span><br></pre></td></tr></table></figure>
+
 <h1 id="示例：从新闻网站点击流中挖掘"><a href="#示例：从新闻网站点击流中挖掘" class="headerlink" title="示例：从新闻网站点击流中挖掘"></a>示例：从新闻网站点击流中挖掘</h1><p>　　下列文件kosarak.dat中包含了将近100万条记录。该文件中的每一行包含某个用户浏览过的新闻报道。一些用户只看过一篇报道，而有些用户看过2498篇报道。用户和报道被编码成整数，所以查看频繁项集很难得到更多的东西，但该数据对于展示FP-growth算法的速度十分有效。</p>
 <p>　　数据前几行如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1 2 3</span><br><span class="line">1</span><br><span class="line">4 5 6 7</span><br><span class="line">1 8</span><br><span class="line">9 10</span><br><span class="line">11 6 12 13 14 15 16</span><br><span class="line">1 3 7</span><br><span class="line">17 18</span><br><span class="line">11 6 19 20 21 22 23 24</span><br><span class="line">1 25 3</span><br><span class="line">26 3</span><br><span class="line">11 27 6 3 28 7 29 30 31 32 33 34 35 36 37</span><br><span class="line">6 2 38</span><br><span class="line">39 11 27 1 40 6 41 42 43 44 45 46 47 3 48 7 49 50 51</span><br></pre></td></tr></table></figure>
+
 <p>　　 运用FP-growth算法：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 导入数据</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>parsedDat = [line.split() <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> open(<span class="hljs-string">'kosarak.dat'</span>).readlines()]</span><br><span class="line"><span class="hljs-comment"># 初始化数据</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>initSet = fpGrowth.createInitSet(parsedDat)</span><br><span class="line"><span class="hljs-comment"># 构建FP树，寻找至少被10万人浏览过的新闻报道</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>myFPtree, myHeaderTab = fpGrowth.createTree(initSet, <span class="hljs-number">100000</span>)</span><br><span class="line"><span class="hljs-comment"># 创建空列表保存频繁项集</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>myFreqList = []</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>fpGrowth.mineTree(myFPtree, myHeaderTab, <span class="hljs-number">100000</span>, set([]), myFreqList)</span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'1'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-number">6</span>   <span class="hljs-number">107404</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'3'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-number">6</span>   <span class="hljs-number">186289</span></span><br><span class="line">    <span class="hljs-number">11</span>   <span class="hljs-number">117401</span></span><br><span class="line">   <span class="hljs-number">11</span>   <span class="hljs-number">9718</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'11'</span>, <span class="hljs-string">'3'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-number">6</span>   <span class="hljs-number">117401</span></span><br><span class="line">conditional tree <span class="hljs-keyword">for</span>:  &#123;<span class="hljs-string">'11'</span>&#125;</span><br><span class="line">  Null Set   <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-number">6</span>   <span class="hljs-number">261773</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>len(myFreqList)</span><br><span class="line"><span class="hljs-number">9</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>myFreqList</span><br><span class="line">[&#123;<span class="hljs-string">'1'</span>&#125;, &#123;<span class="hljs-string">'1'</span>, <span class="hljs-string">'6'</span>&#125;, &#123;<span class="hljs-string">'3'</span>&#125;, &#123;<span class="hljs-string">'11'</span>, <span class="hljs-string">'3'</span>&#125;, &#123;<span class="hljs-string">'11'</span>, <span class="hljs-string">'6'</span>, <span class="hljs-string">'3'</span>&#125;, &#123;<span class="hljs-string">'6'</span>, <span class="hljs-string">'3'</span>&#125;, &#123;<span class="hljs-string">'11'</span>&#125;, &#123;<span class="hljs-string">'11'</span>, <span class="hljs-string">'6'</span>&#125;, &#123;<span class="hljs-string">'6'</span>&#125;]</span><br></pre></td></tr></table></figure>
+
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>　　 FP-growth算法是一种用于发现数据集中频繁模式的有效方法。FP-growth算法利用Apriori原则，执行更快。Apriori算法产生候选项集，然后扫描数据集来检查它们是否频繁。由于只对数据集扫描两次，因此FP-growth算法执行更快。在FP-growth算法中，数据集存储在FP树中。FP树构建完成后，可以通过查找元素项的条件基及构建条件FP树来发现频繁项集。该过程不断以更多元素作为条件重复进行，直到FP树只包含一个元素为止。</p>
 <p>　　 可以使用FP-growth算法在多种文本文档中查找频繁单词。对Twitter源上的某个话题应用FP-growth算法，可以得到一些有关该话题的摘要信息。频繁项集生成还可以用于购物交易、医学诊断和大气研究等。</p>
 
@@ -465,7 +464,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        25
+                        26
                     </p>
                 </div>
             </div>
@@ -485,7 +484,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        66
+                        67
                     </p>
                 </div>
             </div>
@@ -694,7 +693,7 @@
                 <span class="level-item">缓寻芳草</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/诗词遗珠/">
@@ -724,7 +723,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.5px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 10px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
+        <a href="/tags/AVG/" style="font-size: 10px;">AVG</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 12.5px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 15px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12.5px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
     </div>
 </div>
 
@@ -738,6 +737,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/25/诡计x逻辑案件盘点/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/trick.jpg" alt="诡计x逻辑案件盘点">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-25T11:33:24.000Z">2020-05-25</time></div>
+                    <a href="/2020/05/25/诡计x逻辑案件盘点/" class="has-link-black-ter is-size-6">诡计x逻辑案件盘点</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -815,25 +833,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/31/2019年末的碎碎念/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/original.jpg" alt="2019年末的碎碎念">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T14:43:09.000Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/2019年末的碎碎念/" class="has-link-black-ter is-size-6">2019年末的碎碎念</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/负尽年华/">负尽年华</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -852,7 +851,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1012,6 +1011,13 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AVG/">
+                        <span class="tag">AVG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/AirPods/">
@@ -1177,7 +1183,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1233,7 +1239,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Lattice-resoning/">
                         <span class="tag">Lattice resoning</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1450,7 +1456,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Visual-novel/">
                         <span class="tag">Visual novel</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1500,6 +1506,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/25/诡计x逻辑案件盘点/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/trick.jpg" alt="诡计x逻辑案件盘点">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-25T11:33:24.000Z">2020-05-25</time></div>
+                    <a href="/2020/05/25/诡计x逻辑案件盘点/" class="has-link-black-ter is-size-6">诡计x逻辑案件盘点</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/13/每日英语单词/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/ac.jpg" alt="每日英语单词">
@@ -1574,25 +1599,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/31/2019年末的碎碎念/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/original.jpg" alt="2019年末的碎碎念">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T14:43:09.000Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/2019年末的碎碎念/" class="has-link-black-ter is-size-6">2019年末的碎碎念</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/负尽年华/">负尽年华</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1611,7 +1617,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1771,6 +1777,13 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AVG/">
+                        <span class="tag">AVG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/AirPods/">
@@ -1936,7 +1949,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1992,7 +2005,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Lattice-resoning/">
                         <span class="tag">Lattice resoning</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -2209,7 +2222,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Visual-novel/">
                         <span class="tag">Visual novel</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

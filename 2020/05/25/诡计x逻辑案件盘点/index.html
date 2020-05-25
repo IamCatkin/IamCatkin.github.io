@@ -2,25 +2,25 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>Flask学习笔记 - 寒光亭下水如天</title>
+<title>诡计x逻辑案件盘点 - 寒光亭下水如天</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Django有点繁琐，俺打算转战Flask了。">
-<meta name="keywords" content="Python,Flask">
+    <meta name="description" content="⊙﹏⊙b汗，本来只是想扔到推理游戏合集里面的，结果越写越长，干脆独立出来，这样也不会显得喧宾夺主。">
+<meta name="keywords" content="Game,Visual novel,Lattice resoning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flask学习笔记">
-<meta property="og:url" content="https://blog.catkin.moe/2019/11/14/Flask学习笔记/index.html">
+<meta property="og:title" content="诡计x逻辑案件盘点">
+<meta property="og:url" content="https://blog.catkin.moe/2020/05/25/诡计x逻辑案件盘点/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="Django有点繁琐，俺打算转战Flask了。">
+<meta property="og:description" content="⊙﹏⊙b汗，本来只是想扔到推理游戏合集里面的，结果越写越长，干脆独立出来，这样也不会显得喧宾夺主。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
-<meta property="og:updated_time" content="2019-11-14T11:44:03.443Z">
+<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/trick.jpg">
+<meta property="og:updated_time" content="2020-05-25T11:45:13.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flask学习笔记">
-<meta name="twitter:description" content="Django有点繁琐，俺打算转战Flask了。">
-<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/flask-logo.png">
+<meta name="twitter:title" content="诡计x逻辑案件盘点">
+<meta name="twitter:description" content="⊙﹏⊙b汗，本来只是想扔到推理游戏合集里面的，结果越写越长，干脆独立出来，这样也不会显得喧宾夺主。">
+<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/trick.jpg">
 
 
 
@@ -98,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Catkin.png" alt="Flask学习笔记" height="28">
+                <img src="/images/Catkin.png" alt="诡计x逻辑案件盘点" height="28">
             
             </a>
         </div>
@@ -147,7 +147,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/flask-logo.png" alt="Flask学习笔记">
+            <img class="thumbnail" src="/gallery/thumbnails/trick.jpg" alt="诡计x逻辑案件盘点">
         </span>
     </div>
     
@@ -155,17 +155,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T02:16:20.000Z">2019-11-14</time>
+                <time class="level-item has-text-grey" datetime="2020-05-25T11:33:24.000Z">2020-05-25</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/学习笔记/">学习笔记</a>
+                <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 120 个字)
+                    10 分钟 读完 (大约 1554 个字)
                 </span>
                 
                 
@@ -179,20 +179,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Flask学习笔记
+                诡计x逻辑案件盘点
             
         </h1>
         <div class="content">
-            <p>　　Django有点繁琐，俺打算转战Flask了。</p>
+            <p>　　⊙﹏⊙b汗，本来只是想扔到推理游戏合集里面的，结果越写越长，干脆独立出来，这样也不会显得喧宾夺主。</p>
 <a id="more"></a>
 
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>　　在虚拟环境下安装。</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n flask</span><br><span class="line">conda install flask</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hello，Flask"><a href="#Hello，Flask" class="headerlink" title="Hello，Flask"></a>Hello，Flask</h2><p>　　Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python 的<code>__name__</code>变量就是所需的值。</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br></pre></td></tr></table></figure>
-
-<p>　　以上即为一个最简单的实例创建。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　这个游戏算是非常硬核的本格推理游戏，推理短篇合集，作者包括麻耶雄蒿、我孙子武丸、大山诚一郎、绫辻行人、有栖川有栖等，堪称本格推理全明星阵容。唯一的问题是没有完整汉化，目前仅第一季有部分汉化，所以我就着<a href="https://space.bilibili.com/1846417/channel/detail?cid=39227" target="_blank" rel="noopener">兔碳的实况</a>和<a href="https://bbs.lv8f.com/t-169-1-1.html" target="_blank" rel="noopener">落樱时节的文本翻译</a>完成了本作游玩。</p>
+<p>　　另外也要碎碎念这个系统，就算你知道Trick了也得慢慢穷举把闪现凑出来，结果无限拉长游戏时间，很容易劝退玩家。而且有些闪现很不合理，根本就很难理解为什么能组合，事实上不看攻略的情况下想凑齐全闪现和解答是非常困难的，逼死本强迫症。</p>
+<h1 id="尸体所指"><a href="#尸体所指" class="headerlink" title="尸体所指"></a>尸体所指</h1><p>　　作为初始教程的谜题，相对来说比较简单，结果受限于系统设定试了好久才把线索凑齐。</p>
+<h1 id="被盗的手办"><a href="#被盗的手办" class="headerlink" title="被盗的手办"></a>被盗的手办</h1><p>　　作者我孙子武丸，没有凶案，剧情让俺想到了某师弟，四斋蒸鹅心啊。Trick依然很简单，在某著名作品里面用过了，不过在80多页里面找关键词来凑闪现还是花了我一下午时间，搞的网课也没怎么听，血亏！</p>
+<h1 id="光线消失的房间"><a href="#光线消失的房间" class="headerlink" title="光线消失的房间"></a>光线消失的房间</h1><p>　　作者竹本健治，写过四大奇书之一的《 匣中失乐》，平心而论《匣中失乐》有点故弄玄虚，相对而言这篇给我的感觉还行。难度不大，基本上凭直觉就知道凶手了，然后Trick也不难猜到，就是那个闪现太难凑了，居然要尸僵和“ 运动神经看起来相当不错的阳光青年 ”组合，让人不明所以，也有可能是翻译问题，反正本日文苦手就没法深究了。</p>
+<h1 id="飘雪的女生宿舍"><a href="#飘雪的女生宿舍" class="headerlink" title="飘雪的女生宿舍"></a>飘雪的女生宿舍</h1><p>　　作者麻耶雄嵩！虽然麻神的作品相当放飞自我，结果这个谜题的设计还是挺精巧的。死亡信息也是本格推理中很常见的元素，不过也仅仅是在作品中很常见， 现实生活中留下那种需要人猜的信息还是挺少见的。这篇也是和死亡信息有关，重点是为什么凶手要在早上返回消除死亡信息，想明白这点就能经过逻辑排除推出凶手了。只能说细节还是埋的挺巧妙的，但是小说越来越长了，这次是在200页里面翻关键词，我要吐了。</p>
+<h1 id="被斩断的五首"><a href="#被斩断的五首" class="headerlink" title="被斩断的五首"></a>被斩断的五首</h1><p>　　作者大山诚一郎！他的短篇集《密室收藏家》和《赤色博物馆》都是我很喜欢的作品，所以对这篇我也报以很大期望。然而这个故事真的很难，还是诡叙，强烈怀疑和上篇麻神的名字弄混了hhh。回到本篇，这篇里面出现了无面尸元素，读的时候我第一感觉是身份互换，没想到后面作者亲自在剧情里驳斥了这个观点把我打脸了。反正俺是没想出来答案，只能看了提示才解出来，但是最后的答案真的把我气笑了，有种看《消失！》的感觉。不过细想一下该给的线索也给了，就是不知道有没有大佬凭自己本事推理出来。</p>
+<h1 id="亡灵哈姆雷特"><a href="#亡灵哈姆雷特" class="headerlink" title="亡灵哈姆雷特"></a>亡灵哈姆雷特</h1><p>　　作者黑田研二，他最出名的作品是《婚纱》，不过我还没读23333，这个作者最牛的地方还是能把《逆转裁判》和《极限脱出》等游戏IP都拿到改编权出书，有点东西，虽然质量似乎挺一般的。围绕监控器做文章也是近些年科技进步对古典推理的冲击吧。扯一嘴，这方面的文给我印象深刻的有《全部成为F》、《玻璃之锤》以及日剧《上锁的房间》的SP（因为俺没看贵志祐介的其他小说，不确定是否有原著改编）等等。说回来这个故事，再次说明画时刻表和示意图在本格推理阅读的重要性！如果对比示意图，大概也能理解凶手交换的目的所在了，然后也不难猜出手法。总的来说还是挺公平的推理了，该埋的伏笔都有了。</p>
+<h1 id="血腥玛丽之谜"><a href="#血腥玛丽之谜" class="headerlink" title="血腥玛丽之谜"></a>血腥玛丽之谜</h1><p>　　作者竹本健治。这篇怎么说呢，感觉挺一般的。虽然逻辑上行得通，也可以推导出来，但是我觉得有点浪费时间，也没什么惊喜。我不太喜欢Trick被限定到极其局限的地步，这篇恰恰如此，只能在很特定的情况下实现，感觉有点欺负被害者的感觉hhhh。当然内容很点题，大概就是为了这个题目设计的Trick？话说我这样是不是算泄底了。</p>
+<h1 id="来复线的谋杀"><a href="#来复线的谋杀" class="headerlink" title="来复线的谋杀"></a>来复线的谋杀</h1><p>　　作者麻神。这篇有岛田流的风格，Trick倒是有点像某《三星馆杀人事件》（大雾），好像又泄底了。但是我还是觉得有点雷人，至少森博嗣那篇是有设计的，而这里真的能那么巧嘛？</p>
 
         </div>
         
@@ -200,7 +203,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Flask/">Flask</a>, <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                    <a class="has-link-grey -link" href="/tags/Game/">Game</a>, <a class="has-link-grey -link" href="/tags/Lattice-resoning/">Lattice resoning</a>, <a class="has-link-grey -link" href="/tags/Visual-novel/">Visual novel</a>
                 </div>
             </div>
         </div>
@@ -217,17 +220,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/12/记录一些可能有用的网站/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">记录一些可能有用的网站</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/13/数字切片扫描仪操作流程/">
-                <span class="level-item">数字切片扫描仪操作流程</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/05/13/每日英语单词/">
+                <span class="level-item">每日英语单词</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -248,7 +244,7 @@
     var gitalk = new Gitalk({
         clientID: '8323a58c0a8710fd55c3',
         clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
-        id: 'ba55fe15974d9a415a03eea756f63e37',
+        id: '463d1900fff497baa4cdc647b94fd65d',
         repo: 'myblogcomments',
         owner: 'IamCatkin',
         admin: "IamCatkin"
@@ -382,18 +378,42 @@
                 目录
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#初始化">
+        <a class="is-flex" href="#前言">
         <span class="has-mr-6">1</span>
-        <span>初始化</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#安装">
-        <span class="has-mr-6">1.1</span>
-        <span>安装</span>
+        <span>前言</span>
         </a></li><li>
-        <a class="is-flex" href="#Hello，Flask">
-        <span class="has-mr-6">1.2</span>
-        <span>Hello，Flask</span>
-        </a></li></ul></li></ul>
+        <a class="is-flex" href="#尸体所指">
+        <span class="has-mr-6">2</span>
+        <span>尸体所指</span>
+        </a></li><li>
+        <a class="is-flex" href="#被盗的手办">
+        <span class="has-mr-6">3</span>
+        <span>被盗的手办</span>
+        </a></li><li>
+        <a class="is-flex" href="#光线消失的房间">
+        <span class="has-mr-6">4</span>
+        <span>光线消失的房间</span>
+        </a></li><li>
+        <a class="is-flex" href="#飘雪的女生宿舍">
+        <span class="has-mr-6">5</span>
+        <span>飘雪的女生宿舍</span>
+        </a></li><li>
+        <a class="is-flex" href="#被斩断的五首">
+        <span class="has-mr-6">6</span>
+        <span>被斩断的五首</span>
+        </a></li><li>
+        <a class="is-flex" href="#亡灵哈姆雷特">
+        <span class="has-mr-6">7</span>
+        <span>亡灵哈姆雷特</span>
+        </a></li><li>
+        <a class="is-flex" href="#血腥玛丽之谜">
+        <span class="has-mr-6">8</span>
+        <span>血腥玛丽之谜</span>
+        </a></li><li>
+        <a class="is-flex" href="#来复线的谋杀">
+        <span class="has-mr-6">9</span>
+        <span>来复线的谋杀</span>
+        </a></li></ul>
         </div>
     </div>
 </div>

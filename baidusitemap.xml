@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/05/25/%E8%AF%A1%E8%AE%A1x%E9%80%BB%E8%BE%91%E6%A1%88%E4%BB%B6%E7%9B%98%E7%82%B9/</loc>
+    <lastmod>2020-05-25T11:45:13.153Z</lastmod>
+    <data>
+        <display>
+        <title>诡计x逻辑案件盘点</title>
+        <pubTime>2020-05-25T11:33:24.000Z</pubTime>
+        
+        <tag>Game</tag>
+         
+        <tag>Visual novel</tag>
+         
+        <tag>Lattice resoning</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2020-05-24T06:10:50.493Z</lastmod>
+    <lastmod>2020-05-25T11:42:43.210Z</lastmod>
     <data>
         <display>
         <title>悬疑推理向游戏记录</title>
@@ -19,10 +43,60 @@
          
         <tag>Galgame</tag>
          
+        <tag>AVG</tag>
+         
          
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/13/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    <lastmod>2020-05-25T07:52:54.780Z</lastmod>
+    <data>
+        <display>
+        <title>每日英语单词</title>
+        <pubTime>2020-05-13T09:23:26.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>Word</tag>
+         
+        <tag>Daily life</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2020-05-25T07:30:59.805Z</lastmod>
+    <data>
+        <display>
+        <title>记录一些可能有用的网站</title>
+        <pubTime>2019-12-12T00:43:54.000Z</pubTime>
+        
+        <tag>Link</tag>
+         
+        <tag>Writing</tag>
+         
+        <tag>Experiment</tag>
+         
+         
+           
+             
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>
@@ -47,30 +121,6 @@
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/13/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    <lastmod>2020-05-23T08:38:02.485Z</lastmod>
-    <data>
-        <display>
-        <title>每日英语单词</title>
-        <pubTime>2020-05-13T09:23:26.000Z</pubTime>
-        
-        <tag>English</tag>
-         
-        <tag>Word</tag>
-         
-        <tag>Daily life</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -150,30 +200,6 @@
            
              
               <breadCrumb title="负尽年华" url="https://blog.catkin.moe/categories/%E8%B4%9F%E5%B0%BD%E5%B9%B4%E5%8D%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2019-12-25T05:51:52.176Z</lastmod>
-    <data>
-        <display>
-        <title>记录一些可能有用的网站</title>
-        <pubTime>2019-12-12T00:43:54.000Z</pubTime>
-        
-        <tag>Link</tag>
-         
-        <tag>Writing</tag>
-         
-        <tag>Experiment</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>

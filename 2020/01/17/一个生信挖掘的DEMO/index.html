@@ -185,7 +185,6 @@
         <div class="content">
             <p>　　起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。</p>
 <a id="more"></a>
-
 <h1 id="分析GEO数据miRNA表达情况"><a href="#分析GEO数据miRNA表达情况" class="headerlink" title="分析GEO数据miRNA表达情况"></a>分析GEO数据miRNA表达情况</h1><p>　　<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE106452" target="_blank" rel="noopener">GSE106452</a>是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。</p>
 <blockquote>
 <p>点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。</p>
@@ -204,27 +203,21 @@
 <p>　　此外，在下载上述manifest文件以外顺便应该下载json文件备用。</p>
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="Clinical数据合并"><a href="#Clinical数据合并" class="headerlink" title="Clinical数据合并"></a>Clinical数据合并</h3><p>　　主要是xml文件，利用R包来分析。以单个文件为例：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">result = xmlParse(file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/00a9a7f4-06eb-40fb-8d3a-66f5f5d315f7/nationwidechildrens.org_clinical.TCGA-KR-A7K0.xml"</span>)</span><br><span class="line">rootnode = xmlRoot(result)</span><br><span class="line">rootsize = xmlSize(rootnode)</span><br><span class="line">xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">write.table(t(xmldataframe),<span class="hljs-string">'tmp'</span>)</span><br></pre></td></tr></table></figure>
-
 <p> 　　当然具体数据有成百上千个，应该用循环来做。</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/"</span></span><br><span class="line">cl = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.xml$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">    result = xmlParse(file=file.path(dir,x))</span><br><span class="line">    rootnode = xmlRoot(result)</span><br><span class="line">	xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">    <span class="hljs-keyword">return</span>(t(xmldataframe))</span><br><span class="line">&#125;)</span><br><span class="line">cl_df = t(do.call(cbind,cl))</span><br><span class="line">save(cl_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Process/GDC_TCGA_LIHC_clinical_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="miRNA-Seq数据合并"><a href="#miRNA-Seq数据合并" class="headerlink" title="miRNA-Seq数据合并"></a>miRNA-Seq数据合并</h3><p> 　　类似地，修改处理代码如下：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/miRNA-Seq/"</span></span><br><span class="line">mi = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.mirnas.quantification.txt$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">  result = read.table(file=file.path(dir,x),sep=<span class="hljs-string">"\t"</span>,header=<span class="hljs-literal">T</span>)[,<span class="hljs-number">1</span>:<span class="hljs-number">2</span>]</span><br><span class="line">  <span class="hljs-keyword">return</span>(result)</span><br><span class="line">&#125;)</span><br><span class="line">mi_df = t(do.call(cbind,mi))</span><br><span class="line">colnames(mi_df) = mi_df[<span class="hljs-number">1</span>,]</span><br><span class="line">mi_df = mi_df[seq(<span class="hljs-number">2</span>,nrow(mi_df),by=<span class="hljs-number">2</span>),]</span><br><span class="line">save(mi_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Process/GDC_TCGA_LIHC_miRNA-Seq_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
-
 <p> 　　这样可以得到一个表达矩阵。</p>
 <h3 id="Json数据解析"><a href="#Json数据解析" class="headerlink" title="Json数据解析"></a>Json数据解析</h3><p> 　　类似地，修改处理代码如下：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"rjson"</span>)</span><br><span class="line">result = fromJSON(file = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/TCGA-LIHC-miRNA-Seq.json"</span>)</span><br><span class="line">fls = unlist(lapply(result,<span class="hljs-keyword">function</span>(x)&#123;x$file_name&#125;))</span><br><span class="line">cid = unlist(lapply(result,<span class="hljs-keyword">function</span>(x)&#123;x$cases[[<span class="hljs-number">1</span>]]$case_id&#125;))</span><br><span class="line">id2fls = data.frame(cid=cid,fls=fls)</span><br><span class="line">save(id2fls,mi_df,fls,cl_df,file=<span class="hljs-string">'D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_miRNA-clinical.Rdata'</span>)</span><br><span class="line"><span class="hljs-comment"># 相关数据的清除与读取</span></span><br><span class="line">rm(list=ls())</span><br><span class="line">load(file=<span class="hljs-string">'D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_miRNA-clinical.Rdata'</span>)</span><br></pre></td></tr></table></figure>
-
 <h2 id="使用TCGAbiolinks包"><a href="#使用TCGAbiolinks包" class="headerlink" title="使用TCGAbiolinks包"></a>使用TCGAbiolinks包</h2><p>　　感觉真的很方便，在BiocManager里面安装：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 安装</span></span><br><span class="line">BiocManager::install(<span class="hljs-string">"TCGAbiolinks"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 下载</span></span><br><span class="line"><span class="hljs-keyword">library</span>(TCGAbiolinks)</span><br><span class="line">query = GDCquery(project = <span class="hljs-string">'TCGA-LIHC'</span>, </span><br><span class="line">                  data.category = <span class="hljs-string">"Transcriptome Profiling"</span>, </span><br><span class="line">                  data.type = <span class="hljs-string">"Gene Expression Quantification"</span>, </span><br><span class="line">                  workflow.type = <span class="hljs-string">"HTSeq - Counts"</span>)</span><br><span class="line">GDCdownload(query, method = <span class="hljs-string">"api"</span>, files.per.chunk = <span class="hljs-number">100</span>)</span><br><span class="line">expdat = GDCprepare(query = query)</span><br><span class="line">count_matrix = assay(expdat)</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>PS1：本来打算用RTCGA的，但是这个包N年不更新了，用着膈应~</p>
 <p>PS2：R语言设置代理：</p>
-<p>Sys.setenv(“http_proxy”=”<a href="http://127.0.0.1:10809&quot;" target="_blank" rel="noopener">http://127.0.0.1:10809&quot;</a>)<br>Sys.setenv(“https_proxy”=”<a href="http://127.0.0.1:10809&quot;" target="_blank" rel="noopener">http://127.0.0.1:10809&quot;</a>) </p>
+<p>Sys.setenv(“http_proxy”=”<a href="http://127.0.0.1:10809" target="_blank" rel="noopener">http://127.0.0.1:10809</a>“)<br>Sys.setenv(“https_proxy”=”<a href="http://127.0.0.1:10809" target="_blank" rel="noopener">http://127.0.0.1:10809</a>“) </p>
 </blockquote>
-<p>## </p>
-
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -332,7 +325,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        27
                     </p>
                 </div>
             </div>
@@ -352,7 +345,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        67
+                        69
                     </p>
                 </div>
             </div>
@@ -456,6 +449,10 @@
         <a class="is-flex" href="#使用TCGAbiolinks包">
         <span class="has-mr-6">2.3</span>
         <span>使用TCGAbiolinks包</span>
+        </a></li><li>
+        <a class="is-flex" href="#">
+        <span class="has-mr-6">2.4</span>
+        <span> </span>
         </a></li></ul></li></ul>
         </div>
     </div>
@@ -569,7 +566,7 @@
                 <span class="level-item">缓寻芳草</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/诗词遗珠/">
@@ -599,7 +596,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AVG/" style="font-size: 10px;">AVG</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 12.5px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 15px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12.5px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
+        <a href="/tags/AVG/" style="font-size: 10px;">AVG</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 15px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 15px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 10px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12.5px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 10px;">Wuxia</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
     </div>
 </div>
 
@@ -613,6 +610,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nangong.jpg" alt="江湖夜雨十年灯：武侠游戏记忆">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-28T08:24:56.000Z">2020-05-28</time></div>
+                    <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="has-link-black-ter is-size-6">江湖夜雨十年灯：武侠游戏记忆</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -690,25 +706,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
-                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -727,7 +724,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1059,7 +1056,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1267,6 +1264,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
                         <span class="tag is-grey">1</span>
@@ -1346,6 +1350,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1382,6 +1393,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nangong.jpg" alt="江湖夜雨十年灯：武侠游戏记忆">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-28T08:24:56.000Z">2020-05-28</time></div>
+                    <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="has-link-black-ter is-size-6">江湖夜雨十年灯：武侠游戏记忆</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/25/诡计x逻辑案件盘点/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/trick.jpg" alt="诡计x逻辑案件盘点">
@@ -1456,25 +1486,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
-                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1493,7 +1504,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1825,7 +1836,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -2033,6 +2044,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
                         <span class="tag is-grey">1</span>
@@ -2112,6 +2130,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

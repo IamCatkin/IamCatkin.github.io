@@ -185,37 +185,26 @@
         <div class="content">
             <p>　　本文专门用来记录一下python中一些好用方法/库，可以在日常使用中提高效率。</p>
 <a id="more"></a>
-
 <h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><p>　　在爬虫和机器学习等工作中，可能需要有一个进度条能够反馈当前程序运行速度或者进度，可以考虑用以下方法实现：</p>
 <h2 id="ShowProcess类"><a href="#ShowProcess类" class="headerlink" title="ShowProcess类"></a>ShowProcess类</h2><p>　　在网上找到别人写的一个方法如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 建立一个ShowProcess类</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShowProcess</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    i = <span class="hljs-number">0</span> </span><br><span class="line">    max_steps = <span class="hljs-number">0</span> </span><br><span class="line">    max_arrow = <span class="hljs-number">50</span> </span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, max_steps)</span>:</span></span><br><span class="line">        self.max_steps = max_steps</span><br><span class="line">        self.i = <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show_process</span><span class="hljs-params">(self, i=None)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> i <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            self.i = i</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            self.i += <span class="hljs-number">1</span></span><br><span class="line">        num_arrow = int(self.i * self.max_arrow / self.max_steps) </span><br><span class="line">        num_line = self.max_arrow - num_arrow </span><br><span class="line">        percent = self.i * <span class="hljs-number">100.0</span> / self.max_steps </span><br><span class="line">        process_bar = <span class="hljs-string">'['</span> + <span class="hljs-string">'&gt;'</span> * num_arrow + <span class="hljs-string">'-'</span> * num_line + <span class="hljs-string">']'</span>\</span><br><span class="line">                      + <span class="hljs-string">'%.2f'</span> % percent + <span class="hljs-string">'%'</span></span><br><span class="line">        print(<span class="hljs-string">'\r'</span>,process_bar,end=<span class="hljs-string">''</span>,flush=<span class="hljs-keyword">True</span>) </span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">close</span><span class="hljs-params">(self, words=<span class="hljs-string">'done'</span>)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">''</span>)</span><br><span class="line">        print(words)</span><br><span class="line">        self.i = <span class="hljs-number">0</span></span><br></pre></td></tr></table></figure>
-
 <p>　　使用示例：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">'__main__'</span>:</span><br><span class="line">    max_steps = <span class="hljs-number">100</span></span><br><span class="line"></span><br><span class="line">    process_bar = ShowProcess(max_steps)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(max_steps):</span><br><span class="line">        process_bar.show_process()</span><br><span class="line">        time.sleep(<span class="hljs-number">0.05</span>)</span><br><span class="line">    process_bar.close()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 效果如下 </span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>[&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;]<span class="hljs-number">100.00</span>%</span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>done</span><br></pre></td></tr></table></figure>
-
 <p>　　在命令窗口下使用正常，但是在IDLE和Spyder中显示存在问题，考虑使用其他方法。</p>
 <h2 id="tqdm"><a href="#tqdm" class="headerlink" title="tqdm"></a>tqdm</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
-
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 最基本的用法</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(range(<span class="hljs-number">9</span>)):</span><br><span class="line">	time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># trange类似于tqdm</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> trange</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> trange(<span class="hljs-number">10</span>):</span><br><span class="line">	time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.79</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 传入list</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])  </span><br><span class="line"><span class="hljs-keyword">for</span> char <span class="hljs-keyword">in</span> pbar:  </span><br><span class="line">    pbar.set_description(<span class="hljs-string">"Processing %s"</span> % char) </span><br><span class="line">    time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span>Processing <span class="hljs-number">10</span>: <span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">01</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>,  <span class="hljs-number">9.49</span>it/s]</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment"># 手动控制更新</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line"><span class="hljs-keyword">with</span> tqdm(total=<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> pbar:  </span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):  </span><br><span class="line">        pbar.update(<span class="hljs-number">1</span>)</span><br><span class="line">        time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">00</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>, <span class="hljs-number">10.10</span>it/s]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 也可以这样</span></span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm</span><br><span class="line">pbar = tqdm(total=<span class="hljs-number">10</span>)  </span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):  </span><br><span class="line">    pbar.update(<span class="hljs-number">1</span>)</span><br><span class="line">    time.sleep(<span class="hljs-number">0.1</span>)</span><br><span class="line">pbar.close()  </span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">100</span>%|██████████| <span class="hljs-number">10</span>/<span class="hljs-number">10</span> [<span class="hljs-number">00</span>:<span class="hljs-number">00</span>&lt;<span class="hljs-number">00</span>:<span class="hljs-number">00</span>, <span class="hljs-number">10.10</span>it/s]</span><br></pre></td></tr></table></figure>
-
 <p>　　在Spyder下正常了，然而在命令窗口有问题。</p>
 <h1 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h1><p>　　进行爬虫的时候，很容易因为网络问题导致失败，这里有2个库可以很轻松地实现这个功能。</p>
 <h2 id="retry"><a href="#retry" class="headerlink" title="retry"></a>retry</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install retry</span><br></pre></td></tr></table></figure>
-
 <h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p>　　只需要在函数定义前加上@retry就行了。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> retry <span class="hljs-keyword">import</span> retry</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@retry()</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试直到成功'''</span></span><br><span class="line"><span class="hljs-meta">@retry(ZeroDivisionError, tries=3, delay=2)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry((ValueError, TypeError), delay=1, backoff=2)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 8, ...秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry((ValueError, TypeError), delay=1, backoff=2, max_delay=4)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError或TypeError时重试, 每次间隔1, 2, 4, 4, ...秒，最高间隔为4秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(ValueError, delay=1, jitter=1)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ValueError时重试,每次间隔1, 2, 3, 4, ... 秒'''</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="Tenacity"><a href="#Tenacity" class="headerlink" title="Tenacity"></a>Tenacity</h2><p>　　使用类似于retry。同样只需要在函数定义前加上@retry就行了。</p>
 <h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tenacity</span><br></pre></td></tr></table></figure>
-
 <h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> tenacity <span class="hljs-keyword">import</span> retry, retry_if_exception_type, wait_fixed, stop_after_attempt, stop_after_delay,</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@retry()</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试直到成功'''</span></span><br><span class="line"><span class="hljs-meta">@retry(retry=retry_if_exception_type(ZeroDivisionError), wait=wait_fixed(2), 	stop=stop_after_attempt(3))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''出现ZeroDivisionError时重试, 重试3次，每次间隔2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(stop=(stop_after_delay(10) | stop_after_attempt(5)))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试10秒或者5次'''</span>    </span><br><span class="line"><span class="hljs-meta">@retry(wait=wait_random(min=1, max=2))</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''重试间隔在随机1-2秒'''</span></span><br><span class="line"><span class="hljs-meta">@retry(wait=wait_chain(*[wait_fixed(3) for i in range(3)] +</span></span><br><span class="line">                       [wait_fixed(<span class="hljs-number">7</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>)] +</span><br><span class="line">                       [wait_fixed(<span class="hljs-number">9</span>)]))</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_trouble</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">'''前三次重试每次间隔3秒，接下来2次间隔7秒，之后重试间隔9秒'''</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h1><p>　　很多任务特别是多线程时，为了防止程序卡死，需要设定一个超时。</p>
 <h2 id="func-timeout"><a href="#func-timeout" class="headerlink" title="func_timeout"></a>func_timeout</h2><p>　　由于windows下signal的支持问题，选择使用第三方包，func_timeout就是一个给函数添加超时的包。</p>
 <h3 id="安装-3"><a href="#安装-3" class="headerlink" title="安装"></a>安装</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install func_timeout</span><br></pre></td></tr></table></figure>
-
 <h3 id="使用-3"><a href="#使用-3" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> func_timeout <span class="hljs-keyword">import</span> func_set_timeout,FunctionTimedOut</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 基本用法</span></span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">	doitReturnValue = func_timeout(<span class="hljs-number">5</span>, doit, args=(<span class="hljs-string">'arg1'</span>, <span class="hljs-string">'arg2'</span>))</span><br><span class="line"><span class="hljs-keyword">except</span> FunctionTimedOut:</span><br><span class="line">	<span class="hljs-keyword">print</span> ( <span class="hljs-string">"doit('arg1', 'arg2') could not complete within 5 seconds and was terminated.\n"</span>)</span><br><span class="line"><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:</span><br><span class="line">	<span class="hljs-comment"># 其他Exception</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 装饰器用法</span></span><br><span class="line"><span class="hljs-meta">@func_set_timeout(2)</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">task</span><span class="hljs-params">()</span>:</span></span><br><span class="line">	time.sleep(<span class="hljs-number">5</span>)</span><br><span class="line"><span class="hljs-comment"># 效果如下</span></span><br><span class="line">FunctionTimedOut: Function task (args=()) (kwargs=&#123;&#125;) timed out after <span class="hljs-number">2.000000</span> seconds.</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 捕获异常</span></span><br><span class="line"><span class="hljs-keyword">from</span> func_timeout.exceptions <span class="hljs-keyword">import</span> FunctionTimedOut</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">	task()</span><br><span class="line"><span class="hljs-keyword">except</span> FunctionTimedOut:</span><br><span class="line">	print(<span class="hljs-string">'task func_timeout'</span>)</span><br></pre></td></tr></table></figure>
-
 <p>　　此外它还有一个重试的函数FunctionTimedOut，就不赘述了。</p>
 <h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>　　待填坑……</p>
 
@@ -326,7 +315,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        27
                     </p>
                 </div>
             </div>
@@ -346,7 +335,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        67
+                        69
                     </p>
                 </div>
             </div>
@@ -587,7 +576,7 @@
                 <span class="level-item">缓寻芳草</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/诗词遗珠/">
@@ -617,7 +606,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AVG/" style="font-size: 10px;">AVG</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 12.5px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 15px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12.5px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
+        <a href="/tags/AVG/" style="font-size: 10px;">AVG</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12.5px;">Association Analysis</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Daily-life/" style="font-size: 10px;">Daily life</a> <a href="/tags/Data-Mining/" style="font-size: 17.5px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 15px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 15px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 12.5px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 17.5px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 15px;">Manual</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.5px;">Poetry</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 10px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/Unboxing/" style="font-size: 15px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12.5px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 10px;">Wuxia</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
     </div>
 </div>
 
@@ -631,6 +620,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nangong.jpg" alt="江湖夜雨十年灯：武侠游戏记忆">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-28T08:24:56.000Z">2020-05-28</time></div>
+                    <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="has-link-black-ter is-size-6">江湖夜雨十年灯：武侠游戏记忆</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -708,25 +716,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
-                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -745,7 +734,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1077,7 +1066,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1285,6 +1274,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
                         <span class="tag is-grey">1</span>
@@ -1364,6 +1360,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1400,6 +1403,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/nangong.jpg" alt="江湖夜雨十年灯：武侠游戏记忆">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-28T08:24:56.000Z">2020-05-28</time></div>
+                    <a href="/2020/05/28/江湖夜雨十年灯：武侠游戏记忆/" class="has-link-black-ter is-size-6">江湖夜雨十年灯：武侠游戏记忆</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/25/诡计x逻辑案件盘点/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/trick.jpg" alt="诡计x逻辑案件盘点">
@@ -1474,25 +1496,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/01/17/一个生信挖掘的DEMO/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/machiawaseru.jpg" alt="一个生信挖掘的DEMO">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-17T13:35:49.000Z">2020-01-17</time></div>
-                    <a href="/2020/01/17/一个生信挖掘的DEMO/" class="has-link-black-ter is-size-6">一个生信挖掘的DEMO</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1511,7 +1514,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1843,7 +1846,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Game/">
                         <span class="tag">Game</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -2051,6 +2054,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Review/">
                         <span class="tag">Review</span>
                         <span class="tag is-grey">1</span>
@@ -2130,6 +2140,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Writing/">
                         <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

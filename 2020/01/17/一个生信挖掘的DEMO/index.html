@@ -16,7 +16,7 @@
 <meta property="og:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/machiawaseru.jpg">
-<meta property="og:updated_time" content="2020-04-26T06:20:02.495Z">
+<meta property="og:updated_time" content="2020-05-31T09:44:39.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个生信挖掘的DEMO">
 <meta name="twitter:description" content="起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。">
@@ -185,6 +185,7 @@
         <div class="content">
             <p>　　起源是海洋师兄让我复现一个公司做的生信分析，据说这样一个东西收费1w+，于是我开始尝试进行探索。</p>
 <a id="more"></a>
+
 <h1 id="分析GEO数据miRNA表达情况"><a href="#分析GEO数据miRNA表达情况" class="headerlink" title="分析GEO数据miRNA表达情况"></a>分析GEO数据miRNA表达情况</h1><p>　　<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE106452" target="_blank" rel="noopener">GSE106452</a>是4种肝癌细胞的外泌体miRNA的微阵列分析数据，我们由于只有HepG2细胞，因此只拿该细胞数据，挑选表达较高的30个miRNA数据。甚至都用不到Python和R，Excel排序即可。</p>
 <blockquote>
 <p>点评：开始俺还以为得用GEO2R做差异分析，事实上是俺想复杂了。</p>
@@ -198,26 +199,32 @@
 <p>这里我采用了分割文件&amp;挂代理的策略才把RNA数据下完。</p>
 <p>console下设置代理：</p>
 <p>set http_proxy=<a href="http://127.0.0.1:10809。" target="_blank" rel="noopener">http://127.0.0.1:10809。</a></p>
-<p>set https_proxy=<a href="http://127.0.0.1:10809。" target="_blank" rel="noopener">http://127.0.0.1:10809。</a></p>
+<p>set https_proxy=<a href="https://127.0.0.1:10809。" target="_blank" rel="noopener">https://127.0.0.1:10809。</a></p>
 </blockquote>
 <p>　　此外，在下载上述manifest文件以外顺便应该下载json文件备用。</p>
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="Clinical数据合并"><a href="#Clinical数据合并" class="headerlink" title="Clinical数据合并"></a>Clinical数据合并</h3><p>　　主要是xml文件，利用R包来分析。以单个文件为例：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">result = xmlParse(file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/00a9a7f4-06eb-40fb-8d3a-66f5f5d315f7/nationwidechildrens.org_clinical.TCGA-KR-A7K0.xml"</span>)</span><br><span class="line">rootnode = xmlRoot(result)</span><br><span class="line">rootsize = xmlSize(rootnode)</span><br><span class="line">xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">write.table(t(xmldataframe),<span class="hljs-string">'tmp'</span>)</span><br></pre></td></tr></table></figure>
+
 <p> 　　当然具体数据有成百上千个，应该用循环来做。</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"XML"</span>)</span><br><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"methods"</span>)</span><br><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Clinical/"</span></span><br><span class="line">cl = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.xml$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">    result = xmlParse(file=file.path(dir,x))</span><br><span class="line">    rootnode = xmlRoot(result)</span><br><span class="line">	xmldataframe = xmlToDataFrame(rootnode[<span class="hljs-number">2</span>])</span><br><span class="line">    <span class="hljs-keyword">return</span>(t(xmldataframe))</span><br><span class="line">&#125;)</span><br><span class="line">cl_df = t(do.call(cbind,cl))</span><br><span class="line">save(cl_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Process/GDC_TCGA_LIHC_clinical_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="miRNA-Seq数据合并"><a href="#miRNA-Seq数据合并" class="headerlink" title="miRNA-Seq数据合并"></a>miRNA-Seq数据合并</h3><p> 　　类似地，修改处理代码如下：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dir = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/miRNA-Seq/"</span></span><br><span class="line">mi = lapply(list.files(path=dir,pattern=<span class="hljs-string">"*.mirnas.quantification.txt$"</span>,recursive=<span class="hljs-literal">T</span>),<span class="hljs-keyword">function</span>(x)&#123;</span><br><span class="line">  result = read.table(file=file.path(dir,x),sep=<span class="hljs-string">"\t"</span>,header=<span class="hljs-literal">T</span>)[,<span class="hljs-number">1</span>:<span class="hljs-number">2</span>]</span><br><span class="line">  <span class="hljs-keyword">return</span>(result)</span><br><span class="line">&#125;)</span><br><span class="line">mi_df = t(do.call(cbind,mi))</span><br><span class="line">colnames(mi_df) = mi_df[<span class="hljs-number">1</span>,]</span><br><span class="line">mi_df = mi_df[seq(<span class="hljs-number">2</span>,nrow(mi_df),by=<span class="hljs-number">2</span>),]</span><br><span class="line">save(mi_df,file=<span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/Process/GDC_TCGA_LIHC_miRNA-Seq_df.Rdata"</span>)</span><br></pre></td></tr></table></figure>
+
 <p> 　　这样可以得到一个表达矩阵。</p>
 <h3 id="Json数据解析"><a href="#Json数据解析" class="headerlink" title="Json数据解析"></a>Json数据解析</h3><p> 　　类似地，修改处理代码如下：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(<span class="hljs-string">"rjson"</span>)</span><br><span class="line">result = fromJSON(file = <span class="hljs-string">"D:/Bioinformatics/TCGA/LIHC/TCGA-LIHC-miRNA-Seq.json"</span>)</span><br><span class="line">fls = unlist(lapply(result,<span class="hljs-keyword">function</span>(x)&#123;x$file_name&#125;))</span><br><span class="line">cid = unlist(lapply(result,<span class="hljs-keyword">function</span>(x)&#123;x$cases[[<span class="hljs-number">1</span>]]$case_id&#125;))</span><br><span class="line">id2fls = data.frame(cid=cid,fls=fls)</span><br><span class="line">save(id2fls,mi_df,fls,cl_df,file=<span class="hljs-string">'D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_miRNA-clinical.Rdata'</span>)</span><br><span class="line"><span class="hljs-comment"># 相关数据的清除与读取</span></span><br><span class="line">rm(list=ls())</span><br><span class="line">load(file=<span class="hljs-string">'D:/Bioinformatics/TCGA/LIHC/Rdata/GDC_TCGA_LIHC_miRNA-clinical.Rdata'</span>)</span><br></pre></td></tr></table></figure>
+
 <h2 id="使用TCGAbiolinks包"><a href="#使用TCGAbiolinks包" class="headerlink" title="使用TCGAbiolinks包"></a>使用TCGAbiolinks包</h2><p>　　感觉真的很方便，在BiocManager里面安装：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 安装</span></span><br><span class="line">BiocManager::install(<span class="hljs-string">"TCGAbiolinks"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 下载</span></span><br><span class="line"><span class="hljs-keyword">library</span>(TCGAbiolinks)</span><br><span class="line">query = GDCquery(project = <span class="hljs-string">'TCGA-LIHC'</span>, </span><br><span class="line">                  data.category = <span class="hljs-string">"Transcriptome Profiling"</span>, </span><br><span class="line">                  data.type = <span class="hljs-string">"Gene Expression Quantification"</span>, </span><br><span class="line">                  workflow.type = <span class="hljs-string">"HTSeq - Counts"</span>)</span><br><span class="line">GDCdownload(query, method = <span class="hljs-string">"api"</span>, files.per.chunk = <span class="hljs-number">100</span>)</span><br><span class="line">expdat = GDCprepare(query = query)</span><br><span class="line">count_matrix = assay(expdat)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>PS1：本来打算用RTCGA的，但是这个包N年不更新了，用着膈应~</p>
 <p>PS2：R语言设置代理：</p>
-<p>Sys.setenv(“http_proxy”=”<a href="http://127.0.0.1:10809" target="_blank" rel="noopener">http://127.0.0.1:10809</a>“)<br>Sys.setenv(“https_proxy”=”<a href="http://127.0.0.1:10809" target="_blank" rel="noopener">http://127.0.0.1:10809</a>“) </p>
+<p>Sys.setenv(“http_proxy”=”<a href="http://127.0.0.1:10809&quot;" target="_blank" rel="noopener">http://127.0.0.1:10809&quot;</a>)<br>Sys.setenv(“https_proxy”=”<a href="https://127.0.0.1:10809&quot;" target="_blank" rel="noopener">https://127.0.0.1:10809&quot;</a>) </p>
 </blockquote>
-<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
+<p>## </p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -356,45 +363,6 @@
         </div>
         
         
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/IamCatkin">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Steam" href="https://steamcommunity.com/id/Catkin7/">
-                
-                <i class="fab fa-steam"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=326432248&amp;site=qq&amp;menu=yes">
-                
-                <i class="fab fa-qq"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Douban" href="https://www.douban.com/people/catkin7/">
-                
-                <i class="fa fa-map"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="E-Mail" href="mailto:i@catkin.moe">
-                
-                <i class="fas fa-envelope"></i>
-                
-            </a>
-            
-        </div>
-        
     </div>
 </div>
     
@@ -449,10 +417,6 @@
         <a class="is-flex" href="#使用TCGAbiolinks包">
         <span class="has-mr-6">2.3</span>
         <span>使用TCGAbiolinks包</span>
-        </a></li><li>
-        <a class="is-flex" href="#">
-        <span class="has-mr-6">2.4</span>
-        <span> </span>
         </a></li></ul></li></ul>
         </div>
     </div>

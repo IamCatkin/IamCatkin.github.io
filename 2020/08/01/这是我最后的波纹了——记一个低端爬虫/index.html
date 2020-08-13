@@ -16,7 +16,7 @@
 <meta property="og:description" content="呜呜呜，没想到时隔一年俺居然还有写爬虫的时候，虽然是个简单的需求，但是还是记录一下吧，毕竟以后俺也未必有机会写代码了。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/cat.jpg">
-<meta property="og:updated_time" content="2020-07-28T06:10:37.849Z">
+<meta property="og:updated_time" content="2020-08-05T03:41:38.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="这是我最后的波纹了——记一个低端爬虫">
 <meta name="twitter:description" content="呜呜呜，没想到时隔一年俺居然还有写爬虫的时候，虽然是个简单的需求，但是还是记录一下吧，毕竟以后俺也未必有机会写代码了。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 853 个字)
+                    6 分钟 读完 (大约 924 个字)
                 </span>
                 
                 
@@ -185,16 +185,21 @@
         <div class="content">
             <p>　　呜呜呜，没想到时隔一年俺居然还有写爬虫的时候，虽然是个简单的需求，但是还是记录一下吧，毕竟以后俺也未必有机会写代码了。</p>
 <a id="more"></a>
+
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>　　由于老板个人主页建设的要求，需要将她发表文献的年限、影响因子、卷号期号页码和doi号等信息整理下来，考虑到这是劳动密集型工作，自然地就想到爬虫了。虽然俺久疏战阵，但是既然需要俺出力，还是义不容辞的。</p>
 <h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="识别中英文"><a href="#识别中英文" class="headerlink" title="识别中英文"></a>识别中英文</h3><p>　　由于到手的Excel是中英文标题混排的，首先就得识别出中英文与否，英文去Pubmed就行，中文就得去知网。这部分俺想不到什么精妙的Trick，去网上偷了个轮子：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkEn</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">for</span> _char <span class="hljs-keyword">in</span> strs:</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'\u4e00'</span> &lt;= _char &lt;= <span class="hljs-string">'\u9fd5'</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br></pre></td></tr></table></figure>
+
 <p>　　注：之前都是到<code>\u9fa5</code>，新标准又增加了几个字，所以是<code>\u9fd5</code>了。</p>
 <h3 id="Pubmed爬虫"><a href="#Pubmed爬虫" class="headerlink" title="Pubmed爬虫"></a>Pubmed爬虫</h3><p>　　祭出老伙计Requests &amp; BeautifulSoup，随手先整出一段代码，望忽略里面辣眼睛的正则和split函数，正所谓能用就行：</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromPubmed</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"https://pubmed.ncbi.nlm.nih.gov/?term="</span>+strs</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    soup = BeautifulSoup(response.text,<span class="hljs-string">'lxml'</span>)    </span><br><span class="line">    cite = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"cit"</span>).get_text().strip()</span><br><span class="line">    doi = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"citation-doi"</span>).get_text().strip()</span><br><span class="line">    journal = soup.find(<span class="hljs-string">"button"</span>, class_=<span class="hljs-string">"journal-actions-trigger trigger"</span>).get_text().strip()</span><br><span class="line">    year = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    vol = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">"("</span> <span class="hljs-keyword">in</span> vol:</span><br><span class="line">        pat = re.compile(<span class="hljs-string">'\((.*?)\)'</span>)</span><br><span class="line">        no = re.findall(pat,vol)[<span class="hljs-number">0</span>]</span><br><span class="line">        vol = vol.split(<span class="hljs-string">"("</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        no = <span class="hljs-keyword">None</span></span><br><span class="line">    page = cite.split(<span class="hljs-string">":"</span>)[<span class="hljs-number">-1</span>].strip(<span class="hljs-string">"."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> year,vol,no,page,doi,journal</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromPubmed</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"https://pubmed.ncbi.nlm.nih.gov/?term="</span>+strs</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    soup = BeautifulSoup(response.text,<span class="hljs-string">'lxml'</span>)    </span><br><span class="line">    cite = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"cit"</span>).get_text().strip()</span><br><span class="line">    authors = soup.find_all(<span class="hljs-string">"a"</span>, class_=<span class="hljs-string">"full-name"</span>)</span><br><span class="line">    authors = [item.get_text().strip() <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> authors]</span><br><span class="line">    func = <span class="hljs-keyword">lambda</span> authors,i: authors <span class="hljs-keyword">if</span> i <span class="hljs-keyword">in</span> authors <span class="hljs-keyword">else</span> authors + [i]</span><br><span class="line">    authors_set = reduce(func, [[], ] + authors)</span><br><span class="line">    author = <span class="hljs-string">','</span>.join(authors_set)</span><br><span class="line">    doi = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"citation-doi"</span>).get_text().strip()</span><br><span class="line">    journal = soup.find(<span class="hljs-string">"button"</span>, class_=<span class="hljs-string">"journal-actions-trigger trigger"</span>).get_text().strip()</span><br><span class="line">    year = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    vol = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">"("</span> <span class="hljs-keyword">in</span> vol:</span><br><span class="line">        pat = re.compile(<span class="hljs-string">'\((.*?)\)'</span>)</span><br><span class="line">        no = re.findall(pat,vol)[<span class="hljs-number">0</span>]</span><br><span class="line">        vol = vol.split(<span class="hljs-string">"("</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        no = <span class="hljs-keyword">None</span></span><br><span class="line">    page = cite.split(<span class="hljs-string">":"</span>)[<span class="hljs-number">-1</span>].strip(<span class="hljs-string">"."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> author,year,vol,no,page,doi,journal</span><br></pre></td></tr></table></figure>
+
 <p>　　由于Pubmed不能显示影响因子，只能先提取期刊名去别处弄。</p>
 <h3 id="获取影响因子"><a href="#获取影响因子" class="headerlink" title="获取影响因子"></a>获取影响因子</h3><p>　　实在不知道scholarscope的API，只能另辟蹊径，从<a href="http://sci.justscience.cn/" target="_blank" rel="noopener">Justscience</a>里面爬了。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromJustscience</span><span class="hljs-params">(journal)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"http://sci.justscience.cn/?q="</span>+journal</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    form = pd.read_html(response.text)[<span class="hljs-number">1</span>]</span><br><span class="line">    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> form.index:</span><br><span class="line">        target = form.loc[index,<span class="hljs-string">'期刊缩写'</span>]</span><br><span class="line">        <span class="hljs-keyword">if</span> target == journal:</span><br><span class="line">            impact = form.loc[index,<span class="hljs-string">'影响因子'</span>]</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            impact = <span class="hljs-keyword">None</span></span><br><span class="line">    <span class="hljs-keyword">return</span> impact</span><br></pre></td></tr></table></figure>
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># @Time    : Mon Jul 27 22:44:09 2020</span></span><br><span class="line"><span class="hljs-comment"># @Author  : Catkin</span></span><br><span class="line"><span class="hljs-comment"># @Website : blog.catkin.moe</span></span><br><span class="line"><span class="hljs-keyword">import</span> requests,re</span><br><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkEn</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">for</span> _char <span class="hljs-keyword">in</span> strs:</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'\u4e00'</span> &lt;= _char &lt;= <span class="hljs-string">'\u9fd5'</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromPubmed</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"https://pubmed.ncbi.nlm.nih.gov/?term="</span>+strs</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    soup = BeautifulSoup(response.text,<span class="hljs-string">'lxml'</span>)    </span><br><span class="line">    cite = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"cit"</span>).get_text().strip()</span><br><span class="line">    doi = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"citation-doi"</span>).get_text().strip()</span><br><span class="line">    journal = soup.find(<span class="hljs-string">"button"</span>, class_=<span class="hljs-string">"journal-actions-trigger trigger"</span>).get_text().strip()</span><br><span class="line">    year = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    vol = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">"("</span> <span class="hljs-keyword">in</span> vol:</span><br><span class="line">        pat = re.compile(<span class="hljs-string">'\((.*?)\)'</span>)</span><br><span class="line">        no = re.findall(pat,vol)[<span class="hljs-number">0</span>]</span><br><span class="line">        vol = vol.split(<span class="hljs-string">"("</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        no = <span class="hljs-keyword">None</span></span><br><span class="line">    page = cite.split(<span class="hljs-string">":"</span>)[<span class="hljs-number">-1</span>].strip(<span class="hljs-string">"."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> year,vol,no,page,doi,journal</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromJustscience</span><span class="hljs-params">(journal)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"http://sci.justscience.cn/?q="</span>+journal</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    form = pd.read_html(response.text)[<span class="hljs-number">1</span>]</span><br><span class="line">    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> form.index:</span><br><span class="line">        target = form.loc[index,<span class="hljs-string">'期刊缩写'</span>]</span><br><span class="line">        <span class="hljs-keyword">if</span> target == journal:</span><br><span class="line">            impact = form.loc[index,<span class="hljs-string">'影响因子'</span>]</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            impact = <span class="hljs-keyword">None</span></span><br><span class="line">    <span class="hljs-keyword">return</span> impact</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">    data = pd.read_excel(<span class="hljs-string">"论文成果.xls"</span>,index_col=<span class="hljs-number">0</span>,header=<span class="hljs-number">1</span>)</span><br><span class="line">    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> data.index:</span><br><span class="line">        title = data.loc[index,<span class="hljs-string">"论文名称"</span>]</span><br><span class="line">        status = checkEn(title)</span><br><span class="line">        <span class="hljs-keyword">try</span>:</span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> status:</span><br><span class="line">                year,vol,no,page,doi,journal = getInfoFromPubmed(title)</span><br><span class="line">                impact = getInfoFromJustscience(journal)</span><br><span class="line">                data.loc[index,<span class="hljs-string">'发表时间'</span>] = year</span><br><span class="line">                data.loc[index,<span class="hljs-string">'卷号'</span>] = vol</span><br><span class="line">                data.loc[index,<span class="hljs-string">'期号'</span>] = no</span><br><span class="line">                data.loc[index,<span class="hljs-string">'页面范围'</span>] = page</span><br><span class="line">                data.loc[index,<span class="hljs-string">'DOI码'</span>] = doi</span><br><span class="line">                data.loc[index,<span class="hljs-string">'影响因子'</span>] = impact</span><br><span class="line">        <span class="hljs-keyword">except</span>:</span><br><span class="line">            <span class="hljs-keyword">pass</span>   </span><br><span class="line">    data.to_excel(<span class="hljs-string">"result.xlsx"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># @Time    : Mon Jul 27 22:44:09 2020</span></span><br><span class="line"><span class="hljs-comment"># @Author  : Catkin</span></span><br><span class="line"><span class="hljs-comment"># @Website : blog.catkin.moe</span></span><br><span class="line"><span class="hljs-keyword">import</span> requests,re</span><br><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> reduce</span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkEn</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">for</span> _char <span class="hljs-keyword">in</span> strs:</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'\u4e00'</span> &lt;= _char &lt;= <span class="hljs-string">'\u9fd5'</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromPubmed</span><span class="hljs-params">(strs)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"https://pubmed.ncbi.nlm.nih.gov/?term="</span>+strs</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    soup = BeautifulSoup(response.text,<span class="hljs-string">'lxml'</span>)    </span><br><span class="line">    cite = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"cit"</span>).get_text().strip()</span><br><span class="line">    authors = soup.find_all(<span class="hljs-string">"a"</span>, class_=<span class="hljs-string">"full-name"</span>)</span><br><span class="line">    author = <span class="hljs-string">','</span>.join([item.get_text().strip() <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> authors])</span><br><span class="line">    doi = soup.find(<span class="hljs-string">"span"</span>, class_=<span class="hljs-string">"citation-doi"</span>).get_text().strip()</span><br><span class="line">    journal = soup.find(<span class="hljs-string">"button"</span>, class_=<span class="hljs-string">"journal-actions-trigger trigger"</span>).get_text().strip()</span><br><span class="line">    year = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    vol = cite.split(<span class="hljs-string">";"</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">"("</span> <span class="hljs-keyword">in</span> vol:</span><br><span class="line">        pat = re.compile(<span class="hljs-string">'\((.*?)\)'</span>)</span><br><span class="line">        no = re.findall(pat,vol)[<span class="hljs-number">0</span>]</span><br><span class="line">        vol = vol.split(<span class="hljs-string">"("</span>)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        no = <span class="hljs-keyword">None</span></span><br><span class="line">    page = cite.split(<span class="hljs-string">":"</span>)[<span class="hljs-number">-1</span>].strip(<span class="hljs-string">"."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> author,year,vol,no,page,doi,journal</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getInfoFromJustscience</span><span class="hljs-params">(journal)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"http://sci.justscience.cn/?q="</span>+journal</span><br><span class="line">    session = requests.Session()</span><br><span class="line">    response = session.get(url)</span><br><span class="line">    form = pd.read_html(response.text)[<span class="hljs-number">1</span>]</span><br><span class="line">    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> form.index:</span><br><span class="line">        target = form.loc[index,<span class="hljs-string">'期刊缩写'</span>]</span><br><span class="line">        <span class="hljs-keyword">if</span> target == journal:</span><br><span class="line">            impact = form.loc[index,<span class="hljs-string">'影响因子'</span>]</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            impact = <span class="hljs-keyword">None</span></span><br><span class="line">    <span class="hljs-keyword">return</span> impact</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">    data = pd.read_excel(<span class="hljs-string">"论文成果.xls"</span>,index_col=<span class="hljs-number">0</span>,header=<span class="hljs-number">1</span>)</span><br><span class="line">    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> data.index:</span><br><span class="line">        title = data.loc[index,<span class="hljs-string">"论文名称"</span>]</span><br><span class="line">        status = checkEn(title)</span><br><span class="line">        <span class="hljs-keyword">try</span>:</span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> status:</span><br><span class="line">                author,year,vol,no,page,doi,journal = getInfoFromPubmed(title)</span><br><span class="line">                impact = getInfoFromjustscience(journal)</span><br><span class="line">                data.loc[index,<span class="hljs-string">'作者名称'</span>] = author</span><br><span class="line">                data.loc[index,<span class="hljs-string">'发表时间'</span>] = year</span><br><span class="line">                data.loc[index,<span class="hljs-string">'卷号'</span>] = vol</span><br><span class="line">                data.loc[index,<span class="hljs-string">'期号'</span>] = no</span><br><span class="line">                data.loc[index,<span class="hljs-string">'页面范围'</span>] = page</span><br><span class="line">                data.loc[index,<span class="hljs-string">'DOI码'</span>] = doi</span><br><span class="line">                data.loc[index,<span class="hljs-string">'影响因子'</span>] = impact</span><br><span class="line">        <span class="hljs-keyword">except</span>:</span><br><span class="line">            <span class="hljs-keyword">pass</span>   </span><br><span class="line">    data.to_excel(<span class="hljs-string">"result.xlsx"</span>)</span><br></pre></td></tr></table></figure>
+
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>　　代码简直不忍直视，深感俺真的是太菜了，匿了匿了。</p>
 
         </div>
@@ -219,6 +224,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/08/13/记录几个和npm相关的弱智问题/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">记录几个和npm相关的弱智问题</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -297,7 +309,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        36
                     </p>
                 </div>
             </div>
@@ -317,7 +329,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        83
+                        87
                     </p>
                 </div>
             </div>
@@ -463,7 +475,7 @@
                 <span class="level-item">心得体会</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/昔情难追/">
@@ -517,7 +529,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ACT/" style="font-size: 12px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 16px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 16px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 18px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 14px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 14px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 14px;">Manual</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 16px;">Monthly</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 14px;">Poetry</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 12px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Softstar/" style="font-size: 10px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Unboxing/" style="font-size: 14px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 16px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 12px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 10px;">XuanYuan Sword</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a>
+        <a href="/tags/ACT/" style="font-size: 12px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 12px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 16px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/English/" style="font-size: 16px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 18px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 14px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 14px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 14px;">Manual</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 16px;">Monthly</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 14px;">Poetry</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 12px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Softstar/" style="font-size: 10px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Unboxing/" style="font-size: 14px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 12px;">Visual novel</a> <a href="/tags/Word/" style="font-size: 16px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 12px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 10px;">XuanYuan Sword</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
     </div>
 </div>
 
@@ -531,6 +543,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/08/13/记录几个和npm相关的弱智问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/npm.jpg" alt="记录几个和npm相关的弱智问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-13T02:11:45.000Z">2020-08-13</time></div>
+                    <a href="/2020/08/13/记录几个和npm相关的弱智问题/" class="has-link-black-ter is-size-6">记录几个和npm相关的弱智问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -608,25 +639,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/07/11/紫塞秋风个人评价/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/zs.jpg" alt="紫塞秋风个人评价">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-11T08:52:33.000Z">2020-07-11</time></div>
-                    <a href="/2020/07/11/紫塞秋风个人评价/" class="has-link-black-ter is-size-6">紫塞秋风个人评价</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -645,7 +657,7 @@
                     <span class="level-item">八月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1204,6 +1216,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/OpenBabel/">
                         <span class="tag">OpenBabel</span>
                         <span class="tag is-grey">1</span>
@@ -1414,8 +1433,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/cnpm/">
+                        <span class="tag">cnpm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/fsevents/">
+                        <span class="tag">fsevents</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/miRanda/">
                         <span class="tag">miRanda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1445,6 +1485,25 @@
         
         <article class="media">
             
+            <a href="/2020/08/13/记录几个和npm相关的弱智问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/npm.jpg" alt="记录几个和npm相关的弱智问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-13T02:11:45.000Z">2020-08-13</time></div>
+                    <a href="/2020/08/13/记录几个和npm相关的弱智问题/" class="has-link-black-ter is-size-6">记录几个和npm相关的弱智问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/08/01/这是我最后的波纹了——记一个低端爬虫/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/cat.jpg" alt="这是我最后的波纹了——记一个低端爬虫">
@@ -1519,25 +1578,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/07/11/紫塞秋风个人评价/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/zs.jpg" alt="紫塞秋风个人评价">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-11T08:52:33.000Z">2020-07-11</time></div>
-                    <a href="/2020/07/11/紫塞秋风个人评价/" class="has-link-black-ter is-size-6">紫塞秋风个人评价</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/缓寻芳草/">缓寻芳草</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1556,7 +1596,7 @@
                     <span class="level-item">八月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -2115,6 +2155,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/OpenBabel/">
                         <span class="tag">OpenBabel</span>
                         <span class="tag is-grey">1</span>
@@ -2325,8 +2372,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/cnpm/">
+                        <span class="tag">cnpm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/fsevents/">
+                        <span class="tag">fsevents</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/miRanda/">
                         <span class="tag">miRanda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

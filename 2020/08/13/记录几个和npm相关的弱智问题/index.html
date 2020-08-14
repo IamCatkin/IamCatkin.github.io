@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录一下以防忘记，有一说一，还是MacOS对程序猿友好啊。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/npm.jpg">
-<meta property="og:updated_time" content="2020-08-13T06:36:13.072Z">
+<meta property="og:updated_time" content="2020-08-13T13:42:30.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录几个和npm相关的弱智问题">
 <meta name="twitter:description" content="记录一下以防忘记，有一说一，还是MacOS对程序猿友好啊。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 436 个字)
+                    3 分钟 读完 (大约 442 个字)
                 </span>
                 
                 
@@ -185,25 +185,35 @@
         <div class="content">
             <p>　　记录一下以防忘记，有一说一，还是MacOS对程序猿友好啊。</p>
 <a id="more"></a>
+
 <h2 id="fsevents报错"><a href="#fsevents报错" class="headerlink" title="fsevents报错"></a>fsevents报错</h2><p>　　这个问题主要存在于npm安装插件时，大致原因在于fsevents是用在MacOS的，windows下安装会报npm err或者warn，俺的解决方法有如下2种：</p>
 <ul>
 <li><p>进入node_modules文件夹，找到fsevents相关文件夹删除，再执行安装。</p>
 </li>
 <li><p>如果有的话，把package.json里dependencies中的fsevents依赖删了。添加下面配置：</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"optionalDependencies"</span>: &#123;</span><br><span class="line">    <span class="hljs-string">"fsevents"</span>: <span class="hljs-string">"xxx"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="npm访问困难"><a href="#npm访问困难" class="headerlink" title="npm访问困难"></a>npm访问困难</h2><p>　　npm在国内访问是真的困难，想布置个环境不重试个n次是不可能的。其中有个解决思路是挂代理，在俺之前的文章大概说过terminal如何设置代理的思路，这里就不复赘述。</p>
 <h3 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h3><p>　　首先要提的就是npm访问困难的救星、阿里少数几个积德的项目——cnpm。简而言之，cnpm是一个国内的npmjs.org镜像，用于代替官方版本。具体操作思路如下：</p>
 <ul>
-<li>安装cnpm，输入以下命令：<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-<li>输入<code>cnpm -v</code>，验证是否安装成功。</li>
-<li>使用时输入<code>cnpm install xxx</code> 便能安装相关包了。</li>
+<li><p>安装cnpm，输入以下命令：</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https:<span class="hljs-comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入<code>cnpm -v</code>，验证是否安装成功。</p>
+</li>
+<li><p>使用时输入<code>cnpm install xxx</code> 便能安装相关包了。</p>
+</li>
 </ul>
 <h3 id="改变仓库地址"><a href="#改变仓库地址" class="headerlink" title="改变仓库地址"></a>改变仓库地址</h3><p>　　不过你要说不想安装cnpm，也可以改仓库地址，操作思路如下：</p>
 <ul>
-<li>首先使用<code>npm config get registry</code>查看npm的仓库地址，不出意外应该是<code>https://registry.npmjs.org/</code>。</li>
-<li>使用<code>npm config set registry https://registry.npm.taobao.org</code>来改变默认仓库地址，重复上一步验证是否成功。</li>
+<li><p>首先使用<code>npm config get registry</code>查看npm的仓库地址，不出意外应该是<code>https://registry.npmjs.org/</code>。</p>
+</li>
+<li><p>使用如下代码来改变默认仓库地址，重复上一步验证是否成功：</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:<span class="hljs-comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 
         </div>

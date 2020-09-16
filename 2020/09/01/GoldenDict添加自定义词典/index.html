@@ -1,0 +1,2853 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8">
+<title>GoldenDict添加自定义词典 - 寒光亭下水如天</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="本鱼已经忘了3年前的做的一些改动的技术细节了，不过本着能用先扔上来吧，反正俺也不可能重新读一遍代码了。">
+<meta name="keywords" content="GoldenDict,Youdao,Google Translate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GoldenDict添加自定义词典">
+<meta property="og:url" content="https://blog.catkin.moe/2020/09/01/GoldenDict添加自定义词典/index.html">
+<meta property="og:site_name" content="寒光亭下水如天">
+<meta property="og:description" content="本鱼已经忘了3年前的做的一些改动的技术细节了，不过本着能用先扔上来吧，反正俺也不可能重新读一遍代码了。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/goldendict.jpg">
+<meta property="og:updated_time" content="2020-08-30T14:10:53.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GoldenDict添加自定义词典">
+<meta name="twitter:description" content="本鱼已经忘了3年前的做的一些改动的技术细节了，不过本着能用先扔上来吧，反正俺也不可能重新读一遍代码了。">
+<meta name="twitter:image" content="https://blog.catkin.moe/gallery/thumbnails/goldendict.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Catkin.png" alt="GoldenDict添加自定义词典" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/goldendict.jpg" alt="GoldenDict添加自定义词典">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-09-01T05:41:27.000Z">2020-09-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/不务正业/">不务正业</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 分钟 读完 (大约 1511 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                GoldenDict添加自定义词典
+            
+        </h1>
+        <div class="content">
+            <p>　　本鱼已经忘了3年前的做的一些改动的技术细节了，不过本着能用先扔上来吧，反正俺也不可能重新读一遍代码了。</p>
+<a id="more"></a>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>　　某天突然收到有道智云的短信，说余额不足。于是俺登陆了一下，发现确实不足了，充值是不可能充值的，只能换成谷歌翻译白嫖咯。当然为了纪念一下当初改的轮子，还是把代码贴上来咯。<del>（路过的好心人注册一个API分享一下吧）</del></p>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/GoldenDict%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%8D%E5%85%B8/1.jpg" alt=""></p>
+<h1 id="词典"><a href="#词典" class="headerlink" title="词典"></a>词典</h1><p>　　首先强烈推荐网友们制作的一些优秀词典，这也是用这个而不是直接用商业软件的初衷，不仅绿色无广告，而且扩展性强。词典可以在<a href="https://www.pdawiki.com/forum/" target="_blank" rel="noopener">掌上百科</a>里面找，嫌这里面要注册麻烦的可以下俺以前收集的：<a href="https://pan.baidu.com/s/1vF_Wbs4Z7_PWmV1bLKdxhw" target="_blank" rel="noopener">度盘链接</a>，提取码: 7wck。</p>
+<h1 id="有道"><a href="#有道" class="headerlink" title="有道"></a>有道</h1><p>　　因为GoldenDict是词典，但是在平时使用中往往有翻译一句话的需求，因此想把有道翻译或者谷歌翻译加进去。虽然软件本身支持添加URL，但是显示效果什么的挺差，而且有道还有广告，简直不能忍。</p>
+<p>　　经过俺一番寻找，找到个12年的<a href="https://www.cnblogs.com/skyhacker/archive/2012/02/10/2346111.html" target="_blank" rel="noopener">轮子</a>，但是由于时隔太久，有道API已经改过了，现在需要注册有道智云，这里就不复赘言了，请看官自行注册，然后申请API。</p>
+<p>　　代码附上，注意需要填写应用ID和密钥：</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> sys</span><br><span class="line"><span class="hljs-keyword">import</span> json</span><br><span class="line"><span class="hljs-keyword">import</span> http.client</span><br><span class="line"><span class="hljs-keyword">import</span> hashlib </span><br><span class="line"><span class="hljs-keyword">import</span> urllib.request</span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#api信息</span></span><br><span class="line">appKey = <span class="hljs-string">'你的应用ID'</span></span><br><span class="line">secretKey = <span class="hljs-string">'你的密钥'</span></span><br><span class="line"></span><br><span class="line">html = <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">&lt;html&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;head&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;meta charset="UTF-8"&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;script type="text/javascript"&gt;function playSound()&#123;var ky = document.getElementById("key");var word = ky.childNodes[0].nodeValue;var api = "http://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(word);var ado = document.getElementById("media");try&#123;ado.ended = true;ado.setAttribute("src",api);ado.load();ado.play();return false;&#125;catch(err)&#123;alert(err.description);return false;&#125;&#125;&lt;/script&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/head&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;body&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;style type="text/css"&gt;</span></span><br><span class="line"><span class="hljs-string">      div.block &#123;</span></span><br><span class="line"><span class="hljs-string">      border:1px solid #BEBEBE;</span></span><br><span class="line"><span class="hljs-string">      background:#F0F0F0;</span></span><br><span class="line"><span class="hljs-string">      margin-left:20px;</span></span><br><span class="line"><span class="hljs-string">      border-radius: 5px;</span></span><br><span class="line"><span class="hljs-string">      &#125;</span></span><br><span class="line"><span class="hljs-string">      div.name &#123;</span></span><br><span class="line"><span class="hljs-string">      margin-top:10px;</span></span><br><span class="line"><span class="hljs-string">      margin-bottom:5px;</span></span><br><span class="line"><span class="hljs-string">      margin-left:20px;</span></span><br><span class="line"><span class="hljs-string">      font-size:13px;</span></span><br><span class="line"><span class="hljs-string">      font-weight:bold;</span></span><br><span class="line"><span class="hljs-string">      &#125;</span></span><br><span class="line"><span class="hljs-string">      div.item &#123;</span></span><br><span class="line"><span class="hljs-string">      padding:5px;</span></span><br><span class="line"><span class="hljs-string">      font-size:12px;</span></span><br><span class="line"><span class="hljs-string">      margin: 0px 10px 0px 10px;</span></span><br><span class="line"><span class="hljs-string">      &#125;</span></span><br><span class="line"><span class="hljs-string">      #web &#123;</span></span><br><span class="line"><span class="hljs-string">      border-style: none none solid none;</span></span><br><span class="line"><span class="hljs-string">      border-color: #BEBEBE;</span></span><br><span class="line"><span class="hljs-string">      border-bottom-width: 1px;</span></span><br><span class="line"><span class="hljs-string">      &#125;</span></span><br><span class="line"><span class="hljs-string">    &lt;/style&gt;</span></span><br><span class="line"><span class="hljs-string">    &lt;div class="content"&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="name"&gt;&lt;i&gt;查询:&lt;/i&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">       %s</span></span><br><span class="line"><span class="hljs-string">      &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="name"&gt;&lt;i&gt;有道翻译:&lt;/i&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">       %s</span></span><br><span class="line"><span class="hljs-string">      &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="name"&gt;&lt;i&gt;有道词典-基本词典:&lt;/i&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">       %s</span></span><br><span class="line"><span class="hljs-string">      &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="name"&gt;&lt;i&gt;有道词典-网络释义:&lt;/i&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">       %s</span></span><br><span class="line"><span class="hljs-string">      &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="name"&gt;&lt;i&gt;更多结果:&lt;/i&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">      &lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">       %s</span></span><br><span class="line"><span class="hljs-string">      &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">    &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/body&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/html&gt;</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"></span><br><span class="line">errorHtml = <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">&lt;html&gt;&lt;body&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;div class="block"&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;div class="item"&gt;%s&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">&lt;/body&gt;&lt;/html&gt;</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"></span><br><span class="line">errorResult = &#123;<span class="hljs-string">'0'</span>:<span class="hljs-string">''</span>, <span class="hljs-string">'20'</span>:<span class="hljs-string">'要翻译的文本过长'</span>, <span class="hljs-string">'30'</span>:<span class="hljs-string">'无法进行有效的翻译'</span>,</span><br><span class="line">              <span class="hljs-string">'40'</span>:<span class="hljs-string">'不支持的语言类型'</span>, <span class="hljs-string">'50'</span>:<span class="hljs-string">'无效的key'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printHtml</span><span class="hljs-params">(errorCode, query, translation, basic, web)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""打印html"""</span></span><br><span class="line">    <span class="hljs-keyword">if</span> errorCode != <span class="hljs-string">"0"</span>:</span><br><span class="line">        print(errorHtml % errorResult[errorCode])</span><br><span class="line">        <span class="hljs-keyword">return</span></span><br><span class="line">    item = <span class="hljs-string">'&lt;div class="item"&gt;%s&lt;/div&gt;'</span></span><br><span class="line">    <span class="hljs-comment">#有道翻译</span></span><br><span class="line">    q = item % (<span class="hljs-string">'&lt;b&gt;"%s"&lt;/b&gt;'</span> % query)</span><br><span class="line">    trans = <span class="hljs-string">''</span></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> translation:</span><br><span class="line">        trans += item % (<span class="hljs-string">'&lt;b&gt;"%s"&lt;/b&gt;'</span> % i)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">#有道词典</span></span><br><span class="line">    key = <span class="hljs-string">''</span></span><br><span class="line">    <span class="hljs-keyword">if</span> basic:</span><br><span class="line">        key += <span class="hljs-string">'&lt;span id="key" style="font-weight:bold"&gt;%s&lt;/span&gt;'</span> % (query + <span class="hljs-string">' '</span>)</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'phonetic'</span> <span class="hljs-keyword">in</span> basic.keys():</span><br><span class="line">            key += <span class="hljs-string">'[%s]'</span> % basic[<span class="hljs-string">'phonetic'</span>]</span><br><span class="line">            key += <span class="hljs-string">'&lt;button id="sound" onclick="playSound()"&gt;sound&lt;/button&gt;&lt;audio id="media"&gt;&lt;/audio&gt;'</span></span><br><span class="line">        key = item % key</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-string">'explains'</span> <span class="hljs-keyword">in</span> basic.keys():</span><br><span class="line">            <span class="hljs-comment">#判断查询的词是不是中文</span></span><br><span class="line">            isChinese = <span class="hljs-keyword">False</span></span><br><span class="line">            <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> query:</span><br><span class="line">                <span class="hljs-keyword">if</span> ord(c) &gt;= <span class="hljs-number">0x4e00</span> <span class="hljs-keyword">and</span> ord(c) &lt;= <span class="hljs-number">0x9fa5</span>:</span><br><span class="line">                    isChinese = <span class="hljs-keyword">True</span></span><br><span class="line">                    <span class="hljs-keyword">break</span></span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isChinese:</span><br><span class="line">                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> basic[<span class="hljs-string">'explains'</span>]:</span><br><span class="line">                    key += item % i</span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> basic[<span class="hljs-string">'explains'</span>]:</span><br><span class="line">                    key += item % (<span class="hljs-string">'&lt;a href="%s"&gt;%s&lt;/a&gt;'</span> % (i, i))</span><br><span class="line">        key += item % (<span class="hljs-string">'&lt;a href="http://dict.youdao.com/w/%s"&gt;%s&lt;/a&gt;'</span> % (query, <span class="hljs-string">'更多解释'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">#web词典</span></span><br><span class="line">    webdict = <span class="hljs-string">''</span></span><br><span class="line">    webitem = <span class="hljs-string">'&lt;div %s class="item"&gt;%s&lt;br/&gt;%s&lt;/div&gt;'</span></span><br><span class="line">    <span class="hljs-keyword">if</span> web:</span><br><span class="line">        <span class="hljs-keyword">if</span> len(web) &gt; <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(web)<span class="hljs-number">-1</span>):</span><br><span class="line">                webdict += webitem % (<span class="hljs-string">'id="web"'</span>, web[i][<span class="hljs-string">'key'</span>], <span class="hljs-string">', '</span>.join(web[i][<span class="hljs-string">'value'</span>]))</span><br><span class="line">        webdict += webitem % (<span class="hljs-string">''</span>, web[<span class="hljs-number">-1</span>][<span class="hljs-string">'key'</span>], <span class="hljs-string">', '</span>.join(web[<span class="hljs-number">-1</span>][<span class="hljs-string">'value'</span>]))</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> key:</span><br><span class="line">        key = item % <span class="hljs-string">'对不起,没有结果'</span></span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> webdict:</span><br><span class="line">        webdict = item % <span class="hljs-string">'对不起,没有结果'</span></span><br><span class="line">    <span class="hljs-comment">#更多搜索</span></span><br><span class="line">    moreSearch = <span class="hljs-string">'&lt;div class="item"&gt;&lt;a href="https://cn.bing.com/dict/search?q='</span> + \</span><br><span class="line">      query + <span class="hljs-string">'"&gt;通过Bing词典搜索&lt;/a&gt;&lt;/div&gt;'</span></span><br><span class="line">    moreSearch += <span class="hljs-string">'&lt;div class="item"&gt;&lt;a href="http://www.iciba.com/'</span> + \</span><br><span class="line">      query + <span class="hljs-string">'"&gt;通过iciba词典搜索&lt;/a&gt;&lt;/div&gt;'</span></span><br><span class="line">    moreSearch += <span class="hljs-string">'&lt;div class="item"&gt;&lt;a href="http://www.baidu.com/s?wd='</span> + \</span><br><span class="line">      query + <span class="hljs-string">'"&gt;通过百度搜索&lt;/a&gt;&lt;/div&gt;'</span></span><br><span class="line">    result = html % (q, trans, key, webdict, moreSearch)</span><br><span class="line">    utf8stdout = open(<span class="hljs-number">1</span>, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>, closefd=<span class="hljs-keyword">False</span>) <span class="hljs-comment"># fd 1 is stdout</span></span><br><span class="line">    print(result, file=utf8stdout)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getData</span><span class="hljs-params">(string)</span>:</span></span><br><span class="line">    data = json.loads(string)</span><br><span class="line">    errorCode = data[<span class="hljs-string">'errorCode'</span>]</span><br><span class="line">    query = data[<span class="hljs-string">'query'</span>]</span><br><span class="line">    translation = data[<span class="hljs-string">'translation'</span>]</span><br><span class="line">    basic = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">'basic'</span> <span class="hljs-keyword">in</span> data.keys():</span><br><span class="line">        basic = data[<span class="hljs-string">'basic'</span>]</span><br><span class="line">    web = []</span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-string">'web'</span> <span class="hljs-keyword">in</span> data.keys():</span><br><span class="line">        web = data[<span class="hljs-string">'web'</span>]</span><br><span class="line">    </span><br><span class="line">    printHtml(errorCode, query, translation, basic, web)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">searchWord</span><span class="hljs-params">(word)</span>:</span></span><br><span class="line">    <span class="hljs-comment">#加盐</span></span><br><span class="line">    httpClient = <span class="hljs-keyword">None</span></span><br><span class="line">    myurl = <span class="hljs-string">'/api'</span></span><br><span class="line">    q = word</span><br><span class="line">    fromLang = <span class="hljs-string">'EN'</span></span><br><span class="line">    toLang = <span class="hljs-string">'zh-CHS'</span></span><br><span class="line">    salt = random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">65536</span>)</span><br><span class="line">    sign = appKey+q+str(salt)+secretKey</span><br><span class="line">    m1 = hashlib.md5()</span><br><span class="line">    m1.update(sign.encode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">    sign = m1.hexdigest()</span><br><span class="line">    myurl = myurl+<span class="hljs-string">'?appKey='</span>+appKey+<span class="hljs-string">'&amp;q='</span>+urllib.request.quote(q)+<span class="hljs-string">'&amp;from='</span>+fromLang+<span class="hljs-string">'&amp;to='</span>+toLang+<span class="hljs-string">'&amp;salt='</span>+str(salt)+<span class="hljs-string">'&amp;sign='</span>+sign</span><br><span class="line">    <span class="hljs-keyword">try</span>:</span><br><span class="line">        httpClient = http.client.HTTPConnection(<span class="hljs-string">'openapi.youdao.com'</span>)</span><br><span class="line">        httpClient.request(<span class="hljs-string">'GET'</span>, myurl)</span><br><span class="line">     </span><br><span class="line">        <span class="hljs-comment">#response是HTTPResponse对象</span></span><br><span class="line">        response = httpClient.getresponse()</span><br><span class="line">        k = response.read()</span><br><span class="line">        getData(k)</span><br><span class="line">    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="hljs-keyword">finally</span>:</span><br><span class="line">        <span class="hljs-keyword">if</span> httpClient:</span><br><span class="line">            httpClient.close()</span><br><span class="line">            </span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">    searchWord(sys.argv[<span class="hljs-number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>　　将代码保存为<code>Youdao.py</code>。在编辑-&gt;词典-&gt;程序里添加一个程序，名字填 Youdao，类型选Html，命令填<code>python Youdao.py %GDWORD%</code></p>
+<p>　　密钥貌似要经过加盐处理，但是代码是俺18年写的，实在不记得当初怎么解决的了，反正就是这样做没错。如果借用了哪的轮子，只能表示抱歉，俺确实不记得了！</p>
+<p>　　因为编码问题，原作者代码在Windows下执行有问题，俺貌似稍加改动了一下，具体原理不记得了，反正现在可以跑通！</p>
+<p>　　最后剩的问题是不能发音，可是俺在Ubuntu下是可以正常发音的，不知道是GoldenDict在Windows下本身的bug还是啥毛病，如果有JavaScript懂哥看到可以指点一下啊。</p>
+<p>　　另外，俺在Github也看到另外一个<a href="https://github.com/cathaysia/YouDao4GoldenDict" target="_blank" rel="noopener">轮子</a>，效果应该差不多，感兴趣的也可以试试。</p>
+<h1 id="谷歌"><a href="#谷歌" class="headerlink" title="谷歌"></a>谷歌</h1><p>　　基本原理相同，来源于：<a href="https://github.com/xinebf/google-translate-for-goldendict" target="_blank" rel="noopener">google-translate-for-goldendict</a>。直接<code>pip install google-translate-for-goldendict</code>安装，然后在编辑-&gt;词典-&gt;程序里添加一个程序，名字填Google Translate，类型选Html，命令填<code>python -m googletranslate.googletranslate zh-CN %GDWORD% -s &quot;translate.google.cn&quot;</code></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>　　附送图标2个，献给和俺一样的强迫症选手：<a href="https://pan.baidu.com/s/1qZwckocKr6cjrbotw2BV7Q" target="_blank" rel="noopener">度盘链接</a>，提取码: 95ef。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/skyhacker/archive/2012/02/10/2346111.html" target="_blank" rel="noopener">用python实现有道翻译，配合Goldendict显示</a></p>
+<p><a href="https://github.com/cathaysia/YouDao4GoldenDict" target="_blank" rel="noopener">YouDao4GoldenDict</a></p>
+<p><a href="https://www.freesion.com/article/5087546094/" target="_blank" rel="noopener">WINDOWS下在GOLDENDICT中添加谷歌翻译</a></p>
+<p><a href="https://github.com/xinebf/google-translate-for-goldendict" target="_blank" rel="noopener">google-translate-for-goldendict</a> </p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/GoldenDict/">GoldenDict</a>, <a class="has-link-grey -link" href="/tags/Google-Translate/">Google Translate</a>, <a class="has-link-grey -link" href="/tags/Youdao/">Youdao</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/09/14/Soft Lithography/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Soft Lithography</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/09/01/九月英语单词/">
+                <span class="level-item">九月英语单词</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '8323a58c0a8710fd55c3',
+        clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
+        id: '2b6f6bd3ba8158910566c8d789db1820',
+        repo: 'myblogcomments',
+        owner: 'IamCatkin',
+        admin: "IamCatkin"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.jpg" alt="Catkin">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Catkin
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        世路如今已惯，此心到处悠然。
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>长沙</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        41
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        104
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://weibo.com/catkin218" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#起因">
+        <span class="has-mr-6">1</span>
+        <span>起因</span>
+        </a></li><li>
+        <a class="is-flex" href="#词典">
+        <span class="has-mr-6">2</span>
+        <span>词典</span>
+        </a></li><li>
+        <a class="is-flex" href="#有道">
+        <span class="has-mr-6">3</span>
+        <span>有道</span>
+        </a></li><li>
+        <a class="is-flex" href="#谷歌">
+        <span class="has-mr-6">4</span>
+        <span>谷歌</span>
+        </a></li><li>
+        <a class="is-flex" href="#其他">
+        <span class="has-mr-6">5</span>
+        <span>其他</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">6</span>
+        <span>参考</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://yukgan.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">菜神</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">yukgan.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://blog.iamkotori.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">某学弟</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">blog.iamkotori.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://blog.neigehevi.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hevi</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">blog.neigehevi.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://benzina.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Benz1</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">benzina.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/不务正业/">
+            <span class="level-start">
+                <span class="level-item">不务正业</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/学习笔记/">
+            <span class="level-start">
+                <span class="level-item">学习笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/心得体会/">
+            <span class="level-start">
+                <span class="level-item">心得体会</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/文献阅读/">
+            <span class="level-start">
+                <span class="level-item">文献阅读</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/昔情难追/">
+            <span class="level-start">
+                <span class="level-item">昔情难追</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/缓寻芳草/">
+            <span class="level-start">
+                <span class="level-item">缓寻芳草</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/诗词遗珠/">
+            <span class="level-start">
+                <span class="level-item">诗词遗珠</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/语言学习/">
+            <span class="level-start">
+                <span class="level-item">语言学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/负尽年华/">
+            <span class="level-start">
+                <span class="level-item">负尽年华</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/3D-printing/" style="font-size: 10px;">3D printing</a> <a href="/tags/ACT/" style="font-size: 11.67px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.67px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 10px;">Compartmentalized devices</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 15px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/English/" style="font-size: 16.67px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 10px;">Fast prototyping</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 18.33px;">Game</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 10px;">Human neural stem cells</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 13.33px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Literature/" style="font-size: 13.33px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 13.33px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 16.67px;">Monthly</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patterning/" style="font-size: 10px;">Patterning</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 13.33px;">Poetry</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 11.67px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Soft-lithography/" style="font-size: 11.67px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 10px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Unboxing/" style="font-size: 13.33px;">Unboxing</a> <a href="/tags/Visual-novel/" style="font-size: 11.67px;">Visual novel</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 16.67px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.67px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 10px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/09/16/3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/paper2.jpg" alt="3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T07:28:22.000Z">2020-09-16</time></div>
+                    <a href="/2020/09/16/3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices/" class="has-link-black-ter is-size-6">3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/14/Soft Lithography/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/paper1.png" alt="Soft Lithography">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-14T00:51:22.000Z">2020-09-14</time></div>
+                    <a href="/2020/09/14/Soft Lithography/" class="has-link-black-ter is-size-6">Soft Lithography</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/01/GoldenDict添加自定义词典/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/goldendict.jpg" alt="GoldenDict添加自定义词典">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-01T05:41:27.000Z">2020-09-01</time></div>
+                    <a href="/2020/09/01/GoldenDict添加自定义词典/" class="has-link-black-ter is-size-6">GoldenDict添加自定义词典</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/不务正业/">不务正业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/01/九月英语单词/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yuli.jpg" alt="九月英语单词">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-31T16:00:01.000Z">2020-09-01</time></div>
+                    <a href="/2020/09/01/九月英语单词/" class="has-link-black-ter is-size-6">九月英语单词</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/语言学习/">语言学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/从Cmder到Windows Terminal/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/terminal.jpg" alt="从Cmder到Windows Terminal">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T11:35:22.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/从Cmder到Windows Terminal/" class="has-link-black-ter is-size-6">从Cmder到Windows Terminal</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/不务正业/">不务正业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/3D-printing/">
+                        <span class="tag">3D printing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ACT/">
+                        <span class="tag">ACT</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ADV/">
+                        <span class="tag">ADV</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AirPods/">
+                        <span class="tag">AirPods</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Apple/">
+                        <span class="tag">Apple</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Apriori/">
+                        <span class="tag">Apriori</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Association-Analysis/">
+                        <span class="tag">Association Analysis</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/August/">
+                        <span class="tag">August</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CM1860/">
+                        <span class="tag">CM1860</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cheminformatics/">
+                        <span class="tag">Cheminformatics</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cmder/">
+                        <span class="tag">Cmder</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Compartmentalized-devices/">
+                        <span class="tag">Compartmentalized devices</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Crawler/">
+                        <span class="tag">Crawler</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cryostat/">
+                        <span class="tag">Cryostat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DESeq/">
+                        <span class="tag">DESeq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Data-Mining/">
+                        <span class="tag">Data Mining</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Detective-story/">
+                        <span class="tag">Detective story</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Django/">
+                        <span class="tag">Django</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Earphone/">
+                        <span class="tag">Earphone</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Efficiency/">
+                        <span class="tag">Efficiency</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Elastomers/">
+                        <span class="tag">Elastomers</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/English/">
+                        <span class="tag">English</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Euclidean-distance/">
+                        <span class="tag">Euclidean distance</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Experiment/">
+                        <span class="tag">Experiment</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FP-growth/">
+                        <span class="tag">FP-growth</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fast-prototyping/">
+                        <span class="tag">Fast prototyping</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fiddler/">
+                        <span class="tag">Fiddler</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flask/">
+                        <span class="tag">Flask</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GEO/">
+                        <span class="tag">GEO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Galgame/">
+                        <span class="tag">Galgame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Game/">
+                        <span class="tag">Game</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gigabyte/">
+                        <span class="tag">Gigabyte</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GoldenDict/">
+                        <span class="tag">GoldenDict</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Google-Translate/">
+                        <span class="tag">Google Translate</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Histopathology/">
+                        <span class="tag">Histopathology</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Human-neural-stem-cells/">
+                        <span class="tag">Human neural stem cells</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JRPG/">
+                        <span class="tag">JRPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jaccard-coefficient/">
+                        <span class="tag">Jaccard coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/July/">
+                        <span class="tag">July</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/June/">
+                        <span class="tag">June</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/KNN/">
+                        <span class="tag">KNN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Laptop/">
+                        <span class="tag">Laptop</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lattice-resoning/">
+                        <span class="tag">Lattice resoning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Leica/">
+                        <span class="tag">Leica</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Link/">
+                        <span class="tag">Link</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Literature/">
+                        <span class="tag">Literature</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MOE/">
+                        <span class="tag">MOE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Machine-Learning/">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Manhattan-distance/">
+                        <span class="tag">Manhattan distance</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Manual/">
+                        <span class="tag">Manual</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Materials-science/">
+                        <span class="tag">Materials science</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/May/">
+                        <span class="tag">May</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Microcontact-printing/">
+                        <span class="tag">Microcontact printing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Monolith/">
+                        <span class="tag">Monolith</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Monthly/">
+                        <span class="tag">Monthly</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoZoomer/">
+                        <span class="tag">NanoZoomer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Neurons/">
+                        <span class="tag">Neurons</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nintendo/">
+                        <span class="tag">Nintendo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nissl-body/">
+                        <span class="tag">Nissl body</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenBabel/">
+                        <span class="tag">OpenBabel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pathology/">
+                        <span class="tag">Pathology</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Patterning/">
+                        <span class="tag">Patterning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pearson-coefficient/">
+                        <span class="tag">Pearson coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Penetralium/">
+                        <span class="tag">Penetralium</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Poetry/">
+                        <span class="tag">Poetry</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PowerShell/">
+                        <span class="tag">PowerShell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pubmed/">
+                        <span class="tag">Pubmed</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pybel/">
+                        <span class="tag">Pybel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pytesseract/">
+                        <span class="tag">Pytesseract</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">11</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/R/">
+                        <span class="tag">R</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RDKit/">
+                        <span class="tag">RDKit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Review/">
+                        <span class="tag">Review</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/STRING/">
+                        <span class="tag">STRING</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/September/">
+                        <span class="tag">September</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Similarity/">
+                        <span class="tag">Similarity</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Soft-lithography/">
+                        <span class="tag">Soft lithography</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Softstar/">
+                        <span class="tag">Softstar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Staining/">
+                        <span class="tag">Staining</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StarBase/">
+                        <span class="tag">StarBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Supramolecular-chemistry/">
+                        <span class="tag">Supramolecular chemistry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Switch/">
+                        <span class="tag">Switch</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TCGA/">
+                        <span class="tag">TCGA</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tanimoto-coefficient/">
+                        <span class="tag">Tanimoto coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/The-Millennium-Destiny/">
+                        <span class="tag">The Millennium Destiny</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/The-Wind-Road/">
+                        <span class="tag">The Wind Road</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unboxing/">
+                        <span class="tag">Unboxing</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Visual-novel/">
+                        <span class="tag">Visual novel</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Windows-Terminal/">
+                        <span class="tag">Windows Terminal</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Word/">
+                        <span class="tag">Word</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Writing/">
+                        <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Xenoblade-Chronicles/">
+                        <span class="tag">Xenoblade Chronicles</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/XuanYuan-Sword/">
+                        <span class="tag">XuanYuan Sword</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Youdao/">
+                        <span class="tag">Youdao</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cnpm/">
+                        <span class="tag">cnpm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/fsevents/">
+                        <span class="tag">fsevents</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/miRanda/">
+                        <span class="tag">miRanda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/09/16/3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/paper2.jpg" alt="3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T07:28:22.000Z">2020-09-16</time></div>
+                    <a href="/2020/09/16/3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices/" class="has-link-black-ter is-size-6">3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/14/Soft Lithography/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/paper1.png" alt="Soft Lithography">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-14T00:51:22.000Z">2020-09-14</time></div>
+                    <a href="/2020/09/14/Soft Lithography/" class="has-link-black-ter is-size-6">Soft Lithography</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/01/GoldenDict添加自定义词典/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/goldendict.jpg" alt="GoldenDict添加自定义词典">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-01T05:41:27.000Z">2020-09-01</time></div>
+                    <a href="/2020/09/01/GoldenDict添加自定义词典/" class="has-link-black-ter is-size-6">GoldenDict添加自定义词典</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/不务正业/">不务正业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/09/01/九月英语单词/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/yuli.jpg" alt="九月英语单词">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-31T16:00:01.000Z">2020-09-01</time></div>
+                    <a href="/2020/09/01/九月英语单词/" class="has-link-black-ter is-size-6">九月英语单词</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/语言学习/">语言学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/从Cmder到Windows Terminal/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/terminal.jpg" alt="从Cmder到Windows Terminal">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T11:35:22.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/从Cmder到Windows Terminal/" class="has-link-black-ter is-size-6">从Cmder到Windows Terminal</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/不务正业/">不务正业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/3D-printing/">
+                        <span class="tag">3D printing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ACT/">
+                        <span class="tag">ACT</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ADV/">
+                        <span class="tag">ADV</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AirPods/">
+                        <span class="tag">AirPods</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Apple/">
+                        <span class="tag">Apple</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Apriori/">
+                        <span class="tag">Apriori</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Association-Analysis/">
+                        <span class="tag">Association Analysis</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/August/">
+                        <span class="tag">August</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CM1860/">
+                        <span class="tag">CM1860</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CSS/">
+                        <span class="tag">CSS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cheminformatics/">
+                        <span class="tag">Cheminformatics</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cmder/">
+                        <span class="tag">Cmder</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Compartmentalized-devices/">
+                        <span class="tag">Compartmentalized devices</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Crawler/">
+                        <span class="tag">Crawler</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Cryostat/">
+                        <span class="tag">Cryostat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DESeq/">
+                        <span class="tag">DESeq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Data-Mining/">
+                        <span class="tag">Data Mining</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Detective-story/">
+                        <span class="tag">Detective story</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Django/">
+                        <span class="tag">Django</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Earphone/">
+                        <span class="tag">Earphone</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Efficiency/">
+                        <span class="tag">Efficiency</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Elastomers/">
+                        <span class="tag">Elastomers</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/English/">
+                        <span class="tag">English</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Euclidean-distance/">
+                        <span class="tag">Euclidean distance</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Experiment/">
+                        <span class="tag">Experiment</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FP-growth/">
+                        <span class="tag">FP-growth</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fast-prototyping/">
+                        <span class="tag">Fast prototyping</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fiddler/">
+                        <span class="tag">Fiddler</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flask/">
+                        <span class="tag">Flask</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GEO/">
+                        <span class="tag">GEO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Galgame/">
+                        <span class="tag">Galgame</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Game/">
+                        <span class="tag">Game</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Gigabyte/">
+                        <span class="tag">Gigabyte</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GoldenDict/">
+                        <span class="tag">GoldenDict</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Google-Translate/">
+                        <span class="tag">Google Translate</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTML/">
+                        <span class="tag">HTML</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Histopathology/">
+                        <span class="tag">Histopathology</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Human-neural-stem-cells/">
+                        <span class="tag">Human neural stem cells</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JRPG/">
+                        <span class="tag">JRPG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Jaccard-coefficient/">
+                        <span class="tag">Jaccard coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/July/">
+                        <span class="tag">July</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/June/">
+                        <span class="tag">June</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/KNN/">
+                        <span class="tag">KNN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Laptop/">
+                        <span class="tag">Laptop</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lattice-resoning/">
+                        <span class="tag">Lattice resoning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Leica/">
+                        <span class="tag">Leica</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Link/">
+                        <span class="tag">Link</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Literature/">
+                        <span class="tag">Literature</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MOE/">
+                        <span class="tag">MOE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Machine-Learning/">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Manhattan-distance/">
+                        <span class="tag">Manhattan distance</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Manual/">
+                        <span class="tag">Manual</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Materials-science/">
+                        <span class="tag">Materials science</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/May/">
+                        <span class="tag">May</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Microcontact-printing/">
+                        <span class="tag">Microcontact printing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Monolith/">
+                        <span class="tag">Monolith</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Monthly/">
+                        <span class="tag">Monthly</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoZoomer/">
+                        <span class="tag">NanoZoomer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Neurons/">
+                        <span class="tag">Neurons</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nintendo/">
+                        <span class="tag">Nintendo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nissl-body/">
+                        <span class="tag">Nissl body</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenBabel/">
+                        <span class="tag">OpenBabel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pathology/">
+                        <span class="tag">Pathology</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Patterning/">
+                        <span class="tag">Patterning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pearson-coefficient/">
+                        <span class="tag">Pearson coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Penetralium/">
+                        <span class="tag">Penetralium</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Poetry/">
+                        <span class="tag">Poetry</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PowerShell/">
+                        <span class="tag">PowerShell</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pubmed/">
+                        <span class="tag">Pubmed</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pybel/">
+                        <span class="tag">Pybel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Pytesseract/">
+                        <span class="tag">Pytesseract</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">11</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/R/">
+                        <span class="tag">R</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RDKit/">
+                        <span class="tag">RDKit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RPG/">
+                        <span class="tag">RPG</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Review/">
+                        <span class="tag">Review</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/STRING/">
+                        <span class="tag">STRING</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/September/">
+                        <span class="tag">September</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Similarity/">
+                        <span class="tag">Similarity</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Soft-lithography/">
+                        <span class="tag">Soft lithography</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Softstar/">
+                        <span class="tag">Softstar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Staining/">
+                        <span class="tag">Staining</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StarBase/">
+                        <span class="tag">StarBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Supramolecular-chemistry/">
+                        <span class="tag">Supramolecular chemistry</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Switch/">
+                        <span class="tag">Switch</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TCGA/">
+                        <span class="tag">TCGA</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tanimoto-coefficient/">
+                        <span class="tag">Tanimoto coefficient</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/The-Millennium-Destiny/">
+                        <span class="tag">The Millennium Destiny</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/The-Wind-Road/">
+                        <span class="tag">The Wind Road</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unboxing/">
+                        <span class="tag">Unboxing</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Visual-novel/">
+                        <span class="tag">Visual novel</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Windows-Terminal/">
+                        <span class="tag">Windows Terminal</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Word/">
+                        <span class="tag">Word</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Writing/">
+                        <span class="tag">Writing</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wuxia/">
+                        <span class="tag">Wuxia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Xenoblade-Chronicles/">
+                        <span class="tag">Xenoblade Chronicles</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/XuanYuan-Sword/">
+                        <span class="tag">XuanYuan Sword</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Youdao/">
+                        <span class="tag">Youdao</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cnpm/">
+                        <span class="tag">cnpm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/fsevents/">
+                        <span class="tag">fsevents</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/miRanda/">
+                        <span class="tag">miRanda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="padding-bottom: 42px;">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <span class="is-size-7">
+                    &copy; 2018-2020&nbsp;&nbsp;<img src="/images/Catkin.png" alt="catkin" width="48" height="24"><br>
+                    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                            href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </span>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+    <!--console.log-->
+    <script type="text/javascript">
+        console.log("唐多令\n吴文英\n何处合成愁。离人心上秋。\n纵芭蕉、不雨也飕飕。\n都道晚凉天气好，\n有明月、怕登楼。\n年事梦中休。花空烟水流。\n燕辞归、客尚淹留。\n垂柳不萦裙带住,\n漫长是、系行舟。");
+    </script>
+</body>
+</html>

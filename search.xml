@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Droplet‐Based Combinatorial Assay for Cell Cytotoxicity and Cytokine Release Evaluation]]></title>
+    <url>%2F2020%2F09%2F30%2FDroplet%E2%80%90Based%20Combinatorial%20Assay%20for%20Cell%20Cytotoxicity%20and%20Cytokine%20Release%20Evaluation%2F</url>
+    <content type="text"><![CDATA[一种基于液滴的共封装，以研究NK细胞的细胞因子释放与细胞毒性。 Introduction 干扰素γ（interferon gamma, IFN‐γ）是一种主要由NK细胞（natural killer cells）和效应T细胞（effector T cells）产生的细胞因子，广泛存在于先天免疫和获得性免疫中。最初将IFN-γ仅考虑为针对细菌和病毒感染的免疫调节反应，但它近来在调节肿瘤免疫机制上的基本作用已被发现和研究。主要通过抑制增殖、导致细胞死亡（凋亡样和坏死样）发挥抗肿瘤作用。然而也有一些研究显示，干扰素γ会促进肿瘤生长和免疫监视逃逸。为了最大化干扰素γ的抗肿瘤作用和最小化其副作用，确定细胞因子治疗的最佳剂量是十分重要的。因此需要定量研究决定单细胞干扰素γ的释放和重组干扰素γ的添加是如何影响免疫细胞的细胞溶解活动。 迄今为止，研究免疫细胞因子的释放主要通过ELISA和ELISPOT，免疫细胞毒性主要通过铬释放试验和流式细胞术。这些方法通常提供普遍或平均地细胞对细胞的行为结果，而不能对单个细胞进行动态的数据收集，因此缺少时空的分辨率。 ELISPOT：即Enzyme-linked Immunospot Assay，全名为酶联免疫斑点检测，结合了细胞培养技术与酶联免疫吸附技术，能够检测到单个细胞分泌的细胞因子情况。简单来说，就是用包被好的抗体捕获培养中的细胞分泌的细胞因子，并以酶联斑点显色的方式将其呈现出来。 ELISPOT 实验使用 PVDF 膜为底的 96 孔板，包被上特异性的单克隆抗体（需要无毒，不含内毒素，亲和力高的抗体），以捕获细胞分泌的细胞因子。 然后在培养板的孔内加入待检测的细胞和抗原刺激物进行培养。在刺激物的刺激下，T 细胞就会在对应的时间段分泌对应的细胞因子。此时细胞因子就被包被在膜上的抗体所捕获。 洗去细胞后，被捕获的细胞因子可以与生物素标记的第二抗体结合，然后用酶标亲和素与生物素结合，进行化学酶联显色，就可以在膜的局部形成一个个圆形的斑点，每一个斑点就对应了当初一个分泌细胞因子的细胞。统计膜上的斑点的数目，再除以当初加入孔内的细胞总数，就可以计算出阳性细胞的百分比。 铬释放试验：用Na251CrO4 标记靶细胞，若待检效应细胞能杀伤靶细胞，则51Cr从靶细胞内释出。以γ计数仪测定释出的51Cr放射活性，靶细胞溶解破坏越多，51Cr释放就越多，上清液的放射活性也就越高，应用公式可计算出待检效应细胞的杀伤活性。 流式细胞术： 是利用流式细胞仪对于处在快速直线流动状态中的细胞或生物颗粒同时进行多参数、快速定量分析和分选的技术。 科普]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Cytotoxicity assay</tag>
+        <tag>Droplet‐based microfluidics</tag>
+        <tag>Interferon‐gamma</tag>
+        <tag>Natural killer cells</tag>
+        <tag>Single‐cell analysis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Facile Production of Large‐Area Cell Arrays Using Surface‐Assembled Microdroplets]]></title>
     <url>%2F2020%2F09%2F29%2FFacile%20Production%20of%20Large%E2%80%90Area%20Cell%20Arrays%20Using%20Surface%E2%80%90Assembled%20Microdroplets%2F</url>
     <content type="text"><![CDATA[一种构建大规模细胞阵列的方法。 Introduction 能够将活细胞空间排列成特定的图案在组织工程、药物筛选和细胞-细胞研究中广泛应用。本文使用基于微流控的气溶胶喷雾喷嘴产生微液滴，该方法可以控制传递到表面的液滴体积和大小。 他们将使用的方法命名为液滴细胞的微组装（micro-assembly of cells-in-droplets, µACD），主要解决了以下2个问题： 设计和制造了微流控的气溶胶喷雾技术，从而最小化细胞的剪切力，和流行的细胞培养基兼容。 证明了由多聚赖氨酸（poly-L-lysine, PLL, 一种流行的细胞外基质）组成的可延展的表面化学图案能够支持表明微液滴的组装且这些图案可以支持细胞生存和增值。 本文所用细胞为人表皮样癌细胞系A-431（human epidermoid carcinoma cell line A-431）。 Figure 1 Microfluidic‐based aerosol droplet generation and cells‐in‐droplets deposition （A）描述了喷嘴设计的液滴生成过程。 （B）描述了不同气压下，传递到原生PDMS表明的装有细胞的微液滴尺寸分布，含有和不含细胞的微液滴的概率分布也已给出。 （C）喷洒到原生PDMS的带有细胞的微液滴的荧光显微图（细胞由CellTracker green标记）。 （D）24小时孵化后的死活细胞染色。用的calcein-AM和PI。 （E）全部喷洒条件的细胞生存测量。 CellTracker green：荧光氯甲基衍生物，在细胞质中呈绿色。 Figure 2 Microassembly of cells-in-droplets (µACD) and proliferation of the generated cell arrays （A）弹性薄膜上的含细胞粘附促进基质的湿润性微图案的合成。异硫氰酸荧光素-多聚赖氨酸（FITC-PLL）优先吸附在亲水区域（氧处理的PDMS）。 （B）FITC标记的PLL微图案的荧光显微照片。插图表示白点上的荧光强度。 （C）PLL图案上，由（PBS、FITC、10%甘油）组装的水液滴。 （D）通过物理驱动使PDMS上PLL的细胞/液滴组装。DMEM为一种培养基。 （E）E、F反应不同图案尺寸（直径）和细胞浓度下的每个孔内细胞的概率密度。其中E是通过调整细胞浓度，发现浓度越高，概率密度越高。1X = 2000000 cells mL-1，0.5X = 1000000 cells mL-1，0.25X = 500000 cells mL-1。 （F）通过调整图案尺寸，发现尺寸越大，概率密度越高。 （G）培养之前，荧光显微镜下（D = 300 µm，C = 1X），装配的包含活细胞的液滴被CellTracker orange标记为橙色。 （H）培养24小时后的死活细胞染色（calcein-AM和PI）。 （I）培养48小时后用CellTracker orange染色。 Figure 3 Cell distribution across cell arrays after 24 and 48 h of cell culture （A）-（C）蓝色为细胞核（Hoechst），绿色为肌动蛋白丝（A-488-conjugated phallotoxins），可以看到规律的细胞阵列在每个图案上定义好的细胞区域。B为A的局部放大图。其中A、B为125 µm的图案，C为300 µm的图案。 （D）、（E）分别对应A、C的细胞计数热图（D：125 µm，E：300 µm）。 （F）不同图案尺寸下每个孔的细胞概率密度。 （G）一系列延时摄影图像展示了一个CellTracker orange标记的细胞每12 h的观察，可以清楚看见细胞粘附、生长和分裂。 Conclusion 本方法结合了微液滴和2D表面图案化技术。既可以像基于液滴的方法一样，在整合细胞的液滴形成，细胞形成悬浮状态后立刻开始药物筛选和分析测定。也可以像其他2D图案化方法一样，在细胞粘附到基质并扩增后进行组织工程和生物力学研究。除了这些单一培养应用，µACD的灵活性可以扩展到多细胞的共培养。 MTT法又称MTT比色法，是一种检测细胞存活和生长的方法。其检测原理为活细胞线粒体中的琥珀酸脱氢酶能使外源性MTT还原为水不溶性的蓝紫色结晶甲瓒（Formazan）并沉积在细胞中，而死细胞无此功能。二甲基亚砜（DMSO）能溶解细胞中的甲瓒，用酶联免疫检测仪在540 或720nm波长处测定其光吸收值，可间接反映活细胞数量。在一定细胞数范围内，MTT结晶形成的量与细胞数成正比。该方法已广泛用于一些生物活性因子的活性检测、大规模的抗肿瘤药物筛选、细胞毒性试验以及肿瘤放射敏感性测定等。]]></content>

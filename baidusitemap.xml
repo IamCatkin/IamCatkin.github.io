@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2020/09/29/Facile%20Production%20of%20Large%E2%80%90Area%20Cell%20Arrays%20Using%20Surface%E2%80%90Assembled%20Microdroplets/</loc>
-    <lastmod>2020-09-29T06:35:53.460Z</lastmod>
+    <lastmod>2020-09-30T02:37:43.126Z</lastmod>
     <data>
         <display>
         <title>Facile Production of Large‐Area Cell Arrays Using Surface‐Assembled Microdroplets</title>
@@ -32,8 +32,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/09/27/Review%20of%203D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
+    <lastmod>2020-09-29T12:47:17.195Z</lastmod>
+    <data>
+        <display>
+        <title>Review of 3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices</title>
+        <pubTime>2020-09-27T11:40:27.000Z</pubTime>
+        
+        <tag>3D printing</tag>
+         
+        <tag>Compartmentalized devices</tag>
+         
+        <tag>Fast prototyping</tag>
+         
+        <tag>Human neural stem cells</tag>
+         
+        <tag>Soft lithography</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/09/28/Single%20Molecule%20Protein%20Detection%20with%20Attomolar%20Sensitivity%20Using%20Droplet%20Digital%20Enzyme-Linked%20Immunosorbent%20Assay/</loc>
-    <lastmod>2020-09-29T02:56:38.630Z</lastmod>
+    <lastmod>2020-09-29T06:46:41.767Z</lastmod>
     <data>
         <display>
         <title>Single Molecule Protein Detection with Attomolar Sensitivity Using Droplet Digital Enzyme-Linked Immunosorbent Assay</title>
@@ -50,34 +78,6 @@
         <tag>Clinical diagnostics</tag>
          
         <tag>Droplet microfluidics</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/27/Review%20of%203D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
-    <lastmod>2020-09-28T01:46:47.295Z</lastmod>
-    <data>
-        <display>
-        <title>Review of 3D‐Printed Soft Lithography for Complex Compartmentalized Microfluidic Neural Devices</title>
-        <pubTime>2020-09-27T11:40:27.000Z</pubTime>
-        
-        <tag>3D printing</tag>
-         
-        <tag>Compartmentalized devices</tag>
-         
-        <tag>Fast prototyping</tag>
-         
-        <tag>Human neural stem cells</tag>
-         
-        <tag>Soft lithography</tag>
          
          
            

@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2020/09/30/Droplet%E2%80%90Based%20Combinatorial%20Assay%20for%20Cell%20Cytotoxicity%20and%20Cytokine%20Release%20Evaluation/</loc>
-    <lastmod>2020-09-30T07:59:16.893Z</lastmod>
+    <lastmod>2020-10-06T07:55:43.760Z</lastmod>
     <data>
         <display>
         <title>Droplet‐Based Combinatorial Assay for Cell Cytotoxicity and Cytokine Release Evaluation</title>
@@ -20,6 +20,36 @@
         <tag>Natural killer cells</tag>
          
         <tag>Single‐cell analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/28/Single%20Molecule%20Protein%20Detection%20with%20Attomolar%20Sensitivity%20Using%20Droplet%20Digital%20Enzyme-Linked%20Immunosorbent%20Assay/</loc>
+    <lastmod>2020-10-06T00:49:38.449Z</lastmod>
+    <data>
+        <display>
+        <title>Single Molecule Protein Detection with Attomolar Sensitivity Using Droplet Digital Enzyme-Linked Immunosorbent Assay</title>
+        <pubTime>2020-09-28T06:22:10.000Z</pubTime>
+        
+        <tag>Single molecule</tag>
+         
+        <tag>Ultrasensitive detection</tag>
+         
+        <tag>Immunoassay</tag>
+         
+        <tag>Biomarkers</tag>
+         
+        <tag>Clinical diagnostics</tag>
+         
+        <tag>Droplet microfluidics</tag>
          
          
            
@@ -76,36 +106,6 @@
         <tag>Human neural stem cells</tag>
          
         <tag>Soft lithography</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/28/Single%20Molecule%20Protein%20Detection%20with%20Attomolar%20Sensitivity%20Using%20Droplet%20Digital%20Enzyme-Linked%20Immunosorbent%20Assay/</loc>
-    <lastmod>2020-09-29T06:46:41.767Z</lastmod>
-    <data>
-        <display>
-        <title>Single Molecule Protein Detection with Attomolar Sensitivity Using Droplet Digital Enzyme-Linked Immunosorbent Assay</title>
-        <pubTime>2020-09-28T06:22:10.000Z</pubTime>
-        
-        <tag>Single molecule</tag>
-         
-        <tag>Ultrasensitive detection</tag>
-         
-        <tag>Immunoassay</tag>
-         
-        <tag>Biomarkers</tag>
-         
-        <tag>Clinical diagnostics</tag>
-         
-        <tag>Droplet microfluidics</tag>
          
          
            

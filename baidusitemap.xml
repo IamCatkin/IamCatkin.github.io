@@ -4,8 +4,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/10/14/An%20Integrated%20Dielectrophoresis-Trapping%20and%20Nanowell%20Transfer%20Approach%20to%20Enable%20Double-Sub-Poisson%20Single-Cell%20RNA%20Sequencing/</loc>
+    <lastmod>2020-10-14T13:51:01.352Z</lastmod>
+    <data>
+        <display>
+        <title>An Integrated Dielectrophoresis-Trapping and Nanowell Transfer Approach to Enable Double-Sub-Poisson Single-Cell RNA Sequencing</title>
+        <pubTime>2020-10-14T13:43:42.000Z</pubTime>
+        
+        <tag>Single-cell RNA sequencing</tag>
+         
+        <tag>Dielectrophoresis</tag>
+         
+        <tag>Nanowell</tag>
+         
+        <tag>Microfluidic</tag>
+         
+        <tag>Sub-Poisson distribution</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/10/14/Screening%20Therapeutic%20Agents%20Specific%20to%20Breast%20Cancer%20Stem%20Cells%20Using%20a%20Microfluidic%20Single%E2%80%90Cell%20Clone%E2%80%90Forming%20Inhibition%20Assay/</loc>
-    <lastmod>2020-10-14T02:59:44.023Z</lastmod>
+    <lastmod>2020-10-14T13:41:50.762Z</lastmod>
     <data>
         <display>
         <title>Screening Therapeutic Agents Specific to Breast Cancer Stem Cells Using a Microfluidic Single‐Cell Clone‐Forming Inhibition Assay</title>
@@ -20,6 +48,34 @@
         <tag>Microfluidic chips</tag>
          
         <tag>Single cells</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
+    <lastmod>2020-10-14T12:31:26.971Z</lastmod>
+    <data>
+        <display>
+        <title>One Cell, One Drop, One Click Hybrid Microfluidics for Mammalian Single Cell Isolation</title>
+        <pubTime>2020-10-08T00:46:58.000Z</pubTime>
+        
+        <tag>Droplet microfluidics</tag>
+         
+        <tag>Digital microfluidics</tag>
+         
+        <tag>Gene‐editing</tag>
+         
+        <tag>Single‐cell</tag>
+         
+        <tag>Transfection</tag>
          
          
            
@@ -50,34 +106,6 @@
         <tag>Primary cell transfection</tag>
          
         <tag>Nanoparticle delivery</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
-    <lastmod>2020-10-12T14:00:47.303Z</lastmod>
-    <data>
-        <display>
-        <title>One Cell, One Drop, One Click Hybrid Microfluidics for Mammalian Single Cell Isolation</title>
-        <pubTime>2020-10-08T00:46:58.000Z</pubTime>
-        
-        <tag>Droplet microfluidics</tag>
-         
-        <tag>Digital microfluidics</tag>
-         
-        <tag>Gene‐editing</tag>
-         
-        <tag>Single‐cell</tag>
-         
-        <tag>Transfection</tag>
          
          
            

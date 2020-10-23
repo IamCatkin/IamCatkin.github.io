@@ -4,8 +4,64 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/10/23/Dual%E2%80%90Isolation%20and%20Profiling%20of%20Circulating%20Tumor%20Cells%20and%20Cancer%20Exosomes%20from%20Blood%20Samples%20with%20Melanoma%20Using%20Immunoaffinity%E2%80%90Based%20Microfluidic%20Interfaces/</loc>
+    <lastmod>2020-10-23T03:31:39.937Z</lastmod>
+    <data>
+        <display>
+        <title>Dual‐Isolation and Profiling of Circulating Tumor Cells and Cancer Exosomes from Blood Samples with Melanoma Using Immunoaffinity‐Based Microfluidic Interfaces</title>
+        <pubTime>2020-10-23T03:27:06.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Circulating tumor cells</tag>
+         
+        <tag>Dual isolation and profiling</tag>
+         
+        <tag>Melanoma</tag>
+         
+        <tag>Tumor exosomes</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/14/An%20Integrated%20Dielectrophoresis-Trapping%20and%20Nanowell%20Transfer%20Approach%20to%20Enable%20Double-Sub-Poisson%20Single-Cell%20RNA%20Sequencing/</loc>
+    <lastmod>2020-10-23T02:56:19.099Z</lastmod>
+    <data>
+        <display>
+        <title>An Integrated Dielectrophoresis-Trapping and Nanowell Transfer Approach to Enable Double-Sub-Poisson Single-Cell RNA Sequencing</title>
+        <pubTime>2020-10-14T13:43:42.000Z</pubTime>
+        
+        <tag>Single-cell RNA sequencing</tag>
+         
+        <tag>Dielectrophoresis</tag>
+         
+        <tag>Nanowell</tag>
+         
+        <tag>Microfluidic</tag>
+         
+        <tag>Sub-Poisson distribution</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
-    <lastmod>2020-10-21T08:06:16.372Z</lastmod>
+    <lastmod>2020-10-22T13:29:25.306Z</lastmod>
     <data>
         <display>
         <title>Reconfigurable open microfluidics for studying the spatiotemporal dynamics of paracrine signalling</title>
@@ -76,34 +132,6 @@
         <tag>Gene expression profiling</tag>
          
         <tag>High-throughput screening assays</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/14/An%20Integrated%20Dielectrophoresis-Trapping%20and%20Nanowell%20Transfer%20Approach%20to%20Enable%20Double-Sub-Poisson%20Single-Cell%20RNA%20Sequencing/</loc>
-    <lastmod>2020-10-17T03:15:05.618Z</lastmod>
-    <data>
-        <display>
-        <title>An Integrated Dielectrophoresis-Trapping and Nanowell Transfer Approach to Enable Double-Sub-Poisson Single-Cell RNA Sequencing</title>
-        <pubTime>2020-10-14T13:43:42.000Z</pubTime>
-        
-        <tag>Single-cell RNA sequencing</tag>
-         
-        <tag>Dielectrophoresis</tag>
-         
-        <tag>Nanowell</tag>
-         
-        <tag>Microfluidic</tag>
-         
-        <tag>Sub-Poisson distribution</tag>
          
          
            

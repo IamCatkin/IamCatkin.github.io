@@ -4,8 +4,64 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/10/27/Combinatorial%20Strategy%20for%20Studying%20Biochemical%20Pathways%20in%20Double%20Emulsion%20Templated%20Cell%E2%80%90Sized%20Compartments/</loc>
+    <lastmod>2020-10-27T13:28:06.195Z</lastmod>
+    <data>
+        <display>
+        <title>Combinatorial Strategy for Studying Biochemical Pathways in Double Emulsion Templated Cell‐Sized Compartments</title>
+        <pubTime>2020-10-27T13:00:15.000Z</pubTime>
+        
+        <tag>Biochannels</tag>
+         
+        <tag>Double emulsion microfluidics</tag>
+         
+        <tag>Efficiency of encapsulation</tag>
+         
+        <tag>Multi‐step cascade reactions</tag>
+         
+        <tag>Polymer giant unilamellar vesicles</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/23/Dual%E2%80%90Isolation%20and%20Profiling%20of%20Circulating%20Tumor%20Cells%20and%20Cancer%20Exosomes%20from%20Blood%20Samples%20with%20Melanoma%20Using%20Immunoaffinity%E2%80%90Based%20Microfluidic%20Interfaces/</loc>
+    <lastmod>2020-10-27T12:22:36.804Z</lastmod>
+    <data>
+        <display>
+        <title>Dual‐Isolation and Profiling of Circulating Tumor Cells and Cancer Exosomes from Blood Samples with Melanoma Using Immunoaffinity‐Based Microfluidic Interfaces</title>
+        <pubTime>2020-10-23T03:27:06.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Circulating tumor cells</tag>
+         
+        <tag>Dual isolation and profiling</tag>
+         
+        <tag>Melanoma</tag>
+         
+        <tag>Tumor exosomes</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/10/23/Large%E2%80%90Scale%20Fabrication%20of%20Robust%20Artificial%20Skins%20from%20a%20Biodegradable%20Sealant%E2%80%90Loaded%20Nanofiber%20Scaffold%20to%20Skin%20Tissue%20via%20Microfluidic%20Blow%E2%80%90Spinning/</loc>
-    <lastmod>2020-10-23T07:30:21.203Z</lastmod>
+    <lastmod>2020-10-26T11:50:20.888Z</lastmod>
     <data>
         <display>
         <title>Large‐Scale Fabrication of Robust Artificial Skins from a Biodegradable Sealant‐Loaded Nanofiber Scaffold to Skin Tissue via Microfluidic Blow‐Spinning</title>
@@ -28,22 +84,22 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/10/23/Dual%E2%80%90Isolation%20and%20Profiling%20of%20Circulating%20Tumor%20Cells%20and%20Cancer%20Exosomes%20from%20Blood%20Samples%20with%20Melanoma%20Using%20Immunoaffinity%E2%80%90Based%20Microfluidic%20Interfaces/</loc>
-    <lastmod>2020-10-23T03:31:39.937Z</lastmod>
+    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
+    <lastmod>2020-10-26T10:39:01.674Z</lastmod>
     <data>
         <display>
-        <title>Dual‐Isolation and Profiling of Circulating Tumor Cells and Cancer Exosomes from Blood Samples with Melanoma Using Immunoaffinity‐Based Microfluidic Interfaces</title>
-        <pubTime>2020-10-23T03:27:06.000Z</pubTime>
+        <title>Reconfigurable open microfluidics for studying the spatiotemporal dynamics of paracrine signalling</title>
+        <pubTime>2020-10-21T07:31:21.000Z</pubTime>
         
         <tag>Microfluidics</tag>
          
-        <tag>Circulating tumor cells</tag>
+        <tag>Cell culture techniques</tag>
          
-        <tag>Dual isolation and profiling</tag>
+        <tag>Tumor microenvironment</tag>
          
-        <tag>Melanoma</tag>
+        <tag>Signal transduction</tag>
          
-        <tag>Tumor exosomes</tag>
+        <tag>Transcriptome</tag>
          
          
            
@@ -72,34 +128,6 @@
         <tag>Microfluidic</tag>
          
         <tag>Sub-Poisson distribution</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
-    <lastmod>2020-10-22T13:29:25.306Z</lastmod>
-    <data>
-        <display>
-        <title>Reconfigurable open microfluidics for studying the spatiotemporal dynamics of paracrine signalling</title>
-        <pubTime>2020-10-21T07:31:21.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Cell culture techniques</tag>
-         
-        <tag>Tumor microenvironment</tag>
-         
-        <tag>Signal transduction</tag>
-         
-        <tag>Transcriptome</tag>
          
          
            

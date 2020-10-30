@@ -4,8 +4,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/10/30/Bioinspired%20programmable%20wettability%20arrays%20for%20droplets%20manipulation/</loc>
+    <lastmod>2020-10-30T09:30:48.200Z</lastmod>
+    <data>
+        <display>
+        <title>Bioinspired programmable wettability arrays for droplets manipulation</title>
+        <pubTime>2020-10-30T09:26:54.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Bioinspired</tag>
+         
+        <tag>Wettability</tag>
+         
+        <tag>Droplet</tag>
+         
+        <tag>Printing</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
-    <lastmod>2020-10-29T07:30:54.997Z</lastmod>
+    <lastmod>2020-10-30T08:31:06.110Z</lastmod>
     <data>
         <display>
         <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
@@ -22,6 +50,34 @@
         <tag>Organ‐on‐a‐chip</tag>
          
         <tag>Vasculature</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
+    <lastmod>2020-10-30T00:52:43.193Z</lastmod>
+    <data>
+        <display>
+        <title>Reconfigurable open microfluidics for studying the spatiotemporal dynamics of paracrine signalling</title>
+        <pubTime>2020-10-21T07:31:21.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Cell culture techniques</tag>
+         
+        <tag>Tumor microenvironment</tag>
+         
+        <tag>Signal transduction</tag>
+         
+        <tag>Transcriptome</tag>
          
          
            
@@ -102,34 +158,6 @@
         <tag>Microfluidic-blow-spinning</tag>
          
         <tag>Skin regeneration</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
-    <lastmod>2020-10-26T10:39:01.674Z</lastmod>
-    <data>
-        <display>
-        <title>Reconfigurable open microfluidics for studying the spatiotemporal dynamics of paracrine signalling</title>
-        <pubTime>2020-10-21T07:31:21.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Cell culture techniques</tag>
-         
-        <tag>Tumor microenvironment</tag>
-         
-        <tag>Signal transduction</tag>
-         
-        <tag>Transcriptome</tag>
          
          
            

@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2020/10/30/Bioinspired%20programmable%20wettability%20arrays%20for%20droplets%20manipulation/</loc>
+    
+    <lastmod>2020-10-30T09:30:48.200Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
     
-    <lastmod>2020-10-29T07:30:54.997Z</lastmod>
+    <lastmod>2020-10-30T08:31:06.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
+    
+    <lastmod>2020-10-30T00:52:43.193Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://blog.catkin.moe/2020/10/23/Large%E2%80%90Scale%20Fabrication%20of%20Robust%20Artificial%20Skins%20from%20a%20Biodegradable%20Sealant%E2%80%90Loaded%20Nanofiber%20Scaffold%20to%20Skin%20Tissue%20via%20Microfluidic%20Blow%E2%80%90Spinning/</loc>
     
     <lastmod>2020-10-26T11:50:20.888Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
-    
-    <lastmod>2020-10-26T10:39:01.674Z</lastmod>
     
   </url>
   

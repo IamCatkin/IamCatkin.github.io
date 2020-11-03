@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/11/03/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/</loc>
+    <lastmod>2020-11-03T14:31:58.324Z</lastmod>
+    <data>
+        <display>
+        <title>Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations</title>
+        <pubTime>2020-11-03T14:20:01.000Z</pubTime>
+        
+        <tag>Circulating tumor cells</tag>
+         
+        <tag>CTC isolation</tag>
+         
+        <tag>Selective isolation</tag>
+         
+        <tag>Discrimination of heterogenic CTCs</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/11/02/Ultrahigh-throughput%20magnetic%20sorting%20of%20large%20blood%20volumes%20for%20epitope-agnostic%20isolation%20of%20circulating%20tumor%20cells/</loc>
-    <lastmod>2020-11-02T01:42:50.958Z</lastmod>
+    <lastmod>2020-11-03T14:08:36.582Z</lastmod>
     <data>
         <display>
         <title>Ultrahigh-throughput magnetic sorting of large blood volumes for epitope-agnostic isolation of circulating tumor cells</title>
@@ -32,8 +58,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
+    <lastmod>2020-11-02T06:51:36.789Z</lastmod>
+    <data>
+        <display>
+        <title>One Cell, One Drop, One Click Hybrid Microfluidics for Mammalian Single Cell Isolation</title>
+        <pubTime>2020-10-08T00:46:58.000Z</pubTime>
+        
+        <tag>Droplet microfluidics</tag>
+         
+        <tag>Digital microfluidics</tag>
+         
+        <tag>Gene‐editing</tag>
+         
+        <tag>Transfection</tag>
+         
+        <tag>Single-cell</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
-    <lastmod>2020-11-02T01:15:09.235Z</lastmod>
+    <lastmod>2020-11-02T02:34:07.620Z</lastmod>
     <data>
         <display>
         <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
@@ -298,34 +352,6 @@
         <tag>Microfluidic chips</tag>
          
         <tag>Single cells</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
-    <lastmod>2020-10-14T12:31:26.971Z</lastmod>
-    <data>
-        <display>
-        <title>One Cell, One Drop, One Click Hybrid Microfluidics for Mammalian Single Cell Isolation</title>
-        <pubTime>2020-10-08T00:46:58.000Z</pubTime>
-        
-        <tag>Droplet microfluidics</tag>
-         
-        <tag>Digital microfluidics</tag>
-         
-        <tag>Gene‐editing</tag>
-         
-        <tag>Single‐cell</tag>
-         
-        <tag>Transfection</tag>
          
          
            

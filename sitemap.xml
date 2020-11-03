@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2020/11/03/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/</loc>
+    
+    <lastmod>2020-11-03T14:31:58.324Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2020/11/02/Ultrahigh-throughput%20magnetic%20sorting%20of%20large%20blood%20volumes%20for%20epitope-agnostic%20isolation%20of%20circulating%20tumor%20cells/</loc>
     
-    <lastmod>2020-11-02T01:42:50.958Z</lastmod>
+    <lastmod>2020-11-03T14:08:36.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
+    
+    <lastmod>2020-11-02T06:51:36.789Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
     
-    <lastmod>2020-11-02T01:15:09.235Z</lastmod>
+    <lastmod>2020-11-02T02:34:07.620Z</lastmod>
     
   </url>
   
@@ -75,13 +89,6 @@
     <loc>https://blog.catkin.moe/2020/10/14/Screening%20Therapeutic%20Agents%20Specific%20to%20Breast%20Cancer%20Stem%20Cells%20Using%20a%20Microfluidic%20Single%E2%80%90Cell%20Clone%E2%80%90Forming%20Inhibition%20Assay/</loc>
     
     <lastmod>2020-10-14T13:41:50.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
-    
-    <lastmod>2020-10-14T12:31:26.971Z</lastmod>
     
   </url>
   

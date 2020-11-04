@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids]]></title>
+    <url>%2F2020%2F11%2F04%2FAutomated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids%2F</url>
+    <content type="text"><![CDATA[一种 Introduction Fig. 1 Automated microfluidic 3D cellular and organoid culture platform for dynamical drug perturbations Fig. 2 Human tumor organoid culture and growth on microfluidic platform Fig. 3 Combinatorial drug treatment of human tumor organoids on microfluidic platform Fig. 4 Sequential and temporal drug treatment on the microfluidic platform reveals the efficacy of dynamic temporal drug treatment for personalized therapy Fig. 5 High-throughput drug testing of multiple patients on chip ReferenceSchuster B, Junkin M, Kashaf S S, et al. Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids[J]. Nature Communications, 2020, 11(1): 5271.]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Microfluidics</tag>
+        <tag>Drug screening</tag>
+        <tag>Organoids</tag>
+        <tag>Organ‐on‐a‐chip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations]]></title>
     <url>%2F2020%2F11%2F03%2FSimultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations%2F</url>
-    <content type="text"><![CDATA[一种 Introduction Reference]]></content>
+    <content type="text"><![CDATA[一种整合了磁场梯度和免疫荧光的微流控芯片，用于同时分离和鉴别CTCs。 Introduction 人外周血中的CTCs是导致肿瘤转移的主要原因。当前基于CTC分析的肿瘤转移预测有2个主要限制。其一是人血液中CTCs的稀有性，因此需要一个微米或纳米级的分离系统。其二是CTCs的异质性，意味着外周血中CTCs的总数目和浓度不能被当作预测肿瘤转移的绝对标准，并且需要额外的下游分析。 在乳腺癌中，2种激素受体：雌激素受体（estrogen receptor, ER）和孕激素受体（progesterone, receptor, PR）以及细胞膜上的人表皮生长因子受体2（human epidermal growth factor receptor type2, HER2）被用于预测肿瘤转移的未来发展。譬如，ER和PR阴性亚型的5年生存率比其他亚型低10%以上。 Theory 根据肿瘤亚型的受体表达情况，可以区分4种肿瘤细胞亚型，其中Critical score与危险程度成比例，也就是肿瘤的侵袭性。 HER2 expression Critical score (Cell line) ER/PR (+) HER2 - 1 (MCF-7) HER2 + 2 (BT-474) ER/PR (-) HER2 + 3 (SK-BR-3) HER2 - 4 (MDA-MB-231) Fig. 1. （a）原发性肿瘤的异质性CTCs通过外周血管网络进行肿瘤转移的示意图。 （b）区分异质性CTCs的方法，磁纳米颗粒被HER2抗体功能化，与细胞表明HER2抗原结合。ER和PR被免疫染色以在芯片上分离后识别细胞。 （c）基于磁梯度的微流控芯片用于本次研究。 （d）HER2-MNP结合CTCs的形态以及CTCs的ER或PR免疫荧光染色。 Fig. 2. （a）芯片上分离的BT-474的ER染色荧光图像。 （b）芯片上分离的BT-474的PR染色荧光图像。 （c）芯片上分离的MCF-7的ER染色荧光图像。 （d）芯片上分离的MCF-7的PR染色荧光图像。 （e）MDA-MB-231的荧光图像。 （f）SK-BR-3的荧光图像。其中MDA-MB-231和SK-BR-3都是阴性亚型，核染色为蓝色以便于可视化。 （g）每种癌细胞系的分离效率。 （h）每种癌细胞系的HER2选择率。 Fig. 3. （a）芯片分离4种混合的不同亚型的乳腺癌细胞。 （b）混合样本实验中每个肿瘤细胞的分布。 （c）每种癌细胞系的分离效率。 （d）每种癌细胞系的HER2选择率。 ReferenceLee J, Kwak B. Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations[J]. Biosensors &amp; Bioelectronics, 2020, 168: 112564.]]></content>
       <categories>
         <category>文献阅读</category>
       </categories>

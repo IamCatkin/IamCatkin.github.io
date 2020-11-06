@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="一种">
-<meta name="keywords" content="Microfluidics,Drug screening,Organoids,Organ‐on‐a‐chip">
+    <meta name="description" content="一种自动化、高通量的微流控3D类器官培养和分析系统。">
+<meta name="keywords" content="Microfluidics,Drug screening,Organoids,Organ‐on‐a‐chip,3D cell culturing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids">
 <meta property="og:url" content="https://blog.catkin.moe/2020/11/04/Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="一种">
+<meta property="og:description" content="一种自动化、高通量的微流控3D类器官培养和分析系统。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure1.png">
-<meta property="og:updated_time" content="2020-11-04T10:57:51.506Z">
+<meta property="og:updated_time" content="2020-11-06T02:23:07.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids">
-<meta name="twitter:description" content="一种">
+<meta name="twitter:description" content="一种自动化、高通量的微流控3D类器官培养和分析系统。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure1.png">
 
 
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 201 个字)
+                    20 分钟 读完 (大约 2959 个字)
                 </span>
                 
                 
@@ -183,15 +183,123 @@
             
         </h1>
         <div class="content">
-            <p>　　一种</p>
+            <p>　　一种自动化、高通量的微流控3D类器官培养和分析系统。</p>
 <a id="more"></a>
 
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　细胞培养技术是基础和临床研究的重要工具，从个性化或再生医学到更基础的研究，如发育生物学。由于需要更多生物相关的组织模型，人们的兴趣已经从传统的二维平台转向更准确模拟细胞和组织形态、增殖、分化和迁移的三维细胞培养系统。</p>
+<p>　　患者来源的肿瘤类器官作为个性化肿瘤模型有如下优点：</p>
+<ul>
+<li>克服肿瘤细胞2D培养由于培养的选择、组织特异性结构、机械压力等不能反映原代肿瘤异质性的缺点。</li>
+<li>比起人源异种移植（patient-derived xenograft, PDX）模型，在时间和金钱上开销更小。且不会保留鼠基质细胞浸润引起的并发症。</li>
+<li>可以被冷冻保存，扩大，基因分型，并在最初培养的几周内接受治疗。</li>
+<li>可以从常规癌症活检（如内窥镜下超声引导的细针穿刺）中培养，成功率高，适合于探测在肿瘤发生不同阶段的变化。</li>
+<li>当治疗回应像母瘤时可以带来临床获益，并可以对在传统研究环境中一直缺乏研究的一类患者进行深入的基因组表征和体外治疗测试。</li>
+</ul>
+<p>　　微流控技术可以提供药物鸡尾酒和信号分子的动态筛选，可以以自动化的方式精确控制流体输送的浓度，时间和持续时间。相似的用于2D培养的系统已经被开发和商业化，但是由于一些现存的微流控系统的限制，不适用于很多3D细胞培养体系。更重要的是，类器官和其他3D细胞结构模型经常需要使用细胞外基质以与细胞和组织交互，提供机械支撑与生化信号。天然来源基质（如Matrigel）被广为使用，然而它们的物化性质（比如温度敏感性和在微流控通道聚集）使当前微流控和其他高通量技术过时了。</p>
+<ul>
+<li>当前微流控文献已经证明使用微流控技术的类器官应用，但是它们使用了非常低的通量方法（每个装置少于7个腔室）、和Matrigel不兼容、几乎没有自动化以及只有很小的腔室深度不能容纳大的类器官尺寸（约400 μm直径）。</li>
+<li>其他微流控相关装置被称为器官芯片（organ-on-a-chip）或人体芯片（body-on-a-chip）平台，已经用于组织特异性细胞和它们的细胞外基质以在组织特定的微流控结构和系统中重建3D组织结构和生理环境，如剪切力和流体流。尽管在某些研究中非常有用，<strong>与基于类器官的微流控相比，这些系统在重新构建组织发育的生物复杂性时是受限的。</strong></li>
+<li>此外，人体芯片和其他商业上的自动和高通量的方法通常需要复杂或极其昂贵的自动化系统，有并发症或与凝胶支架不相容，而且并不总是适合于细胞和分子特征的实时监测。</li>
+</ul>
+<p>　　作者为了解决<strong>自动化</strong>、<strong>动态监测和培养</strong>和<strong>并行的、实时筛选不同序列的药物或信号因子</strong>提出了本装置。</p>
 <h2 id="Fig-1-Automated-microfluidic-3D-cellular-and-organoid-culture-platform-for-dynamical-drug-perturbations"><a href="#Fig-1-Automated-microfluidic-3D-cellular-and-organoid-culture-platform-for-dynamical-drug-perturbations" class="headerlink" title="Fig. 1 Automated microfluidic 3D cellular and organoid culture platform for dynamical drug perturbations"></a>Fig. 1 Automated microfluidic 3D cellular and organoid culture platform for dynamical drug perturbations</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure1.png" alt=""></p>
+<ul>
+<li>（a）一个可编程基于膜-阀的微流控芯片（多路控制装置），为独立的3D培养平台的不同腔室提供自动的刺激概述。</li>
+<li>（b-c）3D培养腔室平台包含200个独立腔室，对温度敏感性凝胶（如Matrigel）兼容，一个叠加的通道层产生了20个独立的流体环境。通道层可逆地夹在腔室层的顶部，以提供培养基和其他化学刺激而不会泄漏。<ul>
+<li>（b）独立的3D培养平台的不同腔室产生了许多平行和动态的培养实验。</li>
+<li>（c）两层的多腔室的基于PDMS的3D培养腔室装置的横截面。</li>
+</ul>
+</li>
+<li>（d）多路控制装置的30个化学入口和30个出口被预编程以对3D培养腔室装置提供联合的和时间变化的刺激。</li>
+<li>（e-f）类器官或3D细胞结构通过延时成像定量被连续地观察，流动的培养环境可以被按需改变。3D培养腔室装置也可以被分离用于细胞采集和进一步的细胞分析。</li>
+</ul>
 <h2 id="Fig-2-Human-tumor-organoid-culture-and-growth-on-microfluidic-platform"><a href="#Fig-2-Human-tumor-organoid-culture-and-growth-on-microfluidic-platform" class="headerlink" title="Fig. 2 Human tumor organoid culture and growth on microfluidic platform"></a>Fig. 2 Human tumor organoid culture and growth on microfluidic platform</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure2.png" alt=""></p>
+<ul>
+<li>（a）平台上的类器官生长：3个单独的病人来源的胰腺导管腺癌（pancreatic ductal adenocarcinoma, PDAC）类器官在Matrigel中从单细胞形成分化的复杂3D结构形态。</li>
+<li>（b）来自2个病人的类器官分别在传统的24孔板和作者的微流控平台中平行生长。成熟的类器官形成后，采集类器官，HE染色，对比和分析它们的形态。在2个平台，1号病人的类器官展示了紧靠着的腺，伴随有高程度的核异型性和多形性，并有凋亡的腔坏死细胞的堆积。4号病人的类器官展示了良好的分化形态，为简单的球形类器官，均匀的核和细胞质特征，以及很少或者没有坏死的腔细胞聚集。</li>
+<li>（c）来源于3个病人的PDAC类器官样本的类器官生长曲线，由单细胞开始在平台上生长了7天。每个点代表一个独立类器官的横截面积。病人1（蓝色），病人2（红色），病人3（绿色）。</li>
+<li>（d）在平台上长时间培养、生长和荧光染色固定的PDAC类器官。其中，核用DAPI染色，F-肌动蛋白用鬼笔环肽（Phalloidin）。</li>
+<li>（e）使用DAPI和鬼笔环肽进行固定和荧光染色的类器官的多个Z轴图像的切片或堆栈。</li>
+</ul>
 <h2 id="Fig-3-Combinatorial-drug-treatment-of-human-tumor-organoids-on-microfluidic-platform"><a href="#Fig-3-Combinatorial-drug-treatment-of-human-tumor-organoids-on-microfluidic-platform" class="headerlink" title="Fig. 3 Combinatorial drug treatment of human tumor organoids on microfluidic platform"></a>Fig. 3 Combinatorial drug treatment of human tumor organoids on microfluidic platform</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure3.png" alt=""></p>
+<ul>
+<li>（a）处理期间，通过平台上的药物处理和刺激的类器官连续荧光和相位成像。每种颜色代表不同的药物配方。每个通道的药物治疗可以被按需改变，创造了随时间变化的药物治疗。类器官可以被分析其生长、形态学改变或死亡。</li>
+<li>（b）Caspase 3/7试剂（绿色）用于细胞凋亡检测，碘化丙啶（红色）用于死细胞检测。<ul>
+<li>阴性对照。</li>
+<li>100 nM吉西他滨（gemcitabine）的4小时药物脉冲处理类器官后，使用正常生长培养基。</li>
+<li>10 nM紫杉醇（paclitaxel）的连续72小时处理。</li>
+<li>100 nM吉西他滨的连续72小时处理。</li>
+<li>100 nM吉西他滨联合10 nM紫杉醇的连续72小时处理。</li>
+<li>10 mM的星形孢菌素（staurosporine）阳性对照。</li>
+</ul>
+</li>
+<li>（c）1号病人72小时期间连续地单药处理的平均Caspase 3/7信号。</li>
+<li>（d）1号病人72小时期间进行4小时单药脉冲处理随后使用正常生长培养基的平均Caspase 3/7信号。</li>
+<li>（e-f）类似地检查了多种已知药物组合的72小时（e）和4小时（f）药物处理。</li>
+</ul>
+<p>　　总的来说，<strong>相比于单药处理，联合化疗治疗会导致肿瘤类器官凋亡显著增加。</strong></p>
+<blockquote>
+<p><strong>星形孢菌素</strong>的主要生物活性是通过预防ATP与激酶的结合来抑制蛋白激酶。这是通过星形孢菌素对激酶上的ATP结合位点的更强亲和力来实现的。 在研究中，星形孢菌素用于诱导细胞凋亡。 </p>
+</blockquote>
+<h2 id="Table-1-Temporal-drug-combinations"><a href="#Table-1-Temporal-drug-combinations" class="headerlink" title="Table 1 Temporal drug combinations"></a>Table 1 Temporal drug combinations</h2><table>
+<thead>
+<tr>
+<th align="left">Combinatorial chemotherapy</th>
+<th align="left">Constant drug combination description</th>
+<th align="left">Temporal drug combination description</th>
+<th align="left">Temporal delivery description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">FOLFIRINOX</td>
+<td align="left">CPT-11 (100 nM), Oxaliplatin (100 nM), Fluorouracil (100 nM)</td>
+<td align="left">CPT-11 (100 nM), Oxaliplatin (100 nM), High Dose Fluorouracil (1 μM), Low-Dose Fluorouracil (100 nM)</td>
+<td align="left">CPT-11 (2 h), Oxaliplatin (2 h), High Dose Fluorouracil (30 min), Low-Dose Fluorouracil (48 h)</td>
+</tr>
+<tr>
+<td align="left">FOLFIRI</td>
+<td align="left">CPT-11 (100 nM), Fluorouracil (100 nM)</td>
+<td align="left">CPT-11 (100 nM), High Dose Fluorouracil (1 μM), Low-Dose Fluorouracil (100 nM)</td>
+<td align="left">CPT-11 (4 h), High Dose Fluorouracil (30 min), Low-Dose Fluorouracil (48 h)</td>
+</tr>
+<tr>
+<td align="left">FOLFOX</td>
+<td align="left">Oxaliplatin (100 nM), Fluorouracil (100 nM)</td>
+<td align="left">Oxaliplatin (100 nM), High Dose Fluorouracil (1 μM), Low-Dose Fluorouracil (100 nM)</td>
+<td align="left">Oxaliplatin (4 h), High Dose Fluorouracil (30 min), Low-Dose Fluorouracil (48 h)</td>
+</tr>
+<tr>
+<td align="left">Gemcitabine and Fluorouracil (5-FU)</td>
+<td align="left">Gemcitabine (100 nM), Fluorouracil (100 nM)</td>
+<td align="left">Gemcitabine (100 nM), Fluorouracil (100 nM)</td>
+<td align="left">Gemcitabine (4 h), Low-Dose Fluorouracil (48 h) repeated twice</td>
+</tr>
+<tr>
+<td align="left">Gemcitabine and Paclitaxel</td>
+<td align="left">Gemcitabine (100 nM), Paclitaxel (10 nM)</td>
+<td align="left">Gemcitabine (100 nM), Paclitaxel (10 nM)</td>
+<td align="left">Gemcitabine (4 h), Paclitaxel (4 h), normal growth media (24 h) repeated twice</td>
+</tr>
+</tbody></table>
 <h2 id="Fig-4-Sequential-and-temporal-drug-treatment-on-the-microfluidic-platform-reveals-the-efficacy-of-dynamic-temporal-drug-treatment-for-personalized-therapy"><a href="#Fig-4-Sequential-and-temporal-drug-treatment-on-the-microfluidic-platform-reveals-the-efficacy-of-dynamic-temporal-drug-treatment-for-personalized-therapy" class="headerlink" title="Fig. 4 Sequential and temporal drug treatment on the microfluidic platform reveals the efficacy of dynamic temporal drug treatment for personalized therapy"></a>Fig. 4 Sequential and temporal drug treatment on the microfluidic platform reveals the efficacy of dynamic temporal drug treatment for personalized therapy</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure4.png" alt=""></p>
+<ul>
+<li>（a）单药以脉冲的形式依次给药时间表示意图，以概括平台上动态的联合化疗。每行的颜色代表不同的药物配方，可以被按需改变。</li>
+<li>（b-h）比较五种按时间给药的联合化疗，使用平均的caspase 3/7信号以检测病人1样本的细胞凋亡。</li>
+<li>（c-g）比较五种按时间给药的联合化疗、72小时和4小时的恒定对照（也就是所有药同时给药）。</li>
+<li>（h）在72小时药物处理终点比较所有被研究的疗法。顺序的管理联合疗法对导致肿瘤细胞死亡十分有效。</li>
+</ul>
 <h2 id="Fig-5-High-throughput-drug-testing-of-multiple-patients-on-chip"><a href="#Fig-5-High-throughput-drug-testing-of-multiple-patients-on-chip" class="headerlink" title="Fig. 5 High-throughput drug testing of multiple patients on chip"></a>Fig. 5 High-throughput drug testing of multiple patients on chip</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure5.png" alt=""></p>
+<ul>
+<li>（a）3个病人的类器官同时地生长和刺激实验的热图。</li>
+<li>（b）每个病人和联合治疗组的平均类器官细胞凋亡和死亡的终点分析。</li>
+</ul>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><p>　　该平台为了保持鲁棒性，有如下优势：</p>
+<ul>
+<li>如果人工操作，在精确的时间精确地添加复杂的试剂将是一个主要的错误来源。该平台通过程序控制，有效消除了这方面的问题。</li>
+<li>该平台通过大量重复的条件和暴露在相同条件下的相同小孔单元的内在控制，提供了鲁棒性。</li>
+<li>该平台以时间顺序方式逐个给药以测试数千种药物组合，从而从程序上反映现实生活中的患者治疗情况。</li>
+</ul>
+<p>　　目的：<strong>通过体外测试类器官的药物敏感性，确定治疗方案。</strong></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Schuster B, Junkin M, Kashaf S S, et al. Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids[J]. Nature Communications, 2020, 11(1): 5271.</p>
 
         </div>
@@ -200,7 +308,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Drug-screening/">Drug screening</a>, <a class="has-link-grey -link" href="/tags/Microfluidics/">Microfluidics</a>, <a class="has-link-grey -link" href="/tags/Organoids/">Organoids</a>, <a class="has-link-grey -link" href="/tags/Organ‐on‐a‐chip/">Organ‐on‐a‐chip</a>
+                    <a class="has-link-grey -link" href="/tags/3D-cell-culturing/">3D cell culturing</a>, <a class="has-link-grey -link" href="/tags/Drug-screening/">Drug screening</a>, <a class="has-link-grey -link" href="/tags/Microfluidics/">Microfluidics</a>, <a class="has-link-grey -link" href="/tags/Organoids/">Organoids</a>, <a class="has-link-grey -link" href="/tags/Organ‐on‐a‐chip/">Organ‐on‐a‐chip</a>
                 </div>
             </div>
         </div>
@@ -216,6 +324,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/11/06/A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -294,7 +409,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        61
+                        62
                     </p>
                 </div>
             </div>
@@ -314,7 +429,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        184
+                        187
                     </p>
                 </div>
             </div>
@@ -352,16 +467,24 @@
         <span class="has-mr-6">4</span>
         <span>Fig. 3 Combinatorial drug treatment of human tumor organoids on microfluidic platform</span>
         </a></li><li>
-        <a class="is-flex" href="#Fig-4-Sequential-and-temporal-drug-treatment-on-the-microfluidic-platform-reveals-the-efficacy-of-dynamic-temporal-drug-treatment-for-personalized-therapy">
+        <a class="is-flex" href="#Table-1-Temporal-drug-combinations">
         <span class="has-mr-6">5</span>
+        <span>Table 1 Temporal drug combinations</span>
+        </a></li><li>
+        <a class="is-flex" href="#Fig-4-Sequential-and-temporal-drug-treatment-on-the-microfluidic-platform-reveals-the-efficacy-of-dynamic-temporal-drug-treatment-for-personalized-therapy">
+        <span class="has-mr-6">6</span>
         <span>Fig. 4 Sequential and temporal drug treatment on the microfluidic platform reveals the efficacy of dynamic temporal drug treatment for personalized therapy</span>
         </a></li><li>
         <a class="is-flex" href="#Fig-5-High-throughput-drug-testing-of-multiple-patients-on-chip">
-        <span class="has-mr-6">6</span>
+        <span class="has-mr-6">7</span>
         <span>Fig. 5 High-throughput drug testing of multiple patients on chip</span>
         </a></li><li>
+        <a class="is-flex" href="#Discussion">
+        <span class="has-mr-6">8</span>
+        <span>Discussion</span>
+        </a></li><li>
         <a class="is-flex" href="#Reference">
-        <span class="has-mr-6">7</span>
+        <span class="has-mr-6">9</span>
         <span>Reference</span>
         </a></li></ul>
         </div>
@@ -468,7 +591,7 @@
                 <span class="level-item">文献阅读</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">22</span>
+                <span class="level-item tag">23</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/昔情难追/">
@@ -522,7 +645,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/3D-printing/" style="font-size: 11.43px;">3D printing</a> <a href="/tags/ACT/" style="font-size: 11.43px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/Abdominal-wall-defects/" style="font-size: 10px;">Abdominal wall defects</a> <a href="/tags/Adoptive-cell-therapy/" style="font-size: 10px;">Adoptive cell therapy</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Anticancer-agents/" style="font-size: 10px;">Anticancer agents</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.43px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/Biochannels/" style="font-size: 10px;">Biochannels</a> <a href="/tags/Bioinspired/" style="font-size: 10px;">Bioinspired</a> <a href="/tags/Biomarkers/" style="font-size: 10px;">Biomarkers</a> <a href="/tags/Breast-cancer/" style="font-size: 10px;">Breast cancer</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CTC-isolation/" style="font-size: 10px;">CTC isolation</a> <a href="/tags/CTCs/" style="font-size: 10px;">CTCs</a> <a href="/tags/Cancer-stem-cells/" style="font-size: 10px;">Cancer stem cells</a> <a href="/tags/Cell-arrays/" style="font-size: 10px;">Cell arrays</a> <a href="/tags/Cell-culture-techniques/" style="font-size: 10px;">Cell culture techniques</a> <a href="/tags/Cell-bead-pairing/" style="font-size: 10px;">Cell-bead pairing</a> <a href="/tags/Cell-cell-interaction/" style="font-size: 10px;">Cell-cell interaction</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Circulating-tumor-cells/" style="font-size: 14.29px;">Circulating tumor cells</a> <a href="/tags/Clinical-diagnostics/" style="font-size: 10px;">Clinical diagnostics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Colon/" style="font-size: 10px;">Colon</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 11.43px;">Compartmentalized devices</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Cytokine-detection/" style="font-size: 10px;">Cytokine detection</a> <a href="/tags/Cytotoxicity/" style="font-size: 10px;">Cytotoxicity</a> <a href="/tags/Cytotoxicity-assay/" style="font-size: 10px;">Cytotoxicity assay</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 14.29px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Dielectrophoresis/" style="font-size: 10px;">Dielectrophoresis</a> <a href="/tags/Digital-microfluidics/" style="font-size: 10px;">Digital microfluidics</a> <a href="/tags/Discrimination-of-heterogenic-CTCs/" style="font-size: 10px;">Discrimination of heterogenic CTCs</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Double-emulsion-microfluidics/" style="font-size: 10px;">Double emulsion microfluidics</a> <a href="/tags/Droplet/" style="font-size: 10px;">Droplet</a> <a href="/tags/Droplet-microfluidics/" style="font-size: 11.43px;">Droplet microfluidics</a> <a href="/tags/Droplet‐based-microfluidics/" style="font-size: 10px;">Droplet‐based microfluidics</a> <a href="/tags/Drug-screening/" style="font-size: 11.43px;">Drug screening</a> <a href="/tags/Dual-isolation-and-profiling/" style="font-size: 10px;">Dual isolation and profiling</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Efficiency-of-encapsulation/" style="font-size: 10px;">Efficiency of encapsulation</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/English/" style="font-size: 15.71px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 11.43px;">Fast prototyping</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 17.14px;">Game</a> <a href="/tags/Gene-delivery/" style="font-size: 10px;">Gene delivery</a> <a href="/tags/Gene-expression-profiling/" style="font-size: 10px;">Gene expression profiling</a> <a href="/tags/Gene‐editing/" style="font-size: 10px;">Gene‐editing</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/G‐CSF/" style="font-size: 10px;">G‐CSF</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/High-throughput-screening-assays/" style="font-size: 10px;">High-throughput screening assays</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 11.43px;">Human neural stem cells</a> <a href="/tags/Hydrogels/" style="font-size: 10px;">Hydrogels</a> <a href="/tags/Immunoassay/" style="font-size: 10px;">Immunoassay</a> <a href="/tags/Interferon‐gamma/" style="font-size: 10px;">Interferon‐gamma</a> <a href="/tags/Intracellular-delivery/" style="font-size: 10px;">Intracellular delivery</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.86px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Leukapheresis/" style="font-size: 10px;">Leukapheresis</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Liquid-biopsy/" style="font-size: 10px;">Liquid biopsy</a> <a href="/tags/Literature/" style="font-size: 12.86px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 14.29px;">Machine Learning</a> <a href="/tags/Macromolecule-delivery/" style="font-size: 10px;">Macromolecule delivery</a> <a href="/tags/Magnetic-sorting/" style="font-size: 10px;">Magnetic sorting</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 12.86px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Melanoma/" style="font-size: 10px;">Melanoma</a> <a href="/tags/Microassembly/" style="font-size: 10px;">Microassembly</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Microdroplets/" style="font-size: 10px;">Microdroplets</a> <a href="/tags/Microfluidic/" style="font-size: 10px;">Microfluidic</a> <a href="/tags/Microfluidic-chips/" style="font-size: 10px;">Microfluidic chips</a> <a href="/tags/Microfluidic-blow-spinning/" style="font-size: 10px;">Microfluidic-blow-spinning</a> <a href="/tags/Microfluidics/" style="font-size: 18.57px;">Microfluidics</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 15.71px;">Monthly</a> <a href="/tags/Multi‐step-cascade-reactions/" style="font-size: 10px;">Multi‐step cascade reactions</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Nanoparticle-delivery/" style="font-size: 10px;">Nanoparticle delivery</a> <a href="/tags/Nanowell/" style="font-size: 10px;">Nanowell</a> <a href="/tags/Natural-killer-cells/" style="font-size: 10px;">Natural killer cells</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Organoids/" style="font-size: 11.43px;">Organoids</a> <a href="/tags/Organ‐on‐a‐chip/" style="font-size: 11.43px;">Organ‐on‐a‐chip</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patterning/" style="font-size: 10px;">Patterning</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.86px;">Poetry</a> <a href="/tags/Polymer-giant-unilamellar-vesicles/" style="font-size: 10px;">Polymer giant unilamellar vesicles</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Primary-cell-transfection/" style="font-size: 10px;">Primary cell transfection</a> <a href="/tags/Printing/" style="font-size: 10px;">Printing</a> <a href="/tags/Protein-secretion/" style="font-size: 10px;">Protein secretion</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 11.43px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Selective-isolation/" style="font-size: 10px;">Selective isolation</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Signal-transduction/" style="font-size: 10px;">Signal transduction</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Single-cell/" style="font-size: 10px;">Single cell</a> <a href="/tags/Single-cells/" style="font-size: 10px;">Single cells</a> <a href="/tags/Single-molecule/" style="font-size: 10px;">Single molecule</a> <a href="/tags/Single-cell/" style="font-size: 11.43px;">Single-cell</a> <a href="/tags/Single-cell-RNA-sequencing/" style="font-size: 10px;">Single-cell RNA sequencing</a> <a href="/tags/Single‐cell-analysis/" style="font-size: 10px;">Single‐cell analysis</a> <a href="/tags/Skin-regeneration/" style="font-size: 10px;">Skin regeneration</a> <a href="/tags/Soft-lithography/" style="font-size: 12.86px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 10px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Sub-Poisson-distribution/" style="font-size: 10px;">Sub-Poisson distribution</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Surface-chemistry/" style="font-size: 10px;">Surface chemistry</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/T-cell-function/" style="font-size: 10px;">T cell function</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Tissue-engineering/" style="font-size: 10px;">Tissue engineering</a> <a href="/tags/Transcriptome/" style="font-size: 10px;">Transcriptome</a> <a href="/tags/Transfection/" style="font-size: 10px;">Transfection</a> <a href="/tags/Tumor-exosomes/" style="font-size: 10px;">Tumor exosomes</a> <a href="/tags/Tumor-microenvironment/" style="font-size: 10px;">Tumor microenvironment</a> <a href="/tags/Ultrasensitive-detection/" style="font-size: 10px;">Ultrasensitive detection</a> <a href="/tags/Unboxing/" style="font-size: 12.86px;">Unboxing</a> <a href="/tags/Vasculature/" style="font-size: 10px;">Vasculature</a> <a href="/tags/Visual-novel/" style="font-size: 11.43px;">Visual novel</a> <a href="/tags/Wettability/" style="font-size: 10px;">Wettability</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 15.71px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.43px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 10px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+        <a href="/tags/3D-cell-culturing/" style="font-size: 10px;">3D cell culturing</a> <a href="/tags/3D-printing/" style="font-size: 11.67px;">3D printing</a> <a href="/tags/ACT/" style="font-size: 11.67px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/Abdominal-wall-defects/" style="font-size: 10px;">Abdominal wall defects</a> <a href="/tags/Adoptive-cell-therapy/" style="font-size: 10px;">Adoptive cell therapy</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Anticancer-agents/" style="font-size: 10px;">Anticancer agents</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.67px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/Biochannels/" style="font-size: 10px;">Biochannels</a> <a href="/tags/Bioinspired/" style="font-size: 10px;">Bioinspired</a> <a href="/tags/Biomarkers/" style="font-size: 10px;">Biomarkers</a> <a href="/tags/Breast-cancer/" style="font-size: 10px;">Breast cancer</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CTC-isolation/" style="font-size: 10px;">CTC isolation</a> <a href="/tags/CTCs/" style="font-size: 10px;">CTCs</a> <a href="/tags/Cancer-stem-cells/" style="font-size: 10px;">Cancer stem cells</a> <a href="/tags/Cell-arrays/" style="font-size: 10px;">Cell arrays</a> <a href="/tags/Cell-culture-techniques/" style="font-size: 10px;">Cell culture techniques</a> <a href="/tags/Cell-bead-pairing/" style="font-size: 10px;">Cell-bead pairing</a> <a href="/tags/Cell-cell-interaction/" style="font-size: 10px;">Cell-cell interaction</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Circulating-tumor-cells/" style="font-size: 15px;">Circulating tumor cells</a> <a href="/tags/Clinical-diagnostics/" style="font-size: 10px;">Clinical diagnostics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Colon/" style="font-size: 10px;">Colon</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 11.67px;">Compartmentalized devices</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Cytokine-detection/" style="font-size: 10px;">Cytokine detection</a> <a href="/tags/Cytotoxicity/" style="font-size: 10px;">Cytotoxicity</a> <a href="/tags/Cytotoxicity-assay/" style="font-size: 10px;">Cytotoxicity assay</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 15px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Dielectrophoresis/" style="font-size: 10px;">Dielectrophoresis</a> <a href="/tags/Digital-microfluidics/" style="font-size: 10px;">Digital microfluidics</a> <a href="/tags/Discrimination-of-heterogenic-CTCs/" style="font-size: 10px;">Discrimination of heterogenic CTCs</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Double-emulsion-microfluidics/" style="font-size: 10px;">Double emulsion microfluidics</a> <a href="/tags/Droplet/" style="font-size: 10px;">Droplet</a> <a href="/tags/Droplet-microfluidics/" style="font-size: 11.67px;">Droplet microfluidics</a> <a href="/tags/Droplet‐based-microfluidics/" style="font-size: 10px;">Droplet‐based microfluidics</a> <a href="/tags/Drug-screening/" style="font-size: 13.33px;">Drug screening</a> <a href="/tags/Dual-isolation-and-profiling/" style="font-size: 10px;">Dual isolation and profiling</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Efficiency-of-encapsulation/" style="font-size: 10px;">Efficiency of encapsulation</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/English/" style="font-size: 16.67px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 11.67px;">Fast prototyping</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 18.33px;">Game</a> <a href="/tags/Gene-delivery/" style="font-size: 10px;">Gene delivery</a> <a href="/tags/Gene-expression-profiling/" style="font-size: 10px;">Gene expression profiling</a> <a href="/tags/Gene‐editing/" style="font-size: 10px;">Gene‐editing</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/G‐CSF/" style="font-size: 10px;">G‐CSF</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/High-throughput-screening-assays/" style="font-size: 10px;">High-throughput screening assays</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 11.67px;">Human neural stem cells</a> <a href="/tags/Hydrogels/" style="font-size: 10px;">Hydrogels</a> <a href="/tags/Immunoassay/" style="font-size: 10px;">Immunoassay</a> <a href="/tags/Interferon‐gamma/" style="font-size: 10px;">Interferon‐gamma</a> <a href="/tags/Intracellular-delivery/" style="font-size: 10px;">Intracellular delivery</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 13.33px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Leukapheresis/" style="font-size: 10px;">Leukapheresis</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Liquid-biopsy/" style="font-size: 10px;">Liquid biopsy</a> <a href="/tags/Literature/" style="font-size: 13.33px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/Macromolecule-delivery/" style="font-size: 10px;">Macromolecule delivery</a> <a href="/tags/Magnetic-sorting/" style="font-size: 10px;">Magnetic sorting</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 13.33px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Melanoma/" style="font-size: 10px;">Melanoma</a> <a href="/tags/Microassembly/" style="font-size: 10px;">Microassembly</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Microdroplets/" style="font-size: 10px;">Microdroplets</a> <a href="/tags/Microfluidic/" style="font-size: 10px;">Microfluidic</a> <a href="/tags/Microfluidic-chips/" style="font-size: 10px;">Microfluidic chips</a> <a href="/tags/Microfluidic-blow-spinning/" style="font-size: 10px;">Microfluidic-blow-spinning</a> <a href="/tags/Microfluidics/" style="font-size: 20px;">Microfluidics</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 16.67px;">Monthly</a> <a href="/tags/Multi‐step-cascade-reactions/" style="font-size: 10px;">Multi‐step cascade reactions</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Nanoparticle-delivery/" style="font-size: 10px;">Nanoparticle delivery</a> <a href="/tags/Nanowell/" style="font-size: 10px;">Nanowell</a> <a href="/tags/Natural-killer-cells/" style="font-size: 10px;">Natural killer cells</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Organoids/" style="font-size: 11.67px;">Organoids</a> <a href="/tags/Organ‐on‐a‐chip/" style="font-size: 11.67px;">Organ‐on‐a‐chip</a> <a href="/tags/Pain-relief/" style="font-size: 10px;">Pain relief</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patterning/" style="font-size: 10px;">Patterning</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 13.33px;">Poetry</a> <a href="/tags/Polymer-giant-unilamellar-vesicles/" style="font-size: 10px;">Polymer giant unilamellar vesicles</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Primary-cell-transfection/" style="font-size: 10px;">Primary cell transfection</a> <a href="/tags/Printing/" style="font-size: 10px;">Printing</a> <a href="/tags/Protein-secretion/" style="font-size: 10px;">Protein secretion</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 11.67px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Selective-isolation/" style="font-size: 10px;">Selective isolation</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Signal-transduction/" style="font-size: 10px;">Signal transduction</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Single-cell/" style="font-size: 10px;">Single cell</a> <a href="/tags/Single-cells/" style="font-size: 10px;">Single cells</a> <a href="/tags/Single-molecule/" style="font-size: 10px;">Single molecule</a> <a href="/tags/Single-cell/" style="font-size: 11.67px;">Single-cell</a> <a href="/tags/Single-cell-RNA-sequencing/" style="font-size: 10px;">Single-cell RNA sequencing</a> <a href="/tags/Single‐cell-analysis/" style="font-size: 11.67px;">Single‐cell analysis</a> <a href="/tags/Skin-regeneration/" style="font-size: 10px;">Skin regeneration</a> <a href="/tags/Soft-lithography/" style="font-size: 13.33px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 10px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Sub-Poisson-distribution/" style="font-size: 10px;">Sub-Poisson distribution</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Surface-chemistry/" style="font-size: 10px;">Surface chemistry</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/T-cell-function/" style="font-size: 10px;">T cell function</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Tissue-engineering/" style="font-size: 10px;">Tissue engineering</a> <a href="/tags/Transcriptome/" style="font-size: 10px;">Transcriptome</a> <a href="/tags/Transfection/" style="font-size: 10px;">Transfection</a> <a href="/tags/Transient-receptor-potential-channel-modulators/" style="font-size: 10px;">Transient receptor potential channel modulators</a> <a href="/tags/Tumor-exosomes/" style="font-size: 10px;">Tumor exosomes</a> <a href="/tags/Tumor-microenvironment/" style="font-size: 10px;">Tumor microenvironment</a> <a href="/tags/Ultrasensitive-detection/" style="font-size: 10px;">Ultrasensitive detection</a> <a href="/tags/Unboxing/" style="font-size: 13.33px;">Unboxing</a> <a href="/tags/Vasculature/" style="font-size: 10px;">Vasculature</a> <a href="/tags/Visual-novel/" style="font-size: 11.67px;">Visual novel</a> <a href="/tags/Wettability/" style="font-size: 10px;">Wettability</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 16.67px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.67px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 10px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
     </div>
 </div>
 
@@ -536,6 +659,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/06/A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/figure1.jpg" alt="A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T06:01:48.000Z">2020-11-06</time></div>
+                    <a href="/2020/11/06/A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators/" class="has-link-black-ter is-size-6">A Precise Microfluidic Assay i</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -613,25 +755,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/10/29/IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/figure1.jpg" alt="IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-29T07:01:45.000Z">2020-10-29</time></div>
-                    <a href="/2020/10/29/IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids/" class="has-link-black-ter is-size-6">IFlowPlate—A Customized 384‐We</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -650,7 +773,7 @@
                     <span class="level-item">十一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -889,6 +1012,25 @@
         
         <article class="media">
             
+            <a href="/2020/11/06/A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/figure1.jpg" alt="A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-06T06:01:48.000Z">2020-11-06</time></div>
+                    <a href="/2020/11/06/A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators/" class="has-link-black-ter is-size-6">A Precise Microfluidic Assay i</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/11/04/Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/figure1.png" alt="Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids">
@@ -963,25 +1105,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/10/29/IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/figure1.jpg" alt="IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-29T07:01:45.000Z">2020-10-29</time></div>
-                    <a href="/2020/10/29/IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids/" class="has-link-black-ter is-size-6">IFlowPlate—A Customized 384‐We</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1000,7 +1123,7 @@
                     <span class="level-item">十一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

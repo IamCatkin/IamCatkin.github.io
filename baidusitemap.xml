@@ -4,8 +4,62 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    <lastmod>2020-11-09T07:20:08.952Z</lastmod>
+    <data>
+        <display>
+        <title>Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis</title>
+        <pubTime>2020-11-09T07:16:32.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Drug screening</tag>
+         
+        <tag>Breast neoplasms</tag>
+         
+        <tag>Machine learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/04/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/</loc>
+    <lastmod>2020-11-09T01:03:03.311Z</lastmod>
+    <data>
+        <display>
+        <title>Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids</title>
+        <pubTime>2020-11-04T10:57:48.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Drug screening</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Organ‐on‐a‐chip</tag>
+         
+        <tag>3D cell culturing</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/11/08/%E8%BD%A9%E8%BE%95%E5%89%91%E6%9F%92%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
-    <lastmod>2020-11-08T12:59:33.379Z</lastmod>
+    <lastmod>2020-11-08T15:46:08.485Z</lastmod>
     <data>
         <display>
         <title>轩辕剑柒个人评价</title>
@@ -51,34 +105,6 @@
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/04/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/</loc>
-    <lastmod>2020-11-07T00:13:25.805Z</lastmod>
-    <data>
-        <display>
-        <title>Automated microfluidic platform for dynamic and combinatorial drug screening of tumor organoids</title>
-        <pubTime>2020-11-04T10:57:48.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Drug screening</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Organ‐on‐a‐chip</tag>
-         
-        <tag>3D cell culturing</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>

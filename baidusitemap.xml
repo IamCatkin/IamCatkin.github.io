@@ -4,8 +4,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    <lastmod>2020-11-12T09:35:16.280Z</lastmod>
+    <data>
+        <display>
+        <title>Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis</title>
+        <pubTime>2020-11-12T09:17:53.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Cancer stem cells</tag>
+         
+        <tag>Machine learning</tag>
+         
+        <tag>Convolutional neural network</tag>
+         
+        <tag>Tumorsphere</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
-    <lastmod>2020-11-09T07:20:08.952Z</lastmod>
+    <lastmod>2020-11-12T09:15:37.265Z</lastmod>
     <data>
         <display>
         <title>Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis</title>
@@ -18,6 +46,58 @@
         <tag>Breast neoplasms</tag>
          
         <tag>Machine learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2020-11-10T12:50:55.542Z</lastmod>
+    <data>
+        <display>
+        <title>记录一些可能有用的网站</title>
+        <pubTime>2019-12-12T00:43:54.000Z</pubTime>
+        
+        <tag>Link</tag>
+         
+        <tag>Writing</tag>
+         
+        <tag>Experiment</tag>
+         
+         
+           
+             
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
+    <lastmod>2020-11-09T14:16:20.824Z</lastmod>
+    <data>
+        <display>
+        <title>A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators</title>
+        <pubTime>2020-11-06T06:01:48.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Single‐cell analysis</tag>
+         
+        <tag>Drug screening</tag>
+         
+        <tag>Pain relief</tag>
+         
+        <tag>Transient receptor potential channel modulators</tag>
          
          
            
@@ -105,34 +185,6 @@
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
-    <lastmod>2020-11-06T13:07:03.301Z</lastmod>
-    <data>
-        <display>
-        <title>A Precise Microfluidic Assay in Single‐Cell Profile for Screening of Transient Receptor Potential Channel Modulators</title>
-        <pubTime>2020-11-06T06:01:48.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Single‐cell analysis</tag>
-         
-        <tag>Drug screening</tag>
-         
-        <tag>Pain relief</tag>
-         
-        <tag>Transient receptor potential channel modulators</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>
@@ -585,30 +637,6 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2020-10-07T06:48:52.219Z</lastmod>
-    <data>
-        <display>
-        <title>记录一些可能有用的网站</title>
-        <pubTime>2019-12-12T00:43:54.000Z</pubTime>
-        
-        <tag>Link</tag>
-         
-        <tag>Writing</tag>
-         
-        <tag>Experiment</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>

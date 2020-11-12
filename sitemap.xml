@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    
+    <lastmod>2020-11-12T09:35:16.280Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
     
-    <lastmod>2020-11-09T07:20:08.952Z</lastmod>
+    <lastmod>2020-11-12T09:15:37.265Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2020-11-10T12:50:55.542Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
+    
+    <lastmod>2020-11-09T14:16:20.824Z</lastmod>
     
   </url>
   
@@ -26,13 +47,6 @@
     <loc>https://blog.catkin.moe/2020/05/28/%E6%B1%9F%E6%B9%96%E5%A4%9C%E9%9B%A8%E5%8D%81%E5%B9%B4%E7%81%AF%EF%BC%9A%E6%AD%A6%E4%BE%A0%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BF%86/</loc>
     
     <lastmod>2020-11-08T12:56:19.972Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
-    
-    <lastmod>2020-11-06T13:07:03.301Z</lastmod>
     
   </url>
   
@@ -145,13 +159,6 @@
     <loc>https://blog.catkin.moe/2020/10/06/Evaluation%20of%20Single-Cell%20Cytokine%20Secretion%20and%20Cell-Cell%20Interactions%20with%20a%20Hierarchical%20Loading%20Microwell%20Chip/</loc>
     
     <lastmod>2020-10-07T13:09:13.187Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2020-10-07T06:48:52.219Z</lastmod>
     
   </url>
   

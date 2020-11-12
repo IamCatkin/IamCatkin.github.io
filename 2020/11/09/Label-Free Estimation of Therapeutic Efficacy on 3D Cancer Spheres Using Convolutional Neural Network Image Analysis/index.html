@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="一种">
+    <meta name="description" content="一种无标签的，使用神经网络估计3D肿瘤球的治疗有效性的方法。">
 <meta name="keywords" content="Microfluidics,Drug screening,Breast neoplasms,Machine learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis">
 <meta property="og:url" content="https://blog.catkin.moe/2020/11/09/Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="一种">
+<meta property="og:description" content="一种无标签的，使用神经网络估计3D肿瘤球的治疗有效性的方法。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/cover.jpg">
-<meta property="og:updated_time" content="2020-11-09T07:20:08.952Z">
+<meta property="og:updated_time" content="2020-11-12T09:15:37.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis">
-<meta name="twitter:description" content="一种">
+<meta name="twitter:description" content="一种无标签的，使用神经网络估计3D肿瘤球的治疗有效性的方法。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/cover.jpg">
 
 
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 35 个字)
+                    16 分钟 读完 (大约 2354 个字)
                 </span>
                 
                 
@@ -183,9 +183,57 @@
             
         </h1>
         <div class="content">
-            <p>　　一种</p>
+            <p>　　一种无标签的，使用神经网络估计3D肿瘤球的治疗有效性的方法。</p>
 <a id="more"></a>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　</p>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　癌症是导致全球居民死亡的主要原因，也是提高预期寿命的最大障碍。 据统计，到2018年世界范围内预计有1810万新发病例和960万死亡病例。虽然当前在癌症治疗上取得了一些进步，但开发新的治疗试剂对癌症患者仍是意义非凡的。尽管动物模型拥有更好的生理相关性，但它具有高时间与金钱成本的缺点；二维细胞培养具有低成本与高通量的优点，但其缺乏细胞与细胞、细胞与细胞外基质的相互作用，使其不能充分模拟实体瘤微环境。三维细胞培养可以更好地模拟真实肿瘤中的药物暴露、营养和氧气供应情况，是一种在癌症药物筛选中更先进的模型。</p>
+<p>　　微流控技术具有精准控制三维球以用于高通量药物测试的优点。但是在大规模药物筛选中，微流控的采用十分缓慢，一个主要的瓶颈是缺乏一个快速和低成本的读出方法。</p>
+<p>　　为了测量药物有效性，开发了多种细胞活性试验。基于荧光的活死染色由两种成分组成。活细胞荧光试剂（如钙黄绿素）可以被细胞内酯酶激活以指示活细胞。死细胞荧光试剂（如溴乙啡锭二聚体1）能够扩散通过缺乏抵抗力的细胞膜使核酸着色，因此它可以指示死细胞的细胞膜完整性丧失。活死染色在流式细胞术中十分有用，然而它在三维模型中有一些缺点：</p>
+<ul>
+<li>光的吸收、散射、穿透性差会使三维球/组织的成像质量变差。</li>
+<li>荧光成像每张图像通常花费数百毫秒的曝光时间，明场显微镜只需要数毫秒，在大规模的药物筛选试验中会很不利。</li>
+<li>活死细胞染色试剂在大规模的药物筛选中花费很大。</li>
+<li>染色的细胞毒性使其仅适合作为终点检测。</li>
+</ul>
+<p>　　还有其他更专门的细胞活性试验，测量半胱天冬酶（caspase）（如CellEvent）以指示凋亡细胞或ATP的发光读出（如CellTiter-Glo），依然存在高成本和潜在细胞毒性。比色法（如MTT和XTT）监控细胞的代谢功能，是一种快速和便宜的评估细胞活性的替代方法。健康细胞可以将基于四唑的染料还原成紫色的甲瓒，而死细胞失去了这个能力。这个方法成本低廉且易于读数，但是难以通过检查所有细胞区分杀死细胞的效果和降低细胞代谢活性的效果。在连续的监控中它的细胞读数也是让人关心的问题。最重要的是，MTT或XTT需要大量的细胞和试剂以积累显著的比色变化，在微流控平台不适用。</p>
+<h2 id="Figure-1-Tumor-sphere-chip-and-culture-chamber"><a href="#Figure-1-Tumor-sphere-chip-and-culture-chamber" class="headerlink" title="Figure 1. Tumor sphere chip and culture chamber"></a>Figure 1. Tumor sphere chip and culture chamber</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/figure1.jpg" alt=""></p>
+<ul>
+<li>（a）用于药物筛选的癌症球芯片的照片。芯片可以并行测试6个药物浓度用于估算IC50值。每个条件下有320个腔室培养细胞球。</li>
+<li>（b）8个含有流入和流出通道的肿瘤球培养腔室的显微图像，细胞通过流入通道进入球腔，由于细胞直径比微柱支撑的间隔大，细胞被细胞球培养腔捕获。带有细胞的培养基可以通过流出通道流出。</li>
+<li>（c）由Olympus OLS 4000 LEXT仪器测量的一个单元腔的激光共聚焦显微镜图像。</li>
+</ul>
+<h2 id="Figure-2-Cell-loading-in-a-sphere-chamber-and-sphere-aggregation"><a href="#Figure-2-Cell-loading-in-a-sphere-chamber-and-sphere-aggregation" class="headerlink" title="Figure 2. Cell loading in a sphere chamber and sphere aggregation"></a>Figure 2. Cell loading in a sphere chamber and sphere aggregation</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/figure2.jpg" alt=""></p>
+<ul>
+<li>（a）装载前空的癌症球腔。</li>
+<li>（b）SUM159乳腺癌细胞被装载进入癌症球腔。</li>
+<li>（c）2天后细胞聚集成癌症球。</li>
+<li>（d）一个自动的腔室裁剪程序将圆形腔室区域（蓝色圈）裁剪，以用于进一步的图像处理和机器学习。</li>
+</ul>
+<h2 id="Figure-3-Cancer-spheres-treated-by-doxorubicin"><a href="#Figure-3-Cancer-spheres-treated-by-doxorubicin" class="headerlink" title="Figure 3. Cancer spheres treated by doxorubicin"></a>Figure 3. Cancer spheres treated by doxorubicin</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/figure3.jpg" alt=""></p>
+<p>　　由6种不同浓度的阿霉素处理的SUM159癌症球的代表性图像。活死染色用于定量球生存力。FITC绿色荧光图像代表活细胞，TRITC红色荧光图像代表死细胞。当药物浓度增加时，绿色荧光强度减少，红色荧光强度增加。明场形态同样随药物处理而改变。</p>
+<blockquote>
+<p><strong>TRITC</strong></p>
+<p>　　TRITC [四甲基罗丹明-5(6)-异硫氰酸]。与 FITC 相反，TRITC 并非荧光素，而是罗丹明家族的衍生物。罗丹明也具有一个大的共轭芳香电子系统，正是该系统引发了它们的荧光行为。还有一点与FITC 相反，TRITC (479 g/mol) 由最大波长为 550nm的绿色光谱中的光所激发，它的最大发射波长为 573 nm。 </p>
+</blockquote>
+<h2 id="Figure-4-Cancer-sphere-classification-and-drug-inhibition-score-regression-using-the-bright-field-image-and-CNN-model"><a href="#Figure-4-Cancer-sphere-classification-and-drug-inhibition-score-regression-using-the-bright-field-image-and-CNN-model" class="headerlink" title="Figure 4. Cancer sphere classification and drug inhibition score regression using the bright-field image and CNN model"></a>Figure 4. Cancer sphere classification and drug inhibition score regression using the bright-field image and CNN model</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/figure4.jpg" alt=""></p>
+<ul>
+<li>（a）阿霉素处理分类器精确地（93.2%）预测了基于明场图像的药物处理浓度。绿色方框代表正确的预测，红色方框为错误预测，灰色方框为行/列的总和。预测数目和百分比都在方框中被描述。一列方框属于被相同浓度处理的球，一行方框属于被预测为相同浓度处理的球。由于其浓度远低于IC50的转换点难以被活死染色区分，前三类被合并。</li>
+<li>（b）X轴代表通过活死染色测量的抑制分数的真实数据，Y轴代表使用训练后的CNN模型预测的药物抑制分数。每个点代表一个球，不同的颜色代表不同的药物浓度。线性回归的R值（ 也就是皮尔逊系数）为0.84，显示真值与预测的强相关性。</li>
+<li>（c-d）两种化疗药物的药效IC50曲线。X轴代表药物浓度，Y轴代表药物抑制分数。蓝色曲线基于活死染色的真值绘出，红色曲线基于明场图像的预测绘出。误差条指示平均标准偏差（standard error of the mean, SEM）。<ul>
+<li>（c）阿霉素处理癌症球的药效IC50曲线。基于活死染色的预估IC50值为1.7 μM，基于明场图像的为1.6 μM。</li>
+<li>（d）奥沙利铂处理癌症球的药效IC50曲线。基于活死染色的预估IC50值为51 μM，基于明场图像的为47 μM。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Figure-5-Interdrug-model-validation-and-prediction-model-combining-different-drugs"><a href="#Figure-5-Interdrug-model-validation-and-prediction-model-combining-different-drugs" class="headerlink" title="Figure 5. Interdrug model validation and prediction model combining different drugs"></a>Figure 5. Interdrug model validation and prediction model combining different drugs</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/figure5.jpg" alt=""></p>
+<ul>
+<li>（a）通过阿霉素处理的肿瘤球训练的CNN模型，用于预测奥沙利铂处理的肿瘤球的药物抑制分数。X轴代表活死染色测量的抑制分数的真值，Y轴代表通过阿霉素处理肿瘤球的明场图像训练的模型预测的药物抑制分数。每个点代表一个球，线性回归的R值为0.82，显示真值与预测的强相关性。</li>
+<li>（b）经过阿霉素和奥沙利铂处理的肿瘤球联合训练和预测。每个点代表一个球，不同颜色代表不同的药物处理。线性回归的R值为0.93，甚至高于单独药物的预测。</li>
+</ul>
+<blockquote>
+<p>体现了模型的迁移能力，相同机制的药物处理有相同的形态特征。</p>
+</blockquote>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>　　微流控技术在药物研究中受到了缺乏自动化的、快速的和低成本读出方法的限制。作者开发了一个高通量的3D细胞培养平台。通过可编程软件自动化裁剪图片以用于分析，更重要的是，使用卷积神经网络开发了通过明场图像训练的卷积神经网络精准预测癌症球生存率的方法。</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Zhang Z, Chen L, Wang Y, et al. Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis[J]. Analytical Chemistry, 2019, 91(21): 14093–14100.</p>
 
         </div>
@@ -210,6 +258,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/11/12/Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -288,7 +343,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        64
+                        65
                     </p>
                 </div>
             </div>
@@ -308,7 +363,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        190
+                        192
                     </p>
                 </div>
             </div>
@@ -334,8 +389,32 @@
         <span class="has-mr-6">1</span>
         <span>Introduction</span>
         </a></li><li>
-        <a class="is-flex" href="#Reference">
+        <a class="is-flex" href="#Figure-1-Tumor-sphere-chip-and-culture-chamber">
         <span class="has-mr-6">2</span>
+        <span>Figure 1. Tumor sphere chip and culture chamber</span>
+        </a></li><li>
+        <a class="is-flex" href="#Figure-2-Cell-loading-in-a-sphere-chamber-and-sphere-aggregation">
+        <span class="has-mr-6">3</span>
+        <span>Figure 2. Cell loading in a sphere chamber and sphere aggregation</span>
+        </a></li><li>
+        <a class="is-flex" href="#Figure-3-Cancer-spheres-treated-by-doxorubicin">
+        <span class="has-mr-6">4</span>
+        <span>Figure 3. Cancer spheres treated by doxorubicin</span>
+        </a></li><li>
+        <a class="is-flex" href="#Figure-4-Cancer-sphere-classification-and-drug-inhibition-score-regression-using-the-bright-field-image-and-CNN-model">
+        <span class="has-mr-6">5</span>
+        <span>Figure 4. Cancer sphere classification and drug inhibition score regression using the bright-field image and CNN model</span>
+        </a></li><li>
+        <a class="is-flex" href="#Figure-5-Interdrug-model-validation-and-prediction-model-combining-different-drugs">
+        <span class="has-mr-6">6</span>
+        <span>Figure 5. Interdrug model validation and prediction model combining different drugs</span>
+        </a></li><li>
+        <a class="is-flex" href="#Conclusion">
+        <span class="has-mr-6">7</span>
+        <span>Conclusion</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">8</span>
         <span>Reference</span>
         </a></li></ul>
         </div>
@@ -442,7 +521,7 @@
                 <span class="level-item">文献阅读</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">24</span>
+                <span class="level-item tag">25</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/昔情难追/">
@@ -496,7 +575,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/3D-cell-culturing/" style="font-size: 10px;">3D cell culturing</a> <a href="/tags/3D-printing/" style="font-size: 11.43px;">3D printing</a> <a href="/tags/ACT/" style="font-size: 11.43px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/Abdominal-wall-defects/" style="font-size: 10px;">Abdominal wall defects</a> <a href="/tags/Adoptive-cell-therapy/" style="font-size: 10px;">Adoptive cell therapy</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Anticancer-agents/" style="font-size: 10px;">Anticancer agents</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.43px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/Biochannels/" style="font-size: 10px;">Biochannels</a> <a href="/tags/Bioinspired/" style="font-size: 10px;">Bioinspired</a> <a href="/tags/Biomarkers/" style="font-size: 10px;">Biomarkers</a> <a href="/tags/Breast-cancer/" style="font-size: 10px;">Breast cancer</a> <a href="/tags/Breast-neoplasms/" style="font-size: 10px;">Breast neoplasms</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CTC-isolation/" style="font-size: 10px;">CTC isolation</a> <a href="/tags/CTCs/" style="font-size: 10px;">CTCs</a> <a href="/tags/Cancer-stem-cells/" style="font-size: 10px;">Cancer stem cells</a> <a href="/tags/Cell-arrays/" style="font-size: 10px;">Cell arrays</a> <a href="/tags/Cell-culture-techniques/" style="font-size: 10px;">Cell culture techniques</a> <a href="/tags/Cell-bead-pairing/" style="font-size: 10px;">Cell-bead pairing</a> <a href="/tags/Cell-cell-interaction/" style="font-size: 10px;">Cell-cell interaction</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Circulating-tumor-cells/" style="font-size: 14.29px;">Circulating tumor cells</a> <a href="/tags/Clinical-diagnostics/" style="font-size: 10px;">Clinical diagnostics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Colon/" style="font-size: 10px;">Colon</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 11.43px;">Compartmentalized devices</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Cytokine-detection/" style="font-size: 10px;">Cytokine detection</a> <a href="/tags/Cytotoxicity/" style="font-size: 10px;">Cytotoxicity</a> <a href="/tags/Cytotoxicity-assay/" style="font-size: 10px;">Cytotoxicity assay</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 14.29px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Dielectrophoresis/" style="font-size: 10px;">Dielectrophoresis</a> <a href="/tags/Digital-microfluidics/" style="font-size: 10px;">Digital microfluidics</a> <a href="/tags/Discrimination-of-heterogenic-CTCs/" style="font-size: 10px;">Discrimination of heterogenic CTCs</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Double-emulsion-microfluidics/" style="font-size: 10px;">Double emulsion microfluidics</a> <a href="/tags/Droplet/" style="font-size: 10px;">Droplet</a> <a href="/tags/Droplet-microfluidics/" style="font-size: 11.43px;">Droplet microfluidics</a> <a href="/tags/Droplet‐based-microfluidics/" style="font-size: 10px;">Droplet‐based microfluidics</a> <a href="/tags/Drug-screening/" style="font-size: 14.29px;">Drug screening</a> <a href="/tags/Dual-isolation-and-profiling/" style="font-size: 10px;">Dual isolation and profiling</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Efficiency-of-encapsulation/" style="font-size: 10px;">Efficiency of encapsulation</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/English/" style="font-size: 15.71px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 11.43px;">Fast prototyping</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 17.14px;">Game</a> <a href="/tags/Gene-delivery/" style="font-size: 10px;">Gene delivery</a> <a href="/tags/Gene-expression-profiling/" style="font-size: 10px;">Gene expression profiling</a> <a href="/tags/Gene‐editing/" style="font-size: 10px;">Gene‐editing</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/G‐CSF/" style="font-size: 10px;">G‐CSF</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/High-throughput-screening-assays/" style="font-size: 10px;">High-throughput screening assays</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 11.43px;">Human neural stem cells</a> <a href="/tags/Hydrogels/" style="font-size: 10px;">Hydrogels</a> <a href="/tags/Immunoassay/" style="font-size: 10px;">Immunoassay</a> <a href="/tags/Interferon‐gamma/" style="font-size: 10px;">Interferon‐gamma</a> <a href="/tags/Intracellular-delivery/" style="font-size: 10px;">Intracellular delivery</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.86px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Leukapheresis/" style="font-size: 10px;">Leukapheresis</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Liquid-biopsy/" style="font-size: 10px;">Liquid biopsy</a> <a href="/tags/Literature/" style="font-size: 12.86px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 14.29px;">Machine Learning</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/Macromolecule-delivery/" style="font-size: 10px;">Macromolecule delivery</a> <a href="/tags/Magnetic-sorting/" style="font-size: 10px;">Magnetic sorting</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 12.86px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Melanoma/" style="font-size: 10px;">Melanoma</a> <a href="/tags/Microassembly/" style="font-size: 10px;">Microassembly</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Microdroplets/" style="font-size: 10px;">Microdroplets</a> <a href="/tags/Microfluidic/" style="font-size: 10px;">Microfluidic</a> <a href="/tags/Microfluidic-chips/" style="font-size: 10px;">Microfluidic chips</a> <a href="/tags/Microfluidic-blow-spinning/" style="font-size: 10px;">Microfluidic-blow-spinning</a> <a href="/tags/Microfluidics/" style="font-size: 20px;">Microfluidics</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 15.71px;">Monthly</a> <a href="/tags/Multi‐step-cascade-reactions/" style="font-size: 10px;">Multi‐step cascade reactions</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Nanoparticle-delivery/" style="font-size: 10px;">Nanoparticle delivery</a> <a href="/tags/Nanowell/" style="font-size: 10px;">Nanowell</a> <a href="/tags/Natural-killer-cells/" style="font-size: 10px;">Natural killer cells</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Organoids/" style="font-size: 11.43px;">Organoids</a> <a href="/tags/Organ‐on‐a‐chip/" style="font-size: 11.43px;">Organ‐on‐a‐chip</a> <a href="/tags/Pain-relief/" style="font-size: 10px;">Pain relief</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patterning/" style="font-size: 10px;">Patterning</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.86px;">Poetry</a> <a href="/tags/Polymer-giant-unilamellar-vesicles/" style="font-size: 10px;">Polymer giant unilamellar vesicles</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Primary-cell-transfection/" style="font-size: 10px;">Primary cell transfection</a> <a href="/tags/Printing/" style="font-size: 10px;">Printing</a> <a href="/tags/Protein-secretion/" style="font-size: 10px;">Protein secretion</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 12.86px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Selective-isolation/" style="font-size: 10px;">Selective isolation</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Signal-transduction/" style="font-size: 10px;">Signal transduction</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Single-cell/" style="font-size: 10px;">Single cell</a> <a href="/tags/Single-cells/" style="font-size: 10px;">Single cells</a> <a href="/tags/Single-molecule/" style="font-size: 10px;">Single molecule</a> <a href="/tags/Single-cell/" style="font-size: 11.43px;">Single-cell</a> <a href="/tags/Single-cell-RNA-sequencing/" style="font-size: 10px;">Single-cell RNA sequencing</a> <a href="/tags/Single‐cell-analysis/" style="font-size: 11.43px;">Single‐cell analysis</a> <a href="/tags/Skin-regeneration/" style="font-size: 10px;">Skin regeneration</a> <a href="/tags/Soft-lithography/" style="font-size: 12.86px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 11.43px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Sub-Poisson-distribution/" style="font-size: 10px;">Sub-Poisson distribution</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Surface-chemistry/" style="font-size: 10px;">Surface chemistry</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/T-cell-function/" style="font-size: 10px;">T cell function</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Tissue-engineering/" style="font-size: 10px;">Tissue engineering</a> <a href="/tags/Transcriptome/" style="font-size: 10px;">Transcriptome</a> <a href="/tags/Transfection/" style="font-size: 10px;">Transfection</a> <a href="/tags/Transient-receptor-potential-channel-modulators/" style="font-size: 10px;">Transient receptor potential channel modulators</a> <a href="/tags/Tumor-exosomes/" style="font-size: 10px;">Tumor exosomes</a> <a href="/tags/Tumor-microenvironment/" style="font-size: 10px;">Tumor microenvironment</a> <a href="/tags/Ultrasensitive-detection/" style="font-size: 10px;">Ultrasensitive detection</a> <a href="/tags/Unboxing/" style="font-size: 12.86px;">Unboxing</a> <a href="/tags/Vasculature/" style="font-size: 10px;">Vasculature</a> <a href="/tags/Visual-novel/" style="font-size: 11.43px;">Visual novel</a> <a href="/tags/Wettability/" style="font-size: 10px;">Wettability</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 15.71px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.43px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/Xin-dynasty/" style="font-size: 10px;">Xin dynasty</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 11.43px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+        <a href="/tags/3D-cell-culturing/" style="font-size: 10px;">3D cell culturing</a> <a href="/tags/3D-printing/" style="font-size: 11.43px;">3D printing</a> <a href="/tags/ACT/" style="font-size: 11.43px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/Abdominal-wall-defects/" style="font-size: 10px;">Abdominal wall defects</a> <a href="/tags/Adoptive-cell-therapy/" style="font-size: 10px;">Adoptive cell therapy</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Anticancer-agents/" style="font-size: 10px;">Anticancer agents</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.43px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/Biochannels/" style="font-size: 10px;">Biochannels</a> <a href="/tags/Bioinspired/" style="font-size: 10px;">Bioinspired</a> <a href="/tags/Biomarkers/" style="font-size: 10px;">Biomarkers</a> <a href="/tags/Breast-cancer/" style="font-size: 10px;">Breast cancer</a> <a href="/tags/Breast-neoplasms/" style="font-size: 10px;">Breast neoplasms</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CTC-isolation/" style="font-size: 10px;">CTC isolation</a> <a href="/tags/CTCs/" style="font-size: 10px;">CTCs</a> <a href="/tags/Cancer-stem-cells/" style="font-size: 11.43px;">Cancer stem cells</a> <a href="/tags/Cell-arrays/" style="font-size: 10px;">Cell arrays</a> <a href="/tags/Cell-culture-techniques/" style="font-size: 10px;">Cell culture techniques</a> <a href="/tags/Cell-bead-pairing/" style="font-size: 10px;">Cell-bead pairing</a> <a href="/tags/Cell-cell-interaction/" style="font-size: 10px;">Cell-cell interaction</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Circulating-tumor-cells/" style="font-size: 14.29px;">Circulating tumor cells</a> <a href="/tags/Clinical-diagnostics/" style="font-size: 10px;">Clinical diagnostics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Colon/" style="font-size: 10px;">Colon</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 11.43px;">Compartmentalized devices</a> <a href="/tags/Convolutional-neural-network/" style="font-size: 10px;">Convolutional neural network</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Cytokine-detection/" style="font-size: 10px;">Cytokine detection</a> <a href="/tags/Cytotoxicity/" style="font-size: 10px;">Cytotoxicity</a> <a href="/tags/Cytotoxicity-assay/" style="font-size: 10px;">Cytotoxicity assay</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/Data-Mining/" style="font-size: 14.29px;">Data Mining</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Dielectrophoresis/" style="font-size: 10px;">Dielectrophoresis</a> <a href="/tags/Digital-microfluidics/" style="font-size: 10px;">Digital microfluidics</a> <a href="/tags/Discrimination-of-heterogenic-CTCs/" style="font-size: 10px;">Discrimination of heterogenic CTCs</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Double-emulsion-microfluidics/" style="font-size: 10px;">Double emulsion microfluidics</a> <a href="/tags/Droplet/" style="font-size: 10px;">Droplet</a> <a href="/tags/Droplet-microfluidics/" style="font-size: 11.43px;">Droplet microfluidics</a> <a href="/tags/Droplet‐based-microfluidics/" style="font-size: 10px;">Droplet‐based microfluidics</a> <a href="/tags/Drug-screening/" style="font-size: 14.29px;">Drug screening</a> <a href="/tags/Dual-isolation-and-profiling/" style="font-size: 10px;">Dual isolation and profiling</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Efficiency-of-encapsulation/" style="font-size: 10px;">Efficiency of encapsulation</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/English/" style="font-size: 15.71px;">English</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 11.43px;">Fast prototyping</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 17.14px;">Game</a> <a href="/tags/Gene-delivery/" style="font-size: 10px;">Gene delivery</a> <a href="/tags/Gene-expression-profiling/" style="font-size: 10px;">Gene expression profiling</a> <a href="/tags/Gene‐editing/" style="font-size: 10px;">Gene‐editing</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/G‐CSF/" style="font-size: 10px;">G‐CSF</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/High-throughput-screening-assays/" style="font-size: 10px;">High-throughput screening assays</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 11.43px;">Human neural stem cells</a> <a href="/tags/Hydrogels/" style="font-size: 10px;">Hydrogels</a> <a href="/tags/Immunoassay/" style="font-size: 10px;">Immunoassay</a> <a href="/tags/Interferon‐gamma/" style="font-size: 10px;">Interferon‐gamma</a> <a href="/tags/Intracellular-delivery/" style="font-size: 10px;">Intracellular delivery</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.86px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Leukapheresis/" style="font-size: 10px;">Leukapheresis</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Liquid-biopsy/" style="font-size: 10px;">Liquid biopsy</a> <a href="/tags/Literature/" style="font-size: 12.86px;">Literature</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 14.29px;">Machine Learning</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine learning</a> <a href="/tags/Macromolecule-delivery/" style="font-size: 10px;">Macromolecule delivery</a> <a href="/tags/Magnetic-sorting/" style="font-size: 10px;">Magnetic sorting</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 12.86px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Melanoma/" style="font-size: 10px;">Melanoma</a> <a href="/tags/Microassembly/" style="font-size: 10px;">Microassembly</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Microdroplets/" style="font-size: 10px;">Microdroplets</a> <a href="/tags/Microfluidic/" style="font-size: 10px;">Microfluidic</a> <a href="/tags/Microfluidic-chips/" style="font-size: 10px;">Microfluidic chips</a> <a href="/tags/Microfluidic-blow-spinning/" style="font-size: 10px;">Microfluidic-blow-spinning</a> <a href="/tags/Microfluidics/" style="font-size: 20px;">Microfluidics</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 15.71px;">Monthly</a> <a href="/tags/Multi‐step-cascade-reactions/" style="font-size: 10px;">Multi‐step cascade reactions</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Nanoparticle-delivery/" style="font-size: 10px;">Nanoparticle delivery</a> <a href="/tags/Nanowell/" style="font-size: 10px;">Nanowell</a> <a href="/tags/Natural-killer-cells/" style="font-size: 10px;">Natural killer cells</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Organoids/" style="font-size: 11.43px;">Organoids</a> <a href="/tags/Organ‐on‐a‐chip/" style="font-size: 11.43px;">Organ‐on‐a‐chip</a> <a href="/tags/Pain-relief/" style="font-size: 10px;">Pain relief</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patterning/" style="font-size: 10px;">Patterning</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Poetry/" style="font-size: 12.86px;">Poetry</a> <a href="/tags/Polymer-giant-unilamellar-vesicles/" style="font-size: 10px;">Polymer giant unilamellar vesicles</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Primary-cell-transfection/" style="font-size: 10px;">Primary cell transfection</a> <a href="/tags/Printing/" style="font-size: 10px;">Printing</a> <a href="/tags/Protein-secretion/" style="font-size: 10px;">Protein secretion</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RPG/" style="font-size: 12.86px;">RPG</a> <a href="/tags/Review/" style="font-size: 10px;">Review</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Selective-isolation/" style="font-size: 10px;">Selective isolation</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Signal-transduction/" style="font-size: 10px;">Signal transduction</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Single-cell/" style="font-size: 10px;">Single cell</a> <a href="/tags/Single-cells/" style="font-size: 10px;">Single cells</a> <a href="/tags/Single-molecule/" style="font-size: 10px;">Single molecule</a> <a href="/tags/Single-cell/" style="font-size: 11.43px;">Single-cell</a> <a href="/tags/Single-cell-RNA-sequencing/" style="font-size: 10px;">Single-cell RNA sequencing</a> <a href="/tags/Single‐cell-analysis/" style="font-size: 11.43px;">Single‐cell analysis</a> <a href="/tags/Skin-regeneration/" style="font-size: 10px;">Skin regeneration</a> <a href="/tags/Soft-lithography/" style="font-size: 12.86px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 11.43px;">Softstar</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Sub-Poisson-distribution/" style="font-size: 10px;">Sub-Poisson distribution</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Surface-chemistry/" style="font-size: 10px;">Surface chemistry</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/T-cell-function/" style="font-size: 10px;">T cell function</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Tissue-engineering/" style="font-size: 10px;">Tissue engineering</a> <a href="/tags/Transcriptome/" style="font-size: 10px;">Transcriptome</a> <a href="/tags/Transfection/" style="font-size: 10px;">Transfection</a> <a href="/tags/Transient-receptor-potential-channel-modulators/" style="font-size: 10px;">Transient receptor potential channel modulators</a> <a href="/tags/Tumor-exosomes/" style="font-size: 10px;">Tumor exosomes</a> <a href="/tags/Tumor-microenvironment/" style="font-size: 10px;">Tumor microenvironment</a> <a href="/tags/Tumorsphere/" style="font-size: 10px;">Tumorsphere</a> <a href="/tags/Ultrasensitive-detection/" style="font-size: 10px;">Ultrasensitive detection</a> <a href="/tags/Unboxing/" style="font-size: 12.86px;">Unboxing</a> <a href="/tags/Vasculature/" style="font-size: 10px;">Vasculature</a> <a href="/tags/Visual-novel/" style="font-size: 11.43px;">Visual novel</a> <a href="/tags/Wettability/" style="font-size: 10px;">Wettability</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 15.71px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.43px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/Xin-dynasty/" style="font-size: 10px;">Xin dynasty</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 11.43px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
     </div>
 </div>
 
@@ -510,6 +589,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/11/12/Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/cover.jpg" alt="Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-12T09:17:53.000Z">2020-11-12</time></div>
+                    <a href="/2020/11/12/Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis/" class="has-link-black-ter is-size-6">Early Prediction of Single-Cel</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -587,25 +685,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/11/03/Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/figure1.jpg" alt="Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-03T14:20:01.000Z">2020-11-03</time></div>
-                    <a href="/2020/11/03/Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations/" class="has-link-black-ter is-size-6">Simultaneous on-chip isolation</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -624,7 +703,7 @@
                     <span class="level-item">十一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -863,6 +942,25 @@
         
         <article class="media">
             
+            <a href="/2020/11/12/Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/cover.jpg" alt="Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-12T09:17:53.000Z">2020-11-12</time></div>
+                    <a href="/2020/11/12/Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis/" class="has-link-black-ter is-size-6">Early Prediction of Single-Cel</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/11/09/Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/cover.jpg" alt="Label-Free Estimation of Therapeutic Efficacy on 3D Cancer Spheres Using Convolutional Neural Network Image Analysis">
@@ -937,25 +1035,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/11/03/Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/figure1.jpg" alt="Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-03T14:20:01.000Z">2020-11-03</time></div>
-                    <a href="/2020/11/03/Simultaneous on-chip isolation and characterization of circulating tumor cell sub-populations/" class="has-link-black-ter is-size-6">Simultaneous on-chip isolation</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -974,7 +1053,7 @@
                     <span class="level-item">十一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>

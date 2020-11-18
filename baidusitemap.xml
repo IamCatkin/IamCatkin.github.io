@@ -4,6 +4,64 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    <lastmod>2020-11-18T11:46:53.922Z</lastmod>
+    <data>
+        <display>
+        <title>Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis</title>
+        <pubTime>2020-11-12T09:17:53.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Cancer stem cells</tag>
+         
+        <tag>Machine learning</tag>
+         
+        <tag>Convolutional neural network</tag>
+         
+        <tag>Tumorsphere</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
+    <lastmod>2020-11-16T08:58:28.581Z</lastmod>
+    <data>
+        <display>
+        <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
+        <pubTime>2020-10-29T07:01:45.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Colon</tag>
+         
+        <tag>Hydrogels</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Organ‐on‐a‐chip</tag>
+         
+        <tag>Vasculature</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/05/28/%E6%B1%9F%E6%B9%96%E5%A4%9C%E9%9B%A8%E5%8D%81%E5%B9%B4%E7%81%AF%EF%BC%9A%E6%AD%A6%E4%BE%A0%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BF%86/</loc>
     <lastmod>2020-11-14T15:20:54.436Z</lastmod>
     <data>
@@ -51,34 +109,6 @@
            
              
               <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
-    <lastmod>2020-11-14T06:43:52.244Z</lastmod>
-    <data>
-        <display>
-        <title>Early Prediction of Single-Cell Derived Sphere Formation Rate Using Convolutional Neural Network Image Analysis</title>
-        <pubTime>2020-11-12T09:17:53.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Cancer stem cells</tag>
-         
-        <tag>Machine learning</tag>
-         
-        <tag>Convolutional neural network</tag>
-         
-        <tag>Tumorsphere</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>
@@ -180,36 +210,6 @@
         <tag>Organ‐on‐a‐chip</tag>
          
         <tag>3D cell culturing</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
-    <lastmod>2020-11-06T06:23:20.845Z</lastmod>
-    <data>
-        <display>
-        <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
-        <pubTime>2020-10-29T07:01:45.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Colon</tag>
-         
-        <tag>Hydrogels</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Organ‐on‐a‐chip</tag>
-         
-        <tag>Vasculature</tag>
          
          
            

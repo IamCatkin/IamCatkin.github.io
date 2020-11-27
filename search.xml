@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[High‐Definition Single‐Cell Printing Cell‐by‐Cell Fabrication of Biological Structures]]></title>
+    <url>%2F2020%2F11%2F27%2FHigh%E2%80%90Definition%20Single%E2%80%90Cell%20Printing%20Cell%E2%80%90by%E2%80%90Cell%20Fabrication%20of%20Biological%20Structures%2F</url>
+    <content type="text"><![CDATA[一种高精准度的单细胞打印技术。 Introduction 当前修复受损组织的方法主要是利用物理或药物干预来增强身体的自然愈合特性。然而，当损伤无法修复时，唯一的选择就是移除或替换组织，但由于寻找合适供体、可能的免疫排斥或需要持续的免疫抑制的挑战，它们可能不是最优选择。组织工程试图创造用于治疗的人工组织和器官，同时也可能带来更好的结果，包括在更长的时间和更少的药物支持下更有效地发挥作用的组织。 人工组织合成通常使用两种方法： “自下而上”：用多能细胞培养生物结构。 “自上而下”：物理将细胞组装为功能单元。 生物打印技术可以将特定的基块组装成“自下而上”的方法所不能创造的结构。 Figure 1. Schematic of HD-SCP printing process Figure 2. HD-SCP printhead design and operation Figure 3. HD-SCP enables single cells sorting with high accuracy and high viability Figure 4. HD-SCP selectively printing of single cells Figure 5. Controlled spheroid formation by HD-SCP ReferenceZhang P, Abate A R. High-Definition Single-Cell Printing: Cell-by-Cell Fabrication of Biological Structures[J]. Advanced Materials, 2020, n/a(n/a): 2005346.]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Droplet microfluidics</tag>
+        <tag>Bioprinting</tag>
+        <tag>Fluorescence‐activated cell sorting</tag>
+        <tag>Single‐cell printing</tag>
+        <tag>Spheroids</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Homeostatic mini-intestines through scaffold-guided organoid morphogenesis]]></title>
     <url>%2F2020%2F11%2F21%2FHomeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis%2F</url>
-    <content type="text"><![CDATA[通过支架引导产生类器官形态发生，实现迷你小肠的构建。 Introduction 作者假设，将囊性肠类器官塑造成其特有的隐窝和绒毛结构的形态发生过程，可以被利用来促进体外干细胞沿着预定义的空间边界形成，特别是那些近似于肠表面三维拓扑结构的细胞。为此作者创造了一个可以透过气体、营养和大分子的支架，该支架能够促进肠干细胞（intestinal stem cells, ISCs）的有效粘附、增殖和分化，也足够坚硬以作为物理屏障约束ISCs生长成预定义的形状。 由于纯基质胶（Matrigel）太软而不能限制鼠ISCs生长，作者发现由可以提供相对坚硬的、可吸附的基底的I型胶原（type-I collagen）和包含天然基底膜的关键成分的基质胶的混合基质满足所需要求。 LGR5为小肠和结肠干细胞的标记物。 Fig. 1 | Establishment of long-term homeostatic culture of tubular mini-guts Fig. 2 | Cell-fate patterning and cellular diversity of tubular mini-guts Fig. 3 | Perspectives for modelling intestine biology and disease ReferenceNikolaev M, Mitrofanova O, Broguiere N, et al. Homeostatic mini-intestines through scaffold-guided organoid morphogenesis[J]. Nature, 2020, 585(7826): 574–578.]]></content>
+    <content type="text"><![CDATA[通过支架引导产生类器官形态发生，实现迷你小肠的构建。 Introduction 作者假设，将囊性肠类器官塑造成其特有的隐窝和绒毛结构的形态发生过程，可以被利用来促进体外干细胞沿着预定义的空间边界形成，特别是那些近似于肠表面三维拓扑结构的细胞。为此作者创造了一个可以透过气体、营养和大分子的支架，该支架能够促进肠干细胞（intestinal stem cells, ISCs）的有效粘附、增殖和分化，也足够坚硬以作为物理屏障约束ISCs生长成预定义的形状。 由于纯基质胶（Matrigel）太软而不能限制鼠ISCs生长，作者发现由可提供相对坚硬的、可粘附的基底的I型胶原（type-I collagen）和包含天然基底膜的关键成分的基质胶的混合基质满足所需要求。 LGR5为小肠和结肠干细胞的标记物。 Fig. 1 | Establishment of long-term homeostatic culture of tubular mini-guts Fig. 2 | Cell-fate patterning and cellular diversity of tubular mini-guts Fig. 3 | Perspectives for modelling intestine biology and disease MethodsMicrodevice design and fabrication 参考图1和上图。芯片由三个主要部分组成： 1个中央的水凝胶室用于类器官培养。 水凝胶室侧面的2个基侧培养基贮液槽。 用于微通道灌注的出入口培养基储液槽。 基侧：靠近管壁那面。 ReferenceNikolaev M, Mitrofanova O, Broguiere N, et al. Homeostatic mini-intestines through scaffold-guided organoid morphogenesis[J]. Nature, 2020, 585(7826): 574–578.]]></content>
       <categories>
         <category>文献阅读</category>
       </categories>

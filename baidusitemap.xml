@@ -4,6 +4,64 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/12/07/Bioinspired%20One%20Cell%20Culture%20Isolates%20Highly%20Tumorigenic%20and%20Metastatic%20Cancer%20Stem%20Cells%20Capable%20of%20Multilineage%20Differentiation/</loc>
+    <lastmod>2020-12-09T07:15:24.053Z</lastmod>
+    <data>
+        <display>
+        <title>Bioinspired One Cell Culture Isolates Highly Tumorigenic and Metastatic Cancer Stem Cells Capable of Multilineage Differentiation</title>
+        <pubTime>2020-12-07T07:11:31.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Cancer stem cells</tag>
+         
+        <tag>Differentiation</tag>
+         
+        <tag>Drug resistance</tag>
+         
+        <tag>Metastasis</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
+    <lastmod>2020-12-04T00:58:20.284Z</lastmod>
+    <data>
+        <display>
+        <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
+        <pubTime>2020-10-29T07:01:45.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Colon</tag>
+         
+        <tag>Hydrogels</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Organ‐on‐a‐chip</tag>
+         
+        <tag>Vasculature</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2020-11-30T06:54:43.377Z</lastmod>
     <data>
@@ -148,36 +206,6 @@
         <tag>Convolutional neural network</tag>
          
         <tag>Tumorsphere</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
-    <lastmod>2020-11-16T08:58:28.581Z</lastmod>
-    <data>
-        <display>
-        <title>IFlowPlate—A Customized 384‐Well Plate for the Culture of Perfusable Vascularized Colon Organoids</title>
-        <pubTime>2020-10-29T07:01:45.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Colon</tag>
-         
-        <tag>Hydrogels</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Organ‐on‐a‐chip</tag>
-         
-        <tag>Vasculature</tag>
          
          
            

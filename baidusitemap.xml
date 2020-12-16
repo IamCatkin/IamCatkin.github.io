@@ -4,22 +4,30 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/12/10/On-Chip%20Construction%20of%20Liver%20Lobule-like%20Microtissue%20and%20Its%20Application%20for%20Adverse%20Drug%20Reaction%20Assay/</loc>
-    <lastmod>2020-12-10T07:56:41.760Z</lastmod>
+    <loc>https://blog.catkin.moe/2020/12/15/Functional%20Screening%20of%20Candidate%20Causal%20Genes%20for%20Insulin%20Resistance%20in%20Human%20Preadipocytes%20and%20Adipocytes/</loc>
+    <lastmod>2020-12-16T06:52:21.304Z</lastmod>
     <data>
         <display>
-        <title>On-Chip Construction of Liver Lobule-like Microtissue and Its Application for Adverse Drug Reaction Assay</title>
-        <pubTime>2020-12-10T07:44:58.000Z</pubTime>
+        <title>Functional Screening of Candidate Causal Genes for Insulin Resistance in Human Preadipocytes and Adipocytes</title>
+        <pubTime>2020-12-15T07:06:41.000Z</pubTime>
         
-        <tag>Microfluidics</tag>
+        <tag>Insulin resistance</tag>
          
-        <tag>Tissue engineering</tag>
+        <tag>CRISPR/Cas9 system</tag>
          
-        <tag>Hepatocytes</tag>
+        <tag>Adipogenesis</tag>
          
-        <tag>Drug evaluation</tag>
+        <tag>Lipid metabolism</tag>
          
-        <tag>Biomimetic materials</tag>
+        <tag>Insulin signaling</tag>
+         
+        <tag>Gene targetic</tag>
+         
+        <tag>Adipocyte</tag>
+         
+        <tag>Genetic association</tag>
+         
+        <tag>Type 2 diabetes mellitus</tag>
          
          
            
@@ -33,7 +41,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2020/12/07/Bioinspired%20One%20Cell%20Culture%20Isolates%20Highly%20Tumorigenic%20and%20Metastatic%20Cancer%20Stem%20Cells%20Capable%20of%20Multilineage%20Differentiation/</loc>
-    <lastmod>2020-12-10T07:40:29.845Z</lastmod>
+    <lastmod>2020-12-14T11:00:29.219Z</lastmod>
     <data>
         <display>
         <title>Bioinspired One Cell Culture Isolates Highly Tumorigenic and Metastatic Cancer Stem Cells Capable of Multilineage Differentiation</title>
@@ -48,6 +56,34 @@
         <tag>Drug resistance</tag>
          
         <tag>Metastasis</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/10/On-Chip%20Construction%20of%20Liver%20Lobule-like%20Microtissue%20and%20Its%20Application%20for%20Adverse%20Drug%20Reaction%20Assay/</loc>
+    <lastmod>2020-12-10T13:42:44.852Z</lastmod>
+    <data>
+        <display>
+        <title>On-Chip Construction of Liver Lobule-like Microtissue and Its Application for Adverse Drug Reaction Assay</title>
+        <pubTime>2020-12-10T07:44:58.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Tissue engineering</tag>
+         
+        <tag>Hepatocytes</tag>
+         
+        <tag>Drug evaluation</tag>
+         
+        <tag>Biomimetic materials</tag>
          
          
            

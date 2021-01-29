@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[AutoCAD 2021学习笔记]]></title>
     <url>%2F2021%2F01%2F20%2FAutoCAD%202021%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[挖个CAD学习的坑，只涉及基本的平面设计相关内容。 初始设置菜单栏 上方小箭头→显示菜单栏。 关闭三维建模 工具→选项→三维建模→在视口显示工具，取消显示ViewCube与UCS图标。 打开工作空间 上方小箭头→工作空间。 传统界面 工具→工具栏→AutoCAD→标注、标准、绘图、绘图次序、特性、图层、修改、样式。 右键面板关闭。 将当前空间另存为“传统界面”。]]></content>
+    <content type="text"><![CDATA[挖个CAD学习的坑，只涉及基本的平面设计相关内容。 初始设置菜单栏 上方小箭头→显示菜单栏。 关闭三维建模 工具→选项→三维建模→在视口显示工具，取消显示ViewCube与UCS图标。 打开工作空间 上方小箭头→工作空间。 传统界面 工具→工具栏→AutoCAD→标注、标准、绘图、绘图次序、特性、图层、修改、样式。 右键面板关闭。 将当前空间另存为“传统界面”。 工具→选项→显示→在工具栏中使用大按钮。 显示相关工具→选项→显示→颜色→设置为黑/白； 工具→选项→显示→十字光标拉到最大。 工具→选项→绘图→工具提示外观→]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -769,6 +769,19 @@
         <tag>Lattice resoning</tag>
         <tag>Detective story</tag>
         <tag>Penetralium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[A modular microfluidic system based on a multilayered configuration to generate large-scale perfusable microvascular networks]]></title>
+    <url>%2F2020%2F01%2F29%2FA%20modular%20microfluidic%20system%20based%20on%20a%20multilayered%20configuration%20to%20generate%20large-scale%20perfusable%20microvascular%20networks%2F</url>
+    <content type="text"><![CDATA[一种 Introduction Fig. 1 The modular microfluidic system combining two PDMS layers Fig. 2 Schematic drawing of an example of a device and the simulated flow conditions inside Fig. 3 Numerical simulations of flow inside the tissue chambers Fig. 4 Semiclosed rhombic medium channels were fabricated using plastic molds Fig. 5 ECs grew vertically at communication pores to form a leakage-free seal between the microvascular networks and medium channels Fig. 6 Various microvascular networks are generated in the modular microfluidic system Fig. 7 70-kDa FITC-dextran perfusion demonstrated the tight interconnections between the microvascular networks and the medium channels Conclusion ReferenceYue T, Zhao D, Phan D T T, et al. A modular microfluidic system based on a multilayered configuration to generate large-scale perfusable microvascular networks[J]. Microsystems &amp; Nanoengineering, 2021, 7(1): 1–13.]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Microfluidics</tag>
+        <tag>Organ‐on‐a‐chip</tag>
+        <tag>Microvascular networks</tag>
       </tags>
   </entry>
   <entry>

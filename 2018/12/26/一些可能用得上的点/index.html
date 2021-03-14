@@ -185,7 +185,6 @@
         <div class="content">
             <p>　　记录一下以后可能用得上的点。</p>
 <a id="more"></a>
-
 <h1 id="MOE相关"><a href="#MOE相关" class="headerlink" title="MOE相关"></a>MOE相关</h1><h2 id="Lipinski的五倍律"><a href="#Lipinski的五倍律" class="headerlink" title="Lipinski的五倍律"></a>Lipinski的五倍律</h2><p>　　满足下面标准中的至少两条，则该化合物的被动吸收能力或者膜渗透性将较差，难以通过口服吸收：</p>
 <ul>
 <li>Weight：相对分子质量大于500Da</li>
@@ -197,13 +196,10 @@
 <p>　　此外，moe还有一项lip_violation，以提示Lipinski五倍律违反数。</p>
 <h2 id="以多mpu运行"><a href="#以多mpu运行" class="headerlink" title="以多mpu运行"></a>以多mpu运行</h2><p>　　 CMD下运行，%MOE%为MOE根目录：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%MOE%\bin\moe -mpu <span class="hljs-number">2</span></span><br><span class="line"><span class="hljs-comment">// 数字为调用mpu数目</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="计算cats描述符"><a href="#计算cats描述符" class="headerlink" title="计算cats描述符"></a>计算cats描述符</h2><p>　　SVL输入：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db_cats [,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-comment">// 后面为切片，以1为起始</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="RDKit相关"><a href="#RDKit相关" class="headerlink" title="RDKit相关"></a>RDKit相关</h1><h2 id="计算Morgan指纹"><a href="#计算Morgan指纹" class="headerlink" title="计算Morgan指纹"></a>计算Morgan指纹</h2><p>　　当radius=2时，即为ECFP4 ，nBits为长度。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> rdkit <span class="hljs-keyword">import</span> Chem</span><br><span class="line">m1 = Chem.MolFromSmiles(<span class="hljs-string">'Cc1ccccc1'</span>)</span><br><span class="line">fp1 = Chem.AllChem.GetMorganFingerprintAsBitVect(m1,<span class="hljs-number">2</span>,nBits=<span class="hljs-number">1024</span>)</span><br></pre></td></tr></table></figure>
-
 <h1 id="码字相关"><a href="#码字相关" class="headerlink" title="码字相关"></a>码字相关</h1><h2 id="如何在英文环境输入长破折号"><a href="#如何在英文环境输入长破折号" class="headerlink" title="如何在英文环境输入长破折号"></a>如何在英文环境输入长破折号</h2><p>　　某天俺突然想到这个问题，如何在英文环境输入长破折号（em dash），好像还真没有直接输入的方法。研究了一下得到如下两种思路：</p>
 <ul>
 <li>切回中文输入法输入——，然后删掉一个。</li>

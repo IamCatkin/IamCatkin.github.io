@@ -185,9 +185,9 @@
         <div class="content">
             <p>　　 最近打算系统的回顾一下机器学习算法，所以以《机器学习实战》为依据，这次就由k-近邻算法开始回顾。</p>
 <a id="more"></a>
+
 <h1 id="k-近邻算法概述"><a href="#k-近邻算法概述" class="headerlink" title="k-近邻算法概述"></a>k-近邻算法概述</h1><p>　　k-近邻算法（K-Nearest Neighbor ）的工作原理是：存在一个样本数据集合，也称为训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类对应的关系。输入没有标签的新数据后，将新数据中的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据，这就是k-近邻算法中k的出处，通常k是不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。 </p>
 <p>　　以使用k-近邻算法分类爱情片和动作片，有人统计过很多电影的打斗镜头和接吻镜头如下表，假如有一部未看过的电影，以？来表示，如何确定它是爱情片和动作片呢？ </p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -197,8 +197,7 @@
 <th>电影类型</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Califoria Man</td>
 <td>3</td>
 <td>104</td>
@@ -240,13 +239,10 @@
 <td>90</td>
 <td>未知</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离：</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/1.jpg" alt=""></p>
 <p>　　我们用欧氏距离来得到如下距离值：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -254,8 +250,7 @@
 <th>与未知电影的距离</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Califoria Man</td>
 <td>20.5</td>
 </tr>
@@ -279,15 +274,15 @@
 <td>Amped II</td>
 <td>118.9</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　按照距离递增排序，可以找到k个距离最近的电影。假设k=3，则三个最靠近的电影依次是He’s Not Really into Dudes、Beautigul Woman和Califoria Man。k-近邻算法按照距离最近的三部电影的类型，决定未知电影的类型，而这三部电影全是爱情片，因此我们判定未知电影是爱情片。</p>
 <h2 id="准备：使用Python导入数据"><a href="#准备：使用Python导入数据" class="headerlink" title="准备：使用Python导入数据"></a>准备：使用Python导入数据</h2><p>　　首先，创建名为KNN.py的python模块：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line"><span class="hljs-keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createDataSet</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    group = np.array([[<span class="hljs-number">1.0</span>,<span class="hljs-number">1.1</span>],[<span class="hljs-number">1.0</span>,<span class="hljs-number">1.0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>]])</span><br><span class="line">    labels = [<span class="hljs-string">'A'</span>,<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'B'</span>]</span><br><span class="line">    <span class="hljs-keyword">return</span> group, labels</span><br></pre></td></tr></table></figure>
+
 <p>　　这里我们准备了4组数据，每组数据有两个我们已知的属性或者特征值。接下来我们将完成分类任务。</p>
 <h2 id="实施KNN分类算法"><a href="#实施KNN分类算法" class="headerlink" title="实施KNN分类算法"></a>实施KNN分类算法</h2><p>　　定义函数classify0()如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">classify0</span><span class="hljs-params">(inX, dataSet, labels, k)</span>:</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-comment">#用于计算欧氏距离</span></span><br><span class="line">    <span class="hljs-comment">#将intX在纵向重复dataSetSize次</span></span><br><span class="line">    diffMat = np.tile(inX, (dataSetSize,<span class="hljs-number">1</span>)) - dataSet</span><br><span class="line">    sqDiffMat = diffMat**<span class="hljs-number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="hljs-number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="hljs-number">0.5</span></span><br><span class="line">    <span class="hljs-comment">#返回从小到大的索引值</span></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,<span class="hljs-number">0</span>) + <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-comment">#按第二个元素的次序，对元组进行逆序排序，即从大到小排序，返回发生频率最高的元素标签</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="hljs-number">1</span>),reverse=<span class="hljs-keyword">True</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> sortedClassCount[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]</span><br></pre></td></tr></table></figure>
+
 <p>　　至此，我们构建了第一个分类器。</p>
 <h1 id="示例：使用k-近邻算法改进约会网站的配对效果"><a href="#示例：使用k-近邻算法改进约会网站的配对效果" class="headerlink" title="示例：使用k-近邻算法改进约会网站的配对效果"></a>示例：使用k-近邻算法改进约会网站的配对效果</h1><p>　　海伦一直使用在线约会网站寻找自己的约会对象，她把自己交往过的对象分为以下三类：</p>
 <ul>
@@ -304,74 +299,77 @@
 </ul>
 <p>　　创建名为file2matrix的函数，把数据转变为分类器可以接受的格式。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">file2matrix</span><span class="hljs-params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename)</span><br><span class="line">    arrayOlines = fr.readlines()</span><br><span class="line">    <span class="hljs-comment"># 得到文件行数</span></span><br><span class="line">    numberOfLines = len(arrayOlines)</span><br><span class="line">    <span class="hljs-comment"># 创建返回的NumPy矩阵</span></span><br><span class="line">    returnMat = np.zeros((numberOfLines,<span class="hljs-number">3</span>))</span><br><span class="line">    classLabelVector = []</span><br><span class="line">    index = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-comment"># 解析文件数据到列表</span></span><br><span class="line">    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> arrayOlines:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        listFromLine = line.split(<span class="hljs-string">'\t'</span>)</span><br><span class="line">        returnMat[index,:] = listFromLine[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]</span><br><span class="line">        classLabelVector.append(int(listFromLine[<span class="hljs-number">-1</span>]))</span><br><span class="line">        index += <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">return</span> returnMat,classLabelVector</span><br></pre></td></tr></table></figure>
+
 <p>　　接下来图形化展示数据内容。</p>
 <h2 id="分析数据：使用Matplotlib创建散点图"><a href="#分析数据：使用Matplotlib创建散点图" class="headerlink" title="分析数据：使用Matplotlib创建散点图"></a>分析数据：使用Matplotlib创建散点图</h2><p>　　定义一个scatterPlot函数进行可视化。</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> matplotlib</span><br><span class="line"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scatterPlot</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    ax = fig.add_subplot(<span class="hljs-number">111</span>)</span><br><span class="line">    p = ax.scatter(datingDateMat[:,<span class="hljs-number">1</span>], datingDateMat[:,<span class="hljs-number">2</span>],</span><br><span class="line">               <span class="hljs-number">15.0</span>*np.array(datingLabels), <span class="hljs-number">15.0</span>*np.array(datingLabels))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
 <p>　　得到了玩视频游戏所耗时间百分比和每周消费的冰淇淋公升数的关系散点图：</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/2.jpg" alt=""></p>
 <p>　　同理也能得到每年获得的飞行常客里程数和玩视频游戏所耗时间百分比的关系散点图，可以得到更好的展示效果：</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/3.jpg" alt=""></p>
 <p>　　可以知道具有不同的爱好的人其类别区域也不同。</p>
-<h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><div class="table-container">
-<table>
+<h2 id="准备数据：归一化数值"><a href="#准备数据：归一化数值" class="headerlink" title="准备数据：归一化数值"></a>准备数据：归一化数值</h2><table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">玩视频游戏所耗时间百分比</th>
-<th style="text-align:center">每年获得的飞行常客里程数</th>
-<th style="text-align:center">每周消费的冰淇淋公升数</th>
-<th style="text-align:center">样本分类</th>
+<th align="center"></th>
+<th align="center">玩视频游戏所耗时间百分比</th>
+<th align="center">每年获得的飞行常客里程数</th>
+<th align="center">每周消费的冰淇淋公升数</th>
+<th align="center">样本分类</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0.8</td>
-<td style="text-align:center">400</td>
-<td style="text-align:center">0.5</td>
-<td style="text-align:center">1</td>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">0.8</td>
+<td align="center">400</td>
+<td align="center">0.5</td>
+<td align="center">1</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">134000</td>
-<td style="text-align:center">0.9</td>
-<td style="text-align:center">3</td>
+<td align="center">2</td>
+<td align="center">12</td>
+<td align="center">134000</td>
+<td align="center">0.9</td>
+<td align="center">3</td>
 </tr>
 <tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">20000</td>
-<td style="text-align:center">1.1</td>
-<td style="text-align:center">2</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">20000</td>
+<td align="center">1.1</td>
+<td align="center">2</td>
 </tr>
 <tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">67</td>
-<td style="text-align:center">32000</td>
-<td style="text-align:center">0.1</td>
-<td style="text-align:center">2</td>
+<td align="center">4</td>
+<td align="center">67</td>
+<td align="center">32000</td>
+<td align="center">0.1</td>
+<td align="center">2</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>　　上表给出提取的四组数据，要计算样本3和4的距离，使用以下方法：</p>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/4.jpg" alt=""></p>
 <p>　　容易发现，上面方程中数值差值最大的属性对计算结果的影响最大，也就是说，每年获取的飞行常客里程数对于计算结果的影响将远远大于该表其他两个特征的影响。而三种特征是同等重要的，因此需要把数值归一化。</p>
 <p>　　增加函数autoNorm用于归一化：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">autoNorm</span><span class="hljs-params">(dataSet)</span>:</span></span><br><span class="line">    minVals = dataSet.min(<span class="hljs-number">0</span>)</span><br><span class="line">    maxVals = dataSet.max(<span class="hljs-number">0</span>)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    normDateSet = np.zeros(np.shape(dataSet))</span><br><span class="line">    m = dataSet.shape[<span class="hljs-number">0</span>]</span><br><span class="line">    normDateSet = dataSet - np.tile(minVals, (m,<span class="hljs-number">1</span>))</span><br><span class="line">    normDateSet = normDateSet/np.tile(ranges, (m,<span class="hljs-number">1</span>))</span><br><span class="line">    <span class="hljs-keyword">return</span> normDateSet, ranges, minVals</span><br></pre></td></tr></table></figure>
+
 <p>　　在机器学习框架scikit-learn中，有封装好的标准化函数：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 归一化</span></span><br><span class="line"><span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> MinMaxScaler</span><br><span class="line">ss = MinMaxScaler()</span><br><span class="line">X = ss.fit_transform(X)</span><br><span class="line"><span class="hljs-comment"># 标准化</span></span><br><span class="line"><span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> StandardScaler</span><br><span class="line">ss = StandardScaler()</span><br><span class="line">X = ss.fit_transform(X)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#归一化其实就是标准化的一种方式，只不过归一化是将数据映射到了[0,1]这个区间中。</span></span><br><span class="line"><span class="hljs-comment">#标准化则是将数据按照比例缩放，使之放到一个特定区间中。标准化后的数据的均值＝0，标准差＝1，因而标准化的数据可正可负。</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="测试算法：作为完整程序验证分类器"><a href="#测试算法：作为完整程序验证分类器" class="headerlink" title="测试算法：作为完整程序验证分类器"></a>测试算法：作为完整程序验证分类器</h2><p>　　创建函数datingClassTest以测试分类器效果：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">datingClassTest</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    hoRatio = <span class="hljs-number">0.10</span>      </span><br><span class="line">    datingDataMat,datingLabels = file2matrix(<span class="hljs-string">'datingTestSet2.txt'</span>)</span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    m = normMat.shape[<span class="hljs-number">0</span>]</span><br><span class="line">    numTestVecs = int(m*hoRatio)</span><br><span class="line">    errorCount = <span class="hljs-number">0.0</span></span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],<span class="hljs-number">3</span>)</span><br><span class="line">        print(<span class="hljs-string">"the classifier came back with: %d, the real answer is: %d"</span> % (classifierResult, datingLabels[i]))</span><br><span class="line">        <span class="hljs-keyword">if</span> (classifierResult != datingLabels[i]): errorCount += <span class="hljs-number">1.0</span></span><br><span class="line">    print(<span class="hljs-string">"the total error rate is: %f"</span> % (errorCount/float(numTestVecs)))</span><br></pre></td></tr></table></figure>
+
 <p>　　通过分类器可得错误率为5%，结果还不错，也可以改变hoRatio和k来得到不同结果。</p>
 <p>　　这个例子表明我们可以得到较好的分类结果，海伦可以输入未知对象的属性，由分类软件来帮助她判定某一对象的可交往程度：讨厌、一般喜欢、非常喜欢。</p>
 <h1 id="示例：手写识别系统"><a href="#示例：手写识别系统" class="headerlink" title="示例：手写识别系统"></a>示例：手写识别系统</h1><p>　　上面的例子使用的数据比较容易理解，如何在人不太容易看懂的数据上使用分类器呢？我们将使用k-近邻分类器用于手写数字识别。</p>
 <h2 id="准备数据：将图像转换为测试向量"><a href="#准备数据：将图像转换为测试向量" class="headerlink" title="准备数据：将图像转换为测试向量"></a>准备数据：将图像转换为测试向量</h2><p>　　首先把图像格式化处理为一个向量。即将32×32的二进制文本。如果要使用我们的分类器，就将其变成1×1024的向量。</p>
 <p>　　编写函数实现：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">img2vector</span><span class="hljs-params">(filename)</span>:</span></span><br><span class="line">    returnVect = np.zeros((<span class="hljs-number">1</span>,<span class="hljs-number">1024</span>))</span><br><span class="line">    fr = open(filename)</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">32</span>):</span><br><span class="line">        lineStr = fr.readline()</span><br><span class="line">        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">32</span>):</span><br><span class="line">            returnVect[<span class="hljs-number">0</span>,<span class="hljs-number">32</span>*i+j] = int(lineStr[j])</span><br><span class="line">    <span class="hljs-keyword">return</span> returnVect</span><br></pre></td></tr></table></figure>
+
 <h2 id="测试算法：使用k-近邻算法识别手写数字"><a href="#测试算法：使用k-近邻算法识别手写数字" class="headerlink" title="测试算法：使用k-近邻算法识别手写数字"></a>测试算法：使用k-近邻算法识别手写数字</h2><p>　　使用以下代码测试分类器：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">hwLabels = []</span><br><span class="line">trainingFileList = os.listdir(<span class="hljs-string">'trainingDigits'</span>)           <span class="hljs-comment"># 读取训练集</span></span><br><span class="line">m = len(trainingFileList)</span><br><span class="line">trainingMat = np.zeros((m,<span class="hljs-number">1024</span>))</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(m):</span><br><span class="line">    fileNameStr = trainingFileList[i]</span><br><span class="line">    fileStr = fileNameStr.split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]     <span class="hljs-comment"># 从文件名解析分类数字</span></span><br><span class="line">    classNumStr = int(fileStr.split(<span class="hljs-string">'_'</span>)[<span class="hljs-number">0</span>])</span><br><span class="line">    hwLabels.append(classNumStr)</span><br><span class="line">    trainingMat[i,:] = img2vector(<span class="hljs-string">'trainingDigits/%s'</span> % fileNameStr)</span><br><span class="line">testFileList = os.listdir(<span class="hljs-string">'testDigits'</span>)        <span class="hljs-comment"># 载入测试集</span></span><br><span class="line">errorCount = <span class="hljs-number">0.0</span></span><br><span class="line">mTest = len(testFileList)</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(mTest):</span><br><span class="line">    fileNameStr = testFileList[i]</span><br><span class="line">    fileStr = fileNameStr.split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]     </span><br><span class="line">    classNumStr = int(fileStr.split(<span class="hljs-string">'_'</span>)[<span class="hljs-number">0</span>])</span><br><span class="line">    vectorUnderTest = img2vector(<span class="hljs-string">'testDigits/%s'</span> % fileNameStr)</span><br><span class="line">    classifierResult = classify0(vectorUnderTest, trainingMat, hwLabels, <span class="hljs-number">3</span>)</span><br><span class="line">    print(<span class="hljs-string">"the classifier came back with: %d, the real answer is: %d"</span> % (classifierResult, classNumStr))</span><br><span class="line">    <span class="hljs-keyword">if</span> (classifierResult != classNumStr): errorCount += <span class="hljs-number">1.0</span></span><br><span class="line">print(<span class="hljs-string">"\nthe total number of errors is: %d"</span> % errorCount)</span><br><span class="line">print(<span class="hljs-string">"\nthe total error rate is: %f"</span> % (errorCount/float(mTest)))</span><br></pre></td></tr></table></figure>
+
 <p>　　本函数是将trainingDigits目录中的文件内容存储在列表中，然后得到目录中有多少文件，并将其存储到变量m中。接着，创建m行1024列的训练矩阵，该矩阵的每行数据存储一个图像。我们可以从文件名中解析出分类数字。该目录下的文件按照规则命名，如文件9_45.txt的分类是9，它是数字9的第45个实例。然后我们可以将类代码存储到hwLabels向量中，使用前面讨论的img2vector函数载入图像。在下一步中，我们对testDigits目录中的文件执行相似的操作，不同之处是我们并不将这个目录下的文件载入矩阵中，而是使用classify0()函数测试该目录下的每个文件。由于文件中的值已经在0和1之间，并不需要进行标准化。</p>
 <p>　　通过测试本分类器，发现有相对理想的结果。</p>
 <p>　　实际使用本算法时，算法的执行效率并不高。因为算法需要为每个测试向量做2000次距离计算，每个距离计算包括了1024个维度浮点运算，总计要执行9000次，此外还得为测试向量准备2MB的存储空间。是否存在一种算法减少存储空间和计算时间的开销呢？k决策树就是k-近邻算法的优化版，可以节省大量计算开销。</p>

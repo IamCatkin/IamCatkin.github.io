@@ -185,12 +185,14 @@
         <div class="content">
             <p>　　记录一下以防忘记，有一说一，还是MacOS对程序猿友好啊。</p>
 <a id="more"></a>
+
 <h2 id="fsevents报错"><a href="#fsevents报错" class="headerlink" title="fsevents报错"></a>fsevents报错</h2><p>　　这个问题主要存在于npm安装插件时，大致原因在于fsevents是用在MacOS的，windows下安装会报npm err或者warn，俺的解决方法有如下2种：</p>
 <ul>
 <li><p>进入node_modules文件夹，找到fsevents相关文件夹删除，再执行安装。</p>
 </li>
 <li><p>如果有的话，把package.json里dependencies中的fsevents依赖删了。添加下面配置：</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"optionalDependencies"</span>: &#123;</span><br><span class="line">    <span class="hljs-string">"fsevents"</span>: <span class="hljs-string">"xxx"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="npm访问困难"><a href="#npm访问困难" class="headerlink" title="npm访问困难"></a>npm访问困难</h2><p>　　npm在国内访问是真的困难，想布置个环境不重试个n次是不可能的。其中有个解决思路是挂代理，在俺之前的文章大概说过terminal如何设置代理的思路，这里就不复赘述。</p>
@@ -210,6 +212,7 @@
 </li>
 <li><p>使用如下代码来改变默认仓库地址，重复上一步验证是否成功：</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:<span class="hljs-comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 

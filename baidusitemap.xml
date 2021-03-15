@@ -4,6 +4,84 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2021/03/15/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/</loc>
+    <lastmod>2021-03-15T08:48:31.662Z</lastmod>
+    <data>
+        <display>
+        <title>Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform</title>
+        <pubTime>2021-03-15T08:39:09.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>3D tumors</tag>
+         
+        <tag>Pneumatic valve</tag>
+         
+        <tag>Heterotypic tumor</tag>
+         
+        <tag>Drug screening</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/14/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/</loc>
+    <lastmod>2021-03-15T08:36:15.624Z</lastmod>
+    <data>
+        <display>
+        <title>Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics</title>
+        <pubTime>2021-03-14T08:44:25.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>3D tumors</tag>
+         
+        <tag>Pneumatic valve</tag>
+         
+        <tag>Heterotypic tumor</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/11/Controllable%20organization%20and%20high%20throughput%20production%20of%20recoverable%203D%20tumors%20using%20pneumatic%20microfluidics/</loc>
+    <lastmod>2021-03-15T06:29:43.505Z</lastmod>
+    <data>
+        <display>
+        <title>Controllable organization and high throughput production of recoverable 3D tumors using pneumatic microfluidics</title>
+        <pubTime>2021-03-11T12:38:08.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>3D tumors</tag>
+         
+        <tag>Pneumatic valve</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2021/03/01/Microfluidic%20tumor-on-a-chip%20model%20to%20evaluate%20the%20role%20of%20tumor%20environmental%20stress%20on%20NK%20cell%20exhaustion/</loc>
     <lastmod>2021-03-15T03:30:19.339Z</lastmod>
     <data>
@@ -18,32 +96,6 @@
         <tag>Tumor environmental</tag>
          
         <tag>Tumor-on-a-chip</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/14/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/</loc>
-    <lastmod>2021-03-15T03:17:03.926Z</lastmod>
-    <data>
-        <display>
-        <title>Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics</title>
-        <pubTime>2021-03-14T08:44:25.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>3D tumors</tag>
-         
-        <tag>Pneumatic valve</tag>
-         
-        <tag>Heterotypic tumor</tag>
          
          
            
@@ -124,30 +176,6 @@
         <tag>Pneumatic valve</tag>
          
         <tag>Tumor response</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/11/Controllable%20organization%20and%20high%20throughput%20production%20of%20recoverable%203D%20tumors%20using%20pneumatic%20microfluidics/</loc>
-    <lastmod>2021-03-14T08:46:11.377Z</lastmod>
-    <data>
-        <display>
-        <title>Controllable organization and high throughput production of recoverable 3D tumors using pneumatic microfluidics</title>
-        <pubTime>2021-03-11T12:38:08.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>3D tumors</tag>
-         
-        <tag>Pneumatic valve</tag>
          
          
            

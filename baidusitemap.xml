@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2021/03/17/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/</loc>
-    <lastmod>2021-03-17T13:18:52.667Z</lastmod>
+    <lastmod>2021-03-17T13:24:13.653Z</lastmod>
     <data>
         <display>
         <title>Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices</title>
@@ -13,9 +13,9 @@
         
         <tag>Microfluidics</tag>
          
-        <tag>Hydrogels</tag>
-         
         <tag>Endothelial cells</tag>
+         
+        <tag>Hydrogels</tag>
          
         <tag>Oxygen gradients</tag>
          
@@ -69,15 +69,15 @@
         <title>An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation</title>
         <pubTime>2021-03-16T08:53:42.000Z</pubTime>
         
+        <tag>Large scale</tag>
+         
         <tag>Microfluidics</tag>
+         
+        <tag>Gradient generator</tag>
          
         <tag>3D tumors</tag>
          
         <tag>Pneumatic valve</tag>
-         
-        <tag>Large scale</tag>
-         
-        <tag>Gradient generator</tag>
          
          
            
@@ -97,11 +97,11 @@
         <title>A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing</title>
         <pubTime>2021-03-16T01:53:03.000Z</pubTime>
         
-        <tag>Microfluidics</tag>
-         
         <tag>Drug resistance</tag>
          
         <tag>Large scale</tag>
+         
+        <tag>Microfluidics</tag>
          
         <tag>Multi-Size 3D tumors</tag>
          
@@ -641,13 +641,13 @@
         <title>Bioinspired One Cell Culture Isolates Highly Tumorigenic and Metastatic Cancer Stem Cells Capable of Multilineage Differentiation</title>
         <pubTime>2020-12-07T07:11:31.000Z</pubTime>
         
+        <tag>Drug resistance</tag>
+         
         <tag>Microfluidics</tag>
          
         <tag>Cancer stem cells</tag>
          
         <tag>Differentiation</tag>
-         
-        <tag>Drug resistance</tag>
          
         <tag>Metastasis</tag>
          
@@ -673,11 +673,11 @@
          
         <tag>Organoids</tag>
          
+        <tag>Hydrogels</tag>
+         
         <tag>Organ‐on‐a‐chip</tag>
          
         <tag>Colon</tag>
-         
-        <tag>Hydrogels</tag>
          
         <tag>Vasculature</tag>
          
@@ -1051,13 +1051,13 @@
         <title>Bioinspired programmable wettability arrays for droplets manipulation</title>
         <pubTime>2020-10-30T09:26:54.000Z</pubTime>
         
+        <tag>Microfluidics</tag>
+         
         <tag>Bioinspired</tag>
          
         <tag>Wettability</tag>
          
         <tag>Droplet</tag>
-         
-        <tag>Microfluidics</tag>
          
         <tag>Printing</tag>
          
@@ -1245,9 +1245,9 @@
         
         <tag>Cancer stem cells</tag>
          
-        <tag>Anticancer agents</tag>
-         
         <tag>Drug screening</tag>
+         
+        <tag>Anticancer agents</tag>
          
         <tag>Microfluidic chips</tag>
          

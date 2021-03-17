@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2021/03/10/A%20herringbone%20mixer%20based%20microfluidic%20device%20HBEXO-chip%20for%20purifying%20tumor-derived%20exosomes%20and%20establishing%20miRNA%20signature%20in%20pancreatic%20cancer/</loc>
+    
+    <lastmod>2021-03-17T01:07:28.405Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2021/03/16/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/</loc>
     
-    <lastmod>2021-03-16T08:43:23.380Z</lastmod>
+    <lastmod>2021-03-17T01:03:31.942Z</lastmod>
     
   </url>
   
@@ -75,13 +82,6 @@
     <loc>https://blog.catkin.moe/2021/03/08/3D%20scaffold-free%20microlivers%20with%20drug%20metabolic%20function%20generated%20by%20lineage-reprogrammed%20hepatocytes%20from%20human%20fibroblasts/</loc>
     
     <lastmod>2021-03-13T11:24:25.250Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/10/A%20herringbone%20mixer%20based%20microfluidic%20device%20HBEXO-chip%20for%20purifying%20tumor-derived%20exosomes%20and%20establishing%20miRNA%20signature%20in%20pancreatic%20cancer/</loc>
-    
-    <lastmod>2021-03-10T13:05:00.138Z</lastmod>
     
   </url>
   

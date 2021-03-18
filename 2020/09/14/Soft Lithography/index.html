@@ -16,7 +16,7 @@
 <meta property="og:description" content="深感俺现在记忆力太差，特记录读过的文献大意，也是为了以后回顾方便。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.catkin.moe/gallery/thumbnails/paper1.png">
-<meta property="og:updated_time" content="2020-09-23T03:29:49.236Z">
+<meta property="og:updated_time" content="2021-03-18T12:29:32.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Soft Lithography">
 <meta name="twitter:description" content="深感俺现在记忆力太差，特记录读过的文献大意，也是为了以后回顾方便。">
@@ -185,23 +185,24 @@
         <div class="content">
             <p>　　深感俺现在记忆力太差，特记录读过的文献大意，也是为了以后回顾方便。</p>
 <a id="more"></a>
-
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　在微电子学中，自1947年晶体管问世以来，“更小”意味着更好——更便宜，每芯片上有更多的组件，更快的操作，更高的性能和更低的功耗。 许多有趣的新现象都发生在纳米尺度上：例如量子尺寸效应（QSE），库仑阻挡和单电子隧穿（SET）。</p>
 <p>　　微加工以微电子学为基础，在可预见的未来，微电子制造将继续成为微处理器、存储器和其他信息技术的微电子设备的基础。它也越来越多地应用于微电子学以外的领域。</p>
-<p>　　光刻是微加工中最成功的技术，几乎所有的集成电路都是用这种技术制造的。当前用于制造微电子结构的光刻技术基于投影打印系统（通常称为步进器），通过高数值孔径的镜头系统，光罩的图像被缩小并投影到旋涂在晶圆上的光刻胶薄膜上。根据Rayleigh方程，步进器的分辨率R受到的光学衍射的限制：<br>$$<br>R = k_1\frac{\lambda}{NA}<br>$$<br>　　其中，k<sub>1</sub>是取决于光刻胶的常数，λ是波长，NA表示透镜系统的数值孔径。显然，要提高光刻分辨率，需要减小光源波长，或者增大数值孔径。</p>
+<p>　　光刻是微加工中最成功的技术，几乎所有的集成电路都是用这种技术制造的。当前用于制造微电子结构的光刻技术基于投影打印系统（通常称为步进器），通过高数值孔径的镜头系统，光罩的图像被缩小并投影到旋涂在晶圆上的光刻胶薄膜上。根据Rayleigh方程，步进器的分辨率R受到的光学衍射的限制：</p>
+<script type="math/tex; mode=display">
+R = k_1\frac{\lambda}{NA}</script><p>　　其中，k<sub>1</sub>是取决于光刻胶的常数，λ是波长，NA表示透镜系统的数值孔径。显然，要提高光刻分辨率，需要减小光源波长，或者增大数值孔径。</p>
 <p>　　本文讨论的是软光刻技术，包括微接触印刷（ microcontact printing, μCP）、复制模塑（replica molding, REM）、转移微模塑（microtransfer molding, μTM）、毛细微模塑（micromolding in capillaries, MIMIC）和溶剂辅助模塑（solvent-assisted micromolding, SAMIM）。在每种情况下，弹性印模或模具都是将图案转移到衬底上的关键元素，更广泛地讲，因为每种材料都使用柔性有机分子和材料，而不是现在通常用于制造微电子系统的硬质无机材料。</p>
 <p>　　其优势在于复制而不是制造母版，但是快速成型以及弹性印模或模具的变形能力使其具有独特的功能，即使在制造母版图案时也是如此。软光刻技术所需的资金很少，而且程序简单：通常可以在实验室环境中进行。它们不受光学衍射和光学透明性的限制，并且它们提供了无需先进的光刻技术即可制造小于100 nm的结构的途径。它们还提供了通过光刻程序可能难以制造的新型表面，光学结构，传感器，原型设备和系统。</p>
 <h2 id="Key-Strategies-of-Soft-Lithography"><a href="#Key-Strategies-of-Soft-Lithography" class="headerlink" title="Key Strategies of Soft Lithography"></a>Key Strategies of Soft Lithography</h2><h3 id="Self-Assembly"><a href="#Self-Assembly" class="headerlink" title="Self-Assembly"></a>Self-Assembly</h3><p>　　将当前的光刻技术扩展到小于100 nm的特征所面临的明显技术挑战使得至少可以考虑采用根本性的微加工新方法。自组装已得到最充分的探索，并且最接近于实际实现。</p>
 <p>　　自组装是通过非共价力将分子或物体自发组织成稳定的，定义明确的结构。自组装的关键思想是最终结构接近或处于热力学平衡状态。因此，它倾向于自发形成并拒绝缺陷。自组装的最终结构由初始子单元的特征预先确定：确定最终结构的信息编码在子单元的结构和属性（例如形状和表面功能）中。自组装在自然界无处不在：诸如蛋白质和tRNA折叠以及DNA双螺旋结构的形成等过程。</p>
 <h3 id="Self-Assembled-Monolayers"><a href="#Self-Assembled-Monolayers" class="headerlink" title="Self-Assembled Monolayers"></a>Self-Assembled Monolayers</h3><p>　　自组装单分子膜（SAMs）是研究最广泛，开发最完善的非生物的、自组装系统的例子。 它们通过功能化的长链有机分子的化学吸附和自组织而自发形成在适当衬底的表面上。 通常通过将衬底浸入含有对表面具有反应性的配体的溶液中，或通过将衬底暴露于反应性物质的蒸气中来制备。 </p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure1.jpg" alt="Figure 1"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure1.jpg" alt="Figure 1"></p>
 <p>　　以上图为例，烷硫醇在溶液中自发地化学吸附在金表面，并形成吸附的烷硫醇盐。硫原子在金上形成一个30°夹角的覆盖层，其厚度由烷基链中亚甲基基团(n)的数目决定。单层的表面特性可以很容易地通过改变头部基团X来改变，烷基链(CH<sub>2</sub>)<sub>n</sub>从表面延伸到几乎全反式构型。</p>
 <h3 id="Contact-Printing-Replica-Molding-and-Embossing"><a href="#Contact-Printing-Replica-Molding-and-Embossing" class="headerlink" title="Contact Printing, Replica Molding, and Embossing"></a>Contact Printing, Replica Molding, and Embossing</h3><p>　　<strong>接触印刷</strong>是一种有效的图案转印方法。 压模与衬底表面之间的适形接触是其成功的关键。印刷具有简单和方便的优点：一旦获得压模，就可以使用简单的实验技术来制作图案的多个副本。印刷是一个附加过程；材料的浪费降到最低。印刷也具有用于大面积图案化的潜力。尽管接触印刷最适合于二维制造，但它也已被用于通过与其他工艺（例如金属电镀）相结合来生成准三维结构。 </p>
 <p>　　<strong>复制模塑</strong>复制显示在母版中的信息，例如形状、形态和结构。它是一种比光刻法适用范围更广的材料的工艺。它还允许在一个步骤中复制三维拓扑结构，而光刻则不能。它已被用于大量生产表面浮雕结构，如衍射光栅，全息图，光盘（CDs）和微型工具。使用适当材料(通常是前驱体)的复制模塑能够以可靠、简单和廉价的方式将母版中高度复杂的结构如实地复制成具有纳米分辨率的多份副本。复制模塑的保真度由范德华力、润湿和动力学因素（如模具填充）决定。这些物理相互作用应该可以比受光学衍射限制的光刻技术更精确地复制小于100纳米的特征。</p>
 <p>　　<strong>压花</strong>是另一种成本效益高、高通量的在热塑性材料上压印微结构的制造技术。基于镍母料在聚碳酸酯上压印制造光盘和基于熔融石英母料在SURPHEX光聚合物（DuPont）上压印制造全息图是该技术大规模商业应用的两个典型例子。直到最近，压花还没有被认真地发展成为一种加工和制造半导体、金属和其他用于微电子电路的材料结构的方法。周等人的工作表明，压花可以用于在硅上制造最小可达25nm的特征，并引起了人们对这种图案技术潜力的关注。</p>
 <p>　　通过将新方法和新材料引入这些领域，我们正在扩展这些图案技术的能力。特别是，自组装（尤其是自组装单分子膜）和使用弹性压模，模具或掩模进行图案转移的联合构成了软光刻方法的基础。它在许多方面补充了光刻技术，为微加工和纳米加工提供了广泛的新机遇。</p>
 <h3 id="Elastomeric-Stamps-and-Molds"><a href="#Elastomeric-Stamps-and-Molds" class="headerlink" title="Elastomeric Stamps and Molds"></a>Elastomeric Stamps and Molds</h3><p>　　在其表面具有浮雕结构的弹性压模，模具或掩模是软光刻的关键要素。它通常是通过将弹性体的液态预聚物浇铸在其表面上具有图案浮雕结构的母版上，通过复制模塑来制备的。我们在大多数演示中使用的弹性体是聚二甲基硅氧烷（PDMS），如Dow Corning公司的Sylgard 184。下图为示意图：</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure2.jpg" alt="Figure 2"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure2.jpg" alt="Figure 2"></p>
 <p>　　PDMS的一些特性有助于在软光刻中形成高质量的图案和结构：</p>
 <ul>
 <li>PDMS是一种弹性体，在相对较大的面积上贴合于衬底表面。 PDMS具有足够的可变形性，从而甚至可以在微米级的非平面表面上实现适形接触。 PDMS的弹性特性还使其易于释放，甚至可以从复杂而脆弱的结构中释放出来。</li>
@@ -210,21 +211,21 @@
 <li>PDMS是一种耐用的弹性体。 我们在几个月的时间内对同一个压模使用了大约100次，而性能没有明显下降。</li>
 <li>PDMS的表面性质可以通过等离子体处理，与具有广泛的界面自由能的材料进行适当的界面相互作用，然后形成SAMs。</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure3.jpg" alt="Figure 3"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure3.jpg" alt="Figure 3"></p>
 <p>　　上图为改变PDMS表面性质的示意程序。a) 用O<sub>2</sub>等离子体处理；b) 与氯硅烷蒸汽反应。不同的SAMs终端基团X赋予不同的界面特性。</p>
 <p>　　PDMS的弹性特性也是一些最严重的技术问题的根源，在将软光刻技术用于形成复杂的图案结构之前，必须先解决这些问题。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure4.jpg" alt="Figure 4"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure4.jpg" alt="Figure 4"></p>
 <p>　　上图是PDMS等弹性体表面微观结构可能发生的变形和扭曲的示意图。a) 配对，b) 下垂，c) 收缩。</p>
 <h3 id="Masters-and-Rapid-Prototyping"><a href="#Masters-and-Rapid-Prototyping" class="headerlink" title="Masters and Rapid Prototyping"></a>Masters and Rapid Prototyping</h3><p>　　软光刻技术的实用性往往受到适当母版的限制。通常，用于浇筑PDMS的压模或模具是由微光刻技术（如光刻或微加工）或从可用的浮雕结构（如衍射光栅或TEM网格）制造的。光刻似乎是生成复杂图案的最便捷方法。铬制掩膜在市场上有售，但价格昂贵。产生铬掩膜所涉及的时间和费用是化学家和生物学家使用光刻的重大障碍。 这些障碍也限制了软光刻的发展，并在许多领域抑制了微细加工的使用。</p>
 <p>　　快速原型制作可以快速，廉价地生产大量简单的微结构。 通过将该方法与软光刻技术相结合，我们可以在设计完成后的24小时内制造出聚合物和金属的图案化微结构。 快速成型为在化学和生物学领域中广泛使用微加工铺平了道路，尤其是当图案可能很复杂但仅需要适度的特征尺寸时。</p>
 <h2 id="Microcontact-Printing"><a href="#Microcontact-Printing" class="headerlink" title="Microcontact Printing"></a>Microcontact Printing</h2><h3 id="Principles-of-Microcontact-Printing"><a href="#Principles-of-Microcontact-Printing" class="headerlink" title="Principles of Microcontact Printing"></a>Principles of Microcontact Printing</h3><p>　　微接触印刷（μCP）是一种灵活的、非光刻印刷方法，通常形成具有亚微米横向尺寸的不同化学功能终止的带有图案的SAMs的区域。弹性PDMS压模用于通过接触将“墨水”分子转移到衬底表面。 印刷后，通过用含有第二个分子的稀溶液洗涤图案化的衬底，可以在未衍生化的区域上形成不同的SAM。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure5.jpg" alt="Figure 5"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure5.jpg" alt="Figure 5"></p>
 <p>　　上图为金表面的十六烷硫醇（HDT）微接触印刷的程序示意图。A）在平面上用平面图章印刷（I：印刷SAM，II：蚀刻，III：沉积）；B）在平面上用滚动压模进行大面积印刷；C）在非平面上用平面压模印刷。</p>
 <p>　　最有用的系统是在蒸发的金和银薄膜上的烷硫醇的图案化SAMs，因为这两个系统都可以产生高度有序的单层。金是有趣的，因为它被广泛地用作许多应用中的电极材料，它是兼容基于砷化镓（GaAs）（但不是基于硅）的微电子器件。银比金更容易蚀刻，因此它非常有吸引力。银的化学反应性比金更强，因此在大多数蚀刻剂中溶解得更快；银上的烷硫醇SAMs的缺陷水平似乎也比金低。此外，银是一种优良的电导体和热导体。硅氧烷在HO端表面的体系不太容易处理，通常会产生无序的SAMs，在某些情况下会产生亚单层或多层。</p>
 <p>　　由μCP形成的图案化SAM可以使用一系列技术进行可视化，例如扫描电子显微镜（scanning electron microscopy, SEM），扫描探针显微镜（scanning probe microscopy, SPM），二次离子质谱（secondary ion mass spectrometry, SIMS），冷凝图（condensation figures, CFs）和表面增强拉曼显微镜（surface-enhanced Raman microscopy）。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure6.jpg" alt="Figure 6"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure6.jpg" alt="Figure 6"></p>
 <p>　　上图为扫描电镜图像（两种不同的放大率） A)母版 B)金表面的十六烷硫醇（HDT）微接触印刷的SAM图案（接触时间约10秒）与从母版铸造的PDMS压模。使用的是平面PDMS压模。A图压模图像中的对比是由不同的高度和/或区域之间的材料造成的。图B中SAM图案表面的暗区代表HDT的SAM，而亮区则是未衍生的金。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure7.jpg" alt="Figure 7"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure7.jpg" alt="Figure 7"></p>
 <p>　　上图显示了侧向力显微镜（lateral force microscopy, LFM）下十六烷硫醇盐在金上的SAM的测试图案的图像。 由μCP形成的十六烷硫醇盐的图案化SAM似乎具有小于约50nm的边缘粗糙度。其中，表面用HDT印刷，然后通过将图案化的样品浸入含有第二个硫醇的溶液中，用HS(CH<sub>2</sub>)<sub>15</sub>COOH衍生剩余的区域。在COOH端的SAM覆盖的区域（浅色）中检测到探针和表面之间的摩擦力相对较高，CH<sub>3</sub>端的SAM覆盖的区域（深色）中测得相对较低的摩擦力。</p>
 <p>　　图案化的SAMs可以用作选择性湿法蚀刻中的超薄抗蚀剂，也可以用作控制其他材料的润湿，反润湿，成核，生长和沉积的模板（Figure 5A，II和III）。它们还已被用作控制向列液晶（LCs）的方位角和极性取向的载体。由于作为抗蚀剂的SAMs仅1–3 nm厚，边缘清晰度几乎没有损失。 边缘分辨率的主要决定因素似乎是接触印刷的保真度和下层金属蚀刻的各向异性。衬底表面上的吸收物，其表面粗糙度以及弹性印模的材料特性（尤其是变形和扭曲）也会影响μCP形成的图案的分辨率和特征尺寸。对PDMS压模的性能进行一些调整或开发新的弹性材料（针对低于100 nm的方案进行优化）将非常有用。</p>
 <p>　　微接触印刷之所以吸引人，是因为它简单、便宜、灵活。</p>
@@ -236,20 +237,20 @@
 </ul>
 <h3 id="Patterned-SAMs-as-Ultrathin-Resists-in-Selective-Wet-Etching"><a href="#Patterned-SAMs-as-Ultrathin-Resists-in-Selective-Wet-Etching" class="headerlink" title="Patterned SAMs as Ultrathin Resists in Selective Wet Etching"></a>Patterned SAMs as Ultrathin Resists in Selective Wet Etching</h3><p>　　SAMs不具有在常规反应离子蚀刻中用作蚀刻掩模的耐久性。 但是，它们是某些类型湿法蚀刻剂的有效抗蚀剂。 </p>
 <p>　　下图显示了通过μCP，十六烷硫醇然后在铁氰化物水溶液中进行选择性蚀刻制成的一系列的银的测试图案的SEM图像。在去除裸露区域所需的时间内，蚀刻剂几乎不会腐蚀SAM衍生化的区域。这些图像代表了μCP可以常规生成的复杂性，完善性和规模的级别。这种产生具有受控形状和尺寸的铸币金属微结构阵列的能力在用于制造传感器和其他电化学装置的微电极阵列是十分有用的。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure8.jpg" alt="Figure 8"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure8.jpg" alt="Figure 8"></p>
 <p>　　上图是银层上的测试图案的SEM图像（A、B、C：50 nm厚；D：200 nm厚），这些图案是由μCP制造的，HDT在铁氰化物水溶液中进行化学蚀刻。A和B中的图案是用滚动压模印刷的，C和D中的图案是用平面压模印刷的。明亮的区域代表银，黑暗的区域代表Si/SiO<sub>2</sub>，未保护的银已溶解。</p>
 <p>　　μCP的另一个应用是制备金或银图案，以用作蚀刻诸如SiO<sub>2</sub>，硅和GaAs之类的下层衬底的第二掩模。下图显示了通过在含KOH和2-丙醇的水溶液中各向异性蚀刻Si并用银（50 nm厚）图案作为掩模制作的硅中微结构的SEM图像。银掩模是使用μCP，十六烷硫醇和选择性化学蚀刻来生成。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure9.jpg" alt="Figure 9"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure9.jpg" alt="Figure 9"></p>
 <p>　　上图为硅的各向异性蚀刻产生的硅结构的SEM图像，银或金的图案化结构作为掩模。金属掩模仍然是在A的表面，其在B、C、D中被浸泡在王水中而被移除，D中的结构是通过阴影蒸发和硅的各向异性蚀刻相结合的方法制造的。</p>
 <p>　　SAMs和μCP产生的图案举例了一个微加工的新途径。尽管这种结合提供了一种非常有用的单层微加工技术（如传感器和微电极阵列），在它能应用于复杂的微电子学上依然有很多问题有待解决。例如SAMs上形成和分布的缺陷，特别是化学蚀刻的条件必须被理解。最近的一项研究表明SAMs的缺陷密度取决于金层的厚度、烷基链的长度和制备SAMs的条件。根据测量，50 nm厚的金大约有10<sup>3</sup> 坑/平方毫米，同样厚度的银则是10 坑/平方毫米。这些密度依然过高而不能用于制造高分辨率的微电子设备。通过此方法制造的微结构图案能用于很多领域的应用而非微电子学，包括微机电系统（microelectromechanical systems, MEMS）、微量分析系统（microanalytical systems）、传感器、太阳能电池（solar cells）和光学元件的生产。</p>
 <h3 id="Patterned-SAMs-as-Passivating-Layers-in-Selective-Deposition"><a href="#Patterned-SAMs-as-Passivating-Layers-in-Selective-Deposition" class="headerlink" title="Patterned SAMs as Passivating Layers in Selective Deposition"></a>Patterned SAMs as Passivating Layers in Selective Deposition</h3><p>　　通过化学控制聚亚甲基链的长度，可以以约0.1nm的精度预先决定SAM厚度。有机合成还可以将不同的官能团（例如碳氟化合物，酸，酯，胺，酰胺，醇，腈和醚）结合到烷基链中和/或在其末端。使用μCP，具有不同官能团的SAMs可以在一个表面上组织成不同的图案，并用于控制该表面上其他材料的润湿，去湿，成核或沉积。</p>
 <p>　　图14A和14B显示了SAMs的功能是如何影响液体在SAM图案表面上的润湿和去湿的。这一过程由最小自由能决定。</p>
 <p>　　选择性的化学气相沉积（CVD）可以把作为模版的硅氧烷SAMs图案印在硅/二氧化硅上。图案化的SAMs引导选择性的CVD通过抑制成核：被图案化的材料只能在未衍生自SAMs的裸露区域成核和生长并形成连续结构。</p>
 <p>　　图案化的SAMs通常也被用于作为定义和控制细胞外基质蛋白的吸附及随后的哺乳动物细胞的吸附。这种技术使得细胞能以阵列的形式放置在预定位置，有着定义好的形状、尺寸、间隔距离。</p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure10.jpg" alt="Figure 10"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure10.jpg" alt="Figure 10"></p>
 <h3 id="Formation-of-Microstructures-on-Nonplanar-Surfaces"><a href="#Formation-of-Microstructures-on-Nonplanar-Surfaces" class="headerlink" title="Formation of Microstructures on Nonplanar Surfaces"></a>Formation of Microstructures on Nonplanar Surfaces</h3><p>　　在非平面上图案化对光刻和相关技术依然是个实质性挑战。由于聚焦深度的限制甚至不能轻微地在表面上雕刻。由于μCP是使用弹性压模的保形接触，在非平面上图案化相比光刻具有直接的优势。</p>
 <h3 id="Microcontact-Printing-of-Other-Materials"><a href="#Microcontact-Printing-of-Other-Materials" class="headerlink" title="Microcontact Printing of Other Materials"></a>Microcontact Printing of Other Materials</h3><p>　　包含生物分子（如蛋白质和酶）的水溶液的μCP是可行的，尽管这些材料印刷并形成一致的单分子膜可能会很困难。</p>
-<h2 id="Micromolding-and-Related-Techniques"><a href="#Micromolding-and-Related-Techniques" class="headerlink" title="Micromolding and Related Techniques"></a>Micromolding and Related Techniques</h2><h3 id="Replica-Molding"><a href="#Replica-Molding" class="headerlink" title="Replica Molding"></a>Replica Molding</h3><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure11.jpg" alt="Figure 11: 制作图解 A)复制模塑B)微转移模塑C)毛细管微模塑D)溶剂辅助模塑"></p>
+<h2 id="Micromolding-and-Related-Techniques"><a href="#Micromolding-and-Related-Techniques" class="headerlink" title="Micromolding and Related Techniques"></a>Micromolding and Related Techniques</h2><h3 id="Replica-Molding"><a href="#Replica-Molding" class="headerlink" title="Replica Molding"></a>Replica Molding</h3><p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure11.jpg" alt="Figure 11: 制作图解 A)复制模塑B)微转移模塑C)毛细管微模塑D)溶剂辅助模塑"></p>
 <h4 id="Nanomanufacturing"><a href="#Nanomanufacturing" class="headerlink" title="Nanomanufacturing"></a>Nanomanufacturing</h4><p>　　在我们比较相似结构的能力范围以内，复制模塑生产复制结构在实质性领域的纳米尺度。这一方法可以从一个母模生成多个纳米结构的复制，简单和低成本显示了它在纳米制造上的潜能。</p>
 <h4 id="Fabrication-of-Complex-Optical-Surfaces"><a href="#Fabrication-of-Complex-Optical-Surfaces" class="headerlink" title="Fabrication of Complex Optical Surfaces"></a>Fabrication of Complex Optical Surfaces</h4><p>　　弹性PDMS的复制模塑可以进行A) 机械压缩 B) 弯曲 C) 延伸。</p>
 <h3 id="Microtransfer-Molding"><a href="#Microtransfer-Molding" class="headerlink" title="Microtransfer Molding"></a>Microtransfer Molding</h3><p>　　在μTM中，预聚体液滴被用在PDMS模具的有图案的表面，多余的液体用一个平的PDMS块刮去或者用氮气流吹去。填充的模具随后接触衬底，照射或加热。在液体先导被固化为固体后，小心剥掉模具，将有图案的微结构留在基地表面。</p>
@@ -262,7 +263,7 @@
 <p>　　低蒸汽压的和高表面张力的溶剂不适用于SAMIM。</p>
 <p>　　SAMIM可以在聚合物表面生成准三维微结构或形态，使用的溶剂可以软化聚合物，而不影响PDMS模具。不同于已有技术，首先，它使用弹性体而不是刚性模具。其次，它使用溶剂代替升高的温度来“软化”聚合物表面。该过程简单，快速，并且不需要专门的设备或将模具压入衬底的系统。第三，它不受毛细管填充速度慢的影响，这将MIMIC限制在相对较小的区域。它也不限于液压连接结构的制造。第四，它可以与多种聚合物或预聚物一起使用：唯一的要求似乎是能溶解衬底聚合物并润湿PDMS模具表面但不会显着膨胀模具的溶剂。</p>
 <h2 id="Summary-and-Outlook"><a href="#Summary-and-Outlook" class="headerlink" title="Summary and Outlook"></a>Summary and Outlook</h2><p>　　软光刻技术提供了很多直接的优势在光刻不稳定或失败的应用中。如制造尺度小于100 nm，在非平面表面图案化，制造三维结构，图案化功能材料而非光刻胶和表面编辑。下图概述了软光刻技术的发展状况以及潜力特别明显的领域。软光刻的大多数工作都集中在单步处理上。但最近在多层制造方面取得的成功在多层结构和功能微电子器件中确立了中等潜力。 </p>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Soft%20Lithography/figure12.jpg" alt="Figure 12: 软光刻当前发展进展和这些技术应用领域"></p>
+<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/Soft%20Lithography/figure12.jpg" alt="Figure 12: 软光刻当前发展进展和这些技术应用领域"></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Xia Y, Whitesides G M. Soft Lithography[J]. Angewandte Chemie (International ed. in English), 1998, 37(5): 550-575.</p>
 
         </div>
@@ -695,7 +696,7 @@
             
             <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
                 </p>
             </a>
             
@@ -714,7 +715,7 @@
             
             <a href="/2021/03/16/An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/cover.gif" alt="An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/cover.gif" alt="An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation">
                 </p>
             </a>
             
@@ -733,7 +734,7 @@
             
             <a href="/2021/03/16/A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture%2C%20monitoring%20and%20drug%20resistance%20testing/cover.jpg" alt="A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture%2C%20monitoring%20and%20drug%20resistance%20testing/cover.jpg" alt="A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing">
                 </p>
             </a>
             
@@ -752,7 +753,7 @@
             
             <a href="/2021/03/15/Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/cover.jpg" alt="Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/cover.jpg" alt="Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform">
                 </p>
             </a>
             
@@ -771,7 +772,7 @@
             
             <a href="/2021/03/14/Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/cover.gif" alt="Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/cover.gif" alt="Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics">
                 </p>
             </a>
             
@@ -1078,7 +1079,7 @@
             
             <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
                 </p>
             </a>
             
@@ -1097,7 +1098,7 @@
             
             <a href="/2021/03/16/An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/cover.gif" alt="An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/cover.gif" alt="An integrated microfluidic 3D tumor system for parallel and high-throughput chemotherapy evaluation">
                 </p>
             </a>
             
@@ -1116,7 +1117,7 @@
             
             <a href="/2021/03/16/A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture%2C%20monitoring%20and%20drug%20resistance%20testing/cover.jpg" alt="A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture%2C%20monitoring%20and%20drug%20resistance%20testing/cover.jpg" alt="A microfluidic platform for multi-size 3D tumor culture, monitoring and drug resistance testing">
                 </p>
             </a>
             
@@ -1135,7 +1136,7 @@
             
             <a href="/2021/03/15/Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/cover.jpg" alt="Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/cover.jpg" alt="Large-Scale Antitumor Screening Based on Heterotypic 3D Tumors Using an Integrated Microfluidic Platform">
                 </p>
             </a>
             
@@ -1154,7 +1155,7 @@
             
             <a href="/2021/03/14/Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/cover.gif" alt="Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/cover.gif" alt="Heterotypic 3D tumor culture in a reusable platform using pneumatic microfluidics">
                 </p>
             </a>
             

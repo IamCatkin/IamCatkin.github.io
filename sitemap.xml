@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2021/03/16/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/</loc>
+    
+    <lastmod>2021-03-18T04:36:35.393Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2021/01/29/A%20modular%20microfluidic%20system%20based%20on%20a%20multilayered%20configuration%20to%20generate%20large-scale%20perfusable%20microvascular%20networks/</loc>
     
     <lastmod>2021-03-18T00:52:32.839Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://blog.catkin.moe/2021/03/14/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/</loc>
     
     <lastmod>2021-03-18T00:49:00.423Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/16/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/</loc>
-    
-    <lastmod>2021-03-18T00:48:28.446Z</lastmod>
     
   </url>
   

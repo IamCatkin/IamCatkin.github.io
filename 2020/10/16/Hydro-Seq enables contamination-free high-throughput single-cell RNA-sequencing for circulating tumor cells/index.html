@@ -185,6 +185,7 @@
         <div class="content">
             <p>　　一种流体动力的scRNA-seq条码技术，用于高通量的循环肿瘤细胞分析。</p>
 <a id="more"></a>
+
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　循环肿瘤细胞（circulating tumor cells, CTCs）是一种罕见的转移癌细胞，能从原发性肿瘤上脱落进入循环系统，作为在远处组织形成继发性肿瘤的种子。CTCs被观察到极强的异质性在癌症细胞的上皮/间质转移过程中（另一篇与EMT相关的<a href="https://blog.catkin.moe/2020/10/14/Screening%20Therapeutic%20Agents%20Specific%20to%20Breast%20Cancer%20Stem%20Cells%20Using%20a%20Microfluidic%20Single%E2%80%90Cell%20Clone%E2%80%90Forming%20Inhibition%20Assay/">文章</a>）。然而，每10 mL的血中有十亿计的红细胞和百万计的白血病却只有少于100个的CTCs。如何富集CTCs以下游分析是一个巨大的挑战。</p>
 <p>　　<strong>免疫亲和性</strong>的富集方法通过CTCs的表面膜标记用于计数和下游分析，但是这种基于分子标记的方法使采样群体偏离，因此限制了综合分析的分子异质性。<strong>物理性质</strong>的富集方法如基于尺寸的选择，可以把CTCs从较小的红细胞和白细胞中分离而无需供选择的特定分子标记。然而，富集的细胞悬液通常依旧含有大量背景细胞（红细胞和白细胞），使其难以下游分析。尽管<strong>荧光染色</strong>结合免疫组化（IHC）、原位杂交（ISH）以及单细胞WB可能被用于研究CTCs的基因和蛋白表达，荧光成像的带宽限制了分子标记物的数目。</p>
 <p>　　为了充分表征转移的CTCs的全转录组分析和通路调节，单细胞RNA测序（scRNA-seq）被用于毛细抽吸和介电泳微流控挑选的CTCs，其细胞被荧光染色标记。然而，这些技术依然被受限于它们有限的通量和基于抗体标记表达的依赖。常用的标记如上皮细胞粘附分子（EpCAM）和细胞角蛋白（cytokeratins）可能会错过大量不表达这些蛋白的CTCs。因此需要研究一种高通量的、无污染的scRNA-seq，以研究CTCs的通路调节和异质性。</p>
@@ -242,20 +243,24 @@
 <li>（h）角蛋白18（KRT18）。</li>
 </ul>
 </li>
-<li>（i, j）细胞周期基因。<ul>
+<li><p>（i, j）细胞周期基因。</p>
+<ul>
 <li>（i）c-jun（JUN）。</li>
 <li>（j）细胞周期蛋白D1（CCND1）。</li>
 </ul>
 </li>
-<li>（k-n）EMT相关基因。<ul>
+<li><p>（k-n）EMT相关基因。</p>
+<ul>
 <li>（k）磷酸肌醇依赖性激酶1（PDK1）。</li>
 <li>（l）纤溶酶原激活物抑制剂-1（SERPINE1）。</li>
 <li>（m）EMT转录因子（ZEB2）。</li>
 <li>（n）转化生长因子-β（TGFB1）。</li>
 </ul>
 </li>
-<li>（o）HER2阳性、MET样和HER2阴性、EMT样CTCs的聚类和分离。</li>
-<li>（p-u）干细胞特性相关基因。<ul>
+<li><p>（o）HER2阳性、MET样和HER2阴性、EMT样CTCs的聚类和分离。</p>
+</li>
+<li><p>（p-u）干细胞特性相关基因。</p>
+<ul>
 <li>（p）CD44。</li>
 <li>（q）CD24。</li>
 <li>（r）波形蛋白（VIM）。</li>
@@ -274,68 +279,65 @@
 <li>（a）来自一个病人（5号）样本的78个CTCs经过tSNE聚类绘制如下，证明了MET-like和EMT-like的CTC群有清楚的分界。</li>
 <li>（b）热图显示了2簇细胞的显著基因表达（EMT、MET、CSC相关基因）差异。</li>
 </ul>
-<h2 id="Table-1-Pathways-distinguishing-the-HER2-MET-like-and-HER2−-EMT-like-CTCs-The-p-value-was-determined-by-Fisher’s-Exact-Test"><a href="#Table-1-Pathways-distinguishing-the-HER2-MET-like-and-HER2−-EMT-like-CTCs-The-p-value-was-determined-by-Fisher’s-Exact-Test" class="headerlink" title="Table 1 Pathways distinguishing the HER2+ MET-like and HER2− EMT-like CTCs. The p-value was determined by Fisher’s Exact Test"></a>Table 1 Pathways distinguishing the HER2+ MET-like and HER2− EMT-like CTCs. The <em>p</em>-value was determined by Fisher’s Exact Test</h2><div class="table-container">
-<table>
+<h2 id="Table-1-Pathways-distinguishing-the-HER2-MET-like-and-HER2−-EMT-like-CTCs-The-p-value-was-determined-by-Fisher’s-Exact-Test"><a href="#Table-1-Pathways-distinguishing-the-HER2-MET-like-and-HER2−-EMT-like-CTCs-The-p-value-was-determined-by-Fisher’s-Exact-Test" class="headerlink" title="Table 1 Pathways distinguishing the HER2+ MET-like and HER2− EMT-like CTCs. The p-value was determined by Fisher’s Exact Test"></a>Table 1 Pathways distinguishing the HER2+ MET-like and HER2− EMT-like CTCs. The <em>p</em>-value was determined by Fisher’s Exact Test</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">Top-ranked pathways</th>
-<th style="text-align:left"><em>p</em>-value</th>
-<th style="text-align:left">Roles</th>
+<th align="left">Top-ranked pathways</th>
+<th align="left"><em>p</em>-value</th>
+<th align="left">Roles</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Integrin-linked kinase signaling（整合素连接激酶信号）</td>
-<td style="text-align:left">2.17E-08</td>
-<td style="text-align:left">EMT/MET</td>
+<tbody><tr>
+<td align="left">Integrin-linked kinase signaling（整合素连接激酶信号）</td>
+<td align="left">2.17E-08</td>
+<td align="left">EMT/MET</td>
 </tr>
 <tr>
-<td style="text-align:left">Stabilization and expansion of the E-cadherin（上皮型钙黏蛋白） adherens junction</td>
-<td style="text-align:left">3.66E-06</td>
-<td style="text-align:left">EMT/MET</td>
+<td align="left">Stabilization and expansion of the E-cadherin（上皮型钙黏蛋白） adherens junction</td>
+<td align="left">3.66E-06</td>
+<td align="left">EMT/MET</td>
 </tr>
 <tr>
-<td style="text-align:left">Signaling events mediated by focal adhesion kinase（粘着斑激酶）</td>
-<td style="text-align:left">1.21E-04</td>
-<td style="text-align:left">EMT/MET</td>
+<td align="left">Signaling events mediated by focal adhesion kinase（粘着斑激酶）</td>
+<td align="left">1.21E-04</td>
+<td align="left">EMT/MET</td>
 </tr>
 <tr>
-<td style="text-align:left">Validated targets of C-MYC transcriptional activation</td>
-<td style="text-align:left">1.38E-04</td>
-<td style="text-align:left">CSC</td>
+<td align="left">Validated targets of C-MYC transcriptional activation</td>
+<td align="left">1.38E-04</td>
+<td align="left">CSC</td>
 </tr>
 <tr>
-<td style="text-align:left">PDGFR-beta（血小板衍生生长因子受体β） signaling pathway</td>
-<td style="text-align:left">6.56E-04</td>
-<td style="text-align:left">CSC</td>
+<td align="left">PDGFR-beta（血小板衍生生长因子受体β） signaling pathway</td>
+<td align="left">6.56E-04</td>
+<td align="left">CSC</td>
 </tr>
 <tr>
-<td style="text-align:left">AP-1 transcription factor network</td>
-<td style="text-align:left">5.88E-04</td>
-<td style="text-align:left"></td>
+<td align="left">AP-1 transcription factor network</td>
+<td align="left">5.88E-04</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">RhoA signaling pathway</td>
-<td style="text-align:left">3.28E-04</td>
-<td style="text-align:left">CSC</td>
+<td align="left">RhoA signaling pathway</td>
+<td align="left">3.28E-04</td>
+<td align="left">CSC</td>
 </tr>
 <tr>
-<td style="text-align:left">Regulation of Telomerase（端粒酶）</td>
-<td style="text-align:left">1.73E-03</td>
-<td style="text-align:left">CSC</td>
+<td align="left">Regulation of Telomerase（端粒酶）</td>
+<td align="left">1.73E-03</td>
+<td align="left">CSC</td>
 </tr>
 <tr>
-<td style="text-align:left">ErbB1 downstream signaling</td>
-<td style="text-align:left">2.22E-03</td>
-<td style="text-align:left">CSC</td>
+<td align="left">ErbB1 downstream signaling</td>
+<td align="left">2.22E-03</td>
+<td align="left">CSC</td>
 </tr>
 <tr>
-<td style="text-align:left">PAR1-mediated thrombin signaling events</td>
-<td style="text-align:left">1.16E-03</td>
+<td align="left">PAR1-mediated thrombin signaling events</td>
+<td align="left">1.16E-03</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <blockquote>
 <p>有关Fisher’s exact test，可以看<a href="https://www.bilibili.com/video/av80329025/" target="_blank" rel="noopener">科普1</a>，<a href="https://www.zhihu.com/question/28637406" target="_blank" rel="noopener">科普2</a>。</p>
 </blockquote>
@@ -457,7 +459,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        92
+                        91
                     </p>
                 </div>
             </div>
@@ -631,7 +633,7 @@
                 <span class="level-item">心得体会</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/文献阅读/">
@@ -710,26 +712,7 @@
         
         <article class="media">
             
-            <a href="/2021/03/30/hello/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hello">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:52:33.000Z">2021-03-30</time></div>
-                    <a href="/2021/03/30/hello/" class="has-link-black-ter is-size-6">hello</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/03/29/软光刻操作流程/" class="media-left">
+            <a href="/2021/03/28/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
@@ -737,8 +720,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
-                    <a href="/2021/03/29/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-28T13:21:50.000Z">2021-03-28</time></div>
+                    <a href="/2021/03/28/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
@@ -803,6 +786,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-17T09:04:22.000Z">2021-03-17</time></div>
+                    <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="has-link-black-ter is-size-6">Study 3D Endothelial Cell Netw</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -821,7 +823,7 @@
                     <span class="level-item">三月 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -1093,26 +1095,7 @@
         
         <article class="media">
             
-            <a href="/2021/03/30/hello/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hello">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:52:33.000Z">2021-03-30</time></div>
-                    <a href="/2021/03/30/hello/" class="has-link-black-ter is-size-6">hello</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2021/03/29/软光刻操作流程/" class="media-left">
+            <a href="/2021/03/28/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
@@ -1120,8 +1103,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
-                    <a href="/2021/03/29/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-28T13:21:50.000Z">2021-03-28</time></div>
+                    <a href="/2021/03/28/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
@@ -1186,6 +1169,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/figure1.jpg" alt="Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-17T09:04:22.000Z">2021-03-17</time></div>
+                    <a href="/2021/03/17/Study 3D Endothelial Cell Network Formation under Various Oxygen Microenvironment and Hydrogel Composition Combinations Using Upside‐Down Microfluidic Devices/" class="has-link-black-ter is-size-6">Study 3D Endothelial Cell Netw</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -1204,7 +1206,7 @@
                     <span class="level-item">三月 2021</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>

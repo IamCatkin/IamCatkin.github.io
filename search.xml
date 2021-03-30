@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[软光刻操作流程]]></title>
-    <url>%2F2021%2F03%2F29%2F%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[记录一下软光刻相关流程。 基本设备仪器 紫外曝光机，旋转涂膜仪，电热板，混合脱泡机，干燥箱，真空泵。 耗材 聚二甲基硅氧烷（PDMS），固化剂，单抛硅片，阳性/阴性光刻胶，显影液。 前期准备操作流程模板制备芯片制备 模板预处理：使用三甲基氯硅烷（即TMSCl）蒸汽熏模板3 min，以利于PDMS聚合物与模版的剥离。先开通风，此处用指定胶头滴管，贴近瓶盖再吸取，以防洒出。处理完毕后，通风多开一段时间。 配置PDMS：以一定质量比（通常为10:1）称取PDMS预聚物（A 胶）和固化剂（B 胶），用混匀脱泡机将其混合均匀。最好先加B胶，后加A胶，称取完毕后计算带杯子的总重量，在混匀脱泡机中配平重量。切记，混匀脱泡机要先开110 V变压器，然后才能开机。 脱气： 固化： 打孔：]]></content>
+    <title><![CDATA[软光刻技术操作流程]]></title>
+    <url>%2F2021%2F03%2F29%2F%E8%BD%AF%E5%85%89%E5%88%BB%E6%8A%80%E6%9C%AF%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[记录一下软光刻相关流程。 基本设备仪器 紫外曝光机，旋转涂膜仪，电热板，混合脱泡机，干燥箱，真空泵。 耗材 聚二甲基硅氧烷（PDMS），固化剂，单抛硅片，阳性/阴性光刻胶，显影液。 前期准备操作流程模板制备芯片制备 模板预处理：使用三甲基氯硅烷（即TMSCl）蒸汽熏模板3 min，以利于PDMS聚合物与模版的剥离。先开通风，此处用指定胶头滴管，贴近瓶盖再吸取，以防洒出。处理完毕后，通风多开一段时间。 配置PDMS：以一定质量比（通常为10:1）称取PDMS预聚物（A 胶）和固化剂（B 胶），用混匀脱泡机将其混合均匀。最好先加B胶，后加A胶，称取完毕后计算带杯子的总重量，在混匀脱泡机中配平重量。切记，混匀脱泡机要先开110 V变压器，然后才能开机。 脱气：将上述混合均匀的 PDMS 混合物倾倒至模板上，抽真空脱气。 固化：将其放置于 80°C 烘箱中，加热固化。 打孔：将固化好的 PDMS 按设计的芯片结构切割、打孔，清理干净，备用。 芯片封接 铺片：将PDMS预聚物与固化剂以一定的质量比混合均匀（使用与制作芯片不同的比例），以2500 rpm的转速涂布于洁净的载玻片上，80°C 固化。 封接：将准备好的PDMS芯片平整地放置在载玻片PDMS薄膜上，置于 80°C烘箱中烘烤48 h，使其牢固键合。]]></content>
       <categories>
         <category>心得体会</category>
       </categories>
@@ -63,8 +63,8 @@
       </categories>
       <tags>
         <tag>Microfluidics</tag>
-        <tag>Endothelial cells</tag>
         <tag>Hydrogels</tag>
+        <tag>Endothelial cells</tag>
         <tag>Oxygen gradients</tag>
         <tag>Oxygen microenvironments</tag>
       </tags>
@@ -501,9 +501,9 @@
       <tags>
         <tag>Microfluidics</tag>
         <tag>Organoids</tag>
-        <tag>Hydrogels</tag>
         <tag>Organ‐on‐a‐chip</tag>
         <tag>Colon</tag>
+        <tag>Hydrogels</tag>
         <tag>Vasculature</tag>
       </tags>
   </entry>

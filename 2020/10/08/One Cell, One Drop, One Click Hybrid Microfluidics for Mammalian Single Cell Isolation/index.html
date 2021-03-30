@@ -185,6 +185,7 @@
         <div class="content">
             <p>　　一种混合微流控系统，能够捕获单细胞在皮升级的液滴中，从而可以分选和恢复单个克隆细胞以建立稳定的多克隆细胞系。</p>
 <a id="more"></a>
+
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　CRISPR‐Cas9已经成为制造新细胞系的著名工具，可以进行新的细胞治疗与建立新的癌症基因模型。要制造这些新的基因编辑细胞系，评估单克隆的属性尤为重要，因为可能会出现双等位基因编辑差异，并且非同源末端连接的细胞双链断裂（DSB）修复机制会产生单克隆之间存在差异的插入和缺失。分离单克隆可以富集正确编辑的细胞，该方法可以将表型变化与特定的克隆基因型相关联，并有助于下游表征。</p>
 <p>　　当前哺乳动物基因编辑流程中，转染克隆的选择和富集，特别是在敲除实验中，敏感细胞系（例如人多能干细胞h）或难以转染的细胞系，仍然是繁琐而富挑战性的任务。传统的液滴微流控技术的缺点是很难并行操纵和控制液滴。数字微流控（DMF）可以缓解液滴在通道系统的相关挑战，因为DMF能够单独处理每个液滴。</p>
 <p>　　本文建立了一个确定性的“单液滴单细胞”的混合微流控系统，可以捕获单个单克隆细胞并后续在独立的液滴中操纵。为了展示这个装置的通用性，作者以NCI-H1299肺鳞状细胞癌的基因敲除细胞系的建立举例。</p>
@@ -196,8 +197,10 @@
 </ul>
 <blockquote>
 <p>辅助材料里的装置图：<img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/figures1.jpg" alt=""></p>
+</blockquote>
+<blockquote>
 <p>关于液滴生成机制，参考Sauzade的论文<sup>[2]</sup>，帮助理解。</p>
-<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/circuit.jpg" alt=""></p>
+<img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/circuit.jpg" alt="">
 </blockquote>
 <h2 id="Figure-2-Workflow-of-device-operation"><a href="#Figure-2-Workflow-of-device-operation" class="headerlink" title="Figure 2. Workflow of device operation"></a>Figure 2. Workflow of device operation</h2><p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/figure2.jpg" alt=""></p>
 <p>　　用含2％ Pluronics F-127的PBS灌注设备5分钟。含MCF-7细胞的PBS在经过陷阱时被捕获，所有陷阱都有细胞后，以4 nL s<sup>-1</sup>加载油HFE 7500和2% Ran公司的表面活性剂，油流会剪切掉少量残留的PBS，从而在细胞周围形成液滴。可以执行各种液滴操作（捕获，释放，保持，合并）。可以逆转油流以收集油滴。入口（I＃）和出口（O＃）代表每次操作插入管道的位置。</p>
@@ -248,7 +251,7 @@
 <li><p>脂质体介导法利用带正电的脂质体与核酸带负电的磷酸基团形成复合物，被表面带负电的细胞膜吸附，进而通过融合或细胞内吞作用导入外源DNA/RNA。脂质体转染适合用于把DNA转染入悬浮或贴壁培养的细胞中，其转染效率高，是目前实验室最方便的转染方法之一。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/lip.jpg" alt=""></p>
+<img src="https://gitee.com/catkin7/myblogphotos/raw/master/One%20Cell%2C%20One%20Drop%2C%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/lip.jpg" alt="">
 </blockquote>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>　　作者建立了一个三层的混合微流控装置，不仅可以有效捕获单细胞及确定性封装，而且通过相变和电极驱动，可以将单相的包含细胞的水流转变为基于液滴的两相流体。接下来，展示了有效的液滴可控性，并充分表征了液滴产生，双向释放和保持的效率。并且所有这些操作都可以通过“单击按钮”以自动化执行。</p>
 <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="1-右边的电极有什么用？"><a href="#1-右边的电极有什么用？" class="headerlink" title="1.右边的电极有什么用？"></a>1.右边的电极有什么用？</h3><p>　　通过改变电势，影响水流，进而影响液滴生成大小。</p>
@@ -639,16 +642,16 @@
         
         <article class="media">
             
-            <a href="/2021/03/29/软光刻技术操作流程/" class="media-left">
+            <a href="/2021/03/30/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻技术操作流程">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
-                    <a href="/2021/03/29/软光刻技术操作流程/" class="has-link-black-ter is-size-6">软光刻技术操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:53:50.000Z">2021-03-30</time></div>
+                    <a href="/2021/03/30/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
@@ -1022,16 +1025,16 @@
         
         <article class="media">
             
-            <a href="/2021/03/29/软光刻技术操作流程/" class="media-left">
+            <a href="/2021/03/30/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻技术操作流程">
+                    <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
-                    <a href="/2021/03/29/软光刻技术操作流程/" class="has-link-black-ter is-size-6">软光刻技术操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:53:50.000Z">2021-03-30</time></div>
+                    <a href="/2021/03/30/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>

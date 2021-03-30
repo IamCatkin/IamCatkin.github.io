@@ -185,27 +185,20 @@
         <div class="content">
             <p>　　最近在项目中需要将SMILES转成InChiKey，通常可以在OpenBabelGUI中操作完成，但是对于大量数据在OpenBabelGUI中操作就有些不方便且容易失误。这里记录一下我解决这个问题的过程。</p>
 <a id="more"></a>
-
 <h1 id="安装相关包"><a href="#安装相关包" class="headerlink" title="安装相关包"></a>安装相关包</h1><p>　　先建立一个虚拟环境，安装RDKit：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -c rdkit -n my-rdkit-env rdkit</span><br></pre></td></tr></table></figure>
-
 <p>　　然后在虚拟环境下安装OpenBabel：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -n my-rdkit-env -c openbabel openbabel</span><br></pre></td></tr></table></figure>
-
 <h1 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h1><p>　　最初想用Pybel实现，然而发现Pybel并不支持输出格式为InChiKey，既然这条路走不通，就换个方案吧。于是想查看OpenBabel的文档看看能不能实现，然而发现这玩意的python接口只是寥寥几言，也没有具体的文档。不过Google到了一个轮子写了如何将SMILES转成InChiKey，代码如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> openbabel <span class="hljs-keyword">as</span> ob</span><br><span class="line">conv = ob.OBConversion()</span><br><span class="line">conv.SetInAndOutFormats(<span class="hljs-string">"smi"</span>, <span class="hljs-string">"inchi"</span>)</span><br><span class="line">conv.SetOptions(<span class="hljs-string">"K"</span>, conv.OUTOPTIONS)</span><br><span class="line">mol = ob.OBMol()</span><br><span class="line">conv.ReadString(mol, <span class="hljs-string">"CC(=O)Cl"</span>)</span><br><span class="line">inchikey = conv.WriteString(mol):</span><br></pre></td></tr></table></figure>
-
 <p>　　本想着问题解决了，不过试了一下发现并不能用。而且可耻的找不到原因……</p>
 <p>　　不过也问题不大，RDKit可以把SMILES转成InChi，然后再把InChi变成InChiKey就行了，于是写了个函数实现:</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> rdkit <span class="hljs-keyword">import</span> Chem</span><br><span class="line"><span class="hljs-keyword">from</span> rdkit.Chem.inchi <span class="hljs-keyword">import</span> rdinchi</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smiletoinchikey</span><span class="hljs-params">(smile)</span>:</span></span><br><span class="line">    mol = Chem.MolFromSmiles(smile)</span><br><span class="line">    inchi = rdinchi.MolToInchi(mol)</span><br><span class="line">    inchikey = rdinchi.InchiToInchiKey(inchi[<span class="hljs-number">0</span>])</span><br><span class="line">    <span class="hljs-keyword">return</span> inchikey</span><br></pre></td></tr></table></figure>
-
 <p>　　然而在处理项目文件时发现，有些SMILES式RDKit不能识别，导致程序出错。如<code>Clc1c([C@@H]2[C@@H]([N+H3])CC(CN3CCC(C(=O)O)CC3)=CC2)ccc(Cl)c1</code>，于是写了个函数利用Pybel将其转成Canonical SMILES。最后还是有一些剩余问题，比如<code>Oc1ccc([C+2]2345[B-2]678[B-3]9%10%11([C-3])[C+]%12%13%14[B-2]%15%169[B-2]26%10[B-2]23%15[B-2]364[B-2]457[B-2]8%11%12[B-2]%1334[B-2]%14%1626)cc1</code>转成Canonical SMILES依然无法读取，又或者<code>O=BOB(OB(OB=O)[O-])[O-]</code>没转换前能读取，转换后不能读取，只能按例外处理。</p>
 <p>　　最后代码如下：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># @Time    : Thu Apr 20 16:12:41 2018</span></span><br><span class="line"><span class="hljs-comment"># @Author  : Catkin</span></span><br><span class="line"><span class="hljs-comment"># @Website : blog.catkin.moe</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> pybel</span><br><span class="line"><span class="hljs-keyword">from</span> rdkit <span class="hljs-keyword">import</span> Chem</span><br><span class="line"><span class="hljs-keyword">from</span> rdkit.Chem.inchi <span class="hljs-keyword">import</span> rdinchi</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smitosmile</span><span class="hljs-params">(smi)</span>:</span></span><br><span class="line">    mol = pybel.readstring(<span class="hljs-string">"smi"</span>, smi)</span><br><span class="line">    smile = mol.write(<span class="hljs-string">'can'</span>)</span><br><span class="line">    smile = smile.replace(<span class="hljs-string">'\t\n'</span>, <span class="hljs-string">''</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> smile</span><br><span class="line">    </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smiletoinchikey</span><span class="hljs-params">(smile)</span>:</span></span><br><span class="line">    mol = Chem.MolFromSmiles(smile)</span><br><span class="line">    <span class="hljs-keyword">if</span> mol <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">        smi = smitosmile(smile)</span><br><span class="line">        mol = Chem.MolFromSmiles(smi)</span><br><span class="line">    inchi = rdinchi.MolToInchi(mol)</span><br><span class="line">    inchikey = rdinchi.InchiToInchiKey(inchi[<span class="hljs-number">0</span>])</span><br><span class="line">    <span class="hljs-keyword">return</span> inchikey</span><br></pre></td></tr></table></figure>
-
 <p>　　用OpenBabel同样也可以把SMILES转成Canonical SMILES：</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> openbabel <span class="hljs-keyword">as</span> ob</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">obsmitosmile</span><span class="hljs-params">(smi)</span>:</span></span><br><span class="line">    conv = ob.OBConversion()</span><br><span class="line">    conv.SetInAndOutFormats(<span class="hljs-string">"smi"</span>, <span class="hljs-string">"can"</span>)</span><br><span class="line">    conv.SetOptions(<span class="hljs-string">"K"</span>, conv.OUTOPTIONS)</span><br><span class="line">    mol = ob.OBMol()</span><br><span class="line">    conv.ReadString(mol, smi)</span><br><span class="line">    smile = conv.WriteString(mol)</span><br><span class="line">    smile = smile.replace(<span class="hljs-string">'\t\n'</span>, <span class="hljs-string">''</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> smile</span><br></pre></td></tr></table></figure>
-
 
         </div>
         
@@ -261,8 +254,8 @@
         <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
 <script>
     var gitalk = new Gitalk({
         clientID: '8323a58c0a8710fd55c3',
@@ -545,7 +538,7 @@
         
         <article class="media">
             
-            <a href="/2021/03/30/软光刻操作流程/" class="media-left">
+            <a href="/2021/03/29/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
@@ -553,8 +546,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:53:50.000Z">2021-03-30</time></div>
-                    <a href="/2021/03/30/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
+                    <a href="/2021/03/29/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>
@@ -928,7 +921,7 @@
         
         <article class="media">
             
-            <a href="/2021/03/30/软光刻操作流程/" class="media-left">
+            <a href="/2021/03/29/软光刻操作流程/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://gitee.com/catkin7/myblogphotos/raw/master/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/cover.jpg" alt="软光刻操作流程">
                 </p>
@@ -936,8 +929,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-30T08:53:50.000Z">2021-03-30</time></div>
-                    <a href="/2021/03/30/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-29T13:21:50.000Z">2021-03-29</time></div>
+                    <a href="/2021/03/29/软光刻操作流程/" class="has-link-black-ter is-size-6">软光刻操作流程</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
                     </p>

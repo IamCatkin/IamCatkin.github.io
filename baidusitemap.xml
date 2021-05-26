@@ -4,8 +4,82 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2021/05/26/Multiscale%20cytometry%20and%20regulation%20of%203D%20cell%20cultures%20on%20a%20chip/</loc>
+    <lastmod>2021-05-26T06:19:25.051Z</lastmod>
+    <data>
+        <display>
+        <title>Multiscale cytometry and regulation of 3D cell cultures on a chip</title>
+        <pubTime>2021-05-26T02:20:10.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Droplet</tag>
+         
+        <tag>3D cell culturing</tag>
+         
+        <tag>Cytometry</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2021-05-20T16:08:52.801Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/22/%E7%BB%86%E8%83%9E%E5%9F%B9%E5%85%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2021-05-18T13:03:52.835Z</lastmod>
+    <data>
+        <display>
+        <title>细胞培养操作流程</title>
+        <pubTime>2021-03-22T00:34:22.000Z</pubTime>
+        
+        <tag>Manual</tag>
+         
+        <tag>Cell culture</tag>
+         
+        <tag>Reagents preparation</tag>
+         
+         
+           
+             
+              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2021/05/17/Three-Dimensional%20Human%20Liver-Chip%20Emulating%20Premetastatic%20Niche%20Formation%20by%20Breast%20Cancer-Derived%20Extracellular%20Vesicles/</loc>
-    <lastmod>2021-05-17T13:55:17.943Z</lastmod>
+    <lastmod>2021-05-17T13:56:34.232Z</lastmod>
     <data>
         <display>
         <title>Three-Dimensional Human Liver-Chip Emulating Premetastatic Niche Formation by Breast Cancer-Derived Extracellular Vesicles</title>
@@ -84,54 +158,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2021/03/22/%E7%BB%86%E8%83%9E%E5%9F%B9%E5%85%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2021-05-10T15:43:00.623Z</lastmod>
-    <data>
-        <display>
-        <title>细胞培养操作流程</title>
-        <pubTime>2021-03-22T00:34:22.000Z</pubTime>
-        
-        <tag>Manual</tag>
-         
-        <tag>Cell culture</tag>
-         
-        <tag>Reagents preparation</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2021-05-09T12:34:17.145Z</lastmod>
-    <data>
-        <display>
-        <title>推理小说记录</title>
-        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
-        
-        <tag>Lattice resoning</tag>
-         
-        <tag>Detective story</tag>
-         
-        <tag>Penetralium</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2021/04/23/A%20Biomimetic%20Tumor%20Model%20of%20Heterogeneous%20Invasion%20in%20Pancreatic%20Ductal%20Adenocarcinoma/</loc>
     <lastmod>2021-05-06T08:33:35.015Z</lastmod>
     <data>
@@ -181,30 +207,6 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/28/%E8%BD%AF%E5%85%89%E5%88%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2021-04-02T11:21:22.210Z</lastmod>
-    <data>
-        <display>
-        <title>软光刻操作流程</title>
-        <pubTime>2021-03-28T13:21:50.000Z</pubTime>
-        
-        <tag>Soft lithography</tag>
-         
-        <tag>Manual</tag>
-         
-        <tag>PDMS</tag>
-         
-         
-           
-             
-              <breadCrumb title="心得体会" url="https://blog.catkin.moe/categories/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/"/>
           
         </display>
     </data>

@@ -5,22 +5,50 @@
     
   <url>
     <loc>https://blog.catkin.moe/2021/08/06/Multilayer%20architecture%20microfluidic%20network%20array%20for%20combinatorial%20drug%20testing%20on%203D-cultured%20cells/</loc>
-    <lastmod>2021-08-06T08:37:34.429Z</lastmod>
+    <lastmod>2021-09-11T01:55:02.075Z</lastmod>
     <data>
         <display>
         <title>Multilayer architecture microfluidic network array for combinatorial drug testing on 3D-cultured cells</title>
         <pubTime>2021-08-06T08:31:15.000Z</pubTime>
         
-        <tag>Microfluidics</tag>
+        <tag>3D cell culture</tag>
          
-        <tag>Drug testing</tag>
+        <tag>Thin gel</tag>
          
-        <tag>3D culture</tag>
+        <tag>Combinatorial drug screening</tag>
+         
+        <tag>High-throughput</tag>
+         
+        <tag>Microfluidic array</tag>
          
          
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2021-09-05T16:02:20.658Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>
@@ -103,30 +131,6 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2021-07-21T03:35:41.022Z</lastmod>
-    <data>
-        <display>
-        <title>推理小说记录</title>
-        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
-        
-        <tag>Lattice resoning</tag>
-         
-        <tag>Detective story</tag>
-         
-        <tag>Penetralium</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>

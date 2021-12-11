@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.catkin.moe/2021/11/26/A%20Microfluidic%20Multisize%20Spheroid%20Array%20for%20Multiparametric%20Screening%20of%20Anticancer%20Drugs%20and%20Blood%E2%80%93Brain%20Barrier%20Transport%20Properties/</loc>
-    <lastmod>2021-11-26T13:56:30.556Z</lastmod>
+    <lastmod>2021-12-10T16:35:22.317Z</lastmod>
     <data>
         <display>
         <title>A Microfluidic Multisize Spheroid Array for Multiparametric Screening of Anticancer Drugs and Blood–Brain Barrier Transport Properties</title>
@@ -20,6 +20,32 @@
         <tag>In vitro tests</tag>
          
         <tag>Multicellular spheroids</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/01/Microfluidic%20tumor-on-a-chip%20model%20to%20evaluate%20the%20role%20of%20tumor%20environmental%20stress%20on%20NK%20cell%20exhaustion/</loc>
+    <lastmod>2021-11-27T06:06:28.138Z</lastmod>
+    <data>
+        <display>
+        <title>Microfluidic tumor-on-a-chip model to evaluate the role of tumor environmental stress on NK cell exhaustion</title>
+        <pubTime>2021-03-01T10:58:47.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>NK cell</tag>
+         
+        <tag>Tumor environmental</tag>
+         
+        <tag>Tumor-on-a-chip</tag>
          
          
            
@@ -1655,32 +1681,6 @@
         <tag>Pneumatic valve</tag>
          
         <tag>Tumor response</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/01/Microfluidic%20tumor-on-a-chip%20model%20to%20evaluate%20the%20role%20of%20tumor%20environmental%20stress%20on%20NK%20cell%20exhaustion/</loc>
-    <lastmod>2021-03-18T12:29:32.435Z</lastmod>
-    <data>
-        <display>
-        <title>Microfluidic tumor-on-a-chip model to evaluate the role of tumor environmental stress on NK cell exhaustion</title>
-        <pubTime>2021-03-01T10:58:47.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>NK cell</tag>
-         
-        <tag>Tumor environmental</tag>
-         
-        <tag>Tumor-on-a-chip</tag>
          
          
            

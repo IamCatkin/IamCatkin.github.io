@@ -16,7 +16,7 @@
 <meta property="og:description" content="好久没写代码了，真是恍如隔世啊。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://gitee.com/catkin7/myblogphotos/raw/master/Delaunay%E4%B8%89%E8%A7%92Python%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2/cover.png">
-<meta property="og:updated_time" content="2022-02-10T16:22:33.777Z">
+<meta property="og:updated_time" content="2022-02-12T15:26:28.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Delaunay三角Python实现初探">
 <meta name="twitter:description" content="好久没写代码了，真是恍如隔世啊。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 162 个字)
+                    3 分钟 读完 (大约 461 个字)
                 </span>
                 
                 
@@ -185,10 +185,12 @@
         <div class="content">
             <p>　　好久没写代码了，真是恍如隔世啊。</p>
 <a id="more"></a>
-
 <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>　　放假前几天，老板让师弟研究一下Delaunay三角的画法，鉴于俺当时实在摸鱼摸出贤者时间了，就主动揽过了这个活。</p>
 <h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>　　首先去网上找轮子，果不其然有个<a href="https://blog.csdn.net/hpuhjl/article/details/82911990" target="_blank" rel="noopener">轮子</a>，但是老板有一些需求，接下来是探索过程。</p>
-<h2 id="上色标准"><a href="#上色标准" class="headerlink" title="上色标准"></a>上色标准</h2><p>首先是希望颜色分布按三角形面积大小来排列。</p>
+<h2 id="上色标准"><a href="#上色标准" class="headerlink" title="上色标准"></a>上色标准</h2><p>　　首先是希望颜色分布按三角形面积大小来排列。将原轮子稍加改动，替换求面积公式：<code>s = 0.5*abs(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2)</code></p>
+<h2 id="配色方案"><a href="#配色方案" class="headerlink" title="配色方案"></a>配色方案</h2><p>　　plt.cm.get_cmap函数能使用配色方案，在<a href="https://www.matplotlib.org.cn/tutorials/colors/colormaps.html#miscellaneous" target="_blank" rel="noopener">此</a>可以选择预设的方案。</p>
+<h2 id="解决不了的问题"><a href="#解决不了的问题" class="headerlink" title="解决不了的问题"></a>解决不了的问题</h2><p>　　右边刻度没法准确操控，即无法自定义分布区间，待俺有空再研究研究。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> scipy.spatial <span class="hljs-keyword">import</span> Delaunay</span><br><span class="line"><span class="hljs-keyword">import</span> matplotlib <span class="hljs-keyword">as</span> mpl</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt</span><br><span class="line"><span class="hljs-keyword">import</span> matplotlib.ticker <span class="hljs-keyword">as</span> ticker</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># parameters</span></span><br><span class="line">width = <span class="hljs-number">80</span></span><br><span class="line">height = <span class="hljs-number">40</span> </span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getDelaunay</span><span class="hljs-params">(data,pointNumber)</span>:</span></span><br><span class="line">    points = np.zeros((pointNumber, <span class="hljs-number">2</span>)) </span><br><span class="line">    points[:, <span class="hljs-number">0</span>] = data[<span class="hljs-string">"X"</span>]</span><br><span class="line">    points[:, <span class="hljs-number">1</span>] = data[<span class="hljs-string">"Y"</span>]</span><br><span class="line">    tri = Delaunay(points)</span><br><span class="line">    </span><br><span class="line">    color = []</span><br><span class="line">    <span class="hljs-keyword">for</span> index, sim <span class="hljs-keyword">in</span> enumerate(points[tri.simplices]):</span><br><span class="line">        x1, y1 = sim[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>], sim[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]</span><br><span class="line">        x2, y2 = sim[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], sim[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]</span><br><span class="line">        x3, y3 = sim[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>], sim[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]</span><br><span class="line">        s = <span class="hljs-number">0.5</span>*abs(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2)</span><br><span class="line">        color.append(s)</span><br><span class="line">    color = np.array(color)</span><br><span class="line">    areas = pd.DataFrame(color)</span><br><span class="line">    areas.to_excel(<span class="hljs-string">"areas.xlsx"</span>)</span><br><span class="line"></span><br><span class="line">    fig, ax = plt.subplots(figsize=(<span class="hljs-number">20</span>,<span class="hljs-number">10</span>)) </span><br><span class="line">    cmap = plt.cm.get_cmap(<span class="hljs-string">'Pastel1'</span>)</span><br><span class="line">    delu = plt.tripcolor(points[:, <span class="hljs-number">0</span>], points[:, <span class="hljs-number">1</span>], tri.simplices.copy(), cmap=cmap, facecolors=color, edgecolors=<span class="hljs-string">'r'</span>) </span><br><span class="line">    cb = fig.colorbar(delu)</span><br><span class="line">    cb.update_normal(delu)</span><br><span class="line">    ax = plt.gca() </span><br><span class="line">    plt.scatter(points[:,<span class="hljs-number">0</span>],points[:,<span class="hljs-number">1</span>], color=<span class="hljs-string">'w'</span>)</span><br><span class="line">    ax.set_title(<span class="hljs-string">'Title test'</span>,fontsize=<span class="hljs-number">20</span>)</span><br><span class="line">    ax.set_xlabel(<span class="hljs-string">'Xlabel test'</span>,fontsize=<span class="hljs-number">20</span>)</span><br><span class="line">    ax.set_ylabel(<span class="hljs-string">'Ylabel test'</span>,fontsize=<span class="hljs-number">20</span>)</span><br><span class="line">    plt.savefig(<span class="hljs-string">'Delaunay.png'</span>, transparent=<span class="hljs-keyword">True</span>, dpi=<span class="hljs-number">600</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">    data = pd.read_excel(<span class="hljs-string">'Results.xlsx'</span>)</span><br><span class="line">    pointNumber = len(data)</span><br><span class="line">    getDelaunay(data,pointNumber)</span><br></pre></td></tr></table></figure>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/hpuhjl/article/details/82911990" target="_blank" rel="noopener">python 实现德洛内三角剖分</a></p>
 
         </div>
@@ -347,9 +349,21 @@
         <a class="is-flex" href="#上色标准">
         <span class="has-mr-6">2.1</span>
         <span>上色标准</span>
+        </a></li><li>
+        <a class="is-flex" href="#配色方案">
+        <span class="has-mr-6">2.2</span>
+        <span>配色方案</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决不了的问题">
+        <span class="has-mr-6">2.3</span>
+        <span>解决不了的问题</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#参考">
+        <a class="is-flex" href="#代码">
         <span class="has-mr-6">3</span>
+        <span>代码</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">4</span>
         <span>参考</span>
         </a></li></ul>
         </div>

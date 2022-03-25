@@ -2,37 +2,772 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.catkin.moe/2022/03/17/Functionalized%20Microgel%20Rods%20Interlinked%20into%20Soft%20Macroporous%20Structures%20for%203D%20Cell%20Culture/</loc>
+    <loc>https://blog.catkin.moe/2022/03/25/Microengineered%20Multi-Organoid%20System%20from%20hiPSCs%20to%20Recapitulate%20Human%20Liver-Islet%20Axis%20in%20Normal%20and%20Type%202%20Diabetes/</loc>
     
-    <lastmod>2022-03-19T06:47:27.696Z</lastmod>
+    <lastmod>2022-03-25T16:03:56.072Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/01/31/%E9%87%91%E7%BC%95%E6%9B%B2/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/08/01/%E8%BF%99%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E6%B3%A2%E7%BA%B9%E4%BA%86%E2%80%94%E2%80%94%E8%AE%B0%E4%B8%80%E4%B8%AA%E4%BD%8E%E7%AB%AF%E7%88%AC%E8%99%AB/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/08/%E8%BD%A9%E8%BE%95%E5%89%91%E6%9F%92%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.908Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/25/%E8%AF%A1%E8%AE%A1x%E9%80%BB%E8%BE%91%E6%A1%88%E4%BB%B6%E7%9B%98%E7%82%B9/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.907Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/02/03/%E8%AE%B0%E5%BD%95%E5%AE%9E%E7%94%A8%E7%9A%84python%E5%BA%93/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.906Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/08/13/%E8%AE%B0%E5%BD%95%E5%87%A0%E4%B8%AA%E5%92%8Cnpm%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BC%B1%E6%99%BA%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/07/04/%E8%99%9E%E7%BE%8E%E4%BA%BA/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/07/20/%E8%8B%8D%E4%B9%8B%E6%B6%9B%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/22/%E7%BB%86%E8%83%9E%E5%9F%B9%E5%85%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/07/11/%E7%B4%AB%E5%A1%9E%E7%A7%8B%E9%A3%8E%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/05/08/%E7%B1%BB%E4%BC%BC%E2%80%9C%E8%B6%85%E5%BC%BA%E6%99%BA%E5%95%86%E2%80%9D%E4%B9%8B%E7%B1%BB%E7%9A%84%E7%AD%94%E9%A2%98%E6%B8%B8%E6%88%8F%E4%BD%9C%E5%BC%8A%E6%80%9D%E8%B7%AF/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.893Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/28/%E6%B1%9F%E6%B9%96%E5%A4%9C%E9%9B%A8%E5%8D%81%E5%B9%B4%E7%81%AF%EF%BC%9A%E6%AD%A6%E4%BE%A0%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BF%86/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.892Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/11/13/%E6%95%B0%E5%AD%97%E5%88%87%E7%89%87%E6%89%AB%E6%8F%8F%E4%BB%AA%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.891Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2022-03-15T05:12:45.890Z</lastmod>
+    <lastmod>2022-03-25T15:52:33.890Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2022/03/04/Imiquimod-gemcitabine%20nanoparticles%20harness%20immune%20cells%20to%20suppress%20breast%20cancer/</loc>
+    <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2022-03-12T06:43:34.228Z</lastmod>
+    <lastmod>2022-03-25T15:52:33.888Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/07/15/%E5%BC%82%E5%BA%A6%E7%A5%9E%E5%89%91%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.886Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/10/25/%E5%B0%BC%E6%B0%8F%E6%9F%93%E8%89%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.885Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/04/21/%E5%B0%86SMILES%E8%BD%AC%E6%88%90InChiKey/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.884Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/10/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.883Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/10/22/%E5%86%B0%E5%86%BB%E5%88%87%E7%89%87%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.880Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/06/01/%E5%85%AD%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.879Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/08/01/%E5%85%AB%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/08/22/%E4%BB%8ECmder%E5%88%B0Windows%20Terminal/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/13/%E4%BA%94%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/01/%E4%B9%9D%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/01/31/%E4%B8%B4%E7%BB%88%E6%AD%8C/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.872Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/07/01/%E4%B8%83%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.870Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.867Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/01/17/%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.866Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/02/Ultrahigh-throughput%20magnetic%20sorting%20of%20large%20blood%20volumes%20for%20epitope-agnostic%20isolation%20of%20circulating%20tumor%20cells/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.865Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.catkin.moe/2022/03/04/Three-Dimensional%20Human%20Liver-Chip%20Emulating%20Premetastatic%20Niche%20Formation%20by%20Breast%20Cancer-Derived%20Extracellular%20Vesicles/</loc>
     
-    <lastmod>2022-03-04T09:25:10.735Z</lastmod>
+    <lastmod>2022-03-25T15:52:33.861Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/17/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.858Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/14/Soft%20Lithography/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.855Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/28/Single%20Molecule%20Protein%20Detection%20with%20Attomolar%20Sensitivity%20Using%20Droplet%20Digital%20Enzyme-Linked%20Immunosorbent%20Assay/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.852Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/03/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.851Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/11/08/Simultaneous%20Culturing%20of%20Cell%20Monolayers%20and%20Spheroids%20on%20a%20Single%20Microfluidic%20Device%20for%20Bridging%20the%20Gap%20between%202D%20and%203D%20Cell%20Assays%20in%20Drug%20Research/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.849Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/14/Screening%20Therapeutic%20Agents%20Specific%20to%20Breast%20Cancer%20Stem%20Cells%20Using%20a%20Microfluidic%20Single%E2%80%90Cell%20Clone%E2%80%90Forming%20Inhibition%20Assay/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.848Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/27/Review%20of%203D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.847Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.845Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/19/Quantification%20of%20Protein%20Secretion%20from%20Circulating%20Tumor%20Cells%20in%20Microfluidic%20Chambers/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.844Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/04/02/On%E2%80%90Chip%20Biogenesis%20of%20Circulating%20NK%20Cell%E2%80%90Derived%20Exosomes%20in%20Non%E2%80%90Small%20Cell%20Lung%20Cancer%20Exhibits%20Antitumoral%20Activity/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.843Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/10/On-Chip%20Construction%20of%20Liver%20Lobule-like%20Microtissue%20and%20Its%20Application%20for%20Adverse%20Drug%20Reaction%20Assay/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.840Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/07/24/NS%E5%BC%80%E7%AE%B1/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/26/Near-physiological%20microenvironment%20simulation%20on%20chip%20to%20evaluate%20drug%20resistance%20of%20different%20loci%20in%20tumour%20mass/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.836Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/05/26/Multiscale%20cytometry%20and%20regulation%20of%203D%20cell%20cultures%20on%20a%20chip/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.834Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/08/06/Multilayer%20architecture%20microfluidic%20network%20array%20for%20combinatorial%20drug%20testing%20on%203D-cultured%20cells/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.833Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/12/Monitoring%20Tumor%20Response%20to%20Anticancer%20Drugs%20Using%20Stable%20Three-Dimensional%20Culture%20in%20a%20Recyclable%20Microfluidic%20Platform/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.829Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.catkin.moe/2021/12/23/Modeling%20Endothelialized%20Hepatic%20Tumor%20Microtissues%20for%20Drug%20Screening/</loc>
     
-    <lastmod>2022-02-26T06:59:36.309Z</lastmod>
+    <lastmod>2022-03-25T15:52:33.828Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/01/Microfluidic%20tumor-on-a-chip%20model%20to%20evaluate%20the%20role%20of%20tumor%20environmental%20stress%20on%20NK%20cell%20exhaustion/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.827Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/12/Microfluidic%20Cell%20Stretching%20for%20Highly%20Effective%20Gene%20Delivery%20into%20Hard-to-Transfect%20Primary%20Cells/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.826Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/09/16/Mammary%20Tumor%20Organoid%20Culture%20in%20Non-Adhesive%20Alginate%20for%20Luminal%20Mechanics%20and%20High-Throughput%20Drug%20Screening/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.823Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/23/Large%E2%80%90Scale%20Fabrication%20of%20Robust%20Artificial%20Skins%20from%20a%20Biodegradable%20Sealant%E2%80%90Loaded%20Nanofiber%20Scaffold%20to%20Skin%20Tissue%20via%20Microfluidic%20Blow%E2%80%90Spinning/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.820Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/15/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.818Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2022/03/04/Imiquimod-gemcitabine%20nanoparticles%20harness%20immune%20cells%20to%20suppress%20breast%20cancer/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/06/09/ImageJ%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/16/Hydro-Seq%20enables%20contamination-free%20high-throughput%20single-cell%20RNA-sequencing%20for%20circulating%20tumor%20cells/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/27/High%E2%80%90Definition%20Single%E2%80%90Cell%20Printing%20Cell%E2%80%90by%E2%80%90Cell%20Fabrication%20of%20Biological%20Structures/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.808Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/19/High%20throughput%20and%20multiplex%20localization%20of%20proteins%20and%20cells%20for%20in%20situ%20micropatterning%20using%20pneumatic%20microfluidics/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.807Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/31/Hierarchically%20Molecular%20Imprinted%20Porous%20Particles%20for%20Biomimetic%20Kidney%20Cleaning/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.806Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/14/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.805Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/01/GoldenDict%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%8D%E5%85%B8/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.804Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2022/03/17/Functionalized%20Microgel%20Rods%20Interlinked%20into%20Soft%20Macroporous%20Structures%20for%203D%20Cell%20Culture/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.802Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/15/Functional%20Screening%20of%20Candidate%20Causal%20Genes%20for%20Insulin%20Resistance%20in%20Human%20Preadipocytes%20and%20Adipocytes/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.801Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/02/06/FP-growth%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.800Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/11/14/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.798Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/29/Facile%20Production%20of%20Large%E2%80%90Area%20Cell%20Arrays%20Using%20Surface%E2%80%90Assembled%20Microdroplets/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.796Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/06/02/Ex%20Vivo%20Profiling%20of%20PD-1%20Blockade%20Using%20Organotypic%20Tumor%20Spheroids/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.795Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/06/Evaluation%20of%20Single-Cell%20Cytokine%20Secretion%20and%20Cell-Cell%20Interactions%20with%20a%20Hierarchical%20Loading%20Microwell%20Chip/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.793Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.792Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/11/Dynamic%20trapping%20and%20high-throughput%20patterning%20of%20cells%20using%20pneumatic%20microstructures%20in%20an%20integrated%20microfluidic%20device/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.790Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/23/Dual%E2%80%90Isolation%20and%20Profiling%20of%20Circulating%20Tumor%20Cells%20and%20Cancer%20Exosomes%20from%20Blood%20Samples%20with%20Melanoma%20Using%20Immunoaffinity%E2%80%90Based%20Microfluidic%20Interfaces/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.788Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/30/Droplet%E2%80%90Based%20Combinatorial%20Assay%20for%20Cell%20Cytotoxicity%20and%20Cytokine%20Release%20Evaluation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.786Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.785Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2022/02/11/Delaunay%E4%B8%89%E8%A7%92Python%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.782Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/11/Controllable%20organization%20and%20high%20throughput%20production%20of%20recoverable%203D%20tumors%20using%20pneumatic%20microfluidics/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.781Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/27/Combinatorial%20Strategy%20for%20Studying%20Biochemical%20Pathways%20in%20Double%20Emulsion%20Templated%20Cell%E2%80%90Sized%20Compartments/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/09/28/Colorectal%20tumor-on-a-chip%20system%20A%203D%20tool%20for%20precision%20onco-nanomedicine/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.779Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/30/Bioinspired%20programmable%20wettability%20arrays%20for%20droplets%20manipulation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.778Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/07/Bioinspired%20One%20Cell%20Culture%20Isolates%20Highly%20Tumorigenic%20and%20Metastatic%20Cancer%20Stem%20Cells%20Capable%20of%20Multilineage%20Differentiation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.776Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/04/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/01/20/AutoCAD%202021%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.773Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/01/30/Apriori%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.772Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/16/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/10/14/An%20Integrated%20Dielectrophoresis-Trapping%20and%20Nanowell%20Transfer%20Approach%20to%20Enable%20Double-Sub-Poisson%20Single-Cell%20RNA%20Sequencing/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.769Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/05/29/AirPods%E5%BC%80%E7%AE%B1/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2018/04/17/Aero15x%E5%BC%80%E7%AE%B1/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.767Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/01/29/A%20modular%20microfluidic%20system%20based%20on%20a%20multilayered%20configuration%20to%20generate%20large-scale%20perfusable%20microvascular%20networks/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.765Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/05/06/A%20Microfluidic%20Tumor%E2%80%90on%E2%80%90a%E2%80%90Chip%20for%20Assessing%20Multifunctional%20Liposomes'%20Tumor%20Targeting%20and%20Anticancer%20Efficacy/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.764Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/16/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture,%20monitoring%20and%20drug%20resistance%20testing/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.762Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/11/26/A%20Microfluidic%20Multisize%20Spheroid%20Array%20for%20Multiparametric%20Screening%20of%20Anticancer%20Drugs%20and%20Blood%E2%80%93Brain%20Barrier%20Transport%20Properties/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.761Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/10/A%20herringbone%20mixer%20based%20microfluidic%20device%20HBEXO-chip%20for%20purifying%20tumor-derived%20exosomes%20and%20establishing%20miRNA%20signature%20in%20pancreatic%20cancer/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.759Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/06/24/A%20Dynamic%203D%20Tumor%20Spheroid%20Chip%20Enables%20More%20Accurate%20Nanomedicine%20Uptake%20Evaluation/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.752Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/04/23/A%20Biomimetic%20Tumor%20Model%20of%20Heterogeneous%20Invasion%20in%20Pancreatic%20Ductal%20Adenocarcinoma/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/09/16/3D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.749Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/08/3D%20scaffold-free%20microlivers%20with%20drug%20metabolic%20function%20generated%20by%20lineage-reprogrammed%20hepatocytes%20from%20human%20fibroblasts/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.747Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/07/20/3D%20lung%20spheroid%20cultures%20for%20evaluation%20of%20photodynamic%20therapy%20(PDT)%20procedures%20in%20microfluidic%20Lab-on-a-Chip%20system/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.746Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/18/3D%20biomaterial%20matrix%20to%20support%20long%20term,%20full%20thickness,%20immuno-competent%20human%20skin%20equivalents%20with%20nervous%20system%20components/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/12/23/2021%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/12/21/2020%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.743Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2019/12/31/2019%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    
+    <lastmod>2022-03-25T15:52:33.742Z</lastmod>
     
   </url>
   
@@ -40,734 +775,6 @@
     <loc>https://blog.catkin.moe/about/index.html</loc>
     
     <lastmod>2022-02-25T07:31:10.501Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/12/23/2021%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    
-    <lastmod>2022-02-14T13:50:45.427Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/21/2020%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    
-    <lastmod>2022-02-13T10:46:07.276Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2022/02/11/Delaunay%E4%B8%89%E8%A7%92Python%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2/</loc>
-    
-    <lastmod>2022-02-12T15:26:28.016Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/25/%E8%AF%A1%E8%AE%A1x%E9%80%BB%E8%BE%91%E6%A1%88%E4%BB%B6%E7%9B%98%E7%82%B9/</loc>
-    
-    <lastmod>2022-01-29T08:56:31.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2022-01-29T08:55:45.779Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/01/GoldenDict%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%8D%E5%85%B8/</loc>
-    
-    <lastmod>2022-01-03T06:54:46.233Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/11/26/A%20Microfluidic%20Multisize%20Spheroid%20Array%20for%20Multiparametric%20Screening%20of%20Anticancer%20Drugs%20and%20Blood%E2%80%93Brain%20Barrier%20Transport%20Properties/</loc>
-    
-    <lastmod>2021-12-11T00:55:29.803Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/01/Microfluidic%20tumor-on-a-chip%20model%20to%20evaluate%20the%20role%20of%20tumor%20environmental%20stress%20on%20NK%20cell%20exhaustion/</loc>
-    
-    <lastmod>2021-11-27T06:06:28.138Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/11/08/Simultaneous%20Culturing%20of%20Cell%20Monolayers%20and%20Spheroids%20on%20a%20Single%20Microfluidic%20Device%20for%20Bridging%20the%20Gap%20between%202D%20and%203D%20Cell%20Assays%20in%20Drug%20Research/</loc>
-    
-    <lastmod>2021-11-15T11:00:26.069Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/09/28/Colorectal%20tumor-on-a-chip%20system%20A%203D%20tool%20for%20precision%20onco-nanomedicine/</loc>
-    
-    <lastmod>2021-11-08T03:01:39.279Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/09/16/Mammary%20Tumor%20Organoid%20Culture%20in%20Non-Adhesive%20Alginate%20for%20Luminal%20Mechanics%20and%20High-Throughput%20Drug%20Screening/</loc>
-    
-    <lastmod>2021-09-27T10:20:16.636Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/08/06/Multilayer%20architecture%20microfluidic%20network%20array%20for%20combinatorial%20drug%20testing%20on%203D-cultured%20cells/</loc>
-    
-    <lastmod>2021-09-11T06:37:46.616Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/22/%E7%BB%86%E8%83%9E%E5%9F%B9%E5%85%BB%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2021-08-04T10:20:52.197Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/07/20/3D%20lung%20spheroid%20cultures%20for%20evaluation%20of%20photodynamic%20therapy%20(PDT)%20procedures%20in%20microfluidic%20Lab-on-a-Chip%20system/</loc>
-    
-    <lastmod>2021-07-23T14:27:16.512Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/12/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2021-07-18T10:22:44.394Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/10/22/%E5%86%B0%E5%86%BB%E5%88%87%E7%89%87%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2021-07-12T11:12:08.169Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/12/31/2019%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    
-    <lastmod>2021-07-12T11:12:02.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/08/22/%E4%BB%8ECmder%E5%88%B0Windows%20Terminal/</loc>
-    
-    <lastmod>2021-07-12T11:11:59.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/07/20/%E8%8B%8D%E4%B9%8B%E6%B6%9B%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
-    
-    <lastmod>2021-07-12T11:11:57.213Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/18/3D%20biomaterial%20matrix%20to%20support%20long%20term,%20full%20thickness,%20immuno-competent%20human%20skin%20equivalents%20with%20nervous%20system%20components/</loc>
-    
-    <lastmod>2021-07-12T11:11:54.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/06/24/A%20Dynamic%203D%20Tumor%20Spheroid%20Chip%20Enables%20More%20Accurate%20Nanomedicine%20Uptake%20Evaluation/</loc>
-    
-    <lastmod>2021-07-10T06:20:29.694Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/06/02/Ex%20Vivo%20Profiling%20of%20PD-1%20Blockade%20Using%20Organotypic%20Tumor%20Spheroids/</loc>
-    
-    <lastmod>2021-06-19T06:45:16.044Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/06/09/ImageJ%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-06-10T08:26:46.384Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/05/26/Multiscale%20cytometry%20and%20regulation%20of%203D%20cell%20cultures%20on%20a%20chip/</loc>
-    
-    <lastmod>2021-05-29T06:13:29.309Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/05/06/A%20Microfluidic%20Tumor%E2%80%90on%E2%80%90a%E2%80%90Chip%20for%20Assessing%20Multifunctional%20Liposomes'%20Tumor%20Targeting%20and%20Anticancer%20Efficacy/</loc>
-    
-    <lastmod>2021-05-15T06:26:19.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/04/23/A%20Biomimetic%20Tumor%20Model%20of%20Heterogeneous%20Invasion%20in%20Pancreatic%20Ductal%20Adenocarcinoma/</loc>
-    
-    <lastmod>2021-05-06T08:33:35.015Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/04/02/On%E2%80%90Chip%20Biogenesis%20of%20Circulating%20NK%20Cell%E2%80%90Derived%20Exosomes%20in%20Non%E2%80%90Small%20Cell%20Lung%20Cancer%20Exhibits%20Antitumoral%20Activity/</loc>
-    
-    <lastmod>2021-04-24T06:30:03.048Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/26/Near-physiological%20microenvironment%20simulation%20on%20chip%20to%20evaluate%20drug%20resistance%20of%20different%20loci%20in%20tumour%20mass/</loc>
-    
-    <lastmod>2021-03-27T02:38:15.560Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/19/High%20throughput%20and%20multiplex%20localization%20of%20proteins%20and%20cells%20for%20in%20situ%20micropatterning%20using%20pneumatic%20microfluidics/</loc>
-    
-    <lastmod>2021-03-21T15:55:42.900Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/11/Dynamic%20trapping%20and%20high-throughput%20patterning%20of%20cells%20using%20pneumatic%20microstructures%20in%20an%20integrated%20microfluidic%20device/</loc>
-    
-    <lastmod>2021-03-20T03:21:44.945Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/17/Study%203D%20Endothelial%20Cell%20Network%20Formation%20under%20Various%20Oxygen%20Microenvironment%20and%20Hydrogel%20Composition%20Combinations%20Using%20Upside%E2%80%90Down%20Microfluidic%20Devices/</loc>
-    
-    <lastmod>2021-03-20T02:18:47.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/01/31/%E9%87%91%E7%BC%95%E6%9B%B2/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.793Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/08/01/%E8%BF%99%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E6%B3%A2%E7%BA%B9%E4%BA%86%E2%80%94%E2%80%94%E8%AE%B0%E4%B8%80%E4%B8%AA%E4%BD%8E%E7%AB%AF%E7%88%AC%E8%99%AB/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.791Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/08/%E8%BD%A9%E8%BE%95%E5%89%91%E6%9F%92%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.789Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/02/03/%E8%AE%B0%E5%BD%95%E5%AE%9E%E7%94%A8%E7%9A%84python%E5%BA%93/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.778Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/08/13/%E8%AE%B0%E5%BD%95%E5%87%A0%E4%B8%AA%E5%92%8Cnpm%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BC%B1%E6%99%BA%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.776Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/07/04/%E8%99%9E%E7%BE%8E%E4%BA%BA/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.773Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/07/11/%E7%B4%AB%E5%A1%9E%E7%A7%8B%E9%A3%8E%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.767Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/05/08/%E7%B1%BB%E4%BC%BC%E2%80%9C%E8%B6%85%E5%BC%BA%E6%99%BA%E5%95%86%E2%80%9D%E4%B9%8B%E7%B1%BB%E7%9A%84%E7%AD%94%E9%A2%98%E6%B8%B8%E6%88%8F%E4%BD%9C%E5%BC%8A%E6%80%9D%E8%B7%AF/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.765Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/01/03/%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97%E7%9A%84python%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.747Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/28/%E6%B1%9F%E6%B9%96%E5%A4%9C%E9%9B%A8%E5%8D%81%E5%B9%B4%E7%81%AF%EF%BC%9A%E6%AD%A6%E4%BE%A0%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BF%86/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.736Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/11/13/%E6%95%B0%E5%AD%97%E5%88%87%E7%89%87%E6%89%AB%E6%8F%8F%E4%BB%AA%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.724Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/07/15/%E5%BC%82%E5%BA%A6%E7%A5%9E%E5%89%91%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/10/25/%E5%B0%BC%E6%B0%8F%E6%9F%93%E8%89%B2%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/04/21/%E5%B0%86SMILES%E8%BD%AC%E6%88%90InChiKey/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/10/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/06/01/%E5%85%AD%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.650Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/08/01/%E5%85%AB%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.637Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/13/%E4%BA%94%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.605Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/01/%E4%B9%9D%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.593Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/01/31/%E4%B8%B4%E7%BB%88%E6%AD%8C/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.587Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/07/01/%E4%B8%83%E6%9C%88%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.575Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/12/26/%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%E7%82%B9/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.560Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/01/17/%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BF%A1%E6%8C%96%E6%8E%98%E7%9A%84DEMO/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.558Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/02/Ultrahigh-throughput%20magnetic%20sorting%20of%20large%20blood%20volumes%20for%20epitope-agnostic%20isolation%20of%20circulating%20tumor%20cells/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/14/Soft%20Lithography/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.533Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/28/Single%20Molecule%20Protein%20Detection%20with%20Attomolar%20Sensitivity%20Using%20Droplet%20Digital%20Enzyme-Linked%20Immunosorbent%20Assay/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.522Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/03/Simultaneous%20on-chip%20isolation%20and%20characterization%20of%20circulating%20tumor%20cell%20sub-populations/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/14/Screening%20Therapeutic%20Agents%20Specific%20to%20Breast%20Cancer%20Stem%20Cells%20Using%20a%20Microfluidic%20Single%E2%80%90Cell%20Clone%E2%80%90Forming%20Inhibition%20Assay/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.506Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/27/Review%20of%203D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.500Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/21/Reconfigurable%20open%20microfluidics%20for%20studying%20the%20spatiotemporal%20dynamics%20of%20paracrine%20signalling/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.495Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/19/Quantification%20of%20Protein%20Secretion%20from%20Circulating%20Tumor%20Cells%20in%20Microfluidic%20Chambers/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.484Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/08/One%20Cell,%20One%20Drop,%20One%20Click%20Hybrid%20Microfluidics%20for%20Mammalian%20Single%20Cell%20Isolation/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.473Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/10/On-Chip%20Construction%20of%20Liver%20Lobule-like%20Microtissue%20and%20Its%20Application%20for%20Adverse%20Drug%20Reaction%20Assay/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.461Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/07/24/NS%E5%BC%80%E7%AE%B1/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.452Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/12/Monitoring%20Tumor%20Response%20to%20Anticancer%20Drugs%20Using%20Stable%20Three-Dimensional%20Culture%20in%20a%20Recyclable%20Microfluidic%20Platform/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/12/Microfluidic%20Cell%20Stretching%20for%20Highly%20Effective%20Gene%20Delivery%20into%20Hard-to-Transfect%20Primary%20Cells/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.425Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/23/Large%E2%80%90Scale%20Fabrication%20of%20Robust%20Artificial%20Skins%20from%20a%20Biodegradable%20Sealant%E2%80%90Loaded%20Nanofiber%20Scaffold%20to%20Skin%20Tissue%20via%20Microfluidic%20Blow%E2%80%90Spinning/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.415Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/15/Large-Scale%20Antitumor%20Screening%20Based%20on%20Heterotypic%203D%20Tumors%20Using%20an%20Integrated%20Microfluidic%20Platform/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.404Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.398Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.387Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/29/IFlowPlate%E2%80%94A%20Customized%20384%E2%80%90Well%20Plate%20for%20the%20Culture%20of%20Perfusable%20Vascularized%20Colon%20Organoids/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.376Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/16/Hydro-Seq%20enables%20contamination-free%20high-throughput%20single-cell%20RNA-sequencing%20for%20circulating%20tumor%20cells/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.364Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.349Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/27/High%E2%80%90Definition%20Single%E2%80%90Cell%20Printing%20Cell%E2%80%90by%E2%80%90Cell%20Fabrication%20of%20Biological%20Structures/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.343Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/31/Hierarchically%20Molecular%20Imprinted%20Porous%20Particles%20for%20Biomimetic%20Kidney%20Cleaning/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.332Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/14/Heterotypic%203D%20tumor%20culture%20in%20a%20reusable%20platform%20using%20pneumatic%20microfluidics/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.322Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/15/Functional%20Screening%20of%20Candidate%20Causal%20Genes%20for%20Insulin%20Resistance%20in%20Human%20Preadipocytes%20and%20Adipocytes/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.289Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/02/06/FP-growth%E7%AE%97%E6%B3%95/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.277Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/11/14/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.266Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/29/Facile%20Production%20of%20Large%E2%80%90Area%20Cell%20Arrays%20Using%20Surface%E2%80%90Assembled%20Microdroplets/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.260Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/06/Evaluation%20of%20Single-Cell%20Cytokine%20Secretion%20and%20Cell-Cell%20Interactions%20with%20a%20Hierarchical%20Loading%20Microwell%20Chip/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.254Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/12/Early%20Prediction%20of%20Single-Cell%20Derived%20Sphere%20Formation%20Rate%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.243Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/23/Dual%E2%80%90Isolation%20and%20Profiling%20of%20Circulating%20Tumor%20Cells%20and%20Cancer%20Exosomes%20from%20Blood%20Samples%20with%20Melanoma%20Using%20Immunoaffinity%E2%80%90Based%20Microfluidic%20Interfaces/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.222Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/30/Droplet%E2%80%90Based%20Combinatorial%20Assay%20for%20Cell%20Cytotoxicity%20and%20Cytokine%20Release%20Evaluation/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.216Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2019/04/12/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.205Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/11/Controllable%20organization%20and%20high%20throughput%20production%20of%20recoverable%203D%20tumors%20using%20pneumatic%20microfluidics/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.192Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/27/Combinatorial%20Strategy%20for%20Studying%20Biochemical%20Pathways%20in%20Double%20Emulsion%20Templated%20Cell%E2%80%90Sized%20Compartments/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/30/Bioinspired%20programmable%20wettability%20arrays%20for%20droplets%20manipulation/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.174Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/12/07/Bioinspired%20One%20Cell%20Culture%20Isolates%20Highly%20Tumorigenic%20and%20Metastatic%20Cancer%20Stem%20Cells%20Capable%20of%20Multilineage%20Differentiation/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.168Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/04/Automated%20microfluidic%20platform%20for%20dynamic%20and%20combinatorial%20drug%20screening%20of%20tumor%20organoids/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.162Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/01/20/AutoCAD%202021%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.161Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/01/30/Apriori%E7%AE%97%E6%B3%95/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.154Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/16/An%20integrated%20microfluidic%203D%20tumor%20system%20for%20parallel%20and%20high-throughput%20chemotherapy%20evaluation/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.142Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/10/14/An%20Integrated%20Dielectrophoresis-Trapping%20and%20Nanowell%20Transfer%20Approach%20to%20Enable%20Double-Sub-Poisson%20Single-Cell%20RNA%20Sequencing/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.137Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/05/29/AirPods%E5%BC%80%E7%AE%B1/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.128Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2018/04/17/Aero15x%E5%BC%80%E7%AE%B1/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.123Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/06/A%20Precise%20Microfluidic%20Assay%20in%20Single%E2%80%90Cell%20Profile%20for%20Screening%20of%20Transient%20Receptor%20Potential%20Channel%20Modulators/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.117Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/01/29/A%20modular%20microfluidic%20system%20based%20on%20a%20multilayered%20configuration%20to%20generate%20large-scale%20perfusable%20microvascular%20networks/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.104Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/16/A%20microfluidic%20platform%20for%20multi-size%203D%20tumor%20culture,%20monitoring%20and%20drug%20resistance%20testing/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.093Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/10/A%20herringbone%20mixer%20based%20microfluidic%20device%20HBEXO-chip%20for%20purifying%20tumor-derived%20exosomes%20and%20establishing%20miRNA%20signature%20in%20pancreatic%20cancer/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.087Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/09/16/3D%E2%80%90Printed%20Soft%20Lithography%20for%20Complex%20Compartmentalized%20Microfluidic%20Neural%20Devices/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.080Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/08/3D%20scaffold-free%20microlivers%20with%20drug%20metabolic%20function%20generated%20by%20lineage-reprogrammed%20hepatocytes%20from%20human%20fibroblasts/</loc>
-    
-    <lastmod>2021-03-18T12:29:32.070Z</lastmod>
     
   </url>
   

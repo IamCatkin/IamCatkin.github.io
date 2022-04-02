@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/about/index.html</loc>
+    
+    <lastmod>2022-04-02T00:37:24.302Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2022/03/25/Microengineered%20Multi-Organoid%20System%20from%20hiPSCs%20to%20Recapitulate%20Human%20Liver-Islet%20Axis%20in%20Normal%20and%20Type%202%20Diabetes/</loc>
     
-    <lastmod>2022-03-26T05:42:39.583Z</lastmod>
+    <lastmod>2022-03-26T06:46:19.787Z</lastmod>
     
   </url>
   
@@ -443,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
     
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     
@@ -768,13 +775,6 @@
     <loc>https://blog.catkin.moe/2019/12/31/2019%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     
     <lastmod>2022-03-25T15:52:33.742Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/about/index.html</loc>
-    
-    <lastmod>2022-02-25T07:31:10.501Z</lastmod>
     
   </url>
   

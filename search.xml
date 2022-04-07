@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[A Robust Method for Perfusable Microvascular Network Formation In Vitro]]></title>
+    <url>%2F2022%2F04%2F07%2FA%20Robust%20Method%20for%20Perfusable%20Microvascular%20Network%20Formation%20In%20Vitro%2F</url>
+    <content type="text"><![CDATA[一种 Introduction 思路： （a） （b） （c） （d） （e） Initial Seeding Parameters Control MVN Geometry In Vitro （a） （b） （c） （d） （a） （b） Two-Step Method to Generate Perfusable MVNs with Physiological Geometry （a） （b） （c） （d） （e） Applications of MVNs Made with Two-Step Method （a） （b） （c） （d） （e） （a） （b） （c） （d） （e） （f） （g） （h） Hybrid MVN Formation using Two-Step Method （a） （b） （c） （d） （a） （b） （c） （d） （e） （f） Discussion Conclusion ReferenceWan Z, Zhong A X, Zhang S, et al. A Robust Method for Perfusable Microvascular Network Formation In Vitro[J]. Small Methods, 2022.]]></content>
+      <categories>
+        <category>文献阅读</category>
+      </categories>
+      <tags>
+        <tag>Microfluidics</tag>
+        <tag>Cancer</tag>
+        <tag>Microvasculatures</tag>
+        <tag>Perfusable</tag>
+        <tag>Physiological geometry</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PillarX—A Microfluidic Device to Profile Circulating Tumor Cell Clusters Based on Geometry, Deformability, and Epithelial State]]></title>
     <url>%2F2022%2F04%2F04%2FPillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State%2F</url>
-    <content type="text"><![CDATA[一种基于几何形状、可变形性和上皮状态用于分析循环肿瘤细胞簇的微流控装置。 Introduction 思路： Design of the PillarX Device （a） （b） （c） Modeling of Velocity, Shear Stress, and Pressure in the PillarX Device （a） （b） （c） （d） Cluster Cohesion Is Influenced by the Expression of E-Cadherin in MDA-MB-231 Cells and by the Mesenchymal State of Malignant MCF10DCIS Cells （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （n） The PillarX Device Profiles Clusters Based on Their Size, Cohesiveness and Epithelial Identity （a） （b） （c） （d） （e） （f） （g） （h） （a） （b） （c） （d） （e） （f） （g） The PillarX Device Sorts Clusters Based on Deformability （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） The PillarX Device Captures and Profiles CTCs and CTC Clusters from MDA-MB-231 Tumor-Bearing Mice and Breast Cancer Patients （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （n） Outlook Reference]]></content>
+    <content type="text"><![CDATA[一种基于几何形状、可变形性和上皮状态用于分析循环肿瘤细胞簇的微流控装置。 Introduction 思路： 转移通常是由呈单细胞或细胞簇形式的CTC导致，即使是同一个簇的癌细胞也拥有异质性，通常表达上皮细胞-细胞粘附蛋白。 CTC簇通常很小（2-50 个细胞）并且在血液循环中很少见，但与单个CTC相比，它们具有高达50倍的转移潜力。较高的CTC簇计数与癌症预后不良和生存期短相关。 在血管的恶劣环境中，癌细胞的聚集可以防止流体剪切力、氧化应激或免疫攻击。 聚集促进了显示出不同上皮-间质转化（EMT）状态的细胞之间的多克隆相互作用，最终增加它们在生物学和机械学上不同的远处部位定植的潜力。 肿瘤细胞对各种环境条件的机械适应性与转移潜能有关。 从乳腺癌、肺癌或胰腺癌患者中分离出的癌细胞比非恶性癌细胞软80%。 从血液循环中的剪切应力下幸存下来的的肿瘤细胞始终显示出减少的F-肌动蛋白装配和刚度。 以上因素使CTC细胞能够更有效地消散力并承受机械应力。此外，癌细胞的聚集进一步涉及机械保护，使其免受不利的血流动力学作用。 因此，人们对开发能够根据其机械特性捕获、分类和回收单个CTC和簇的装置产生了浓厚的兴趣。 现有的从血液中捕获CTC的方法包括：抗原依赖性、非抗原依赖性或两者的结合。 抗原依赖性方法包括抗体功能化微流体结构，核酸适配体靶向稀有细胞和流体力学分选装置。 非抗原依赖性方法包括多孔过滤装置、Parsortix装置、惯性微流控和确定性横向位移技术。 Design of the PillarX Device （a） （b） （c） Modeling of Velocity, Shear Stress, and Pressure in the PillarX Device （a） （b） （c） （d） Cluster Cohesion Is Influenced by the Expression of E-Cadherin in MDA-MB-231 Cells and by the Mesenchymal State of Malignant MCF10DCIS Cells （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （n） The PillarX Device Profiles Clusters Based on Their Size, Cohesiveness and Epithelial Identity （a） （b） （c） （d） （e） （f） （g） （h） （a） （b） （c） （d） （e） （f） （g） The PillarX Device Sorts Clusters Based on Deformability （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） The PillarX Device Captures and Profiles CTCs and CTC Clusters from MDA-MB-231 Tumor-Bearing Mice and Breast Cancer Patients （a） （b） （c） （d） （e） （f） （g） （h） （i） （j） （k） （l） （m） （n） Outlook ReferenceGreen B J, Marazzini M, Hershey B, et al. PillarX: A Microfluidic Device to Profile Circulating Tumor Cell Clusters Based on Geometry, Deformability, and Epithelial State[J]. Small, 2022.]]></content>
       <categories>
         <category>文献阅读</category>
       </categories>

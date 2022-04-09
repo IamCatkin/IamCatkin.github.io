@@ -16,7 +16,7 @@
 <meta property="og:description" content="一种基于几何形状、可变形性和上皮状态用于分析循环肿瘤细胞簇的微流控装置。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure1.jpg">
-<meta property="og:updated_time" content="2022-04-07T09:09:55.753Z">
+<meta property="og:updated_time" content="2022-04-09T05:39:42.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PillarX—A Microfluidic Device to Profile Circulating Tumor Cell Clusters Based on Geometry, Deformability, and Epithelial State">
 <meta name="twitter:description" content="一种基于几何形状、可变形性和上皮状态用于分析循环肿瘤细胞簇的微流控装置。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 分钟 读完 (大约 1136 个字)
+                    33 分钟 读完 (大约 4998 个字)
                 </span>
                 
                 
@@ -212,105 +212,104 @@
 <li>非抗原依赖性方法包括多孔过滤装置、Parsortix装置、惯性微流控和确定性横向位移技术。</li>
 </ul>
 </li>
+<li><p>基于变形性的捕获方法可以根据单个癌细胞的硬度差异来捕获它们。然而，目前没有一个可以根据多个物理参数，如变形性、大小和细胞特性的系统，同时对恶性细胞群进行分类。</p>
+</li>
+<li><p>在这里，作者提出了一种含有微柱和X结构的微流控系统，能有效地从全血中捕获和分类 CTC簇。</p>
+</li>
 </ul>
 <h2 id="Design-of-the-PillarX-Device"><a href="#Design-of-the-PillarX-Device" class="headerlink" title="Design of the PillarX Device"></a>Design of the PillarX Device</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure1.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
+<li>（a）用于捕获CTC和CTC簇的微流控装置设计。全血中的单个CTC和CTC簇用与磁性纳米颗粒（MNPs）偶联的EpCAM特异性抗体进行标记。较大且更坚硬的粘性簇被困在由6个区域 （P1-P6）组成的柱装置中，支柱间隙尺寸从200到20 μm不等，<strong>可根据大小不同进行分类。</strong>可变性更强的簇和单个细胞进入X装置，由8个区域（X1-X8）组成，其高度从50到400 µm不等，这种横截面积的增加会使每个区域的线速度降低，以增加细胞捕获率。X区域下方有磁场，<strong>高EpCAM表达的细胞和簇将在早期区域中被捕获，反之低表达的将在后期区域中被捕获。</strong></li>
+<li>（b）柱装置的P4-P6和X装置的X1-X2的放大视图。</li>
+<li>（c）MCF10DCIS簇的代表性免疫染色图像，这些图像被困在柱装置的P5（左）和X装置的 X1（右）中。用AF488标记的抗E-钙粘蛋白（绿色）和DAPI（蓝色）对细胞进行免疫染色。</li>
 </ul>
+<blockquote>
+<p>MCF10DCIS细胞表达致癌的T24-H-RAS，是早期乳腺导管原位癌（DCIS）的模型，当注射到免疫受损的小鼠体内时可发展为浸润性癌。它们显示出一种中间的EMT状态，同时表达一些上皮标记，如CDH1、JUP和EPCAM，关键的EMT转录因子水平较低，但间质蛋白的表达升高，如VIM和ITGB1。</p>
+</blockquote>
 <h2 id="Modeling-of-Velocity-Shear-Stress-and-Pressure-in-the-PillarX-Device"><a href="#Modeling-of-Velocity-Shear-Stress-and-Pressure-in-the-PillarX-Device" class="headerlink" title="Modeling of Velocity, Shear Stress, and Pressure in the PillarX Device"></a>Modeling of Velocity, Shear Stress, and Pressure in the PillarX Device</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure2.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
+<li>（a）柱装置的速度场。右图为P2的放大视图。</li>
+<li>（b）X装置的速度场。右图为X2的放大视图。</li>
+<li>（c-d）柱和X装置的速度、剪切力和压力曲线。分别进行了捕获（750 µL h<sup>–1</sup>）和释放 （5000 µL h<sup>–1</sup>）条件下的流体建模。<strong>其最大剪切力&lt;2 Pa，因此不会导致簇解聚。</strong></li>
 </ul>
 <h2 id="Cluster-Cohesion-Is-Influenced-by-the-Expression-of-E-Cadherin-in-MDA-MB-231-Cells-and-by-the-Mesenchymal-State-of-Malignant-MCF10DCIS-Cells"><a href="#Cluster-Cohesion-Is-Influenced-by-the-Expression-of-E-Cadherin-in-MDA-MB-231-Cells-and-by-the-Mesenchymal-State-of-Malignant-MCF10DCIS-Cells" class="headerlink" title="Cluster Cohesion Is Influenced by the Expression of E-Cadherin in MDA-MB-231 Cells and by the Mesenchymal State of Malignant MCF10DCIS Cells"></a>Cluster Cohesion Is Influenced by the Expression of E-Cadherin in MDA-MB-231 Cells and by the Mesenchymal State of Malignant MCF10DCIS Cells</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure3.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
-<li>（h）</li>
-<li>（i）</li>
-<li>（j）</li>
-<li>（k）</li>
-<li>（l）</li>
-<li>（m）</li>
+<li>（a）EMT和细胞-细胞粘附基因表达的qRT-PCR分析（ΔCt = Ct<sub>gene</sub> - Ct<sub>gapdh</sub>； ΔΔCt = ΔCt<sub>MDA-ECAD</sub> - ΔCt<sub>MDA</sub>）。E-钙粘蛋白（E-cadherin）在介导细胞粘附强度和受到拉伸应力时的结点加固方面起着重要的作用， 为了研究这种蛋白如何影响细胞簇中的细胞-细胞粘附，作者将用GFP标记E-钙粘蛋白的MDA-MB-231的细胞命名为MDA-ECAD。图中缩写：CDH1（E-钙粘蛋白）、CDH2（N-钙粘蛋白）、JUP（斑珠蛋白）、EpCAM（上皮细胞粘附分子）、CDH11（钙粘蛋白-11表面糖蛋白）、CLDN3（Claudin-3紧密连接蛋白）、CD44（细胞-粘附蛋白）、TWIST1、ZEB1、SNAI1和SNAI2（EMT转录因子）、VIM（波形蛋白）、ITGB1（整合素β1）。</li>
+<li>（b-d）通过流式细胞术分析E-钙粘蛋白、EpCAM和波形蛋白的表达。细胞用与Alexa Fluor 647偶联的抗E-钙粘蛋白、抗EpCAM或抗波形蛋白标记。</li>
+<li>（e）通过用鬼笔环肽-TRITC免疫染色和DAPI染色在<strong>贴壁</strong>条件下对MDA-MB-231和MDA-ECAD细胞进行形态学分析。<strong>E-钙粘蛋白高表达的MDA-ECAD细胞呈现更像上皮的鹅卵石形态，MDA-MB-231细胞则是典型的间充质纺锤形态。</strong></li>
+<li>（f-g）在<strong>低附着</strong>条件的MDA-MB-231和MDA-ECAD簇的代表性图像。分别使用鬼笔环肽/DAPI和Alexa Fluor 647偶联的抗E-钙粘蛋白/DAPI进行染色，<strong>MDA-MB-231形成松散、粘附性差的簇，而MDA-ECAD产生更紧凑的簇。</strong></li>
+<li>（h-j）<strong>低附着</strong>条件下生长的MDA-MB-231和MDA-ECAD簇的纵横比、圆度和坚固性测量。<strong>表明E-钙粘蛋白表达影响簇形状和内聚性。</strong></li>
+<li>（k）对<strong>低附着</strong>条件下产生的DAPI染色簇的细胞密度进行量化。<strong>表明高E-钙粘蛋白表达的细胞密度更高。</strong></li>
+<li>（l）聚集测定。MDA-MB-231和MDA-ECAD细胞在<strong>低附着</strong>条件下生长于96孔板（5000个细胞/孔）中，并在培养24 h后评估聚集。<strong>证实了MDA-ECAD簇相对于MDA-MB-231簇的紧密度增加。</strong></li>
+<li>（m）基质胶侵袭测定。将在（l）中生长24 h的细胞转移到含5 mg mL<sup>-1</sup> Matrigel的培养基中，并在48 h后评估侵袭能力。<strong>发现 MDA-MB-231簇更具侵袭性并且作为单细胞迁移，而MDA-ECAD侵袭性较小并且表现出集体侵袭。</strong></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure4.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
-<li>（h）</li>
-<li>（i）</li>
-<li>（j）</li>
-<li>（k）</li>
-<li>（l）</li>
-<li>（m）</li>
-<li>（n）</li>
+<li>（a） EMT和细胞-细胞粘附基因表达的qRT-PCR分析（ΔCt = Ct<sub>gene</sub> - Ct<sub>gapdh</sub>； ΔΔCt = ΔCt<sub>MCF10DCIS-Mes</sub> - ΔCt<sub>MCF10DCIS</sub>）。与亲代 MCF10DCIS细胞相比，MCF10DCIS-Mes细胞的上皮标志物CDH1、EPCAM和JUP的mRNA表达降低，而间充质标志物CDH2、CDH11和ZEB1的水平升高。然而，这些细胞也显示出间充质基因VIM、SNAI2和ITGB1的表达降低，与其部分EMT特性一致。</li>
+<li>（b-d）通过流式细胞术分析E-钙粘蛋白、EpCAM和波形蛋白的表达。用与Alexa Fluor 647偶联的抗E-钙粘蛋白、抗EpCAM或抗波形蛋白标记细胞。</li>
+<li>（e）通过用鬼笔环肽-TRITC和DAPI免疫染色对培养皿上的MCF10DCIS和MCF10DCIS-Mes细胞进行形态学分析。黄色箭头表示富含F-肌动蛋白的突起。<strong>由此可见，MCF10DCIS-Mes细胞中间充质标记的获得反映为多边形形状的丧失和富含F-肌动蛋白的、突出的片状伪足样突起的形成。</strong></li>
+<li>（f-g）在<strong>低附着</strong>条件培养下产生的MCF10DCIS和MCF10DCIS-Mes簇的代表性图像。簇分别用鬼笔环肽-FITC/DAPI或Alexa Fluor 488偶联的抗E-钙粘蛋白抗体/DAPI染色。<strong>表明MCF10DCIS-Mes簇的球形较少，具有更不规则的轮廓。</strong></li>
+<li>（h-j）在<strong>低附着</strong>条件下生长的MCF10DCIS和MCF10DCIS-Mes簇的纵横比、圆度和坚固性测定。MCF10DCIS-Mes簇具有更高的纵横比以及更低的圆度和坚固性。</li>
+<li>（k）对<strong>低附着</strong>条件下产生的DAPI染色的簇细胞密度进行量化。<strong>两种细胞的密度较为相似。</strong></li>
+<li>（l）聚集测定。MCF10DCIS和MCF10DCIS-Mes细胞在<strong>低附着</strong>条件下生长于96孔板（5000个细胞/孔）中，并在培养24 h后评估聚集。<strong>MCF10DCIS-Mes细胞形成的簇相对紧凑但球形簇较少，显示不规则轮廓，与其降低的坚固性一致。</strong></li>
+<li>（m）基质胶侵袭测定。将在（l）中生长24 h的细胞转移到含5 mg mL<sup>-1</sup> Matrigel的培养基中，并在48 h后评估侵袭能力。<strong>MCF10DCIS-Mes簇显示Matrigel中的集体入侵芽减少，这与其内聚性降低一致。</strong></li>
+<li>（n）使用ImageJ分析基质胶中MCF10DCIS和MCF10DCIS-Mes簇的坚固性。<strong>总之，数据表明增加的MDA-MB-231细胞中的E-钙粘蛋白水平导致Matrigel中的凝聚力和集体运动性增加，而间充质性状增加的MCF10DCIS细胞导致凝聚力和集体运动性降低。</strong></li>
 </ul>
 <h2 id="The-PillarX-Device-Profiles-Clusters-Based-on-Their-Size-Cohesiveness-and-Epithelial-Identity"><a href="#The-PillarX-Device-Profiles-Clusters-Based-on-Their-Size-Cohesiveness-and-Epithelial-Identity" class="headerlink" title="The PillarX Device Profiles Clusters Based on Their Size, Cohesiveness and Epithelial Identity"></a>The PillarX Device Profiles Clusters Based on Their Size, Cohesiveness and Epithelial Identity</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure5.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
-<li>（h）</li>
+<li>（a）在<strong>低附着</strong>条件下产生的细胞和簇的代表性图像。通过过滤去除较大的簇（&gt;50），以模拟体内CTC大小。细胞用绿色示踪染料标记。</li>
+<li>（b）装置中细胞/簇的捕获效率，平均捕获效率为75-84%。</li>
+<li>（c）MDA-MB-231和MDA-ECAD细胞的平均簇直径。<strong>与MDA-ECAD相比，MDA-MB-231细胞平均形成更小的簇。</strong></li>
+<li>（d）装置不同单元捕获细胞数。MDA-MB-231簇在P6中捕获，而MDA-ECAD簇在P3-P6中捕获。</li>
+<li>（e）装置不同单元平均簇直径。X装置中的簇平均直径相对均匀，范围为24–38 µm，但也有少数大直径（&gt;75 µm）MDA-MB-231簇。结果表明，乳腺癌簇可以变形或重排列以穿过P6中的20 µm间隙。</li>
+<li>（f）MDA-MB-231和MDA-ECAD细胞在柱装置和X装置中的簇分布。</li>
+<li>（g-h）柱装置和X装置中MDA-MB-231和MDA-ECAD簇的E-钙粘蛋白（ECAD）相对强度。<strong>X装置中的MDA-MB-231和MDA-ECAD簇的E-钙粘蛋白水平显着低于柱装置中捕获的簇，表明它们的凝聚力降低，通过微柱的能力增加。</strong></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure6.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
+<li>（a）在<strong>低附着</strong>条件下产生的细胞和簇的代表性图像。细胞用绿色示踪染料标记。</li>
+<li>（b）装置中细胞/簇的捕获效率。</li>
+<li>（c）MCF10DCIS和MCF10DCIS-Mes细胞的平均簇直径。<strong>MCF10DCIS细胞平均形成更大的簇。</strong></li>
+<li>（d）装置不同单元捕获细胞数。MCF10DCIS簇被困在P1-P6和X1-X3中，而MCF10DCIS-Mes簇出现在P3-P6和X1-X8中。</li>
+<li>（e）装置不同单元平均簇直径。</li>
+<li>（f）MCF10DCIS和MCF10DCIS-Mes细胞在柱装置和X装置中的簇分布。 大多数（≈72%）MCF10DCIS簇被困在柱子之间，而<strong>粘性较小</strong>的MCF10DCIS-Mes簇几乎均匀分布在柱装置和X装置之间。</li>
+<li>（g）柱装置和X装置中MCF10DCIS簇的E-钙粘蛋白（ECAD）相对强度。与MDA-MB-231/MDA-ECAD结果一致。</li>
 </ul>
 <h2 id="The-PillarX-Device-Sorts-Clusters-Based-on-Deformability"><a href="#The-PillarX-Device-Sorts-Clusters-Based-on-Deformability" class="headerlink" title="The PillarX Device Sorts Clusters Based on Deformability"></a>The PillarX Device Sorts Clusters Based on Deformability</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure7.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
-<li>（h）</li>
-<li>（i）</li>
-<li>（j）</li>
+<li>（a）簇通过柱装置的移动示意图。</li>
+<li>（b）一个簇在P6区域中移动的代表性视频轨迹。</li>
+<li>（c）单MDA-MB-231和MDA-ECAD簇通过柱装置的P6区域的代表性膨胀（正变形）和收缩（负变形）事件图。</li>
+<li>（d）MDA-MB-231和MDA-ECAD簇穿过柱子的平均膨胀和收缩变形面积量化。<strong>MDA-MB-231簇的变形能力明显大于MDA-ECAD簇。</strong></li>
+<li>（e）MDA-MB-231和MDA-ECAD簇通过柱子的平均速度。</li>
+<li>（f）<strong>低附着</strong>条件下生长的MDA-MB-231和MDA-ECAD簇的代表性荧光图像。<strong>相对于MDA-ECAD，X设备中低粘性MDA-MB-231簇的比例更大可能是由于它们能够形成更细长的形状。</strong></li>
+<li>（g）单MCF10DCIS和MCF10DCIS-Mes簇通过柱装置的P6区域的代表性膨胀（正变形）和收缩（负变形）事件图。</li>
+<li>（h）MCF10DCIS和MCF10DCIS-Mes簇穿过柱子的平均膨胀和收缩变形面积量化。<strong>与亲本MCF10DCIS相比，间质MCF10DCIS-Mes簇的变形程度更大。</strong></li>
+<li>（i）MCF10DCIS和MCF10DCIS-Mes簇通过柱子的平均速度。</li>
+<li>（j）<strong>低附着</strong>条件下生长的MCF10DCIS和MCF10DCIS-Mes簇的代表性荧光图像。MCF10DCIS-Mes簇显示出更细长的几何形状，这可能会增加它们通过柱子的概率。<strong>总之，增加的变形能力与降低的簇内聚力相关。</strong></li>
 </ul>
 <h2 id="The-PillarX-Device-Captures-and-Profiles-CTCs-and-CTC-Clusters-from-MDA-MB-231-Tumor-Bearing-Mice-and-Breast-Cancer-Patients"><a href="#The-PillarX-Device-Captures-and-Profiles-CTCs-and-CTC-Clusters-from-MDA-MB-231-Tumor-Bearing-Mice-and-Breast-Cancer-Patients" class="headerlink" title="The PillarX Device Captures and Profiles CTCs and CTC Clusters from MDA-MB-231 Tumor-Bearing Mice and Breast Cancer Patients"></a>The PillarX Device Captures and Profiles CTCs and CTC Clusters from MDA-MB-231 Tumor-Bearing Mice and Breast Cancer Patients</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/PillarX%E2%80%94A%20Microfluidic%20Device%20to%20Profile%20Circulating%20Tumor%20Cell%20Clusters%20Based%20on%20Geometry%2C%20Deformability%2C%20and%20Epithelial%20State/figure8.jpg" alt=""></p>
 <ul>
-<li>（a）</li>
-<li>（b）</li>
-<li>（c）</li>
-<li>（d）</li>
-<li>（e）</li>
-<li>（f）</li>
-<li>（g）</li>
-<li>（h）</li>
-<li>（i）</li>
-<li>（j）</li>
-<li>（k）</li>
-<li>（l）</li>
-<li>（m）</li>
-<li>（n）</li>
+<li>（a）MDA-MB-231小鼠CTC在装置中的分布。<strong>其分布与体外培养的MDA-MB-231簇的分布（图 5d）非常相似，突出了该装置从动物模型中分析CTC的能力。</strong></li>
+<li>（b）通过波形蛋白<sup>+</sup>/DAPI<sup>+</sup>/CD45<sup>-</sup>免疫染色的MDA-MB-231 CTC簇在柱装置和X装置中的代表性共聚焦显微镜图像。<strong>如图所示，在柱装置的P6区中捕获的小的、有凝聚力的簇和在X装置的X4-X8区中捕获的更易变形的较小簇。</strong></li>
+<li>（c）柱装置和X装置中簇的平均直径。</li>
+<li>（d-f）每个簇的CTC/WBC数量、仅CTC和CTC-WBC混合簇的百分比以及柱装置和X装置每个簇的平均细胞数。 </li>
+<li>（g）装置中的假阳性检测率。以健康WT小鼠的500 µL血液中检测到的波形蛋白<sup>+</sup>/DAPI<sup>+</sup>/CD45<sup>-</sup>单细胞数量为基准检测，可能代表健康小鼠血液中存在的非癌性间质细胞。</li>
+<li>（h）乳腺癌患者CTC在装置中的分布。</li>
+<li>（i）通过细胞角蛋白<sup>+</sup>/DAPI<sup>+</sup>/CD45<sup>-</sup>免疫染色的患者CTC簇在柱装置和X装置中的代表性共聚焦显微镜图像。在柱装置的后方区域捕获的小的、凝聚力强的簇，以及在X装置的前方区域捕获的凝聚力较弱、易变形的簇。</li>
+<li>（j）柱装置和X装置中簇的平均直径。</li>
+<li>（k-m）每个簇的CTC/WBC数量、仅CTC和CTC-WBC混合簇的百分比以及柱装置和X装置每个簇的平均细胞数。 </li>
+<li>（n）装置中的假阳性检测率。</li>
 </ul>
-<h2 id="Outlook"><a href="#Outlook" class="headerlink" title="Outlook"></a>Outlook</h2><p>　　</p>
+<h2 id="Outlook"><a href="#Outlook" class="headerlink" title="Outlook"></a>Outlook</h2><p>　　CTC和CTC簇在癌的转移播种中起重要作用，并且在临床上与预后不良有关。 在这里：</p>
+<ul>
+<li>描述了一种基于CTC和CTC簇的物理特性和上皮标志物表达的微流控装置的开发。</li>
+<li>通过E-钙粘蛋白的基因操作和部分EMT表型的选择，发现相对于X装置，有凝聚力和不易变形的簇在柱装置中被优先捕获。特别是，MDA-MB-231中的E-钙粘蛋白表达导致簇内聚力增加，大多数簇被困在柱子之间；而MCF10DCIS簇的间充质转化，使其变形性增加，将被X装置捕获。</li>
+<li>该装置可以在单个设备内提供相对的簇机械性能读数，同时保持簇完好无损。</li>
+<li>簇可变形性会受到许多因素的影响，包括单个细胞物理刚度的内在差异、细胞间相互作用的改变或细胞重新排列其相对于其邻居的位置的能力增加。本装置中，表明改变细胞凝聚力会影响簇的形状改变能力，正如它们通过柱间隙收缩或重新排列成细长几何形状那样。本装置能够根据这些物理特性（内聚力、可变形性、刚度和形状）对乳腺癌簇进行分类，在未来可能有助于在可变形性和转移倾向之间建立明确的联系。</li>
+<li>荷瘤小鼠和乳腺癌患者的血液样本中存在频繁的异型CTC-WBC簇。据报道，癌细胞与WBC的结合可以使细胞团逃避免疫监视，在血液循环中提供生存优势并增加转移播种。 此外，CTC-WBC簇可能增加了抵抗剪切应力的机械保护。</li>
+</ul>
+<p>　　总之，构建了一个微流控系统，可应用于小鼠癌症模型和肿瘤患者，以加深对肿瘤转移过程的理解。</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Green B J, Marazzini M, Hershey B, et al. PillarX: A Microfluidic Device to Profile Circulating Tumor Cell Clusters Based on Geometry, Deformability, and Epithelial State[J]. Small, 2022.</p>
 
         </div>

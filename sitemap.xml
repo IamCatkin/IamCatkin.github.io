@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.catkin.moe/2022/08/13/In%20vivo%E2%80%93mimicking%20microfluidic%20perfusion%20culture%20of%20pancreatic%20islet%20spheroids/</loc>
+    <loc>https://blog.catkin.moe/about/index.html</loc>
     
-    <lastmod>2022-08-13T06:11:47.908Z</lastmod>
+    <lastmod>2022-08-19T00:21:47.913Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.catkin.moe/2022/08/06/Raising%20fluid%20walls%20around%20living%20cells/</loc>
     
-    <lastmod>2022-08-13T03:23:13.612Z</lastmod>
+    <lastmod>2022-08-14T07:59:29.405Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2022/08/13/In%20vivo%E2%80%93mimicking%20microfluidic%20perfusion%20culture%20of%20pancreatic%20islet%20spheroids/</loc>
+    
+    <lastmod>2022-08-13T06:11:47.908Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>https://blog.catkin.moe/2022/05/06/3D%20Microfluidic%20Platform%20and%20Tumor%20Vascular%20Mapping%20for%20Evaluating%20Anti-Angiogenic%20RNAi-Based%20Nanomedicine/</loc>
     
     <lastmod>2022-05-07T05:48:09.838Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/about/index.html</loc>
-    
-    <lastmod>2022-05-05T16:00:20.096Z</lastmod>
     
   </url>
   

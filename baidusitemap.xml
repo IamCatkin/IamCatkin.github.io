@@ -3,6 +3,31 @@
 
 
     
+    
+  <url>
+    <loc>https://blog.catkin.moe/2022/08/06/Raising%20fluid%20walls%20around%20living%20cells/</loc>
+    <lastmod>2022-08-14T07:59:29.405Z</lastmod>
+    <data>
+        <display>
+        <title>Raising fluid walls around living cells</title>
+        <pubTime>2022-08-06T01:36:02.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Patterning</tag>
+         
+        <tag>FC40</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://blog.catkin.moe/2022/08/13/In%20vivo%E2%80%93mimicking%20microfluidic%20perfusion%20culture%20of%20pancreatic%20islet%20spheroids/</loc>
     <lastmod>2022-08-13T06:11:47.908Z</lastmod>
@@ -18,30 +43,6 @@
         <tag>3D cell culture</tag>
          
         <tag>Dynamic culture</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2022/08/06/Raising%20fluid%20walls%20around%20living%20cells/</loc>
-    <lastmod>2022-08-13T03:23:13.612Z</lastmod>
-    <data>
-        <display>
-        <title>Raising fluid walls around living cells</title>
-        <pubTime>2022-08-06T01:36:02.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Patterning</tag>
-         
-        <tag>FC40</tag>
          
          
            
@@ -270,7 +271,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://blog.catkin.moe/2022/04/19/High-Throughput%20DNA%20Tensioner%20Platform%20for%20Interrogating%20Mechanical%20Heterogeneity%20of%20Single%20Living%20Cells/</loc>

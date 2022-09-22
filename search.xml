@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Well-Paired-Seq：A Size-Exclusion and Locally Quasi-Static Hydrodynamic Microwell Chip for Single-Cell RNA-Seq]]></title>
-    <url>%2F2022%2F09%2F22%2FWell-Paired-Seq%EF%BC%9AA%20Size-Exclusion%20and%20Locally%20Quasi-Static%20Hydrodynamic%20Microwell%20Chip%20for%20Single-Cell%20RNA-Seq%2F</url>
-    <content type="text"><![CDATA[一种 Introduction 思路： Discussion Reference]]></content>
+    <title><![CDATA[Well-Paired-Seq A Size-Exclusion and Locally Quasi-Static Hydrodynamic Microwell Chip for Single-Cell RNA-Seq]]></title>
+    <url>%2F2022%2F09%2F22%2FWell-Paired-Seq%20A%20Size-Exclusion%20and%20Locally%20Quasi-Static%20Hydrodynamic%20Microwell%20Chip%20for%20Single-Cell%20RNA-Seq%2F</url>
+    <content type="text"><![CDATA[一种 Introduction 思路： Discussion ReferenceYin K, Zhao M, Lin L, et al. Well-Paired-Seq: A Size-Exclusion and Locally Quasi-Static Hydrodynamic Microwell Chip for Single-Cell RNA-Seq[J]. Small Methods, 2022, 6(7): 2200341.]]></content>
       <categories>
         <category>文献阅读</category>
       </categories>
+      <tags>
+        <tag>Microfluidics</tag>
+        <tag>Single-cell RNA sequencing</tag>
+        <tag>Microwells</tag>
+        <tag>Quasi-static hydrodynamic capture</tag>
+        <tag>Size exclusion</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[In vivo–mimicking microfluidic perfusion culture of pancreatic islet spheroids]]></title>

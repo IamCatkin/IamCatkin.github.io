@@ -4,8 +4,50 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2022/09/22/Well-Paired-Seq%EF%BC%9AA%20Size-Exclusion%20and%20Locally%20Quasi-Static%20Hydrodynamic%20Microwell%20Chip%20for%20Single-Cell%20RNA-Seq/</loc>
+    <lastmod>2022-09-22T14:21:01.688Z</lastmod>
+    <data>
+        <display>
+        <title>Well-Paired-Seq：A Size-Exclusion and Locally Quasi-Static Hydrodynamic Microwell Chip for Single-Cell RNA-Seq</title>
+        <pubTime>2022-09-22T14:20:22.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2022-09-18T02:58:55.509Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2022/08/13/In%20vivo%E2%80%93mimicking%20microfluidic%20perfusion%20culture%20of%20pancreatic%20islet%20spheroids/</loc>
-    <lastmod>2022-09-10T05:51:45.910Z</lastmod>
+    <lastmod>2022-09-10T06:31:05.541Z</lastmod>
     <data>
         <display>
         <title>In vivo–mimicking microfluidic perfusion culture of pancreatic islet spheroids</title>
@@ -51,30 +93,6 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-09-07T14:02:37.422Z</lastmod>
-    <data>
-        <display>
-        <title>推理小说记录</title>
-        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
-        
-        <tag>Lattice resoning</tag>
-         
-        <tag>Detective story</tag>
-         
-        <tag>Penetralium</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>
@@ -1819,32 +1837,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
-    <data>
-        <display>
-        <title>k-近邻算法</title>
-        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Data Mining</tag>
-         
-        <tag>KNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
     <lastmod>2022-03-25T15:52:33.816Z</lastmod>
     <data>
@@ -1864,6 +1856,32 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
+    <data>
+        <display>
+        <title>k-近邻算法</title>
+        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>KNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -1979,32 +1997,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
-    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
-    <data>
-        <display>
-        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
-        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Mini-guts</tag>
-         
-        <tag>Intestinal stem cells</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     <data>
@@ -2021,6 +2013,32 @@
         <tag>Cell adhesion</tag>
          
         <tag>High‐throughput methods</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    <data>
+        <display>
+        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
+        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Mini-guts</tag>
+         
+        <tag>Intestinal stem cells</tag>
          
          
            

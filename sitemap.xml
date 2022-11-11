@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.catkin.moe/2022/11/11/Microfluidics%20guided%20by%20deep%20learning%20for%20cancer%20immunotherapy%20screening/</loc>
+    
+    <lastmod>2022-11-11T14:01:23.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2022-11-09T06:04:49.101Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.catkin.moe/2021/03/19/High%20throughput%20and%20multiplex%20localization%20of%20proteins%20and%20cells%20for%20in%20situ%20micropatterning%20using%20pneumatic%20microfluidics/</loc>
+    
+    <lastmod>2022-11-08T04:07:13.258Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.catkin.moe/2022/11/03/Simple%20and%20reusable%20off-the-shelf%20microfluidic%20devices%20for%20the%20versatile%20generation%20of%20droplets/</loc>
     
     <lastmod>2022-11-04T10:49:28.099Z</lastmod>
@@ -33,13 +54,6 @@
     <loc>https://blog.catkin.moe/2022/10/07/Scalable%20Multiplexed%20Drug-Combination%20Screening%20Platforms%20Using%203D%20Microtumor%20Model%20for%20Precision%20Medicine/</loc>
     
     <lastmod>2022-10-08T06:12:03.291Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2022-10-08T04:16:26.093Z</lastmod>
     
   </url>
   
@@ -527,14 +541,14 @@
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
     
     <lastmod>2022-03-25T15:52:33.816Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2022-03-25T15:52:33.816Z</lastmod>
     
@@ -569,14 +583,14 @@
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
     
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     
@@ -586,13 +600,6 @@
     <loc>https://blog.catkin.moe/2020/11/27/High%E2%80%90Definition%20Single%E2%80%90Cell%20Printing%20Cell%E2%80%90by%E2%80%90Cell%20Fabrication%20of%20Biological%20Structures/</loc>
     
     <lastmod>2022-03-25T15:52:33.808Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.catkin.moe/2021/03/19/High%20throughput%20and%20multiplex%20localization%20of%20proteins%20and%20cells%20for%20in%20situ%20micropatterning%20using%20pneumatic%20microfluidics/</loc>
-    
-    <lastmod>2022-03-25T15:52:33.807Z</lastmod>
     
   </url>
   
@@ -779,14 +786,14 @@
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2018/05/29/AirPods%E5%BC%80%E7%AE%B1/</loc>
+    <loc>https://blog.catkin.moe/2018/04/17/Aero15x%E5%BC%80%E7%AE%B1/</loc>
     
     <lastmod>2022-03-25T15:52:33.768Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.catkin.moe/2018/04/17/Aero15x%E5%BC%80%E7%AE%B1/</loc>
+    <loc>https://blog.catkin.moe/2018/05/29/AirPods%E5%BC%80%E7%AE%B1/</loc>
     
     <lastmod>2022-03-25T15:52:33.768Z</lastmod>
     

@@ -4,29 +4,34 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2023/02/26/%E7%85%8E%E7%89%9B%E6%8E%92/</loc>
-    <lastmod>2023-02-26T05:58:31.965Z</lastmod>
+    <loc>https://blog.catkin.moe/2023/03/03/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/</loc>
+    <lastmod>2023-03-03T13:29:32.732Z</lastmod>
     <data>
         <display>
-        <title>煎牛排</title>
-        <pubTime>2023-02-26T05:07:09.000Z</pubTime>
+        <title>Three-dimensional microscale hanging drop arrays with geometric control for drug screening and live tissue imaging</title>
+        <pubTime>2023-03-03T13:18:00.000Z</pubTime>
         
-        <tag>Cooking</tag>
+        <tag>Drug screening</tag>
+         
+        <tag>3D culture</tag>
+         
+        <tag>Patterning</tag>
+         
+        <tag>Hanging drop</tag>
          
          
            
              
-              <breadCrumb title="人间有味" url="https://blog.catkin.moe/categories/%E4%BA%BA%E9%97%B4%E6%9C%89%E5%91%B3/"/>
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>
     </url>
 
     
-    
   <url>
     <loc>https://blog.catkin.moe/2023/02/24/Microfluidic%20Arrays%20of%20Breast%20Tumor%20Spheroids%20for%20Drug%20Screening%20and%20Personalized%20Cancer%20Therapies/</loc>
-    <lastmod>2023-02-24T12:59:53.572Z</lastmod>
+    <lastmod>2023-03-03T13:18:26.003Z</lastmod>
     <data>
         <display>
         <title>Microfluidic Arrays of Breast Tumor Spheroids for Drug Screening and Personalized Cancer Therapies</title>
@@ -55,6 +60,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://blog.catkin.moe/2023/02/26/%E7%85%8E%E7%89%9B%E6%8E%92/</loc>
+    <lastmod>2023-02-26T05:58:31.965Z</lastmod>
+    <data>
+        <display>
+        <title>煎牛排</title>
+        <pubTime>2023-02-26T05:07:09.000Z</pubTime>
+        
+        <tag>Cooking</tag>
+         
+         
+           
+             
+              <breadCrumb title="人间有味" url="https://blog.catkin.moe/categories/%E4%BA%BA%E9%97%B4%E6%9C%89%E5%91%B3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://blog.catkin.moe/2022/12/31/2022%E5%B9%B4%E6%9C%AB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
@@ -2131,32 +2157,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
-    <data>
-        <display>
-        <title>k-近邻算法</title>
-        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Data Mining</tag>
-         
-        <tag>KNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
     <lastmod>2022-03-25T15:52:33.816Z</lastmod>
     <data>
@@ -2176,6 +2176,32 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
+    <data>
+        <display>
+        <title>k-近邻算法</title>
+        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>KNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -2291,6 +2317,32 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    <data>
+        <display>
+        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
+        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Mini-guts</tag>
+         
+        <tag>Intestinal stem cells</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     <data>
@@ -2307,32 +2359,6 @@
         <tag>Cell adhesion</tag>
          
         <tag>High‐throughput methods</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
-    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
-    <data>
-        <display>
-        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
-        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Mini-guts</tag>
-         
-        <tag>Intestinal stem cells</tag>
          
          
            

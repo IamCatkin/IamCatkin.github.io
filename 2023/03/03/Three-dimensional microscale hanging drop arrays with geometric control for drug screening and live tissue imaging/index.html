@@ -16,7 +16,7 @@
 <meta property="og:description" content="一种模块化的微尺度悬滴培养平台，允许高重复性的药物筛选、芯片上实时或高分辨率共聚焦显微镜成像以及三维的几何控制。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f1.jpeg">
-<meta property="og:updated_time" content="2023-03-03T14:45:27.806Z">
+<meta property="og:updated_time" content="2023-03-11T07:15:35.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Three-dimensional microscale hanging drop arrays with geometric control for drug screening and live tissue imaging">
 <meta name="twitter:description" content="一种模块化的微尺度悬滴培养平台，允许高重复性的药物筛选、芯片上实时或高分辨率共聚焦显微镜成像以及三维的几何控制。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 442 个字)
+                    24 分钟 读完 (大约 3653 个字)
                 </span>
                 
                 
@@ -185,69 +185,74 @@
         <div class="content">
             <p>　　一种模块化的微尺度悬滴培养平台，允许高重复性的药物筛选、芯片上实时或高分辨率共聚焦显微镜成像以及三维的几何控制。</p>
 <a id="more"></a>
-
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　思路：</p>
 <ul>
 <li>传统的二维（2D）单层培养不能复制三维（3D）条件的重要特征，体现在细胞形态、行为和分子信号的差异。</li>
+<li>基于基质和水凝胶的技术经允许在培养过程中对细胞环境和信号传递进行更多控制。然而支架可能引入不可预测的细胞-聚合物相互作用，影响和误导器官模型的下游应用。聚集技术（如使用纳米粒子的磁悬浮法），产生细胞球的数量有限，并需要用高浓度的磁珠预处理细胞，增加了复杂性和潜在的毒性。</li>
+<li>肿瘤微环境已被越来越多的人认为是癌症进展和抗治疗的关键因素，通过优化培养条件来保持肿瘤微环境来消除选择性压力，对于准确预测治疗反应至关重要。悬滴法可以使肿瘤细胞快速聚集。目前基于悬滴培养的技术非常费力、产量低，且需要破坏培养条件，并将形成的细胞球转移以进行终点分析。目前的技术与基于活体显微镜的直接表征不兼容，而且还存在因培养基从液滴中蒸发而导致渗透压升高的问题，这也限制了生长和分析的时间。</li>
+<li>另外，3D培养平台的几何控制同样重要。组织的结构（包括尺寸和形状）促进组织的功能，通过允许细胞和它们的微环境交换化学、电和机械线索。生物打印和微图案法可能会造成高剪切力，而通过磁性纳米粒子的引导组装形成的现状可能无法长期保持，而且用高浓度的磁珠预处理会增加复杂性和潜在的毒性。</li>
+<li>作者提出了一种可调节的微芯片悬滴平台，可以用于药物筛选、实时成像和几何控制应用。</li>
 </ul>
 <h2 id="On-chip-cell-culture-schematic-and-spheroid-characterization-in-a-well-size-gradient-chip"><a href="#On-chip-cell-culture-schematic-and-spheroid-characterization-in-a-well-size-gradient-chip" class="headerlink" title="On-chip cell culture schematic and spheroid characterization in a well size gradient chip"></a>On-chip cell culture schematic and spheroid characterization in a well size gradient chip</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f1.jpeg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
+<li>（A）工艺流程示意图。<ul>
+<li>在硅片上蚀刻出深度为120 μm的阵列，通过等离子体处理使硅片表面亲水，一方面培养基和细胞容易更容易进入孔内，另一方面可以使芯片表面无菌。</li>
+<li>一个可拆卸的PDMS扣在芯片顶部，这样可以确定需要的阵列大小，且能作为蓄水池装载细胞并离心。</li>
+<li>移除PDMS，加入矿物油，用空气或油剪切力进行分割，形成单独的液滴。</li>
+<li>倒置，放入培养箱，形成悬滴，最终形成细胞球。</li>
+<li><strong>取出细胞：将芯片浸没在1 mL的培养基中，去除阵列顶部的残留油层，再通过移液器从芯片上直接取出3D培养物。</strong></li>
+</ul>
+</li>
+<li>（B）两个微阵列芯片的光学图像。第一个芯片（顶部）是900个微孔的阵列，孔径为300 μm。第二个芯片（底部）包括一个用于细胞球形成的梯度孔（100~500 μm）。</li>
+<li>（C）正置显微镜下，细胞接种1 d后的梯度大小的微癌细胞球形成。</li>
+<li>（D）在（C）中看到的白框中的细胞球的体积映射。每个大小微癌中的一个用黄色突出显示。</li>
+<li>（E）细胞接种后第1至3 d，每个大小的孔中微癌体积变化柱状图，表明微孔和细胞球大小之间的线性关系和可控性。</li>
+<li>（F）细胞接种后第1至3 d，每个大小的孔中微癌的细胞死亡（绿色体积归一于红色体积）的条形图。</li>
 </ul>
 <h2 id="On-chip-PDX-culture"><a href="#On-chip-PDX-culture" class="headerlink" title="On-chip PDX culture"></a>On-chip PDX culture</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f2.jpeg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
-<li>（H）</li>
-<li>（I）</li>
-<li>（J）</li>
-<li>（K）</li>
-<li>（L）</li>
+<li>（A-D）在300 μm的孔中，按每孔300（A）、500（B）、700（C）和1000个植入小鼠大脑的GBM8 PDXs中收获的细胞（D）接种第1至3 d形成的微癌的最大投影。</li>
+<li>（E-F）接种第1至3 d，每孔接种不同数目形成的微癌体积（E）和细胞死亡（F）的箱线图。</li>
+<li>（G-H）配对测序表明，在该阵列平台上生长的原始PDX（G）和3D培养物（H）具有高度的关联性和类似的基因组异常。图上的每条线代表一个至少有六个测序片段作为阈值支持的染色体重排（chromosomal rearrangement，CR）事件。这些图显示了高程度的相似性，超过60%（63个中的38个）的所有CRs在两个样本之间共享。然而，应该注意的是，对于那些似乎是一个样品所独有的CR事件，可以在三维培养物中找到对应于同一事件的测序片段，但其水平低于阈值。<strong>因此，可以得出结论，两个样本之间的CR事件完全重叠，这表明PDX和3D培养物之间具有高度的相关性。</strong></li>
+<li>（I） GEM细胞中UMI计数的分布情况。来自小鼠基因（顶部）和人类基因（底部）的UMI计数之和。</li>
+<li>（J）每个GEM细胞中具有&gt;1个UMI的基因数量的分布情况。小鼠基因中&gt;1 UMI的总数（顶部）和人类基因中&gt;1 UMI的总数。线表示检测到的64个基因的阈值（对数尺度为6）。每个点代表来自离体微癌细胞的单细胞的转录组。（I-J）是为了确定细胞簇中小鼠和人类细胞的比例，<strong>结果表明样品中小鼠细胞的比例非常低。</strong></li>
+<li>（K-L）胶质瘤和胶质瘤干细胞的关键标志物的单细胞基因表达。GBM8细胞表现出上皮生长因子受体（EGFR）扩增并表达ATRX。<strong>（K）图证实了EGFR和ATRX的大量表达。</strong>此外，在表达谱中定位的是已知的神经发生和胶质瘤干细胞调节因子ASPM；星形细胞系的标志物胶质纤维酸性蛋白（GFAP）；经常与胶质瘤干细胞相关的神经祖细胞标志物NES（橙花醇合成酶）。与成熟神经元标志物RBFOX3（RNA结合的Fox-1同源物）的缺失一起，表明GBM8微癌内存在异质性细胞群，包括祖细胞和更多分化的细胞群。</li>
 </ul>
 <h2 id="Capturing-real-time-microcancer-spheroid-formation-with-live-cell-imaging-on-an-inverted-microscope-and-molecular-characterizations-of-spheroids-in-microwell-array"><a href="#Capturing-real-time-microcancer-spheroid-formation-with-live-cell-imaging-on-an-inverted-microscope-and-molecular-characterizations-of-spheroids-in-microwell-array" class="headerlink" title="Capturing real-time microcancer spheroid formation with live cell imaging on an inverted microscope and molecular characterizations of spheroids in microwell array"></a>Capturing real-time microcancer spheroid formation with live cell imaging on an inverted microscope and molecular characterizations of spheroids in microwell array</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f3.jpeg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
+<li>（A）每3 h用自动倒置显微镜对5个微癌（LN229细胞）的形成进行追踪。</li>
+<li>（B）24 h内2号孔中细胞簇四个角之间的2D投影距离，在（A）以白点标记。</li>
+<li>（C）24 h内2号孔中细胞簇四个角之间的2D投影距离比初始时间点减少比率（%）。</li>
+<li>（D）24 h内3个孔中细胞簇四个角之间的2D投影距离比初始时间点平均减少比率（%）。可以发现，在接种后的前9 h，细胞聚集的速度较慢，这可能是因为消化后重新表达粘附分子或分泌分泌可溶性因子以增强细胞-细胞粘附需要时间。</li>
+<li>（E-G）LN229细胞和PDX形成的微癌中的N-钙粘蛋白（红色）、细胞核（蓝色）和人类线粒体（绿色）的免疫细胞染色（E）。单个微癌的高分辨率图像（F）。接种3 d后，微癌的共聚焦z-stack图像（间隔10 μm）（G）。N-钙粘蛋白是一种跨膜蛋白，通过同型细胞粘附介导细胞-细胞接触。观察到N-钙粘蛋白在细胞-细胞接触区域的膜和细胞质中都有表达，与GBM、其他三维培养物和PDX模型中报道的细胞定位一致，与二维培养物不同，其中N-钙粘蛋白的表达在细胞质和细胞核中发现，但在膜中没有表达。</li>
 </ul>
 <h2 id="On-chip-LN229-and-PDX-drug-testing"><a href="#On-chip-LN229-and-PDX-drug-testing" class="headerlink" title="On-chip LN229 and PDX drug testing"></a>On-chip LN229 and PDX drug testing</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f4.jpeg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
-<li>（H）</li>
+<li>（A、E）LN229细胞球（A）和PDX细胞球（E）的12孔培养物在细胞接种后第1至9 d的最大投影。在成像后的第3 d，达沙替尼被加载到芯片上。在芯片上引入药物的过程如下：芯片在矿物油中保持直立，并短暂地离心以使细胞球下降。接下来，将适当体积的带有药物的培养基通过油加载到芯片上，孵育30 min以达到均匀的浓度。值得注意的是，在整个培养基交换或药物装载的过程中，细胞球始终浸泡在培养基中，在毛细作用下被固定在孔内，而从未与油发生物理接触。加入药物的最终浓度为10 μM（顶行），100 nM（中行），和阴性对照（底行）。阴性对照只添加了培养基和CellTox绿色染料。</li>
+<li>（B、C、F、G）不同浓度达沙替尼下，LN229细胞球（B、C）和PDX细胞球（F、G）体积和归一化细胞死亡的箱线图。</li>
+<li>（D、H）第9 d的LN229细胞球（D）和PDX细胞球（H）的IC50值，分别为95.9和13.8 nM。PDX对达沙替尼的整体反应明显较低，因为即使是较高的药物浓度，PDX微癌总体上仍保持完整和活力，这一结果与达沙替尼无法影响GBM8 PDX体内的肿瘤生长一致。</li>
 </ul>
+<blockquote>
+<p>达沙替尼（Dasatinib）：一种酪氨酸激酶抑制剂，已被证明可以降低几个常规和PDX GBM细胞系的细胞活力，包括LN229。</p>
+</blockquote>
 <h2 id="Geometric-control-in-microchip-hanging-drop-3D-culture"><a href="#Geometric-control-in-microchip-hanging-drop-3D-culture" class="headerlink" title="Geometric control in microchip hanging drop 3D culture"></a>Geometric control in microchip hanging drop 3D culture</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Three-dimensional%20microscale%20hanging%20drop%20arrays%20with%20geometric%20control%20for%20drug%20screening%20and%20live%20tissue%20imaging/abc1323-f5.jpeg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
+<li>（A）工艺流程三维形状的形成。具有环形、方形和三角形通道的芯片被制造出来，使通道的深度为~150 μm。通过氧等离子体使内孔表面具有亲水性，之后加载带有培养基的细胞并进行离心，利用油的剪切力形成液滴，因为通道外缘和内柱之间的空腔使液滴符合通道的形状。芯片倒置进行悬滴，经过24 h的细胞培养，产生了密集的三维形状。</li>
+<li>（B）细胞接种后1 d看到不同大小的形状形成的荧光图像。每张图像的左上角表示通道的外径（圆形）或边长（方形和三角形）。</li>
+<li>（C）图（B）绿框中的体积映射。</li>
+<li>（D）细胞接种后第1至3 d，每个通道尺寸的环形圆、方形和三角形体积柱状图。</li>
+<li>（E）细胞接种后第1至3 d，每个通道尺寸的环形圆、方形和三角形的细胞死亡情况柱状图。细胞死亡保持在8%以下。</li>
 </ul>
-<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><p>　　</p>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><p>　　描述了一个模块化和高度通用的微芯片3D悬滴培养平台，允许高重复性的药物筛选、芯片上实时或高分辨率共聚焦显微镜成像以及三维的几何控制。该平台可以与市面上的自动微/纳米注射系统相结合或由3D打印生成浓度梯度生成器，以便在单个芯片中测试数百种药物组合。优点如下：</p>
 <ul>
-<li><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2></li>
+<li>一个步骤即可生成相同尺寸和密度的细胞球，而不需要单独移液，从而减少误差，提高可重复性。</li>
+<li>可直接在芯片上进行高分辨率扫描电子显微镜和共聚焦显微镜，可以使下游分析变得简单和容易使用。</li>
+<li>不需要特定的基质、专门的凝胶或纳米颗粒、工程支架或任何形式的合成表面涂层来形成肿瘤球。</li>
+<li>与经典的悬滴培养方法相比，细胞聚集成细胞球明显更快（1 d，而传统方法为4 d），这可能是影响可溶性因子扩散和增强细胞-细胞粘附的小尺寸孔的影响。</li>
+<li>可以同时对数百至数千个细胞球进行实时测试，每个细胞球似乎都能保留了肿瘤的特征，通过配对测序和共聚焦分析得到证实。</li>
+<li>使用该微芯片悬滴3D培养平台可以对细胞球进行形状控制。通过单步加载和液滴形成技术，可以形成密集和连续的环形形状，尺寸从几百微米到几毫米不等，从而发生三维形状的形成。</li>
 </ul>
-<p>Ganguli A, Mostafa A, Saavedra C, et al. Three-dimensional microscale hanging drop arrays with geometric control for drug screening and live tissue imaging[J]. Science Advances, 2021, 7(17): eabc1323.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Ganguli A, Mostafa A, Saavedra C, et al. Three-dimensional microscale hanging drop arrays with geometric control for drug screening and live tissue imaging[J]. Science Advances, 2021, 7(17): eabc1323.</p>
 
         </div>
         

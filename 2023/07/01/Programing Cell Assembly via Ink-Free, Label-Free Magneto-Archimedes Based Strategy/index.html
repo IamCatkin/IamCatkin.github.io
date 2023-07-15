@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="一种">
+    <meta name="description" content="一种通过无墨水、无标签的磁阿基米德（Magneto-Archimedes, Mag-Arch）策略对细胞进行可编程组装。">
 <meta name="keywords" content="Microfluidics,Magnetic field,Cell assembly,Cell−cell interaction,Coculture">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Programing Cell Assembly via Ink-Free, Label-Free Magneto-Archimedes Based Strategy">
 <meta property="og:url" content="https://blog.catkin.moe/2023/07/01/Programing Cell Assembly via Ink-Free, Label-Free Magneto-Archimedes Based Strategy/index.html">
 <meta property="og:site_name" content="寒光亭下水如天">
-<meta property="og:description" content="一种">
+<meta property="og:description" content="一种通过无墨水、无标签的磁阿基米德（Magneto-Archimedes, Mag-Arch）策略对细胞进行可编程组装。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/cover.jpg">
-<meta property="og:updated_time" content="2023-07-06T08:54:54.915Z">
+<meta property="og:updated_time" content="2023-07-10T02:08:59.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Programing Cell Assembly via Ink-Free, Label-Free Magneto-Archimedes Based Strategy">
-<meta name="twitter:description" content="一种">
+<meta name="twitter:description" content="一种通过无墨水、无标签的磁阿基米德（Magneto-Archimedes, Mag-Arch）策略对细胞进行可编程组装。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/cover.jpg">
 
 
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 370 个字)
+                    42 分钟 读完 (大约 6276 个字)
                 </span>
                 
                 
@@ -183,76 +183,135 @@
             
         </h1>
         <div class="content">
-            <p>　　一种</p>
+            <p>　　一种通过无墨水、无标签的磁阿基米德（Magneto-Archimedes, Mag-Arch）策略对细胞进行可编程组装。</p>
 <a id="more"></a>
 
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>　　思路：</p>
 <ul>
-<li><h2 id="Setup-and-Optimization-of-Mag-Arch-Cell-Patterning"><a href="#Setup-and-Optimization-of-Mag-Arch-Cell-Patterning" class="headerlink" title="Setup and Optimization of Mag-Arch Cell Patterning"></a>Setup and Optimization of Mag-Arch Cell Patterning</h2></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure1.jpg" alt=""></p>
+<li><p>为了复制高度组织化的组织空间排列，人们探索了一系列的策略用于组织再生和细胞功能研究：</p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
-<li>（H）</li>
-<li>（I）</li>
+<li><p>细胞的直接自组装和分化可以将类器官发展成功能性结构（如迷你心脏）。然而细胞自组装和分化的高度可变性会限制这些方法的可重复性和可扩展性。</p>
+</li>
+<li><p>目前基于工程方法的细胞空间调控策略主要依赖于材料的配置和生物化学线索。因此，细胞是通过控制材料间接操作的，这些材料可被视为生物打印的“墨水”。生物墨水可以通过印章、模板、光掩模或生物打印方法产生图案化细胞。但也存在一些局限性：</p>
+<ul>
+<li>要求材料能够快速凝胶化或有足够的粘度；</li>
+<li>制作复杂或需要昂贵仪器；</li>
+<li>细胞图案需要预先定义，在培养过程中很难调控。</li>
+</ul>
+</li>
+<li><p>包括重力、声学、电介质、和磁场的外部场方法被开发出来，以非接触方式直接操纵细胞来制造复杂的组织。然而大多数外部场的传播很容易被系统中预先存在的细胞结构等障碍物干扰，<strong>很难逐步建立包含多细胞类型的细胞培养模型。</strong>此外，外部场的产生，如声场和介电泳场也需要特殊的仪器，而这些仪器很难集成到细胞培养器和生物实验室中。对经济成本和操作设备的专业知识的要求也阻碍了这些技术的广泛使用。</p>
+</li>
+</ul>
+</li>
+<li><p>磁场是一种流行的细胞操纵源，它可以由商业化的磁铁产生，并且不受生物环境中的介质或障碍物的影响。在经典模型中，细胞或材料与磁性颗粒（MPs）结合，可以很容易地被磁场控制。然而用磁性颗粒进行预孵化非常耗时，而且可能通过芬顿反应和铁中毒引起潜在的细胞毒性。与细胞结合的颗粒也可能干扰后续细胞生物学检测。</p>
+</li>
+<li><p>为了避免细胞被标记，最近开发了通过增加介质而不是细胞的磁感应强度来驱动细胞沿着磁场的减少而运动的负磁泳法，被称为磁阿基米德效应。受益于临床批准的顺磁剂的低细胞毒性，基于Mag-Arch的细胞操作已被用于在磁铁中心制造球形、短棒、三角形和环形形状的细胞聚集体，其中细胞悬浮在介质内。在上述大多数研究中，磁铁被用来产生细胞磁悬浮的动力源，图案是由细胞的自我组装产生的。然而，受限于永久磁铁的尺寸，只有少数简单的结构是利用Mag-Arch策略制造的。</p>
+</li>
+<li><p>人们已经努力在Mag-Arch的基础上阐述更复杂的结构。Mauck等人通过控制Mag-Arch的应用时间创造了一个细胞密度梯度，因为由温和的Mag-Arch排斥力驱动的细胞悬浮运动相对缓慢。不同类型的细胞球被聚集在一起，生成了细胞培养系统。用这些策略建立的最终结构高度依赖于组装的细胞的特性，如重量密度和表面张力，很难制造出完全可编程的构造。通过将铁磁支架和基质放在培养基内，同时在外面加载磁铁，由于铁磁材料在磁场内的磁化，在细胞培养系统内产生了带状的磁力，从而抵消了外部磁场，降低了金属表面的磁场大小。因此，细胞和囊泡被激活并附着在具有较低磁度的铁磁材料的侧面，并通过依次加入不同的细胞产生了共培养模式。在这些系统中，细胞附着在铁磁支架的孔隙中，这不适合许多生物应用，如体内植入。此外，当铁磁材料位于细胞培养基内时，很难将细胞组合与其他材料结合起来。尽管如此，将细胞组合与铁磁支架分离可能会导致细胞模式的结构损坏，因为部分细胞可以粘附在支架表面。</p>
+</li>
+<li><p>在这项研究中，作者根据细胞培养容器外的模板展示了一种高精度、高通量、高性价比、独立于基底的Mag-Arch方法。与以往基于Mag-Arch的研究不同，通过使用磁铁阵列或磁性导电金属作为动力源和模板来生成细胞组装模式，从而制造了更复杂的细胞模式和可编程的细胞培养模型。磁铁阵列上方的磁场通过相邻的磁铁或导磁金属的相互作用进行调制，可以产生小于磁铁尺寸的图案。进一步调制介质中的顺磁试剂浓度可以改变图案大小，以获得更多的图案样式。在作者设计的模板的协助下，用多个永久磁铁和/或雕刻的导磁金属组装起来的细胞图案，如条纹、格子和字母。导磁金属的磁感应强度比空气高得多，因此，当培养板在金属上悬浮时，只有底部有导磁金属的区域才会产生足够的磁排斥力，形成无细胞区，细胞图案以完全无接触的方式生成。</p>
+</li>
+<li><p>为了证明该应用，作者：</p>
+<ul>
+<li>在软水凝胶和原生组织上建立了伤口愈合的细胞迁移模型，在这些地方用传统的划痕法和基于屏障的方法来完成集体细胞迁移是具有挑战性的。通过调整磁铁的位置和顺磁剂的浓度，制造了多种细胞类型的细胞培养模式，作为细胞-细胞相互作用研究的强大平台。</li>
+<li>制作了瓣膜间质细胞（VICs）和内皮细胞（ECs）的交叉培养模型，研究它们与单核细胞的相互作用，模拟心脏瓣膜疾病的早期病理过程。用Mag-Arch方法组装的细胞培养模型得到的结果与瓣膜钙化的动物的病理过程一致。</li>
+<li>在微流控通道中准备了紧密包装的卵巢癌细胞（A2780）模式，围绕着内皮细胞单层，进行更直接的药物反应研究。通过观察A2780圆圈的大小变化，可以很容易地评估生理剪切应力下的药物反应，这也模仿了卵巢病理学中的囊肿样结构。</li>
+</ul>
+</li>
+<li><p>本研究中实现的密闭空间内的细胞图案是很难通过其他基于接触的方法产生的。本工作提出了一个解决方案，以建立高度有序的复杂的细胞组装结构，而不需要对基质特性（如刚度和平整度）、操作空间和操纵设备有特别的限制，这可以很容易地在不同的实验室复制，并在细胞生物学和病理学研究中具有广泛的应用。</p>
+</li>
+</ul>
+<blockquote>
+<p>芬顿反应：过氧化氢（H<sub>2</sub>O<sub>2</sub>）与二价铁离子的混合溶液具有强氧化性，产生的羧基自由基可以将当时很多已知的有机化合物如羧酸、醇、酯类氧化为无机态，氧化效果十分显著。</p>
+</blockquote>
+<h2 id="Setup-and-Optimization-of-Mag-Arch-Cell-Patterning"><a href="#Setup-and-Optimization-of-Mag-Arch-Cell-Patterning" class="headerlink" title="Setup and Optimization of Mag-Arch Cell Patterning"></a>Setup and Optimization of Mag-Arch Cell Patterning</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure1.jpg" alt=""></p>
+<ul>
+<li>（A）一个典型的用于细胞组装的Mag-Arch设备，包括一个具有一定排列的磁铁组和一个放置在上面的细胞培养单元。</li>
+<li>（B）通过磁极观察片和计算模拟，显示在X-Y平面上每个磁体区域和间隔区域之间有明显的界限。</li>
+<li>（C） 磁铁组上方X-Z方向的磁场分布。从X-Z平面的放大图来看，磁感应强度随着与磁体的距离增加而减弱，并在每个磁体的顶部呈现出彩虹状分布</li>
+<li>（D）原生细胞是顺磁性的，具有负的磁感应强度。在磁场下，加入了顺磁剂的培养基被吸引到磁铁上，对细胞产生排斥力。本图是作用在典型细胞上的力的分布图，以及细胞在Mag-Arch系统内响应磁场时的运动方向。对于细胞i，F<sub>buoy</sub> + F<sub>mag-z</sub> &lt; F<sub>grav</sub>，所以它向下移动；对于细胞ii，F<sub>buoy</sub> + F<sub>mag-z</sub> &gt; F<sub>grav</sub>，所以它向上移动；对于细胞iii，F<sub>buoy</sub> + F<sub>mag-z</sub> = F<sub>grav</sub>，所以它在瞬态中向水平方向移动。<strong>最终在中间状态的磁铁顶部的培养基中形成了一个细胞排斥区。</strong></li>
+<li>（E）显示由Mag-Arch形成的无细胞区的三维视图。</li>
+<li>（F）通过Mag-Arch驱动的细胞图案化的示意图，与磁铁组的图案是互补关系。</li>
+<li>（G）在Mag-Arch下随时间的细胞分布，细胞在不同的时间点被固定在一个光交联的PEGDA水凝胶内。观察到，图案的清晰度在几分钟内增加，3 min后在PEGDA水凝胶横截面的X-Z方向明显形成一个弧形的无细胞区。10 min后，大部分细胞稳定下来，形成了程序化的2D细胞图案。</li>
+<li>（H）控制磁力应用时间的装置示意图，该装置有一个传送带，可以在培养板固定的同时平稳地移动磁铁阵列。随着磁铁从左到右的逐步移动，对细胞的磁排斥力被控制在2 min、3 min、5 min和7 min。</li>
+<li>（I）HUVEC-GFP在Mag-Arch组装后的时间梯度的荧光图像和沿黄线箭头的荧光强度追踪。</li>
 </ul>
 <h2 id="Mag-Arch-Based-Complex-Cellular-Pattern-Formation"><a href="#Mag-Arch-Based-Complex-Cellular-Pattern-Formation" class="headerlink" title="Mag-Arch Based Complex Cellular Pattern Formation"></a>Mag-Arch Based Complex Cellular Pattern Formation</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure2.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
+<li>（A）磁组和磁场分布，以产生高通量的点阵状结构。组装后四个磁铁中空隙由于相邻磁铁的磁场被破坏，在空间的正上方形成了一个具有低磁力的点阵列，吸引细胞在这些区域聚集。</li>
+<li>（B）图案区域的活/死染色，显示出很好的细胞活力。</li>
+<li>（C）Mag-Arch组装的HUVEC图案的鬼笔环肽（红色） ，ZO-1（绿色）和DAPI（蓝色）免疫荧光染色，显示其细胞骨架、HUVEC的细胞-细胞紧密连接。</li>
+<li>（D）纤连蛋白（红色），Ki-67（绿色）和DAPI（蓝色）免疫荧光染色，显示细胞外间质分泌和细胞增殖。以上结果表明保持了内皮细胞的重要生物学特性。</li>
+<li>（E）使用定制的具有“ZJU”图案的铁磁模板（镍板）。</li>
+<li>（F）组装的细胞图案。优点：由于低磁性区域面积，会增加细胞的集中度。</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure3.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
+<li>（A） 直接用第二种类型的细胞（第二细胞）回填。在第一类细胞（第一细胞）粘附后，第二类细胞（第二细胞）被直接引入以回填空余空间。<ul>
+<li>第二细胞模式的精度高度依赖于第一细胞的密度，如果第一细胞没有占据第一个细胞区域的整个表面，第二细胞仍然可以粘附在第一细胞之间的间隔，导致均匀分布而不是图案分布；</li>
+<li>第二细胞的分布也受到两种细胞类型的细胞-细胞相互作用的影响。<ul>
+<li>如当HUVECs被用作第一细胞和第二细胞时，第二细胞均匀地分布在基质上，而不考虑第一细胞的图案（图3Ai）；</li>
+<li>当HUVECs被设定为第一细胞，VICs被设定为第二细胞时，第二细胞只粘附在基质的空闲区域（图3Aii）。<strong>这可能是由于不同类型的细胞之间的细胞膜表面张力造成的。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>（B）使用互补的磁铁组进行回填，以避免细胞穿插分布。使用这种方法可以建立：<ul>
+<li>（i）两种细胞类型的图案；</li>
+<li>（ii）三种细胞类型的图案。这种方法需要在磁铁组定位时进行精确操作，以生成完全可控的图案。</li>
+</ul>
+</li>
+<li>（C）在较低的Gd-DTPA浓度下进行回填。在较低的[Gd]条件下，磁铁产生的无细胞区比较高的[Gd]小，这使得第二细胞可以粘附在两个无细胞区的减去区域，并根据磁铁组的位置产生：<ul>
+<li>（i）同心图案；</li>
+<li>（ii）偏心图案。因此，第二细胞在第一细胞的细胞岛周围形成类似形态但面积较大的模式（图3Ci）。这种方法与其他两种策略相结合时，有可能产生更复杂的图案。</li>
+</ul>
+</li>
+<li>（D）用Mag-Arch策略控制纳米粒子（带尼罗红的聚（乳酸-乙醇酸）纳米颗粒（PLGA NPs））的定位。纳米粒子被下面的磁排斥力浮起，只有位于低磁度区域的细胞能与接近的纳米粒子相互作用并内化，这导致了（i）RAW巨噬细胞和（ii）HUVEC-GFP中纳米粒子内吞模式的形成。</li>
 </ul>
 <h2 id="Cell-Migration-Model-Generated-by-Mag-Arch─A-Universal-Method-for-Collective-Cell-Migration-Study"><a href="#Cell-Migration-Model-Generated-by-Mag-Arch─A-Universal-Method-for-Collective-Cell-Migration-Study" class="headerlink" title="Cell Migration Model Generated by Mag-Arch─A Universal Method for Collective Cell Migration Study"></a>Cell Migration Model Generated by Mag-Arch─A Universal Method for Collective Cell Migration Study</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure4.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
-<li>（H）</li>
+<li>（A）细胞迁移模型的构建。最常用的细胞迁移方法是划痕试验，然而它只能应用于坚硬的基质上，否则使用机械力的划痕过程可能会导致细胞死亡和基质的表面损伤，影响对细胞迁移行为研究的可靠性。本图展示了在柔软的水凝胶表面，划痕法导致了严重的水凝胶损伤。</li>
+<li>（B）由Mag-Arch方法产生的无细胞伤口保持了完整的水凝胶表面和直线起点。</li>
+<li>（C）不同浓度的GelMA水凝胶上的细胞迁移。</li>
+<li>（D）统计结果，发现HUVEC在5%甲基丙烯酸明胶（GelMA）和10%GelMA水凝胶之间的迁移没有明显差异。</li>
+<li>（E）挡板插入（Baffler）是另一种广泛用于细胞迁移研究的方法。这里用Mag-Arch和Baffle法对药物反应性迁移进行比较。为了消除Gd-DTPA的影响，作者加入了一个有Baffler和Gd-DTPA的小组作为对照。试验结果表明：Baffler法和Mag-Arch法的细胞迁移没有明显差异，Baffler法的培养基中的Gd-DTPA不影响细胞迁移行为。</li>
+<li>（F）不同方法对能明显改善HUVECs迁移的1-磷酸鞘氨醇（S1P）的伤口愈合率的统计结果。</li>
+<li>（G）细胞在光滑的生物假体心脏瓣膜（戊二醛交联的心包，BHV）上的迁移，BHV需要储存在防腐液中，以避免干燥，而且它们也有来自原生胶原纤维的特殊表面纹理。内皮伤口愈合是评估BHVs内皮化能力的一个重要实验，因为它们在植入后直接与血液接触。由于Baffler法不适合在BHV上建立无细胞区域，在以前的研究中只应用了划痕法，而用Mag-Arch可以很容易产生。</li>
+<li>（H）通过磁铁和铁磁模板的组合在96孔板中创建的高通量细胞迁移模型。</li>
 </ul>
 <h2 id="Coculture-Model-for-Inflammatory-Response-Study-in-Calcific-Aortic-Valve-Disease-CAVD"><a href="#Coculture-Model-for-Inflammatory-Response-Study-in-Calcific-Aortic-Valve-Disease-CAVD" class="headerlink" title="Coculture Model for Inflammatory Response Study in Calcific Aortic Valve Disease (CAVD)"></a>Coculture Model for Inflammatory Response Study in Calcific Aortic Valve Disease (CAVD)</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure5.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
-<li>（E）</li>
-<li>（F）</li>
-<li>（G）</li>
-<li>（H）</li>
+<li>（A）主动脉瓣的结构和病理状态下的免疫细胞浸润。瓣膜是由胶原网络中的瓣膜间质细胞（VICs）和外层的内皮细胞（ECs）组成。在病理过程的初始状态下，VICs在一定的刺激下被激活，被激活的VICs可以诱导内皮细胞的激活，内皮细胞表达更多的炎症粘附分子，在细胞之间产生更大的间隙。反过来，被激活的内皮细胞吸引更多的免疫细胞粘附和浸润，促炎症免疫细胞可能进一步导致VICs的成骨分化，导致瓣膜钙化。<strong>从心脏移植或瓣膜置换患者中分离出来的瓣膜细胞，其增殖率非常有限，批次间的变化也很大。一个具有较高产量的模型有可能加速对CAVD的免疫学过程的研究。</strong></li>
+<li>（B）VICs和ECs的交叉共培养模型，用于单核细胞（THP-1）和主动脉瓣细胞之间的细胞-细胞相互作用研究。该模型可以模拟综合实验中的四个单独条件，因为该模型中产生了四个不同的区域： R1-直接共培养区域，模拟THP-1与VIC/EC共培养模型的相互作用；R2-EC单层，模拟THP-1与EC间接共培养时的相互作用；R3-VIC单层，模拟THP-1与EC间接共培养时的相互作用；R4-胶原蛋白I涂层表面，模拟THP-1在VIC和EC的条件培养基上的粘附。</li>
+<li>（C）当VICs用钙化培养基预处理或不预处理时，DID标记的THP-1粘附在交叉培养模型的不同区域的荧光图像。</li>
+<li>（D）THP-1在不同区域的粘附密度的统计分析，比较了钙化和正常状态。结果表明：<ul>
+<li><strong>无论钙化与否，大多数THP-1细胞在R1和R3与VICs粘连；</strong></li>
+<li><strong>如果用钙化介质预处理VIC，除R4胶原I基质外，所有区域粘附的THP-1数量都明显增多；</strong></li>
+<li><strong>THP-1在R2 EC区域的增加表明，钙化的VICs能够通过非接触的旁分泌模式将ECs调控到有利于免疫细胞粘附的状态。</strong></li>
+</ul>
+</li>
+<li>（E-F）正常（E）和钙化（F）的人类主动脉瓣用CD31（绿色）和CD68（红色）染色的免疫荧光图像。结果表明：与ECs相比，大多数THP-1细胞与VICs共定位。也即<strong>在心脏瓣膜病变期间，VIC内层的暴露可能导致单核细胞浸润增加。</strong>在患者主动脉瓣的免疫荧光图像中，虽然内皮层是完整的，但与正常瓣膜相比，更多的免疫细胞（CD68阳性）渗入瓣膜结构和内皮层，这也意味着ECs可以被钙化的ECs所调控。</li>
+<li>（G）荧光图像显示THP-1与VICs和ECs在交叉区域（R1）的共培养模型的共定位。部分THP-1s与VICs的共聚焦由黄色箭头指出。</li>
+<li>（H）钙化和正常状态下THP-1s与VICs和ECs共聚焦的统计分析。</li>
 </ul>
 <h2 id="Cell-Patterning-in-Microfluidic-Channel-for-Drug-Response-under-Shear-Stress"><a href="#Cell-Patterning-in-Microfluidic-Channel-for-Drug-Response-under-Shear-Stress" class="headerlink" title="Cell Patterning in Microfluidic Channel for Drug Response under Shear Stress"></a>Cell Patterning in Microfluidic Channel for Drug Response under Shear Stress</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure6.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
-<li>（C）</li>
-<li>（D）</li>
+<li>（A） 用于在微流体通道中进行图案化的装置和图案化的卵巢癌细胞系A2780/HUVEC的示意图和实物图，保持2.33 μL/min的培养基流动以提供TME的流动条件。</li>
+<li>（B）与不规则模型不同，能够直接从A2780图案的面积变化来监测癌细胞的增殖和迁移情况。</li>
+<li>（C）静态和流动条件下A2780图案的统计分析，分为有/无Dox处理24 h。24 h后，在流动刺激下，图案大小明显增加，表明癌细胞处于更活跃的状态，而Dox处理抑制了尺寸的扩大，表明Dox对细胞活力有毒性。</li>
+<li>（D）静态和流动条件下死细胞百分比（PI阳性）的统计分析，分为有/无Dox处理24 h。在静态环境下，A2780对Dox的敏感度较低，在剪切应力下，癌细胞的抗药性降低，可归因于细胞之间的细胞-细胞相互作用减少。</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Programing%20Cell%20Assembly%20via%20Ink-Free%2C%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/figure7.jpg" alt=""></p>
 <ul>
-<li>（A）</li>
-<li>（B）</li>
+<li>（A）24和72 h后，静态和流动条件下的与EMT高度相关的ZO-1和波形蛋白（Vimentin）染色。</li>
+<li>（B）在静态和流动条件下的不规则和图案化的细胞培养模型中，ZO-1（平均随EMT下降）和Vimentin（平均随EMT上升）的荧光强度被量化。Vimentin的表达增加也表明，当与HUVEC直接共培养时，癌细胞的上皮向间质转化（EMT）增强，这也是图案化共培养组中细胞存活率较高的原因。与不规则的共培养相比，流动诱发了图案化A2780中Vimentin表达的更大变化，这表明图案化细胞对剪切应力更敏感。在流动刺激下，将培养时间延长至3天后，ZO-1的减少和波形蛋白的增加加剧了，表明不规则培养和图案化培养的EMT都在增加。</li>
 </ul>
-<h2 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h2><p>　　</p>
+<h2 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h2><ul>
+<li>开发了一种多功能的生物制造策略，以调节细胞的空间定位，而不受周围成分的影响。在这个策略中，细胞被磁力驱动以产生复杂的细胞模式，而不需要应用磁性标记和侵入性模板。细胞组装模式 由磁铁组定位和顺磁剂浓度来调整。与其他细胞模式化技术相比，这种基于远程磁场的方法可以在没有足够操作空间的密闭容器中组装细胞。与以前基于非接触磁力共振的研究相比，细胞图案的精度提高到了百微米级；</li>
+<li>纳米颗粒也受到磁场的控制，因此只有位于低磁度区域的细胞才能接触到纳米颗粒并将其内化。在具有不同硬度的软水凝胶基质和光滑的原生组织上制作了伤口愈合的细胞迁移模型，以证明在不同基质上的广泛适用性。</li>
+<li>创建了用于免疫细胞相互作用研究的VICs和ECs交叉培养模型，以证明在高通量多细胞研究中的潜力；</li>
+<li>在微流控通道中建立了用于剪切应力下药物反应研究的模式，以证明在封闭的片上实验室生物研究的潜力。</li>
+</ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Ren T, Maitusong M, Zhou X, et al. Programing Cell Assembly via Ink-Free, Label-Free Magneto-Archimedes Based Strategy[J/OL]. ACS Nano, 2023[2023–06–30].</p>
 
         </div>

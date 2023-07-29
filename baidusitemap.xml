@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2023/07/29/Bioengineered%20perfused%20human%20brain%20microvascular%20networks%20enhance%20neural%20progenitor%20cell%20survival,%20neurogenesis,%20and%20maturation/</loc>
+    <lastmod>2023-07-29T06:14:11.628Z</lastmod>
+    <data>
+        <display>
+        <title>Programing Cell Assembly via Ink-Free, Label-Free Magneto-Archimedes Based Strategy</title>
+        <pubTime>2023-07-29T12:35:55.000Z</pubTime>
+        
+        <tag>Microvascular</tag>
+         
+        <tag>Neural progenitor cell</tag>
+         
+        <tag>Bioengineering</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2023-07-10T06:37:40.373Z</lastmod>
     <data>
@@ -2561,32 +2585,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
-    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
-    <data>
-        <display>
-        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
-        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Mini-guts</tag>
-         
-        <tag>Intestinal stem cells</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     <data>
@@ -2603,6 +2601,32 @@
         <tag>Cell adhesion</tag>
          
         <tag>High‐throughput methods</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    <data>
+        <display>
+        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
+        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Mini-guts</tag>
+         
+        <tag>Intestinal stem cells</tag>
          
          
            

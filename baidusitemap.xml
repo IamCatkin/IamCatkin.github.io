@@ -4,8 +4,36 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2023/08/05/A%20PDA-Functionalized%203D%20Lung%20Scaffold%20Bioplatform%20to%20Construct%20Complicated%20Breast%20Tumor%20Microenvironment%20for%20Anticancer%20Drug%20Screening%20and%20Immunotherapy/</loc>
+    <lastmod>2023-08-05T07:04:01.757Z</lastmod>
+    <data>
+        <display>
+        <title>A PDA-Functionalized 3D Lung Scaffold Bioplatform to Construct Complicated Breast Tumor Microenvironment for Anticancer Drug Screening and Immunotherapy</title>
+        <pubTime>2023-08-05T06:44:35.000Z</pubTime>
+        
+        <tag>Breast cancer cells</tag>
+         
+        <tag>Drug resistance screening</tag>
+         
+        <tag>PDA-modified lung scaffolds</tag>
+         
+        <tag>Tumor immunotherapy</tag>
+         
+        <tag>Underlying mechanism</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2023/08/05/Microfluidic%20Templated%20Stem%20Cell%20Spheroid%20Microneedles%20for%20Diabetic%20Wound%20Treatment/</loc>
-    <lastmod>2023-08-05T06:13:08.006Z</lastmod>
+    <lastmod>2023-08-05T06:52:06.344Z</lastmod>
     <data>
         <display>
         <title>Microfluidic Templated Stem Cell Spheroid Microneedles for Diabetic Wound Treatment</title>
@@ -2613,32 +2641,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
-    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
-    <data>
-        <display>
-        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
-        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
-        
-        <tag>Microfluidics</tag>
-         
-        <tag>Organoids</tag>
-         
-        <tag>Mini-guts</tag>
-         
-        <tag>Intestinal stem cells</tag>
-         
-         
-           
-             
-              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/12/28/High%E2%80%90Throughput,%20Label%E2%80%90Free%20Isolation%20of%20Cancer%20Stem%20Cells%20on%20the%20Basis%20of%20Cell%20Adhesion%20Capacity/</loc>
     <lastmod>2022-03-25T15:52:33.810Z</lastmod>
     <data>
@@ -2655,6 +2657,32 @@
         <tag>Cell adhesion</tag>
          
         <tag>High‐throughput methods</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/11/21/Homeostatic%20mini-intestines%20through%20scaffold-guided%20organoid%20morphogenesis/</loc>
+    <lastmod>2022-03-25T15:52:33.810Z</lastmod>
+    <data>
+        <display>
+        <title>Homeostatic mini-intestines through scaffold-guided organoid morphogenesis</title>
+        <pubTime>2020-11-21T02:28:42.000Z</pubTime>
+        
+        <tag>Microfluidics</tag>
+         
+        <tag>Organoids</tag>
+         
+        <tag>Mini-guts</tag>
+         
+        <tag>Intestinal stem cells</tag>
          
          
            

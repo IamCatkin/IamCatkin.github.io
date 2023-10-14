@@ -4,22 +4,22 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2023/08/05/A%20PDA-Functionalized%203D%20Lung%20Scaffold%20Bioplatform%20to%20Construct%20Complicated%20Breast%20Tumor%20Microenvironment%20for%20Anticancer%20Drug%20Screening%20and%20Immunotherapy/</loc>
-    <lastmod>2023-08-05T07:04:01.757Z</lastmod>
+    <loc>https://blog.catkin.moe/2023/10/14/Reducing%20Cancer%20Cell%20Adhesion%20using%20Microtextured%20Surfaces/</loc>
+    <lastmod>2023-10-14T05:53:48.026Z</lastmod>
     <data>
         <display>
-        <title>A PDA-Functionalized 3D Lung Scaffold Bioplatform to Construct Complicated Breast Tumor Microenvironment for Anticancer Drug Screening and Immunotherapy</title>
-        <pubTime>2023-08-05T06:44:35.000Z</pubTime>
+        <title>Reducing Cancer Cell Adhesion using Microtextured Surfaces</title>
+        <pubTime>2023-10-14T03:06:51.000Z</pubTime>
         
-        <tag>Breast cancer cells</tag>
+        <tag>Microfluidics</tag>
          
-        <tag>Drug resistance screening</tag>
+        <tag>Cell adhesion</tag>
          
-        <tag>PDA-modified lung scaffolds</tag>
+        <tag>Cell morphology</tag>
          
-        <tag>Tumor immunotherapy</tag>
+        <tag>Microtexture</tag>
          
-        <tag>Underlying mechanism</tag>
+        <tag>Polystyrene</tag>
          
          
            
@@ -32,8 +32,56 @@
 
     
   <url>
+    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2023-10-11T03:49:23.541Z</lastmod>
+    <data>
+        <display>
+        <title>推理小说记录</title>
+        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
+        
+        <tag>Lattice resoning</tag>
+         
+        <tag>Detective story</tag>
+         
+        <tag>Penetralium</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/25/%E8%AF%A1%E8%AE%A1x%E9%80%BB%E8%BE%91%E6%A1%88%E4%BB%B6%E7%9B%98%E7%82%B9/</loc>
+    <lastmod>2023-09-29T15:38:07.111Z</lastmod>
+    <data>
+        <display>
+        <title>诡计x逻辑案件盘点</title>
+        <pubTime>2020-05-25T11:33:24.000Z</pubTime>
+        
+        <tag>Game</tag>
+         
+        <tag>Visual novel</tag>
+         
+        <tag>Lattice resoning</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.catkin.moe/2023/08/05/Microfluidic%20Templated%20Stem%20Cell%20Spheroid%20Microneedles%20for%20Diabetic%20Wound%20Treatment/</loc>
-    <lastmod>2023-08-05T06:52:06.344Z</lastmod>
+    <lastmod>2023-09-16T06:10:12.134Z</lastmod>
     <data>
         <display>
         <title>Microfluidic Templated Stem Cell Spheroid Microneedles for Diabetic Wound Treatment</title>
@@ -48,6 +96,62 @@
         <tag>Microneedles</tag>
          
         <tag>Stem cells</tag>
+         
+         
+           
+             
+              <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2023-09-09T02:51:25.350Z</lastmod>
+    <data>
+        <display>
+        <title>悬疑推理向游戏记录</title>
+        <pubTime>2020-05-11T11:16:28.000Z</pubTime>
+        
+        <tag>Game</tag>
+         
+        <tag>Visual novel</tag>
+         
+        <tag>Lattice resoning</tag>
+         
+        <tag>Galgame</tag>
+         
+        <tag>ADV</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2023/08/05/A%20PDA-Functionalized%203D%20Lung%20Scaffold%20Bioplatform%20to%20Construct%20Complicated%20Breast%20Tumor%20Microenvironment%20for%20Anticancer%20Drug%20Screening%20and%20Immunotherapy/</loc>
+    <lastmod>2023-09-09T02:49:07.182Z</lastmod>
+    <data>
+        <display>
+        <title>A PDA-Functionalized 3D Lung Scaffold Bioplatform to Construct Complicated Breast Tumor Microenvironment for Anticancer Drug Screening and Immunotherapy</title>
+        <pubTime>2023-08-05T06:44:35.000Z</pubTime>
+        
+        <tag>Breast cancer cells</tag>
+         
+        <tag>Drug resistance screening</tag>
+         
+        <tag>PDA-modified lung scaffolds</tag>
+         
+        <tag>Tumor immunotherapy</tag>
+         
+        <tag>Underlying mechanism</tag>
          
          
            
@@ -84,34 +188,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2020/05/11/%E6%82%AC%E7%96%91%E6%8E%A8%E7%90%86%E5%90%91%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2023-07-10T06:37:40.373Z</lastmod>
-    <data>
-        <display>
-        <title>悬疑推理向游戏记录</title>
-        <pubTime>2020-05-11T11:16:28.000Z</pubTime>
-        
-        <tag>Game</tag>
-         
-        <tag>Visual novel</tag>
-         
-        <tag>Lattice resoning</tag>
-         
-        <tag>Galgame</tag>
-         
-        <tag>ADV</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2023/07/01/Programing%20Cell%20Assembly%20via%20Ink-Free,%20Label-Free%20Magneto-Archimedes%20Based%20Strategy/</loc>
     <lastmod>2023-07-10T02:08:59.417Z</lastmod>
     <data>
@@ -133,30 +209,6 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/03/05/%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2023-07-07T05:13:32.764Z</lastmod>
-    <data>
-        <display>
-        <title>推理小说记录</title>
-        <pubTime>2020-03-05T12:16:28.000Z</pubTime>
-        
-        <tag>Lattice resoning</tag>
-         
-        <tag>Detective story</tag>
-         
-        <tag>Penetralium</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
           
         </display>
     </data>
@@ -1135,30 +1187,6 @@
         <tag>Softstar</tag>
          
         <tag>Xin dynasty</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓寻芳草" url="https://blog.catkin.moe/categories/%E7%BC%93%E5%AF%BB%E8%8A%B3%E8%8D%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.catkin.moe/2020/05/25/%E8%AF%A1%E8%AE%A1x%E9%80%BB%E8%BE%91%E6%A1%88%E4%BB%B6%E7%9B%98%E7%82%B9/</loc>
-    <lastmod>2022-03-25T15:52:33.907Z</lastmod>
-    <data>
-        <display>
-        <title>诡计x逻辑案件盘点</title>
-        <pubTime>2020-05-25T11:33:24.000Z</pubTime>
-        
-        <tag>Game</tag>
-         
-        <tag>Visual novel</tag>
-         
-        <tag>Lattice resoning</tag>
          
          
            
@@ -2481,32 +2509,6 @@
 
     
   <url>
-    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
-    <data>
-        <display>
-        <title>k-近邻算法</title>
-        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Data Mining</tag>
-         
-        <tag>KNN</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.catkin.moe/2020/11/09/Label-Free%20Estimation%20of%20Therapeutic%20Efficacy%20on%203D%20Cancer%20Spheres%20Using%20Convolutional%20Neural%20Network%20Image%20Analysis/</loc>
     <lastmod>2022-03-25T15:52:33.816Z</lastmod>
     <data>
@@ -2526,6 +2528,32 @@
            
              
               <breadCrumb title="文献阅读" url="https://blog.catkin.moe/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.catkin.moe/2018/12/25/k-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-03-25T15:52:33.816Z</lastmod>
+    <data>
+        <display>
+        <title>k-近邻算法</title>
+        <pubTime>2018-12-25T07:58:23.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Data Mining</tag>
+         
+        <tag>KNN</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="https://blog.catkin.moe/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>

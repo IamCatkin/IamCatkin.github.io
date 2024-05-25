@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8">
+<title>A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments - 寒光亭下水如天</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="一种基于液滴微流控技术的患者特异性肺癌组装体（LCA）模型，再现了亲代肿瘤的瘤间和瘤内异质性、TME细胞多样性以及基因组和转录组景观。">
+<meta name="keywords" content="Tissue engineering,Cancer models">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
+<meta property="og:url" content="https://blog.catkin.moe/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/index.html">
+<meta property="og:site_name" content="寒光亭下水如天">
+<meta property="og:description" content="一种基于液滴微流控技术的患者特异性肺癌组装体（LCA）模型，再现了亲代肿瘤的瘤间和瘤内异质性、TME细胞多样性以及基因组和转录组景观。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp">
+<meta property="og:updated_time" content="2024-05-25T06:37:46.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
+<meta name="twitter:description" content="一种基于液滴微流控技术的患者特异性肺癌组装体（LCA）模型，再现了亲代肿瘤的瘤间和瘤内异质性、TME细胞多样性以及基因组和转录组景观。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Catkin.png" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2024-05-25T04:45:34.000Z">2024-05-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    34 分钟 读完 (大约 5082 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments
+            
+        </h1>
+        <div class="content">
+            <p>　　一种基于液滴微流控技术的患者特异性肺癌组装体（LCA）模型，再现了亲代肿瘤的瘤间和瘤内异质性、TME细胞多样性以及基因组和转录组景观。</p>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>肺癌是癌症死亡的主要原因，2020年全球约有180万人死于肺癌。尽管包括靶向治疗和免疫治疗在内的治疗策略越来越多，但很少有患者能获得完全缓解，而且患者的反应也千差万别。人们已经认识到，肿瘤异质性和肿瘤微环境（TME）是导致肿瘤发展和抗癌治疗效果不佳的原因。肿瘤微环境由细胞外基质（ECM）和各种细胞成分组成，包括免疫细胞和基质细胞。癌症相关成纤维细胞（CAFs）是TME中的主要基质细胞，具有驱动癌症转移和耐药性以及调节免疫微环境的能力。TME在每个患者之间和患者内部都存在很大差异，导致疾病的多样性，并对精准治疗和药物开发构成重大挑战。因此，在体外重建具有肿瘤异质性和个性化TME的癌症模型已成为癌症研究和精准医疗的关键问题。</li>
+<li><p>体外癌症模型为癌症研究和抗癌药物开发做出了巨大贡献。</p>
+<ul>
+<li>传统的癌症模型，包括二维和三维球体培养，缺乏亲代肿瘤的异质性细胞亚型和分子特征；</li>
+<li>患者来源的癌症类器官可以复制亲代肿瘤的病理形态和部分遗传特征。然而基于 matrigel的传统癌症类器官模型主要代表肿瘤上皮，内源性基质细胞和免疫细胞会随着培养时间的推移而逐渐丢失。虽然一些研究通过气液界面（ALI）法或与TME细胞（如CAFs和免疫细胞）共培养在类器官培养系统中重建了部分TME，但也有一些研究开发了由异质性患者来源肿瘤细胞和基质细胞组成的非matrigel水凝胶三维癌症模型，这些模型除了人力成本外，还缺乏精确的可控性和均匀性。</li>
+<li>其他一些从粉碎的肿瘤片段中提取的癌症器官组织可以保持原生组织结构和TME细胞成分。然而，人工粉碎组织会导致碎片大小不可再现和环境不均匀。另一方面，从小肿瘤组织中提取的毫米级肿瘤片段数量有限，在高通量药物筛选中的应用也受到限制。</li>
+</ul>
+</li>
+<li><p>组装体是由多种类型细胞或类器官融合和功能整合形成的三维结构，是了解人类发育和疾病的最新工具，目前被认为是干细胞研究的前沿。目前，组装体主要通过共培养和三维挤压打印方法制造。用细胞培养法制造的类器官的形态和结构难以控制，批内一致性差。虽然使用基于挤压的三维打印方法可以制造出具有组织形态的肾脏类器官模型，但每分钟只能制造出18个直径约为2毫米的类器官（每个类器官的体积为0.55 μL）。三维挤压生物打印技术在快速生成具有必要尺寸和精度的微米级组织模型方面受到限制。快速制备具有良好批内一致性的肿瘤组装体仍是一项巨大挑战。</p>
+</li>
+<li>在本研究中报告了一种创新的患者特异性肺癌组装体（LCA）模型，该模型是通过基于微注射的液滴微流控技术生成的，可实现临床微样本的精确操作和高通量生成LCA。LCA 是通过将患者肿瘤来源的TME细胞和肺癌器官组织（LCO）均匀包裹在具有良好细胞相容性的明胶甲基丙烯酰（GelMA）-Matrigel 微凝胶中实现的。这种LCA模型在大小、细胞组成和药物反应谱分析方面具有良好的批内一致性。此外，这些LCA代表了其亲代肿瘤的TME和肿瘤异质性，并复制了肺癌患者的临床反应，突出了LCA模型在基础研究和个性化药物筛选方面的潜在用途。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt=""></p>
+<ul>
+<li>（a）载有肺癌器官组织和TME细胞的生物墨水的制备示意图。</li>
+<li>（b）基于微注射策略的液滴微流控技术制备LCA。</li>
+<li>（c）LCA具有批内一致性好、代表亲代肿瘤的TME异质性和复制临床药物反应等优点。</li>
+</ul>
+<blockquote>
+<p>LCOs，肺癌器官组织；</p>
+<p>CAFs，癌症相关成纤维细胞；</p>
+<p>TME，肿瘤微环境；</p>
+<p>TILs，肿瘤浸润淋巴细胞。</p>
+</blockquote>
+<h2 id="Establishment-of-uniform-LCAs-through-a-microinjection-strategy-based-droplet-microfluidic-technology"><a href="#Establishment-of-uniform-LCAs-through-a-microinjection-strategy-based-droplet-microfluidic-technology" class="headerlink" title="Establishment of uniform LCAs through a microinjection strategy-based droplet microfluidic technology"></a>Establishment of uniform LCAs through a microinjection strategy-based droplet microfluidic technology</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig2_HTML.webp" alt=""></p>
+<ul>
+<li>（a）LCA制造策略和表征示意图。</li>
+<li>（b） LCA（LC05）在制造后第0 d（LCA 前体）和第 3 d的代表性白光显微镜图像。右图为红线圈出的放大图。</li>
+<li>（c）LCA前体和LCA中EpCAM和α-SMA标记的免疫荧光染色。</li>
+<li>（d）GelMA-Matrigel水凝胶、肺癌肿瘤和相匹配的邻近正常肺组织的压缩弹性模量。其中由15%（v/v）Matrigel和 6%（w/v）GelMA组成的水凝胶称为6-15。</li>
+<li>（e）LCA制作后第0 d和第7 d的代表性活（绿色）/死（红色）染色图像。</li>
+<li>（f）细胞组装前和组装成LCA后第0 d和第7 d的归一化细胞活性。</li>
+<li>（g）LCA的细胞增殖能力随培养时间的定量分析。</li>
+<li>（h）LCA中LCO和CAF的细胞百分比。</li>
+<li>（i）高细胞密度（较多细胞，10<sup>8</sup> mL<sup>-1</sup>）和低细胞密度（较少细胞，10<sup>6</sup> mL<sup>-1</sup>）的LCA大小分布直方图。</li>
+<li>（j）用10 μL肿瘤活检样本（LC33 和 LC34）制作的LCA大小分布直方图。<strong>表明该平台可广泛应用于快速制作癌症组装体模型，即使是使用从中晚期肿瘤患者身上很容易获得的活检组织等微量样本。</strong></li>
+<li>（k）冷冻前和解冻后LCA的代表性白光图像。</li>
+<li>（l）冷冻前和解冻后的LCA直径。<strong>表明LCA可作为生物库冷冻保存，以备进一步应用。</strong></li>
+</ul>
+<h2 id="LCAs-maintain-the-heterogeneous-histology-and-TME-features-of-parental-tumors"><a href="#LCAs-maintain-the-heterogeneous-histology-and-TME-features-of-parental-tumors" class="headerlink" title="LCAs maintain the heterogeneous histology and TME features of parental tumors"></a>LCAs maintain the heterogeneous histology and TME features of parental tumors</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig3_HTML.webp" alt=""></p>
+<ul>
+<li>（a）LCA及其相应亲代肿瘤（LC06、LC17 和 LC07）的H&amp;E染色图像。CAs的组织学特征与亲代肿瘤相似，如箭头所示，基质细胞（红色箭头）包裹着肿瘤细胞（黑色箭头），并相互形成连接。</li>
+<li>（b）亲代肿瘤（LC05、LC14 和 LC63）及其衍生的LCAs中CK7和EpCAM的一致表达。</li>
+<li>（c）肿瘤片段和培养1 w和 2 w的相应LCA中人α-SMA和EpCAM的免疫荧光染色。</li>
+<li>（d）肿瘤片段和LCA（LCA37 和 LCA66）中人CD3和EpCAM的免疫荧光染色。<strong>以上结果表明，LCA可以保持相应亲代肿瘤的TME和异质性组织学。</strong></li>
+</ul>
+<h2 id="LCAs-maintain-the-transcriptomic-and-genomic-signatures-of-parental-tumors"><a href="#LCAs-maintain-the-transcriptomic-and-genomic-signatures-of-parental-tumors" class="headerlink" title="LCAs maintain the transcriptomic and genomic signatures of parental tumors"></a>LCAs maintain the transcriptomic and genomic signatures of parental tumors</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig4_HTML.webp" alt=""></p>
+<ul>
+<li>（a）四名患者（LC14、LC28、LC51 和 LC52）正常组织、亲代肿瘤和LCA中6577个差异表达基因的基因表达热图。<strong>全转录组比较表明，LCA与其相应的亲代肿瘤具有高度相似性，总体相关系数为0.86。</strong></li>
+<li>（b-c）与匹配的正常组织相比，LCAs和亲代肿瘤共同上调和下调基因中富集的基因本体生物过程术语的泡状图。亲代肿瘤或 LCA中前20个富集通路在相应的LCA或亲代肿瘤中也高度富集。<strong>四对LCA-亲代肿瘤中基因上调的共同富集通路主要涉及有丝分裂细胞周期、细胞增殖、上皮细胞分化和细胞外基质组织等生物学过程，下调基因的共同富集通路主要与ECM和循环系统有关。</strong></li>
+<li>（d）肿瘤和相应LCA之间不同细胞群（癌症干细胞、免疫细胞和肺癌细胞）的富集基因热图。 <strong>表明LCAs在很大程度上保持了亲代肿瘤的细胞异质性。</strong></li>
+<li>（e）LCA和亲代肿瘤之间存在肺癌相关基因的体细胞突变，且突变类型一致。</li>
+<li>（f）热图显示了三名患者（LC28、LC51 和 LC52）肺肿瘤-LCA对的全基因组拷贝数变异（CNV）。右侧的数字表示每对样本的皮尔逊相关系数。在原始肺癌组织中发现的DNA拷贝数增加（红色）和减少（蓝色）在相应的 LCA 中保持不变。<strong>结果表明LCA保留了其相应亲代肿瘤的转录组和基因组特征。</strong></li>
+</ul>
+<h2 id="LCAs-maintain-the-cell-type-heterogeneity-and-cell‒cell-interaction-signatures-of-parental-tumors"><a href="#LCAs-maintain-the-cell-type-heterogeneity-and-cell‒cell-interaction-signatures-of-parental-tumors" class="headerlink" title="LCAs maintain the cell-type heterogeneity and cell‒cell interaction signatures of parental tumors"></a>LCAs maintain the cell-type heterogeneity and cell‒cell interaction signatures of parental tumors</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig5_HTML.webp" alt=""></p>
+<ul>
+<li>（a）UMAP图显示按6种主要细胞类型着色的粗聚类结果。</li>
+<li>（b）UMAP图显示按13种细胞类型着色的细聚类结果。</li>
+<li>（c）UMAP图显示按样本标识着色的所有细胞。<strong>表明患者的上皮细胞存在很大的异质性。</strong></li>
+<li>（d）原发性肿瘤（LC55和LC66）与相应LCA之间单个细胞类型比例的比较分析。患者肿瘤的所有细胞类型在相应的 LCA 中都保持得很好，1 w的LCA中细胞类型的比例与亲代肿瘤相似，而2 w的LCA中细胞类型与亲代肿瘤的相似度较低。</li>
+<li>（e）利用细胞类型特异性差异表达基因获得的皮尔逊相关系数（PCC）。随着时间的推移，LCA的上皮细胞和成纤维细胞与亲代肿瘤的总体相似度略有下降。</li>
+<li>（f）细胞间通信网络的圆图。边缘的宽度代表通信的强度。1 w的LCA和 2 w的LCA都保持了这些细胞间的相互作用。</li>
+<li>（g）维恩图显示了LCAs与LC55患者亲代肿瘤之间从CAFs到上皮细胞的配体-受体对的重叠情况。</li>
+<li>（h）维恩图显示了LCAs与LC55患者亲代肿瘤之间上皮细胞-CAFs的配体-受体对重叠情况。表明肿瘤细胞与 CAFs 之间保持着沟通。</li>
+</ul>
+<h2 id="LCA-model-could-reconstruct-and-identify-functionally-heterogeneous-CAFs"><a href="#LCA-model-could-reconstruct-and-identify-functionally-heterogeneous-CAFs" class="headerlink" title="LCA model could reconstruct and identify functionally heterogeneous CAFs"></a>LCA model could reconstruct and identify functionally heterogeneous CAFs</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig6_HTML.webp" alt=""></p>
+<ul>
+<li>（a-b）通过酶联免疫吸附试验（ELISA）检测7例患者肿瘤中CAFs的HGF和FGF7分泌水平。<strong>HGF和FGF7在放射抗性、化疗抗性和表皮生长因子受体抑制剂抗性的形成中发挥着重要作用。</strong></li>
+<li>（c）LC22和LC23患者肿瘤中α-SMA+CAFs的IHC染色。</li>
+<li>（d）LC22和LC23 LCOs以及分别包裹在微凝胶中的LCAs培养7 d后的白光图像。</li>
+<li>（e）LC22 CAFs促进了LC22组装体的增殖能力。</li>
+<li>（f）Taxol（紫杉醇）处理3 d后LC22和LC23的LCOs和LCAs的剂量反应曲线。</li>
+<li>（g）Taxol和2 μM PFD（吡非尼酮，CAF靶向药）处理3 d后LC22 LCOs和LCAs的剂量反应曲线。</li>
+<li>（h-i）1 μM Taxol和2 μM PFD处理LC22 LCAs后，EpCAM+肿瘤细胞凋亡的流式细胞术分析和定量。</li>
+<li>（j）使用Taxol和2 μM PFD治疗3 d后LC23 LCA和LCO的剂量反应曲线。<strong>LC23的LCA对Taxol和PFD联合治疗的反应非常有限。</strong></li>
+<li>（k）使用Osi（奥希替尼）和PFD治疗3 d后LC23组装体的剂量反应曲线。<strong>与LCO组相比，CAF靶向治疗并未显著提高LCA中 EGFR突变的LC23肿瘤细胞对奥希替尼的敏感性。</strong></li>
+<li>（l）1 μM Osi和2 μM PFD处理LC23 LCAs EpCAM+肿瘤细胞后，活细胞、凋亡细胞和死亡细胞的定量。<strong>进一步表明LC23 CAFs 对相应肿瘤细胞的保护作用很小。</strong></li>
+</ul>
+<h2 id="LCAs-as-a-powerful-preclinical-model-for-personalized-drug-testing"><a href="#LCAs-as-a-powerful-preclinical-model-for-personalized-drug-testing" class="headerlink" title="LCAs as a powerful preclinical model for personalized drug testing"></a>LCAs as a powerful preclinical model for personalized drug testing</h2><p><img src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig7_HTML.webp" alt=""></p>
+<ul>
+<li>（a）来自6名肺腺癌患者的LCA和LCO对卡铂类化疗药物的异质性反应。拟合的剂量-反应曲线说明了LCA和LCO对培美曲塞+卡铂（PC）的反应。</li>
+<li>（b）热图表明LCA和LCO的LogIC50值。TC：紫杉醇 + 卡铂。<strong>大多数LCAs对化疗药物和靶向药物的反应降低，可能是由LCAs中存在的肿瘤微环境造成的，这可能反映了具有微环境的肿瘤对药物的真实反应。</strong></li>
+<li>（c）LCA和LCO组中药物-样品对的CV分布。<strong>这表明LCA组的药物-样品对结果更加一致。</strong></li>
+<li>（d）九名不同患者的各种LCA对福莫尼替尼的剂量反应曲线。右图比较了表皮生长因子受体突变组（EGFR-M，LC19、LC46和 LC69）和表皮生长因子受体野生型组（EGFR-W）在指定浓度（0.1 μM）下的剂量反应曲线下面积（AUC-DRC）和存活率。</li>
+<li>（e）表皮生长因子受体（EGFR）突变的LC46患者的治疗流程图 。</li>
+<li>（f）LCA 46不同药物的剂量反应曲线。</li>
+<li>（g）LC46患者新辅助治疗前后的CT图像。</li>
+<li>（h）LC42患者LCAs的药物反应曲线。</li>
+<li>（i）LC42 患者新辅助治疗前后的CT图像。</li>
+<li>（j）基于LCA测试的体外药物反应热图和基于RECIST的7例患者临床结果。CR，完全应答。PR，部分应答；SD，病情稳定。</li>
+</ul>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><ul>
+<li><p>代表个体患者的体外肿瘤模型将促进精准医学的发展。癌症组装体是将癌细胞与不同类型的细胞一起三维重建在TME中，被认为是更强大的模型，但其缺点是没有高效的制备方法，而且很少有研究对其进行系统的表征并与临床反应进行定量比较。在此报告了一种成功高通量生成LCA的方法，它能再现分子、异质性组织学和TME特征。作者系统地比较了基于LCA的药物测试结果与患者临床结果的一致性，并评估了LCA作为个性化药物测试临床前模型的价值。</p>
+</li>
+<li><p>TME是肿瘤的关键组成部分，对治疗反应和临床结果有重大影响。带有TME的三维癌症模型对于了解癌症发展和开发抗癌药物至关重要。虽然已经开发出了一些三维肿瘤组织生长因子建模方法，如自组装球体、类器官细胞培养和器官型模型，但由于缺乏患者特异性肿瘤组织生长因子、耗时和批内一致性差，限制了它们的广泛应用。在本研究中从患者肿瘤中生成了稳定的 LCOs和相应的TME细胞，然后利用基于液滴微流控技术的方法将TME细胞和LCOs均匀地包裹在GelMA-Matrigel微凝胶中，精确地制造出了LCAs。LCA具有患者特异性的TME和批内一致性，克服了传统共培养和三维生物打印组装体方法的局限性。与肺癌器官组织相比，LCAs能再现患者的TME，包括异质性CAFs和肿瘤免疫微环境，有利于形成肿瘤样形态，并可应用于联合治疗的药物筛选。</p>
+</li>
+<li><p>由于类器官在体外衍生和扩增的效率低且不可预测。我们始终面临着微量样本（小于 100 μL）中细胞或器官组织有限的挑战。为了克服这一挑战，作者开发了一种微注射策略，能够精确操作微量样本并制造出细胞分布良好的LCA，表明从微小肿瘤组织（如活检组织）中提取的LCA有潜力用于个性化药物测试。</p>
+</li>
+<li><p>此外，癌症模型具有良好的可储存性和可持续性，这有助于其在基础研究和转化研究中的广泛应用。作者选择了一种GelMA-Matrigel复合水凝胶，它具有良好的生物相容性、合适的机械特性和良好的成型能力。更重要的是，用这种水凝胶形成的LCA 可以低温保存和解冻，而对细胞和 LCA 的形状几乎没有损害，这表明 LCA 模型可以作为生物库用于未来的研究。LCA 也可以在 3 分钟内用温和的酶消化成单细胞，用于其他分析。</p>
+</li>
+<li><p>药物测试与临床患者反应之间的良好一致性是临床前模型的黄金标准。尽管有报道称一些癌症组织细胞和患者肿瘤衍生细胞簇能再现临床中患者的反应，但批间和批内一致性的缺乏以及异质性TME影响了药物测试的效率和准确性。与LCO模型相比，LCA模型在平行实验的各孔中表现出更高的一致性，而LCA和LCO的药物反应表型的重现性似乎都很高。此外，LCA和LCO对肿瘤微环境下的化疗药物和靶向药物表现出不同的反应。而这些LCO和LCA之间的比较还需要将来在更多的样本中进一步进行。此外LCA模型可以准确预测新辅助免疫疗法联合化疗和靶向治疗患者的临床治疗效果。</p>
+</li>
+<li><p>总之，作者在此提供了一种高通量生成统一癌症组装体的可行方法，以及一种复制患者特异性TME和亲代肿瘤其他关键特征的个性化临床前模型。该模型具有测试个性化治疗反应的潜力，可广泛应用于基础研究和转化研究。该模型和未来的调整可能会推动临床-转化工作，以开发肺癌的联合疗法和个性化疗法。</p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Zhang Y, Hu Q, Pei Y, et al. A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments[J]. Nature Communications, 2024, 15(1): 3382.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Cancer-models/">Cancer models</a>, <a class="has-link-grey -link" href="/tags/Tissue-engineering/">Tissue engineering</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+            
+            <div class="level-end">
+                <a class="level level-item has-link-grey  article-nav-next" href="/2024/04/26/Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy/">
+                    <span class="level-item">Microfluidic Organoid ... apy and Immunotherapy</span>
+                    <i class="level-item fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '8323a58c0a8710fd55c3',
+        clientSecret: 'c61fe5ff40275771d48504413964ea3b515dae3a',
+        id: '9b53e660a829fc48359f049522ce7a8a',
+        repo: 'myblogcomments',
+        owner: 'IamCatkin',
+        admin: "IamCatkin"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.jpg" alt="Catkin">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Catkin
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        世路如今已惯，此心到处悠然。
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>长沙</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        154
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        10
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        429
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://weibo.com/catkin218" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Introduction">
+        <span class="has-mr-6">1</span>
+        <span>Introduction</span>
+        </a></li><li>
+        <a class="is-flex" href="#Establishment-of-uniform-LCAs-through-a-microinjection-strategy-based-droplet-microfluidic-technology">
+        <span class="has-mr-6">2</span>
+        <span>Establishment of uniform LCAs through a microinjection strategy-based droplet microfluidic technology</span>
+        </a></li><li>
+        <a class="is-flex" href="#LCAs-maintain-the-heterogeneous-histology-and-TME-features-of-parental-tumors">
+        <span class="has-mr-6">3</span>
+        <span>LCAs maintain the heterogeneous histology and TME features of parental tumors</span>
+        </a></li><li>
+        <a class="is-flex" href="#LCAs-maintain-the-transcriptomic-and-genomic-signatures-of-parental-tumors">
+        <span class="has-mr-6">4</span>
+        <span>LCAs maintain the transcriptomic and genomic signatures of parental tumors</span>
+        </a></li><li>
+        <a class="is-flex" href="#LCAs-maintain-the-cell-type-heterogeneity-and-cell‒cell-interaction-signatures-of-parental-tumors">
+        <span class="has-mr-6">5</span>
+        <span>LCAs maintain the cell-type heterogeneity and cell‒cell interaction signatures of parental tumors</span>
+        </a></li><li>
+        <a class="is-flex" href="#LCA-model-could-reconstruct-and-identify-functionally-heterogeneous-CAFs">
+        <span class="has-mr-6">6</span>
+        <span>LCA model could reconstruct and identify functionally heterogeneous CAFs</span>
+        </a></li><li>
+        <a class="is-flex" href="#LCAs-as-a-powerful-preclinical-model-for-personalized-drug-testing">
+        <span class="has-mr-6">7</span>
+        <span>LCAs as a powerful preclinical model for personalized drug testing</span>
+        </a></li><li>
+        <a class="is-flex" href="#Discussion">
+        <span class="has-mr-6">8</span>
+        <span>Discussion</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">9</span>
+        <span>Reference</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://yukgan.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">菜神</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">yukgan.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://blog.iamkotori.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">某学弟</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">blog.iamkotori.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://blog.neigehevi.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hevi</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">blog.neigehevi.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://benzina.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Benz1</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">benzina.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/不务正业/">
+            <span class="level-start">
+                <span class="level-item">不务正业</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/人间有味/">
+            <span class="level-start">
+                <span class="level-item">人间有味</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/学习笔记/">
+            <span class="level-start">
+                <span class="level-item">学习笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/心得体会/">
+            <span class="level-start">
+                <span class="level-item">心得体会</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/文献阅读/">
+            <span class="level-start">
+                <span class="level-item">文献阅读</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">100</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/昔情难追/">
+            <span class="level-start">
+                <span class="level-item">昔情难追</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/缓寻芳草/">
+            <span class="level-start">
+                <span class="level-item">缓寻芳草</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/词海拾珍/">
+            <span class="level-start">
+                <span class="level-item">词海拾珍</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/语言学习/">
+            <span class="level-start">
+                <span class="level-item">语言学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/负尽年华/">
+            <span class="level-start">
+                <span class="level-item">负尽年华</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/3D-cell-culture/" style="font-size: 13.33px;">3D cell culture</a> <a href="/tags/3D-cell-culturing/" style="font-size: 12.22px;">3D cell culturing</a> <a href="/tags/3D-cell-microarrays/" style="font-size: 10px;">3D cell microarrays</a> <a href="/tags/3D-culture/" style="font-size: 11.11px;">3D culture</a> <a href="/tags/3D-culture-model/" style="font-size: 10px;">3D culture model</a> <a href="/tags/3D-printing/" style="font-size: 12.22px;">3D printing</a> <a href="/tags/3D-spheroid/" style="font-size: 10px;">3D spheroid</a> <a href="/tags/3D-tumor-culture/" style="font-size: 10px;">3D tumor culture</a> <a href="/tags/3D-tumors/" style="font-size: 14.44px;">3D tumors</a> <a href="/tags/3D-vascular-mapping/" style="font-size: 10px;">3D vascular mapping</a> <a href="/tags/ACT/" style="font-size: 11.11px;">ACT</a> <a href="/tags/ADV/" style="font-size: 10px;">ADV</a> <a href="/tags/AUTODESK/" style="font-size: 10px;">AUTODESK</a> <a href="/tags/Abdominal-wall-defects/" style="font-size: 10px;">Abdominal wall defects</a> <a href="/tags/Acoustofluidics/" style="font-size: 10px;">Acoustofluidics</a> <a href="/tags/Adipocyte/" style="font-size: 10px;">Adipocyte</a> <a href="/tags/Adipogenesis/" style="font-size: 10px;">Adipogenesis</a> <a href="/tags/Adoptive-cell-therapy/" style="font-size: 10px;">Adoptive cell therapy</a> <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Alginate/" style="font-size: 10px;">Alginate</a> <a href="/tags/Anticancer/" style="font-size: 10px;">Anticancer</a> <a href="/tags/Anticancer-agents/" style="font-size: 10px;">Anticancer agents</a> <a href="/tags/Anticancer-drugs/" style="font-size: 11.11px;">Anticancer drugs</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Apriori/" style="font-size: 10px;">Apriori</a> <a href="/tags/Association-Analysis/" style="font-size: 11.11px;">Association Analysis</a> <a href="/tags/August/" style="font-size: 10px;">August</a> <a href="/tags/AutoCAD/" style="font-size: 10px;">AutoCAD</a> <a href="/tags/Bio-inspired-systems/" style="font-size: 10px;">Bio-inspired systems</a> <a href="/tags/Biochannels/" style="font-size: 10px;">Biochannels</a> <a href="/tags/Bioengineering/" style="font-size: 10px;">Bioengineering</a> <a href="/tags/Bioinspired/" style="font-size: 10px;">Bioinspired</a> <a href="/tags/Biological-physics/" style="font-size: 10px;">Biological physics</a> <a href="/tags/Biomarkers/" style="font-size: 10px;">Biomarkers</a> <a href="/tags/Biomaterial/" style="font-size: 10px;">Biomaterial</a> <a href="/tags/Biomaterials/" style="font-size: 10px;">Biomaterials</a> <a href="/tags/Biomimetic-materials/" style="font-size: 10px;">Biomimetic materials</a> <a href="/tags/Biomimetics/" style="font-size: 10px;">Biomimetics</a> <a href="/tags/Bioprinting/" style="font-size: 11.11px;">Bioprinting</a> <a href="/tags/Blood-purification/" style="font-size: 10px;">Blood purification</a> <a href="/tags/Blood-brain-barrier/" style="font-size: 10px;">Blood-brain barrier</a> <a href="/tags/Bone-regeneration/" style="font-size: 10px;">Bone regeneration</a> <a href="/tags/Breast-cancer/" style="font-size: 13.33px;">Breast cancer</a> <a href="/tags/Breast-cancer-cells/" style="font-size: 10px;">Breast cancer cells</a> <a href="/tags/Breast-neoplasms/" style="font-size: 10px;">Breast neoplasms</a> <a href="/tags/CM1860/" style="font-size: 10px;">CM1860</a> <a href="/tags/CRISPR-Cas9-system/" style="font-size: 10px;">CRISPR/Cas9 system</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CTC-isolation/" style="font-size: 10px;">CTC isolation</a> <a href="/tags/CTCs/" style="font-size: 10px;">CTCs</a> <a href="/tags/Cancer/" style="font-size: 11.11px;">Cancer</a> <a href="/tags/Cancer-angiogenesis/" style="font-size: 10px;">Cancer angiogenesis</a> <a href="/tags/Cancer-cell-invasion/" style="font-size: 10px;">Cancer cell invasion</a> <a href="/tags/Cancer-immunity/" style="font-size: 10px;">Cancer immunity</a> <a href="/tags/Cancer-immunotherapy/" style="font-size: 10px;">Cancer immunotherapy</a> <a href="/tags/Cancer-metabolism/" style="font-size: 10px;">Cancer metabolism</a> <a href="/tags/Cancer-metastasis/" style="font-size: 11.11px;">Cancer metastasis</a> <a href="/tags/Cancer-models/" style="font-size: 10px;">Cancer models</a> <a href="/tags/Cancer-screening/" style="font-size: 10px;">Cancer screening</a> <a href="/tags/Cancer-stem-cells/" style="font-size: 13.33px;">Cancer stem cells</a> <a href="/tags/Cell-adhesion/" style="font-size: 11.11px;">Cell adhesion</a> <a href="/tags/Cell-arrays/" style="font-size: 10px;">Cell arrays</a> <a href="/tags/Cell-assembly/" style="font-size: 10px;">Cell assembly</a> <a href="/tags/Cell-clusters/" style="font-size: 10px;">Cell clusters</a> <a href="/tags/Cell-culture/" style="font-size: 10px;">Cell culture</a> <a href="/tags/Cell-culture-techniques/" style="font-size: 10px;">Cell culture techniques</a> <a href="/tags/Cell-mechanical-stimulation/" style="font-size: 10px;">Cell mechanical stimulation</a> <a href="/tags/Cell-morphology/" style="font-size: 10px;">Cell morphology</a> <a href="/tags/Cell-trapping/" style="font-size: 10px;">Cell trapping</a> <a href="/tags/Cell-bead-pairing/" style="font-size: 10px;">Cell-bead pairing</a> <a href="/tags/Cell-cell-interaction/" style="font-size: 10px;">Cell-cell interaction</a> <a href="/tags/Cell-laden-gelatin-methacrylate/" style="font-size: 10px;">Cell-laden gelatin methacrylate</a> <a href="/tags/Cellular-uptake/" style="font-size: 10px;">Cellular uptake</a> <a href="/tags/Cell−cell-interaction/" style="font-size: 10px;">Cell−cell interaction</a> <a href="/tags/Cervical-cancer/" style="font-size: 10px;">Cervical cancer</a> <a href="/tags/Cheminformatics/" style="font-size: 10px;">Cheminformatics</a> <a href="/tags/Chemotherapy/" style="font-size: 12.22px;">Chemotherapy</a> <a href="/tags/Chimeric-antigen-receptor-T-cells/" style="font-size: 10px;">Chimeric antigen receptor-T cells</a> <a href="/tags/Chip-interface/" style="font-size: 11.11px;">Chip interface</a> <a href="/tags/Circulating-tumor-cells/" style="font-size: 15.56px;">Circulating tumor cells</a> <a href="/tags/Clinical-diagnostics/" style="font-size: 10px;">Clinical diagnostics</a> <a href="/tags/Cmder/" style="font-size: 10px;">Cmder</a> <a href="/tags/Co-culture/" style="font-size: 10px;">Co-culture</a> <a href="/tags/Coculture/" style="font-size: 10px;">Coculture</a> <a href="/tags/Colon/" style="font-size: 10px;">Colon</a> <a href="/tags/Colorectal-cancer/" style="font-size: 10px;">Colorectal cancer</a> <a href="/tags/Combinatorial-drug-screening/" style="font-size: 10px;">Combinatorial drug screening</a> <a href="/tags/Compartmentalized-devices/" style="font-size: 11.11px;">Compartmentalized devices</a> <a href="/tags/Confined-migration/" style="font-size: 10px;">Confined migration</a> <a href="/tags/Continuous-flow/" style="font-size: 10px;">Continuous flow</a> <a href="/tags/Convolutional-neural-network/" style="font-size: 10px;">Convolutional neural network</a> <a href="/tags/Cooking/" style="font-size: 14.44px;">Cooking</a> <a href="/tags/Crawler/" style="font-size: 10px;">Crawler</a> <a href="/tags/Cryostat/" style="font-size: 10px;">Cryostat</a> <a href="/tags/Curved-geometry/" style="font-size: 10px;">Curved geometry</a> <a href="/tags/Cytokine-detection/" style="font-size: 10px;">Cytokine detection</a> <a href="/tags/Cytometry/" style="font-size: 10px;">Cytometry</a> <a href="/tags/Cytotoxicity/" style="font-size: 10px;">Cytotoxicity</a> <a href="/tags/Cytotoxicity-assay/" style="font-size: 10px;">Cytotoxicity assay</a> <a href="/tags/DESeq/" style="font-size: 10px;">DESeq</a> <a href="/tags/DNA-tensioners/" style="font-size: 10px;">DNA tensioners</a> <a href="/tags/Data-Mining/" style="font-size: 13.33px;">Data Mining</a> <a href="/tags/Deep-learning/" style="font-size: 10px;">Deep learning</a> <a href="/tags/Deformability/" style="font-size: 10px;">Deformability</a> <a href="/tags/Delaunay-triangulation/" style="font-size: 10px;">Delaunay triangulation</a> <a href="/tags/Detective-story/" style="font-size: 10px;">Detective story</a> <a href="/tags/Diabetic-wound-healing/" style="font-size: 10px;">Diabetic wound healing</a> <a href="/tags/Diagnostics/" style="font-size: 10px;">Diagnostics</a> <a href="/tags/Dielectrophoresis/" style="font-size: 10px;">Dielectrophoresis</a> <a href="/tags/Differentiation/" style="font-size: 10px;">Differentiation</a> <a href="/tags/Digital-microfluidics/" style="font-size: 10px;">Digital microfluidics</a> <a href="/tags/Direct-reprogramming/" style="font-size: 10px;">Direct reprogramming</a> <a href="/tags/Discrimination-of-heterogenic-CTCs/" style="font-size: 10px;">Discrimination of heterogenic CTCs</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Double-emulsion-microfluidics/" style="font-size: 10px;">Double emulsion microfluidics</a> <a href="/tags/Droplet/" style="font-size: 11.11px;">Droplet</a> <a href="/tags/Droplet-microfluidics/" style="font-size: 12.22px;">Droplet microfluidics</a> <a href="/tags/Droplets-generation/" style="font-size: 10px;">Droplets generation</a> <a href="/tags/Droplet‐based-microfluidics/" style="font-size: 10px;">Droplet‐based microfluidics</a> <a href="/tags/Drug-combination/" style="font-size: 10px;">Drug combination</a> <a href="/tags/Drug-efficacy-evaluation/" style="font-size: 10px;">Drug efficacy evaluation</a> <a href="/tags/Drug-evaluation/" style="font-size: 11.11px;">Drug evaluation</a> <a href="/tags/Drug-metabolism/" style="font-size: 10px;">Drug metabolism</a> <a href="/tags/Drug-resistance/" style="font-size: 12.22px;">Drug resistance</a> <a href="/tags/Drug-resistance-screening/" style="font-size: 10px;">Drug resistance screening</a> <a href="/tags/Drug-screening/" style="font-size: 17.78px;">Drug screening</a> <a href="/tags/Drug-testing/" style="font-size: 11.11px;">Drug testing</a> <a href="/tags/Dual-isolation-and-profiling/" style="font-size: 10px;">Dual isolation and profiling</a> <a href="/tags/Dynamic-culture/" style="font-size: 10px;">Dynamic culture</a> <a href="/tags/Earphone/" style="font-size: 10px;">Earphone</a> <a href="/tags/Efficiency/" style="font-size: 10px;">Efficiency</a> <a href="/tags/Efficiency-of-encapsulation/" style="font-size: 10px;">Efficiency of encapsulation</a> <a href="/tags/Elastomers/" style="font-size: 10px;">Elastomers</a> <a href="/tags/Embedded-3D-bioprinting/" style="font-size: 10px;">Embedded 3D bioprinting</a> <a href="/tags/Endothelial-cell/" style="font-size: 10px;">Endothelial cell</a> <a href="/tags/Endothelial-cells/" style="font-size: 10px;">Endothelial cells</a> <a href="/tags/English/" style="font-size: 14.44px;">English</a> <a href="/tags/Environmental-hazard-assessment/" style="font-size: 10px;">Environmental hazard assessment</a> <a href="/tags/Epithelial–mesenchymal-transition/" style="font-size: 10px;">Epithelial–mesenchymal transition</a> <a href="/tags/Euclidean-distance/" style="font-size: 10px;">Euclidean distance</a> <a href="/tags/Exosome-biogenesis/" style="font-size: 10px;">Exosome biogenesis</a> <a href="/tags/Exosomes/" style="font-size: 10px;">Exosomes</a> <a href="/tags/Experiment/" style="font-size: 10px;">Experiment</a> <a href="/tags/Extracellular-vesicles/" style="font-size: 10px;">Extracellular vesicles</a> <a href="/tags/FC40/" style="font-size: 10px;">FC40</a> <a href="/tags/FP-growth/" style="font-size: 10px;">FP-growth</a> <a href="/tags/Fast-prototyping/" style="font-size: 11.11px;">Fast prototyping</a> <a href="/tags/Fibroblasts/" style="font-size: 10px;">Fibroblasts</a> <a href="/tags/Fibrous-strands/" style="font-size: 10px;">Fibrous strands</a> <a href="/tags/Fiddler/" style="font-size: 10px;">Fiddler</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flow-rates/" style="font-size: 10px;">Flow rates</a> <a href="/tags/Fluorescence‐activated-cell-sorting/" style="font-size: 10px;">Fluorescence‐activated cell sorting</a> <a href="/tags/GEO/" style="font-size: 10px;">GEO</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Game/" style="font-size: 16.67px;">Game</a> <a href="/tags/Gene-Expression-Profiling/" style="font-size: 10px;">Gene Expression Profiling</a> <a href="/tags/Gene-delivery/" style="font-size: 10px;">Gene delivery</a> <a href="/tags/Gene-expression-profiling/" style="font-size: 10px;">Gene expression profiling</a> <a href="/tags/Gene-targetic/" style="font-size: 10px;">Gene targetic</a> <a href="/tags/Genetic-association/" style="font-size: 10px;">Genetic association</a> <a href="/tags/Gene‐editing/" style="font-size: 10px;">Gene‐editing</a> <a href="/tags/Gigabyte/" style="font-size: 10px;">Gigabyte</a> <a href="/tags/Glypican-1/" style="font-size: 10px;">Glypican-1</a> <a href="/tags/GoldenDict/" style="font-size: 10px;">GoldenDict</a> <a href="/tags/Google-Translate/" style="font-size: 10px;">Google Translate</a> <a href="/tags/Gradient-generator/" style="font-size: 10px;">Gradient generator</a> <a href="/tags/Growth-factor/" style="font-size: 10px;">Growth factor</a> <a href="/tags/G‐CSF/" style="font-size: 10px;">G‐CSF</a> <a href="/tags/HBEXO-Chip/" style="font-size: 10px;">HBEXO-Chip</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hanging-drop/" style="font-size: 10px;">Hanging drop</a> <a href="/tags/Head-and-neck-cancer/" style="font-size: 10px;">Head and neck cancer</a> <a href="/tags/Hectorite-nanoclay/" style="font-size: 10px;">Hectorite nanoclay</a> <a href="/tags/Hepatic-models/" style="font-size: 10px;">Hepatic models</a> <a href="/tags/Hepatocytes/" style="font-size: 10px;">Hepatocytes</a> <a href="/tags/Heterotypic-tumor/" style="font-size: 11.11px;">Heterotypic tumor</a> <a href="/tags/HiPSCs/" style="font-size: 10px;">HiPSCs</a> <a href="/tags/High-throughput-analyses/" style="font-size: 10px;">High throughput analyses</a> <a href="/tags/High-throughput/" style="font-size: 11.11px;">High-throughput</a> <a href="/tags/High-throughput-drug-screening/" style="font-size: 10px;">High-throughput drug screening</a> <a href="/tags/High-throughput-screening-assays/" style="font-size: 10px;">High-throughput screening assays</a> <a href="/tags/High‐throughput-methods/" style="font-size: 10px;">High‐throughput methods</a> <a href="/tags/Histopathology/" style="font-size: 10px;">Histopathology</a> <a href="/tags/Human-neural-stem-cells/" style="font-size: 11.11px;">Human neural stem cells</a> <a href="/tags/Human-skin-equivalent/" style="font-size: 10px;">Human skin equivalent</a> <a href="/tags/Hydrogel/" style="font-size: 10px;">Hydrogel</a> <a href="/tags/Hydrogel-hypoxia/" style="font-size: 10px;">Hydrogel hypoxia</a> <a href="/tags/Hydrogels/" style="font-size: 12.22px;">Hydrogels</a> <a href="/tags/ImageJ/" style="font-size: 10px;">ImageJ</a> <a href="/tags/Immune-checkpoint-blockade/" style="font-size: 10px;">Immune checkpoint blockade</a> <a href="/tags/Immune-cell-infiltration/" style="font-size: 10px;">Immune-cell infiltration</a> <a href="/tags/Immunoassay/" style="font-size: 10px;">Immunoassay</a> <a href="/tags/Immunological-surveillance/" style="font-size: 10px;">Immunological surveillance</a> <a href="/tags/Immunotherapy/" style="font-size: 11.11px;">Immunotherapy</a> <a href="/tags/In-vitro-tests/" style="font-size: 10px;">In vitro tests</a> <a href="/tags/In-vivo-mimicking/" style="font-size: 10px;">In vivo mimicking</a> <a href="/tags/Induced-hepatocytes/" style="font-size: 10px;">Induced hepatocytes</a> <a href="/tags/Innervation/" style="font-size: 10px;">Innervation</a> <a href="/tags/Insulin-resistance/" style="font-size: 10px;">Insulin resistance</a> <a href="/tags/Insulin-signaling/" style="font-size: 10px;">Insulin signaling</a> <a href="/tags/Interferon‐gamma/" style="font-size: 10px;">Interferon‐gamma</a> <a href="/tags/Intestinal-stem-cells/" style="font-size: 10px;">Intestinal stem cells</a> <a href="/tags/Intracellular-delivery/" style="font-size: 10px;">Intracellular delivery</a> <a href="/tags/Intratumoral-heterogeneity/" style="font-size: 10px;">Intratumoral heterogeneity</a> <a href="/tags/JRPG/" style="font-size: 10px;">JRPG</a> <a href="/tags/Jaccard-coefficient/" style="font-size: 10px;">Jaccard coefficient</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/July/" style="font-size: 10px;">July</a> <a href="/tags/June/" style="font-size: 10px;">June</a> <a href="/tags/KNN/" style="font-size: 10px;">KNN</a> <a href="/tags/Kidney-on-a-chip/" style="font-size: 10px;">Kidney-on-a-chip</a> <a href="/tags/Lab-on-a-chip/" style="font-size: 10px;">Lab-on-a-chip</a> <a href="/tags/Laptop/" style="font-size: 10px;">Laptop</a> <a href="/tags/Large-scale/" style="font-size: 11.11px;">Large scale</a> <a href="/tags/Lattice-resoning/" style="font-size: 12.22px;">Lattice resoning</a> <a href="/tags/Leica/" style="font-size: 10px;">Leica</a> <a href="/tags/Leukapheresis/" style="font-size: 10px;">Leukapheresis</a> <a href="/tags/Link/" style="font-size: 10px;">Link</a> <a href="/tags/Lipid-metabolism/" style="font-size: 10px;">Lipid metabolism</a> <a href="/tags/Liquid-biopsy/" style="font-size: 10px;">Liquid biopsy</a> <a href="/tags/Literature/" style="font-size: 13.33px;">Literature</a> <a href="/tags/Liver/" style="font-size: 10px;">Liver</a> <a href="/tags/Liver-microenvironment/" style="font-size: 10px;">Liver microenvironment</a> <a href="/tags/Liver-spheroid/" style="font-size: 10px;">Liver spheroid</a> <a href="/tags/Luminal-mechanics/" style="font-size: 10px;">Luminal mechanics</a> <a href="/tags/Lung-cells/" style="font-size: 10px;">Lung cells</a> <a href="/tags/MOE/" style="font-size: 10px;">MOE</a> <a href="/tags/Machine-Learning/" style="font-size: 13.33px;">Machine Learning</a> <a href="/tags/Machine-learning/" style="font-size: 11.11px;">Machine learning</a> <a href="/tags/Macro/" style="font-size: 10px;">Macro</a> <a href="/tags/Macromolecule-delivery/" style="font-size: 10px;">Macromolecule delivery</a> <a href="/tags/Macroporous-microgel-scaffolds/" style="font-size: 10px;">Macroporous microgel scaffolds</a> <a href="/tags/Magnetic-field/" style="font-size: 10px;">Magnetic field</a> <a href="/tags/Magnetic-sorting/" style="font-size: 10px;">Magnetic sorting</a> <a href="/tags/Malignant-potential/" style="font-size: 10px;">Malignant potential</a> <a href="/tags/Mammary-tumor-organoids/" style="font-size: 10px;">Mammary tumor organoids</a> <a href="/tags/Manhattan-distance/" style="font-size: 10px;">Manhattan distance</a> <a href="/tags/Manual/" style="font-size: 13.33px;">Manual</a> <a href="/tags/Materials-science/" style="font-size: 10px;">Materials science</a> <a href="/tags/May/" style="font-size: 10px;">May</a> <a href="/tags/Mechanical-forces/" style="font-size: 10px;">Mechanical forces</a> <a href="/tags/Melanoma/" style="font-size: 10px;">Melanoma</a> <a href="/tags/Mesenchymal-stem-cells/" style="font-size: 10px;">Mesenchymal stem cells</a> <a href="/tags/Mesoporous-silica-particles-MSNs/" style="font-size: 10px;">Mesoporous silica particles (MSNs)</a> <a href="/tags/Metastasis/" style="font-size: 12.22px;">Metastasis</a> <a href="/tags/Microassembly/" style="font-size: 10px;">Microassembly</a> <a href="/tags/Microcapsule/" style="font-size: 10px;">Microcapsule</a> <a href="/tags/Microcontact-printing/" style="font-size: 10px;">Microcontact printing</a> <a href="/tags/Microdroplets/" style="font-size: 10px;">Microdroplets</a> <a href="/tags/Microenvironment/" style="font-size: 10px;">Microenvironment</a> <a href="/tags/Microfluidic-array/" style="font-size: 10px;">Microfluidic array</a> <a href="/tags/Microfluidic-chips/" style="font-size: 11.11px;">Microfluidic chips</a> <a href="/tags/Microfluidic-device/" style="font-size: 10px;">Microfluidic device</a> <a href="/tags/Microfluidic-droplet/" style="font-size: 10px;">Microfluidic droplet</a> <a href="/tags/Microfluidic-organ-on-a-chip/" style="font-size: 10px;">Microfluidic organ-on-a chip</a> <a href="/tags/Microfluidic-organ-on-a-chip/" style="font-size: 10px;">Microfluidic organ-on-a-chip</a> <a href="/tags/Microfluidic-patterning/" style="font-size: 10px;">Microfluidic patterning</a> <a href="/tags/Microfluidic-screening/" style="font-size: 10px;">Microfluidic screening</a> <a href="/tags/Microfluidic-tumor-models/" style="font-size: 10px;">Microfluidic tumor models</a> <a href="/tags/Microfluidic-blow-spinning/" style="font-size: 10px;">Microfluidic-blow-spinning</a> <a href="/tags/Microfluidics/" style="font-size: 20px;">Microfluidics</a> <a href="/tags/Microneedles/" style="font-size: 10px;">Microneedles</a> <a href="/tags/Micropatterning/" style="font-size: 10px;">Micropatterning</a> <a href="/tags/Microtexture/" style="font-size: 10px;">Microtexture</a> <a href="/tags/Microvascular/" style="font-size: 10px;">Microvascular</a> <a href="/tags/Microvascular-networks/" style="font-size: 10px;">Microvascular networks</a> <a href="/tags/Microvasculatures/" style="font-size: 10px;">Microvasculatures</a> <a href="/tags/Microwells/" style="font-size: 11.11px;">Microwells</a> <a href="/tags/Mini-guts/" style="font-size: 10px;">Mini-guts</a> <a href="/tags/Mirco-droplets/" style="font-size: 10px;">Mirco-droplets</a> <a href="/tags/Molecular-imprinting/" style="font-size: 10px;">Molecular imprinting</a> <a href="/tags/Monolith/" style="font-size: 10px;">Monolith</a> <a href="/tags/Monthly/" style="font-size: 14.44px;">Monthly</a> <a href="/tags/Multi-Size-3D-tumors/" style="font-size: 10px;">Multi-Size 3D tumors</a> <a href="/tags/Multi-organoid-on-chip/" style="font-size: 10px;">Multi-organoid-on-chip</a> <a href="/tags/Multicellular-spheroids/" style="font-size: 10px;">Multicellular spheroids</a> <a href="/tags/Multicellular-systems/" style="font-size: 10px;">Multicellular systems</a> <a href="/tags/Multicellular-tumor-aggregates/" style="font-size: 10px;">Multicellular tumor aggregates</a> <a href="/tags/Multi‐step-cascade-reactions/" style="font-size: 10px;">Multi‐step cascade reactions</a> <a href="/tags/Myeloid-derived-suppressor-cells/" style="font-size: 10px;">Myeloid-derived suppressor cells</a> <a href="/tags/NK-cell/" style="font-size: 10px;">NK cell</a> <a href="/tags/NanoZoomer/" style="font-size: 10px;">NanoZoomer</a> <a href="/tags/Nanomaterials/" style="font-size: 10px;">Nanomaterials</a> <a href="/tags/Nanoparticle-delivery/" style="font-size: 11.11px;">Nanoparticle delivery</a> <a href="/tags/Nanoparticle-drug-delivery/" style="font-size: 10px;">Nanoparticle drug delivery</a> <a href="/tags/Nanoparticles/" style="font-size: 10px;">Nanoparticles</a> <a href="/tags/Nanowell/" style="font-size: 10px;">Nanowell</a> <a href="/tags/Natural-killer-cells/" style="font-size: 11.11px;">Natural killer cells</a> <a href="/tags/Neural-progenitor-cell/" style="font-size: 10px;">Neural progenitor cell</a> <a href="/tags/Neuroblastoma/" style="font-size: 10px;">Neuroblastoma</a> <a href="/tags/Neuronal-cell/" style="font-size: 10px;">Neuronal cell</a> <a href="/tags/Neurons/" style="font-size: 10px;">Neurons</a> <a href="/tags/Nintendo/" style="font-size: 10px;">Nintendo</a> <a href="/tags/Nissl-body/" style="font-size: 10px;">Nissl body</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/On-Chip-orthogonal-Analysis/" style="font-size: 10px;">On-Chip orthogonal Analysis</a> <a href="/tags/OpenBabel/" style="font-size: 10px;">OpenBabel</a> <a href="/tags/Organ-on-a-chip/" style="font-size: 13.33px;">Organ-on-a-chip</a> <a href="/tags/Organ-on-a-chip-devices/" style="font-size: 10px;">Organ-on-a-chip devices</a> <a href="/tags/Organically-modified-ceramics/" style="font-size: 10px;">Organically modified ceramics</a> <a href="/tags/Organoids/" style="font-size: 12.22px;">Organoids</a> <a href="/tags/Organ‐on‐a‐chip/" style="font-size: 12.22px;">Organ‐on‐a‐chip</a> <a href="/tags/Osteochondral-interface/" style="font-size: 10px;">Osteochondral interface</a> <a href="/tags/Oxygen-control/" style="font-size: 10px;">Oxygen control</a> <a href="/tags/Oxygen-gradients/" style="font-size: 10px;">Oxygen gradients</a> <a href="/tags/Oxygen-microenvironments/" style="font-size: 10px;">Oxygen microenvironments</a> <a href="/tags/PDA-modified-lung-scaffolds/" style="font-size: 10px;">PDA-modified lung scaffolds</a> <a href="/tags/PDMS/" style="font-size: 11.11px;">PDMS</a> <a href="/tags/PTX‐loaded-liposomes/" style="font-size: 10px;">PTX‐loaded liposomes</a> <a href="/tags/Pain-relief/" style="font-size: 10px;">Pain relief</a> <a href="/tags/Pancreatic-cancer/" style="font-size: 11.11px;">Pancreatic cancer</a> <a href="/tags/Pancreatic-ductal-adenocarcinoma/" style="font-size: 10px;">Pancreatic ductal adenocarcinoma</a> <a href="/tags/Pancreatic-islet/" style="font-size: 11.11px;">Pancreatic islet</a> <a href="/tags/Pathology/" style="font-size: 10px;">Pathology</a> <a href="/tags/Patient-derived-organoid/" style="font-size: 10px;">Patient-derived organoid</a> <a href="/tags/Patient-derived-tumor-model/" style="font-size: 10px;">Patient-derived tumor model</a> <a href="/tags/Patterning/" style="font-size: 12.22px;">Patterning</a> <a href="/tags/Pearl-powder/" style="font-size: 10px;">Pearl powder</a> <a href="/tags/Pearson-coefficient/" style="font-size: 10px;">Pearson coefficient</a> <a href="/tags/Penetralium/" style="font-size: 10px;">Penetralium</a> <a href="/tags/Perfusable/" style="font-size: 10px;">Perfusable</a> <a href="/tags/Personalized-medicine/" style="font-size: 10px;">Personalized medicine</a> <a href="/tags/Photocytotoxicity/" style="font-size: 10px;">Photocytotoxicity</a> <a href="/tags/Photodynamic-therapy-PDT/" style="font-size: 10px;">Photodynamic therapy (PDT)</a> <a href="/tags/Physiological-geometry/" style="font-size: 10px;">Physiological geometry</a> <a href="/tags/Pluronic-F127/" style="font-size: 11.11px;">Pluronic F127</a> <a href="/tags/Pneumatic-valve/" style="font-size: 16.67px;">Pneumatic valve</a> <a href="/tags/Poetry/" style="font-size: 13.33px;">Poetry</a> <a href="/tags/Polymer-giant-unilamellar-vesicles/" style="font-size: 10px;">Polymer giant unilamellar vesicles</a> <a href="/tags/Polystyrene/" style="font-size: 10px;">Polystyrene</a> <a href="/tags/PowerShell/" style="font-size: 10px;">PowerShell</a> <a href="/tags/Precision-medicine/" style="font-size: 10px;">Precision medicine</a> <a href="/tags/Preclinical-models/" style="font-size: 10px;">Preclinical models</a> <a href="/tags/Premetastatic-niche/" style="font-size: 10px;">Premetastatic niche</a> <a href="/tags/Primary-cell-transfection/" style="font-size: 10px;">Primary cell transfection</a> <a href="/tags/Printing/" style="font-size: 10px;">Printing</a> <a href="/tags/Protein-patterning/" style="font-size: 10px;">Protein patterning</a> <a href="/tags/Protein-secretion/" style="font-size: 10px;">Protein secretion</a> <a href="/tags/Pubmed/" style="font-size: 10px;">Pubmed</a> <a href="/tags/Pybel/" style="font-size: 10px;">Pybel</a> <a href="/tags/Pytesseract/" style="font-size: 10px;">Pytesseract</a> <a href="/tags/Python/" style="font-size: 18.89px;">Python</a> <a href="/tags/Quasi-static-hydrodynamic-capture/" style="font-size: 10px;">Quasi-static hydrodynamic capture</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RDKit/" style="font-size: 10px;">RDKit</a> <a href="/tags/RNAi-nanomedicine/" style="font-size: 10px;">RNAi nanomedicine</a> <a href="/tags/RPG/" style="font-size: 12.22px;">RPG</a> <a href="/tags/Reactive-oxygen-species/" style="font-size: 10px;">Reactive oxygen species</a> <a href="/tags/Reagents-preparation/" style="font-size: 10px;">Reagents preparation</a> <a href="/tags/Resistance/" style="font-size: 10px;">Resistance</a> <a href="/tags/Review/" style="font-size: 14.44px;">Review</a> <a href="/tags/Rod-shaped-microgels/" style="font-size: 10px;">Rod-shaped microgels</a> <a href="/tags/STRING/" style="font-size: 10px;">STRING</a> <a href="/tags/Selective-isolation/" style="font-size: 10px;">Selective isolation</a> <a href="/tags/Self-assembly/" style="font-size: 10px;">Self-assembly</a> <a href="/tags/Self-healing-hydrogel/" style="font-size: 10px;">Self-healing hydrogel</a> <a href="/tags/September/" style="font-size: 10px;">September</a> <a href="/tags/Signal-transduction/" style="font-size: 10px;">Signal transduction</a> <a href="/tags/Silk-collagen-biomaterial-composite/" style="font-size: 10px;">Silk-collagen biomaterial composite</a> <a href="/tags/Similarity/" style="font-size: 10px;">Similarity</a> <a href="/tags/Single-cell/" style="font-size: 10px;">Single cell</a> <a href="/tags/Single-cells/" style="font-size: 10px;">Single cells</a> <a href="/tags/Single-molecule/" style="font-size: 10px;">Single molecule</a> <a href="/tags/Single-cell/" style="font-size: 11.11px;">Single-cell</a> <a href="/tags/Single-cell-RNA-sequencing/" style="font-size: 11.11px;">Single-cell RNA sequencing</a> <a href="/tags/Single‐cell-analysis/" style="font-size: 11.11px;">Single‐cell analysis</a> <a href="/tags/Single‐cell-printing/" style="font-size: 10px;">Single‐cell printing</a> <a href="/tags/Size-exclusion/" style="font-size: 10px;">Size exclusion</a> <a href="/tags/Skin-regeneration/" style="font-size: 10px;">Skin regeneration</a> <a href="/tags/Soft-lithography/" style="font-size: 12.22px;">Soft lithography</a> <a href="/tags/Softstar/" style="font-size: 11.11px;">Softstar</a> <a href="/tags/Spheroids/" style="font-size: 15.56px;">Spheroids</a> <a href="/tags/Staining/" style="font-size: 10px;">Staining</a> <a href="/tags/StarBase/" style="font-size: 10px;">StarBase</a> <a href="/tags/Stem-cells/" style="font-size: 10px;">Stem cells</a> <a href="/tags/Sub-Poisson-distribution/" style="font-size: 10px;">Sub-Poisson distribution</a> <a href="/tags/Supramolecular-chemistry/" style="font-size: 10px;">Supramolecular chemistry</a> <a href="/tags/Surface-chemistry/" style="font-size: 10px;">Surface chemistry</a> <a href="/tags/Surface-modification/" style="font-size: 11.11px;">Surface modification</a> <a href="/tags/Switch/" style="font-size: 10px;">Switch</a> <a href="/tags/T-cell-function/" style="font-size: 10px;">T cell function</a> <a href="/tags/TCGA/" style="font-size: 10px;">TCGA</a> <a href="/tags/Tanimoto-coefficient/" style="font-size: 10px;">Tanimoto coefficient</a> <a href="/tags/The-Millennium-Destiny/" style="font-size: 10px;">The Millennium Destiny</a> <a href="/tags/The-Wind-Road/" style="font-size: 10px;">The Wind Road</a> <a href="/tags/Thin-gel/" style="font-size: 10px;">Thin gel</a> <a href="/tags/Tissue-engineering/" style="font-size: 14.44px;">Tissue engineering</a> <a href="/tags/Transcriptome/" style="font-size: 10px;">Transcriptome</a> <a href="/tags/Transfection/" style="font-size: 10px;">Transfection</a> <a href="/tags/Transient-receptor-potential-channel-modulators/" style="font-size: 10px;">Transient receptor potential channel modulators</a> <a href="/tags/Tropism/" style="font-size: 10px;">Tropism</a> <a href="/tags/Tubulogenesis/" style="font-size: 10px;">Tubulogenesis</a> <a href="/tags/Tumor-environmental/" style="font-size: 10px;">Tumor environmental</a> <a href="/tags/Tumor-exosomes/" style="font-size: 10px;">Tumor exosomes</a> <a href="/tags/Tumor-growth-and-invasion/" style="font-size: 10px;">Tumor growth and invasion</a> <a href="/tags/Tumor-immunotherapy/" style="font-size: 10px;">Tumor immunotherapy</a> <a href="/tags/Tumor-metastasis/" style="font-size: 10px;">Tumor metastasis</a> <a href="/tags/Tumor-microenvironment/" style="font-size: 12.22px;">Tumor microenvironment</a> <a href="/tags/Tumor-response/" style="font-size: 10px;">Tumor response</a> <a href="/tags/Tumor-sizes/" style="font-size: 10px;">Tumor sizes</a> <a href="/tags/Tumor-spheroid/" style="font-size: 10px;">Tumor spheroid</a> <a href="/tags/Tumor-on-a-chip/" style="font-size: 11.11px;">Tumor-on-a-chip</a> <a href="/tags/Tumorsphere/" style="font-size: 10px;">Tumorsphere</a> <a href="/tags/Tumors‐on‐a‐chip/" style="font-size: 10px;">Tumors‐on‐a‐chip</a> <a href="/tags/Type-2-diabetes-mellitus/" style="font-size: 10px;">Type 2 diabetes mellitus</a> <a href="/tags/Ultrasensitive-detection/" style="font-size: 10px;">Ultrasensitive detection</a> <a href="/tags/Unboxing/" style="font-size: 12.22px;">Unboxing</a> <a href="/tags/Underlying-mechanism/" style="font-size: 10px;">Underlying mechanism</a> <a href="/tags/Vascularization/" style="font-size: 11.11px;">Vascularization</a> <a href="/tags/Vascularized-model/" style="font-size: 10px;">Vascularized model</a> <a href="/tags/Vasculature/" style="font-size: 10px;">Vasculature</a> <a href="/tags/Visual-novel/" style="font-size: 11.11px;">Visual novel</a> <a href="/tags/Wettability/" style="font-size: 10px;">Wettability</a> <a href="/tags/Windows-Terminal/" style="font-size: 10px;">Windows Terminal</a> <a href="/tags/Word/" style="font-size: 14.44px;">Word</a> <a href="/tags/Writing/" style="font-size: 10px;">Writing</a> <a href="/tags/Wuxia/" style="font-size: 11.11px;">Wuxia</a> <a href="/tags/Xenoblade-Chronicles/" style="font-size: 10px;">Xenoblade Chronicles</a> <a href="/tags/Xin-dynasty/" style="font-size: 10px;">Xin dynasty</a> <a href="/tags/XuanYuan-Sword/" style="font-size: 11.11px;">XuanYuan Sword</a> <a href="/tags/Youdao/" style="font-size: 10px;">Youdao</a> <a href="/tags/cnpm/" style="font-size: 10px;">cnpm</a> <a href="/tags/fsevents/" style="font-size: 10px;">fsevents</a> <a href="/tags/miR-125b-5p/" style="font-size: 10px;">miR-125b-5p</a> <a href="/tags/miR-214-3p/" style="font-size: 10px;">miR-214-3p</a> <a href="/tags/miRNA-signature/" style="font-size: 10px;">miRNA signature</a> <a href="/tags/miRanda/" style="font-size: 10px;">miRanda</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-05-25T04:45:34.000Z">2024-05-25</time></div>
+                    <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="has-link-black-ter is-size-6">A patient-specific lung cancer</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/04/26/Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Microfluidic%20Organoid%20Cultures%20Derived%20from%20Pancreatic%20Cancer%20Biopsies%20for%20Personalized%20Testing%20of%20Chemotherapy%20and%20Immunotherapy/advs6794-fig-0001-m.jpg" alt="Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-04-26T01:55:34.000Z">2024-04-26</time></div>
+                    <a href="/2024/04/26/Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy/" class="has-link-black-ter is-size-6">Microfluidic Organoid Cultures</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/03/30/Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Localized%20Oxygen%20Control%20in%20a%20Microfluidic%20Osteochondral%20Interface%20Model%20Recapitulates%20Bone%E2%80%93Cartilage%20Crosstalk%20During%20Osteoarthritis/adfm202315608-fig-0001-m.jpg" alt="Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-03-30T05:06:51.000Z">2024-03-30</time></div>
+                    <a href="/2024/03/30/Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis/" class="has-link-black-ter is-size-6">Localized Oxygen Control in a </a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/01/12/2023年末的碎碎念/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/MejYt.jpg" alt="2023年末的碎碎念">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-01-12T12:57:02.000Z">2024-01-12</time></div>
+                    <a href="/2024/01/12/2023年末的碎碎念/" class="has-link-black-ter is-size-6">2023年末的碎碎念</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/负尽年华/">负尽年华</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/01/11/三垂冈/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/scg.jpg" alt="三垂冈">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-01-11T05:33:42.000Z">2024-01-11</time></div>
+                    <a href="/2024/01/11/三垂冈/" class="has-link-black-ter is-size-6">三垂冈</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/词海拾珍/">词海拾珍</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">13</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-05-25T04:45:34.000Z">2024-05-25</time></div>
+                    <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="has-link-black-ter is-size-6">A patient-specific lung cancer</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/04/26/Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Microfluidic%20Organoid%20Cultures%20Derived%20from%20Pancreatic%20Cancer%20Biopsies%20for%20Personalized%20Testing%20of%20Chemotherapy%20and%20Immunotherapy/advs6794-fig-0001-m.jpg" alt="Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-04-26T01:55:34.000Z">2024-04-26</time></div>
+                    <a href="/2024/04/26/Microfluidic Organoid Cultures Derived from Pancreatic Cancer Biopsies for Personalized Testing of Chemotherapy and Immunotherapy/" class="has-link-black-ter is-size-6">Microfluidic Organoid Cultures</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/03/30/Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/Localized%20Oxygen%20Control%20in%20a%20Microfluidic%20Osteochondral%20Interface%20Model%20Recapitulates%20Bone%E2%80%93Cartilage%20Crosstalk%20During%20Osteoarthritis/adfm202315608-fig-0001-m.jpg" alt="Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-03-30T05:06:51.000Z">2024-03-30</time></div>
+                    <a href="/2024/03/30/Localized Oxygen Control in a Microfluidic Osteochondral Interface Model Recapitulates Bone–Cartilage Crosstalk During Osteoarthritis/" class="has-link-black-ter is-size-6">Localized Oxygen Control in a </a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/01/12/2023年末的碎碎念/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/MejYt.jpg" alt="2023年末的碎碎念">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-01-12T12:57:02.000Z">2024-01-12</time></div>
+                    <a href="/2024/01/12/2023年末的碎碎念/" class="has-link-black-ter is-size-6">2023年末的碎碎念</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/负尽年华/">负尽年华</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2024/01/11/三垂冈/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/scg.jpg" alt="三垂冈">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-01-11T05:33:42.000Z">2024-01-11</time></div>
+                    <a href="/2024/01/11/三垂冈/" class="has-link-black-ter is-size-6">三垂冈</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/词海拾珍/">词海拾珍</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2023/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2023</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">13</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="padding-bottom: 42px;">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <span class="is-size-7">
+                    &copy; 2018-2024&nbsp;&nbsp;<img src="/images/Catkin.png" alt="catkin" width="48" height="24"><br>
+                    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                            href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </span>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+    <!--console.log-->
+    <script type="text/javascript">
+        console.log("唐多令\n吴文英\n何处合成愁。离人心上秋。\n纵芭蕉、不雨也飕飕。\n都道晚凉天气好，\n有明月、怕登楼。\n年事梦中休。花空烟水流。\n燕辞归、客尚淹留。\n垂柳不萦裙带住,\n漫长是、系行舟。");
+    </script>
+</body>
+</html>

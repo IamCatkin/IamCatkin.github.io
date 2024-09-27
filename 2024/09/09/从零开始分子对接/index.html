@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录一下学习分子对接的流程，希望给后人提供一点帮助。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%86%E5%AD%90%E5%AF%B9%E6%8E%A5/wJHTu.jpg">
-<meta property="og:updated_time" content="2024-09-09T07:24:35.984Z">
+<meta property="og:updated_time" content="2024-09-27T07:47:22.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始分子对接">
 <meta name="twitter:description" content="记录一下学习分子对接的流程，希望给后人提供一点帮助。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 214 个字)
+                    24 分钟 读完 (大约 3593 个字)
                 </span>
                 
                 
@@ -185,11 +185,98 @@
         <div class="content">
             <p>　　记录一下学习分子对接的流程，希望给后人提供一点帮助。</p>
 <a id="more"></a>
-<h2 id="工作环境"><a href="#工作环境" class="headerlink" title="工作环境"></a>工作环境</h2><p>　　</p>
-<h3 id="Autodock"><a href="#Autodock" class="headerlink" title="Autodock"></a>Autodock</h3><p>　　点击<a href="https://autodock.scripps.edu/download-autodock4/" target="_blank" rel="noopener">下载链接</a>下载，该软件为纯命令行软件，图形界面需要使用MGLTools。此外有<a href="https://github.com/ccsb-scripps/AutoDock-GPU" target="_blank" rel="noopener">Autodock-GPU</a>，速度更快，但仅限于Linux环境，且需配置CUDA环境，因为用不上在此不提供演示。</p>
+
+<h2 id="工作环境"><a href="#工作环境" class="headerlink" title="工作环境"></a>工作环境</h2><h3 id="Autodock"><a href="#Autodock" class="headerlink" title="Autodock"></a>Autodock</h3><p>　　点击<a href="https://autodock.scripps.edu/download-autodock4/" target="_blank" rel="noopener">下载链接</a>下载，该软件为纯命令行软件，图形界面需要使用MGLTools。此外有<a href="https://github.com/ccsb-scripps/AutoDock-GPU" target="_blank" rel="noopener">Autodock-GPU</a>，速度更快，但仅限于Linux环境，且需配置CUDA环境，因为用不上在此不提供演示。</p>
 <h3 id="MGLTools"><a href="#MGLTools" class="headerlink" title="MGLTools"></a>MGLTools</h3><p>　　点击<a href="https://ccsb.scripps.edu/mgltools/downloads/" target="_blank" rel="noopener">下载链接</a>下载，由于Autodock/MGLTools均需要一定专业知识，因此更推荐使用Autodock Vina。</p>
-<h3 id="Autodock-Vina"><a href="#Autodock-Vina" class="headerlink" title="Autodock Vina"></a>Autodock Vina</h3><p>　　点击<a href="https://vina.scripps.edu/downloads/" target="_blank" rel="noopener">下载链接</a>下载</p>
-<h3 id="Quick-Vina"><a href="#Quick-Vina" class="headerlink" title="Quick Vina"></a>Quick Vina</h3><h3 id="Quick-Vina-W"><a href="#Quick-Vina-W" class="headerlink" title="Quick Vina-W"></a>Quick Vina-W</h3><h3 id="Openbabel"><a href="#Openbabel" class="headerlink" title="Openbabel"></a>Openbabel</h3><h3 id="PyMol"><a href="#PyMol" class="headerlink" title="PyMol"></a>PyMol</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.bilibili.com/video/BV1kL411K7XN/" target="_blank" rel="noopener">[新版]AutoDock Vina分子对接小白1小时入门教程</a></p>
+<h3 id="Autodock-Vina"><a href="#Autodock-Vina" class="headerlink" title="Autodock Vina"></a>Autodock Vina</h3><p>　　点击<a href="https://vina.scripps.edu/downloads/" target="_blank" rel="noopener">下载链接</a>下载，目前一般都用这个对接。建议安装1.1.2，后续版本没有log，不方便抄代码。</p>
+<h3 id="Quick-Vina"><a href="#Quick-Vina" class="headerlink" title="Quick Vina"></a>Quick Vina</h3><p>　　Vina的进一步优化，<a href="https://qvina.github.io/" target="_blank" rel="noopener">下载链接</a>，据说性能更高。</p>
+<h3 id="Quick-Vina-W"><a href="#Quick-Vina-W" class="headerlink" title="Quick Vina-W"></a>Quick Vina-W</h3><p>　　适用于盲对接（blind docking），也就是不知道配体-受体结合位点，下载链接同上，可以一块下载。</p>
+<h3 id="Openbabel"><a href="#Openbabel" class="headerlink" title="Openbabel"></a>Openbabel</h3><p>　　以前<a href="https://blog.catkin.moe/2018/04/21/%E5%B0%86SMILES%E8%BD%AC%E6%88%90InChiKey/">写过</a>，不再赘叙。</p>
+<h3 id="PyMol"><a href="#PyMol" class="headerlink" title="PyMol"></a>PyMol</h3><p>　　在<a href="https://github.com/cgohlke/pymol-open-source-wheels/releases" target="_blank" rel="noopener">此</a>有编译好的whl文件，使用pip安装即可。</p>
+<h3 id="Chimera"><a href="#Chimera" class="headerlink" title="Chimera"></a>Chimera</h3><p>　　用来展示结合蛋白分子以及口袋，比PyMol更复杂一点。在<a href="https://www.cgl.ucsf.edu/chimera/download.html" target="_blank" rel="noopener">此</a>下载。</p>
+<h2 id="受体配体处理"><a href="#受体配体处理" class="headerlink" title="受体配体处理"></a>受体配体处理</h2><h3 id="受体准备"><a href="#受体准备" class="headerlink" title="受体准备"></a>受体准备</h3><h4 id="数据库下载"><a href="#数据库下载" class="headerlink" title="数据库下载"></a>数据库下载</h4><p>　　<a href="https://www.rcsb.org/" target="_blank" rel="noopener">PDB数据库</a>进行检索，如果有完整的X射线晶体结构则可以下载使用，遵循原则是来自人类，分辨率≤2.50 Å。</p>
+<h4 id="同源模建"><a href="#同源模建" class="headerlink" title="同源模建"></a>同源模建</h4><p>　　如果没有完整结构，但有同源序列，且相似度大于30%，则可以进行同源模建。先访问<a href="https://www.uniprot.org/" target="_blank" rel="noopener">Uniprot</a>数据库，搜索受体，获取蛋白质序列。其原理是基于相似的氨基酸序列对应着相似的蛋白质结构。也可以进行叠加证明模板可靠性，简而言之用PyMol分别打开受体与模板的pdb文件，用<code>align A, B</code>命令即可获得叠加图，输出作为支持材料。</p>
+<h5 id="Swiss-model法"><a href="#Swiss-model法" class="headerlink" title="Swiss model法"></a>Swiss model法</h5><p>　　打开<a href="https://swissmodel.expasy.org/interactive/GWC7eB/" target="_blank" rel="noopener">Swiss model</a>网页，输入直接粘贴序列运行即可。对于生成结果，网站会自动排序，需要了解的指标为：</p>
+<ul>
+<li><p>GMQE：可信度范围为 0-1，值越大表明质量越好；</p>
+</li>
+<li><p>QMEAN：区间-4-0，越接近0，评估待测蛋白与模板蛋白的匹配度越好。</p>
+<p>参考视频：<a href="https://www.bilibili.com/video/BV1Lb4y1v7FH/" target="_blank" rel="noopener">使用SWISS-MODEL的同源建模及模型检验</a>。</p>
+</li>
+</ul>
+<h5 id="软件法"><a href="#软件法" class="headerlink" title="软件法"></a>软件法</h5><p>　　用MOE等软件，有同源模建模块，因为暂时用不上，先不写了。有兴趣可以自己研究。</p>
+<h4 id="从头计算"><a href="#从头计算" class="headerlink" title="从头计算"></a>从头计算</h4><p>　　如果无同源序列，那就得考虑从头计算了。</p>
+<h5 id="I-TASSER"><a href="#I-TASSER" class="headerlink" title="I-TASSER"></a>I-TASSER</h5><p>　　打开<a href="https://link.zhihu.com/?target=http%3A//zhanglab.ccmb.med.umich.edu/I-TASSER/" target="_blank" rel="noopener">I-TASSER</a>，注册账户，按流程操作。建议参考<a href="https://zhuanlan.zhihu.com/p/45041082" target="_blank" rel="noopener">同源建模方法整理</a>。</p>
+<h4 id="穿线法-综合法"><a href="#穿线法-综合法" class="headerlink" title="穿线法/综合法"></a>穿线法/综合法</h4><p>　　可以看山东大学的<a href="https://www.bilibili.com/video/BV1Nq4y1d7mM?p=80" target="_blank" rel="noopener">mooc</a>，有个初步介绍。</p>
+<h4 id="AlphaFold"><a href="#AlphaFold" class="headerlink" title="AlphaFold"></a>AlphaFold</h4><p>　　基于AlphaFold模型生成的蛋白数据库，访问<a href="https://alphafold.ebi.ac.uk/" target="_blank" rel="noopener">AlphaFold</a>搜索下载。</p>
+<h3 id="受体评估"><a href="#受体评估" class="headerlink" title="受体评估"></a>受体评估</h3><h4 id="SAVES"><a href="#SAVES" class="headerlink" title="SAVES"></a>SAVES</h4><p>　　<a href="https://saves.mbi.ucla.edu/" target="_blank" rel="noopener">SAVES</a>是目前最常用的综合评估网页，上传pdb文件就能自动开始5种评估。</p>
+<h4 id="PDBsum"><a href="#PDBsum" class="headerlink" title="PDBsum"></a>PDBsum</h4><p>　　<a href="http://www.ebi.ac.uk/thornton-srv/databases/pdbsum/Generate.html" target="_blank" rel="noopener">PDBsum</a>也是一个经典评估网页，上传pdb文件提交。</p>
+<blockquote>
+<p>相关概念解释：</p>
+<ul>
+<li><p>PROCHECK用于评估模型三维结构的立体化学参数，结果可用Ramachandran图表示，横坐标为多肽蛋白质立体结构中肽键内α碳原子和羰基碳原子间的键的旋转度psi（ψ），纵坐标为α碳原子和氮原子间的键的旋转度phi（φ），理论上psi和phi都可自由变化，但键的转动会带动其它原子一起转动，因此受分子各个基团的空间障碍和作用力的影响，Ramachandran图中就出现了氨基酸的允许区域和不允许构象区域。<strong>主要看拉氏图检查Cα的两面角是否合理，合格的模型超过90%的残基都应该落在红色（允许区域）和正黄色（额外允许区域）落到其他区域的残基应当被查看并修正。</strong></p>
+</li>
+<li><p>VERIFY_3D对同源建模所得模型的质量进行了可视化分析，主要是用来判断模型与其本身氨基酸序列之间的兼容性，对氨基酸残基数大于100的蛋白质，VERIFY_3D的评估结果更准确。<strong>超过80%的残基拥有大于0.2的3D/1D值，则模型质量合格，低于0.2的部分需要进一步修正。</strong></p>
+</li>
+<li><p>PROSA的评价结果反映的是目的蛋白三维结构氨基酸残基之间的相互作用能，由公式计算得到：Z<sub>S,C</sub>=(E<sub>S,C</sub>-Ê<sub>S,C</sub>)/σ<sub>S</sub>。其中E<sub>S,C</sub>表示序列S间的残基在C构象空间中的相互作用能，而Ê<sub>S,C</sub>指序列S间的残基在C构象空间的相互作用能的平均值，下面的σ<sub>S</sub>为相对应的标准偏差。将含有目的蛋白空间结构的PDB格式的文件上传到<a href="https://www.came.sbg.ac.at/prosa.php" target="_blank" rel="noopener">网站</a>便可得到PROSA的评价结果，计算所得数值Z<sub>S,C</sub>即为 Z-score，该值通常为负数。在PROSA结果图中还包括所有已经实验确定的现存于RCSB PDB数据库中与目的蛋白大小相近的蛋白质的Z-score值，当目标蛋白的Z-score值分布在这些已知蛋白的Z-score值绘制的图形范围内时，则证明目标蛋白结构的能量是合理的，反之，则认为结构是不合理的。</p>
+</li>
+<li><p>whatcheck提交的蛋白结构与正常结构之间的差异，指标贼多，绿色多就当通过了。</p>
+</li>
+<li><p>errat计算0.35 nm范围之内，不同的原子类型对之间形成的非键相互作用的数目（侧链）。得分&gt;85较好，晶体可达到95，一般来说结果在91以内，很容易过。</p>
+</li>
+<li><p>prove与预先计算好的一系列标准体积的差别，用z-score来表示，显示模版蛋白质与待测蛋白之间的匹配程度，越高越好。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="受体预处理"><a href="#受体预处理" class="headerlink" title="受体预处理"></a>受体预处理</h3><p>　　主要就是去除原有小分子（ligand）、加氢（polar)、导出为pdbqt文件。大概操作如下：</p>
+<ul>
+<li>PyMOL打开pdb文件，右下角点S显示序列，删掉配体和多余的水分子，Export molecular保存成为pdb文件；</li>
+<li>用MGLTools打开上面的pdb文件，在左侧的方框中勾选上protein，点击Edit—Hydrogens—Add，为蛋白质结构加氢原子；</li>
+<li>选择Grid—Macromolecule—Choose，点击选择protein作为AutoDock4的对接分子（Select Molecule），点击确定，保存为pdbqt文件。</li>
+</ul>
+<h3 id="口袋预测"><a href="#口袋预测" class="headerlink" title="口袋预测"></a>口袋预测</h3><h4 id="在线预测"><a href="#在线预测" class="headerlink" title="在线预测"></a>在线预测</h4><p>　　使用<a href="https://proteins.plus/" target="_blank" rel="noopener">DoGSiteScorer</a>网站预测，上传pdb文件，选择go，再选择右边的DoGSiteScorer—Calculate，然后download文件。该文件为压缩包，其中pockets为预测的口袋，解压后用Chimera可以加载，通过叠加受体蛋白pdb，可以获得口袋与受体相对关系的图片。</p>
+<h4 id="设置口袋"><a href="#设置口袋" class="headerlink" title="设置口袋"></a>设置口袋</h4><p>　　residues则是预测的残基位点，使用MGLTools的ADT打开选定口袋的pdb文件以及受体pdb文件，将残基的C点上，显示为球状氨基酸。基于此来设置口袋区域，Grid—Grid box，在Options中先把Spacing调到1，然后通过调整box大小和坐标让box正好包住球状区域。然后将参数复制到config.txt文件。</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># box数据只是示例</span></span><br><span class="line"><span class="hljs-comment"># 需要自行修改受体配体文件名</span></span><br><span class="line">receptor = model_01.pdbqt</span><br><span class="line"></span><br><span class="line">center_x = 19.369</span><br><span class="line">center_y = 11.437</span><br><span class="line">center_z = -32.072</span><br><span class="line">size_x = 32</span><br><span class="line">size_y = 26</span><br><span class="line">size_z = 26</span><br><span class="line"></span><br><span class="line">exhaustiveness = 20</span><br><span class="line">energy_range = 4</span><br><span class="line">num_modes = 20</span><br></pre></td></tr></table></figure>
+
+<p>　　<del>实在不知道怎么设置，就把蛋白全部罩住吧，不清楚后果（逃。</del></p>
+<h3 id="配体准备"><a href="#配体准备" class="headerlink" title="配体准备"></a>配体准备</h3><h4 id="手动绘制"><a href="#手动绘制" class="headerlink" title="手动绘制"></a>手动绘制</h4><p>　　高手可以用ChemDraw绘制，不赘述。</p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>　　去<a href="https://zinc15.docking.org/substances/subsets/" target="_blank" rel="noopener">Zinc</a>等数据库下载小分子文件。</p>
+<h4 id="对接"><a href="#对接" class="headerlink" title="对接"></a>对接</h4><p>　　由于smile直接转mol2会遇到丢失结构的bug，<del>血泪教训</del>，说实话也不知道怎么解决，还好不是所有分子都这样。</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> ~   <span class="hljs-comment"># 进入home目录</span></span><br><span class="line">mkdir docking <span class="hljs-comment"># 新建工作目录</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 建立对接脚本</span></span><br><span class="line"><span class="hljs-built_in">cd</span> docking <span class="hljs-comment"># 进入docking目录</span></span><br><span class="line">mkdir log_file</span><br><span class="line">chmod +x /home/catkin/mgltools_x86_64Linux2_1.5.6/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py <span class="hljs-comment"># 让prepare_ligand4.py可以直接被执行</span></span><br><span class="line">vim vina.sh  <span class="hljs-comment"># 建立shell脚本</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#!bin/bash</span></span><br><span class="line"><span class="hljs-comment">#vina批量对接脚本</span></span><br><span class="line"><span class="hljs-comment">#本脚本及配体受体文件在~/docking 目录下面，prepare_ligand4.py和vina使用时根据情况自行调整。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> mol_*.sdf; <span class="hljs-keyword">do</span></span><br><span class="line">        b=`basename <span class="hljs-variable">$m</span> .sdf`</span><br><span class="line">        <span class="hljs-built_in">echo</span> Processing ligand <span class="hljs-variable">$b</span></span><br><span class="line">        mkdir -p <span class="hljs-variable">$b</span></span><br><span class="line">        obabel -i sdf <span class="hljs-variable">$m</span> -o mol2 -O <span class="hljs-variable">$&#123;b&#125;</span>.mol2 -h --gen3d</span><br><span class="line">        /home/catkin/mgltools_x86_64Linux2_1.5.6/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py -l <span class="hljs-variable">$&#123;b&#125;</span>.mol2 -o <span class="hljs-variable">$&#123;b&#125;</span>.pdbqt</span><br><span class="line">        /home/catkin/autodock_vina_1_1_2_linux_x86/bin/vina --config config.txt --ligand <span class="hljs-variable">$&#123;b&#125;</span>.pdbqt --out <span class="hljs-variable">$&#123;b&#125;</span>/<span class="hljs-variable">$&#123;b&#125;</span>_out.pdbqt --<span class="hljs-built_in">log</span> log_file/<span class="hljs-variable">$&#123;b&#125;</span>.<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><h5 id="提取亲和力数据"><a href="#提取亲和力数据" class="headerlink" title="提取亲和力数据"></a>提取亲和力数据</h5><p>　　基于<a href="https://zhuanlan.zhihu.com/p/184001296" target="_blank" rel="noopener">Becky</a>的脚本修改，需要自己调整一下路径和正则。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string"># @Time    : Wed Sep 11 11:05:47 2024</span></span><br><span class="line"><span class="hljs-string"># @Author  : Catkin</span></span><br><span class="line"><span class="hljs-string"># @Website : blog.catkin.moe</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-keyword">import</span> re</span><br><span class="line"><span class="hljs-keyword">import</span> glob</span><br><span class="line"></span><br><span class="line">library = <span class="hljs-string">'FDA'</span></span><br><span class="line"></span><br><span class="line">log_file = glob.glob(<span class="hljs-string">'..\\Docking\\Docking_results\\'</span> + <span class="hljs-string">'*.log'</span>)</span><br><span class="line">file1 = open(<span class="hljs-string">'..\\Docking\\Docking_results\\'</span> + library + <span class="hljs-string">'.csv'</span>,<span class="hljs-string">"w"</span>)</span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> log_file:</span><br><span class="line">    file2 = open(i,<span class="hljs-string">'r'</span>)</span><br><span class="line">    data = file2.readlines()</span><br><span class="line">    file2.close()</span><br><span class="line">    patterns_x = re.compile(<span class="hljs-string">'mol_(.*?).log'</span>)</span><br><span class="line">    x = re.findall(patterns_x,i)[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> data:</span><br><span class="line">        <span class="hljs-keyword">if</span> len(j.split())&gt;=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> j.split()[<span class="hljs-number">0</span>] == <span class="hljs-string">"1"</span>:</span><br><span class="line">               affinity = str(x) + <span class="hljs-string">","</span> + j.split()[<span class="hljs-number">1</span>]</span><br><span class="line">               file1.writelines(affinity + <span class="hljs-string">'\n'</span>)</span><br><span class="line">file1.close()</span><br></pre></td></tr></table></figure>
+
+<h5 id="构建蛋白-配体复合物"><a href="#构建蛋白-配体复合物" class="headerlink" title="构建蛋白/配体复合物"></a>构建蛋白/配体复合物</h5><p>　　运行ADT，选择Analyze—Docking—Open autoDock vina result—OK，左右切换不同构象，选择最左边的构象，File—Save—Write PDB—OK。随后运行PyMol，分别载入刚才的分子和蛋白。然后File—Export Molecule—PDB options—Save，选择PDB格式保存。再重新打开复合物文件，选择配体，然后A—find—halogen-bond interactions。</p>
+<h5 id="检查是否正常形成氢键"><a href="#检查是否正常形成氢键" class="headerlink" title="检查是否正常形成氢键"></a>检查是否正常形成氢键</h5><p>　　运行ADT，选择Analyze—Docking—Open autoDock vina result—OK，选择Analyze—Macromolecule打开受体文件，再Analyze—Docking—Show interactions，选择受体的C隐藏球状文件以防干扰，取消display msms，close contact，勾选hydrogen bonds。</p>
+<h5 id="绘制蛋白-小分子互作图"><a href="#绘制蛋白-小分子互作图" class="headerlink" title="绘制蛋白/小分子互作图"></a>绘制蛋白/小分子互作图</h5><h6 id="2D"><a href="#2D" class="headerlink" title="2D"></a>2D</h6><p>　　参考<a href="https://www.bilibili.com/video/BV11K411M7cq" target="_blank" rel="noopener">视频</a>，主要可以用的工具如下：</p>
+<ul>
+<li><a href="https://www.schrodinger.com/platform/products/maestro/" target="_blank" rel="noopener">Maestro</a>（据up主说可视化免费，但是我没找到依据）</li>
+<li><a href="https://discover.3ds.com/discovery-studio-visualizer-download" target="_blank" rel="noopener">Discovery Studio Visualizer</a>（Visualizer无需license）</li>
+<li><a href="https://www.ebi.ac.uk/thornton-srv/software/LigPlus/" target="_blank" rel="noopener">LigPlot<sup>+</sup></a></li>
+<li><a href="http://www.pegase-biosciences.com/leview-ligand-environment-viewer/" target="_blank" rel="noopener">Leview</a></li>
+<li><a href="https://projects.biotec.tu-dresden.de/plip-web/plip/index" target="_blank" rel="noopener">Protein-Ligand Interaction Profiler</a> (PLIP)（这个只能绘制3D的）</li>
+<li><a href="https://proteins.plus/" target="_blank" rel="noopener">Proteins Plus</a></li>
+</ul>
+<p>　　以Proteins Plus的2D作图为例，访问页面，上传复合结构，看到分子，点create pocket，右边PoseView，输入Ligand id（在左边点Ligands可以查看），然后会出现2D相互作用图，可以下载svg格式保存。</p>
+<p>　　如果是DS Visualizer，File—Open选择配体复合结构，然后选择Receptor-Ligand Interactions，再选择Show 2D Diagram，然后可以保存为PNG格式。</p>
+<h6 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h6><p>　　参考<a href="https://www.bilibili.com/video/BV1yb421b7K6?p=10" target="_blank" rel="noopener">视频</a>。</p>
+<ol>
+<li>三维结构需要先把复合结构用Pymol打开，在右下角切换成Chains，可以分别选出蛋白质和小分子并命名，为了方便区分给蛋白质换个颜色；</li>
+<li>点击小分子，A—find—polar contacts—to other atoms in object显示氢键；</li>
+<li>点蛋白质，S—licorice—sticks，显示球棍模式，这时候就能方便选中残基，右下角切换回Residues，选择氢键连接的残基，右键命名，然后选回蛋白质H—licorice—sticks，把球棍模式隐藏；</li>
+<li>选择刚才的残基，显示回球棍模式，为了方便区分再换个颜色；</li>
+<li>主屏幕右键还原最初位置，然后右上角Draw输出全视角图片；</li>
+<li>选择蛋白质，S—surface显示表面，Setting—Transparency—Surface设置一个透明度，H—cartoon蛋白质结构，右上角Draw输出第二张图片；</li>
+<li>还原至第5步，放大局部区域，使氢键和残基可以很好展示，再选择氢键，S—labels，选择残基，L—residues，再Setting—Label—Size调一下字体大小，右下角把Viewing切成Editing，按住Ctrl可以拖动Label，调整好输出图片。</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.bilibili.com/video/BV1kL411K7XN/" target="_blank" rel="noopener">[新版]AutoDock Vina分子对接小白1小时入门教程</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Lb4y1v7FH/" target="_blank" rel="noopener">使用SWISS-MODEL的同源建模及模型检验</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/45041082" target="_blank" rel="noopener">同源建模方法整理</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/422189626" target="_blank" rel="noopener">Linux系统下，使用open babel、MGLTools、AutoDock Vina批量筛选ZINC数据库的方法记录</a></p>
+<p><a href="https://www.bilibili.com/video/BV1YG411875s/" target="_blank" rel="noopener">【GROMACS】蛋白-配体动力学模拟之一：准备拓扑文件</a></p>
+<p><a href="https://www.bilibili.com/video/BV11K411M7cq" target="_blank" rel="noopener">分子对接 - 如何生成蛋白和小分子的2D相互作用图片？</a></p>
+<p>……</p>
 
         </div>
         
@@ -367,9 +454,89 @@
         <a class="is-flex" href="#PyMol">
         <span class="has-mr-6">1.7</span>
         <span>PyMol</span>
+        </a></li><li>
+        <a class="is-flex" href="#Chimera">
+        <span class="has-mr-6">1.8</span>
+        <span>Chimera</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#参考链接">
+        <a class="is-flex" href="#受体配体处理">
         <span class="has-mr-6">2</span>
+        <span>受体配体处理</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#受体准备">
+        <span class="has-mr-6">2.1</span>
+        <span>受体准备</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#数据库下载">
+        <span class="has-mr-6">2.1.1</span>
+        <span>数据库下载</span>
+        </a></li><li>
+        <a class="is-flex" href="#同源模建">
+        <span class="has-mr-6">2.1.2</span>
+        <span>同源模建</span>
+        </a></li><li>
+        <a class="is-flex" href="#从头计算">
+        <span class="has-mr-6">2.1.3</span>
+        <span>从头计算</span>
+        </a></li><li>
+        <a class="is-flex" href="#穿线法-综合法">
+        <span class="has-mr-6">2.1.4</span>
+        <span>穿线法/综合法</span>
+        </a></li><li>
+        <a class="is-flex" href="#AlphaFold">
+        <span class="has-mr-6">2.1.5</span>
+        <span>AlphaFold</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#受体评估">
+        <span class="has-mr-6">2.2</span>
+        <span>受体评估</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#SAVES">
+        <span class="has-mr-6">2.2.1</span>
+        <span>SAVES</span>
+        </a></li><li>
+        <a class="is-flex" href="#PDBsum">
+        <span class="has-mr-6">2.2.2</span>
+        <span>PDBsum</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#受体预处理">
+        <span class="has-mr-6">2.3</span>
+        <span>受体预处理</span>
+        </a></li><li>
+        <a class="is-flex" href="#口袋预测">
+        <span class="has-mr-6">2.4</span>
+        <span>口袋预测</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#在线预测">
+        <span class="has-mr-6">2.4.1</span>
+        <span>在线预测</span>
+        </a></li><li>
+        <a class="is-flex" href="#设置口袋">
+        <span class="has-mr-6">2.4.2</span>
+        <span>设置口袋</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#配体准备">
+        <span class="has-mr-6">2.5</span>
+        <span>配体准备</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#手动绘制">
+        <span class="has-mr-6">2.5.1</span>
+        <span>手动绘制</span>
+        </a></li><li>
+        <a class="is-flex" href="#下载">
+        <span class="has-mr-6">2.5.2</span>
+        <span>下载</span>
+        </a></li><li>
+        <a class="is-flex" href="#对接">
+        <span class="has-mr-6">2.5.3</span>
+        <span>对接</span>
+        </a></li><li>
+        <a class="is-flex" href="#数据处理">
+        <span class="has-mr-6">2.5.4</span>
+        <span>数据处理</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#参考链接">
+        <span class="has-mr-6">3</span>
         <span>参考链接</span>
         </a></li></ul>
         </div>

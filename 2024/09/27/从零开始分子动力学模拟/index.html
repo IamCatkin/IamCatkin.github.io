@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录一下学习分子动力学（Gromacs）的流程，希望给后人提供一点帮助。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/IamCatkin/myblogphotos/refs/heads/master/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E6%8B%9F/fHLi1DtgbJOFZeV.jpg">
-<meta property="og:updated_time" content="2024-09-28T07:11:04.757Z">
+<meta property="og:updated_time" content="2024-10-15T09:14:35.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始分子动力学模拟">
 <meta name="twitter:description" content="记录一下学习分子动力学（Gromacs）的流程，希望给后人提供一点帮助。">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    18 分钟 读完 (大约 2667 个字)
+                    23 分钟 读完 (大约 3507 个字)
                 </span>
                 
                 
@@ -192,6 +192,12 @@
 <h3 id="avogadro"><a href="#avogadro" class="headerlink" title="avogadro"></a>avogadro</h3><p>　　用于给配体加氢操作，访问<a href="https://two.avogadro.cc/" target="_blank" rel="noopener">avogadro</a>下载安装。</p>
 <h3 id="CHARMM36"><a href="#CHARMM36" class="headerlink" title="CHARMM36"></a>CHARMM36</h3><p>　　访问<a href="http://mackerell.umaryland.edu/charmm_ff.shtml#gromacs" target="_blank" rel="noopener">网站</a>，下载CHARMM36力场，访问<a href="https://github.com/Lemkul-Lab/cgenff_charmm2gmx" target="_blank" rel="noopener">网站</a>，下载对应cgenff_charmm2gmx脚本，解压至工作目录。</p>
 <h3 id="sort-mol2-bonds-pl"><a href="#sort-mol2-bonds-pl" class="headerlink" title="sort_mol2_bonds.pl"></a>sort_mol2_bonds.pl</h3><p>　　处理分子的脚本文件，访问<a href="http://www.mdtutorials.com/gmx/complex/Files/sort_mol2_bonds.pl" target="_blank" rel="noopener">此处</a>下载，本项目选择的是cgenff_charmm2gmx_py3_nx2.py，解压至工作目录。</p>
+<h3 id="Qtgrace"><a href="#Qtgrace" class="headerlink" title="Qtgrace"></a>Qtgrace</h3><p>　　适合快速预览可视化，点<a href="https://sourceforge.net/projects/qtgrace/" target="_blank" rel="noopener">此</a>下载。</p>
+<h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><p>　　首先需要稍微了解一下各文件含义和表示方法，当然跳过直接做应该也行。</p>
+<h3 id="mol2"><a href="#mol2" class="headerlink" title="mol2"></a>mol2</h3><p>　　以下为一个分子的mol2文件，显示如下，我将关键信息以注释形式标记：</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@&lt;TRIPOS&gt;MOLECULE</span><br><span class="line">UNL1  # 分子名</span><br><span class="line"> 75 79 0 0 0  # 第一个代表有75个原子</span><br><span class="line">SMALL</span><br><span class="line">GASTEIGER  # GASTEIGER电荷，代表一种电荷形式，由力场产生</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第一列代表原子序号</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第二列代表元素</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 中间三列代表XYZ，即坐标</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第六列代表原子类型，如阿尔法碳原子</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第七列代表分子序数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第八列为分子名称简写</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 最后一列原子电荷</span></span><br><span class="line">@&lt;TRIPOS&gt;ATOM</span><br><span class="line">      1 N          12.7250   10.5600  -29.9030 N.3     1  UNL1       -0.2511</span><br><span class="line">      2 N          11.8620    9.5520  -29.5930 N.3     1  UNL1       -0.2289</span><br><span class="line">      3 N          18.2190   12.7890  -33.9180 N.3     1  UNL1       -0.2750</span><br><span class="line">      4 N          20.6040   13.9660  -34.9820 N.3     1  UNL1       -0.2751</span><br><span class="line">      5 C          18.2320   11.3310  -31.1210 C.3     1  UNL1        0.1074</span><br><span class="line">      6 C          18.0730   11.2020  -29.7430 C.3     1  UNL1       -0.0211</span><br></pre></td></tr></table></figure>
+<h3 id="pdb"><a href="#pdb" class="headerlink" title="pdb"></a>pdb</h3><p>　　以下为一个分子的mol2文件，显示如下，我将关键信息以注释形式标记：</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第一列代表原子</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第二列代表原子序号</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第三列代表原子类型，比如CA是阿尔法碳原子</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第四列代表氨基酸缩写</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第五列代表蛋白质的链</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第六列代表氨基酸残基编号，如3就是3号残基</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第七到九列代表代表XYZ</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第十列代表占位比，1.00即代表该原子在该位置出现概率为100%</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 第十一列代表温度因子，原子热振动程度</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 最后一列为元素</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 如果计算电荷，还能多一列电荷信息</span></span><br><span class="line"></span><br><span class="line">ATOM     34  N   ASP A   3      27.619  20.810  -7.568  1.00  0.49           N  </span><br><span class="line">ATOM     35  CA  ASP A   3      28.326  21.638  -8.592  1.00  0.49           C  </span><br><span class="line">ATOM     36  C   ASP A   3      29.110  20.808  -9.598  1.00  0.49           C  </span><br><span class="line">ATOM     37  O   ASP A   3      29.501  19.679  -9.308  1.00  0.49           O  </span><br><span class="line">ATOM     38  CB  ASP A   3      29.198  22.696  -7.862  1.00  0.49           C  </span><br><span class="line">ATOM     39  CG  ASP A   3      28.341  23.607  -6.998  1.00  0.49           C  </span><br><span class="line">ATOM     40  OD1 ASP A   3      27.122  23.300  -6.909  1.00  0.49           O  </span><br><span class="line">ATOM     41  OD2 ASP A   3      28.899  24.541  -6.394  1.00  0.49           O1-</span><br><span class="line">ATOM     42  N   VAL A   4      29.299  21.335 -10.822  1.00  0.74           N</span><br></pre></td></tr></table></figure>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="生成拓扑"><a href="#生成拓扑" class="headerlink" title="生成拓扑"></a>生成拓扑</h3><ul>
 <li>将对接复合物的pdb文件以文本格式打开，复合物前面为小分子，剪切出来新建为mol.pdb文件，剩下部分保存为pro.pdb文件；</li>
 <li>使用avogadro打开mol.pdb文件，构建—氢原子—添加氢原子，文件—输出为mol.mol2文件</li>
@@ -262,7 +268,7 @@
 <ul>
 <li>然后需要处理topol.top文件，打开拉到底部区域，定位到<code>; Include water topology</code>处，在前面插入并保存：</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">; Ligand position restraints</span><br><span class="line">#ifdef POSRES</span><br><span class="line">#include &quot;posre_resi.itp&quot;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">; Ligand position restraints</span><br><span class="line"><span class="hljs-comment">#ifdef POSRES</span></span><br><span class="line"><span class="hljs-comment">#include "posre_resi.itp"</span></span><br><span class="line"><span class="hljs-comment">#endif</span></span><br></pre></td></tr></table></figure>
 <h4 id="恒温器"><a href="#恒温器" class="headerlink" title="恒温器"></a>恒温器</h4><ul>
 <li>然后执行：</li>
 </ul>
@@ -274,7 +280,7 @@
 <ul>
 <li>执行下列代码：</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -n index.ndx -o nvt.tpr</span><br><span class="line"></span><br><span class="line">gmx mdrun -v -deffnm nvt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -n index.ndx -o nvt.tpr</span><br><span class="line"></span><br><span class="line">gmx mdrun -v -deffnm nvt</span><br></pre></td></tr></table></figure>
 <ul>
 <li>然后做再做NPT平衡，新建npt.mdp，粘贴以下内容并保存，一样要改<code>tc-grps</code>！</li>
 </ul>
@@ -286,14 +292,20 @@
 <h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul>
 <li>新建md.mdp文件，粘贴以下内容并保存，同样记得修改！</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">title                   = Protein-ligand complex MD simulation </span><br><span class="line">; Run parameters</span><br><span class="line">integrator              = md        ; leap-frog integrator</span><br><span class="line">nsteps                  = 5000000   ; 2 * 5000000 = 10000 ps (10 ns)</span><br><span class="line">dt                      = 0.002     ; 2 fs</span><br><span class="line">; Output control</span><br><span class="line">nstenergy               = 5000      ; save energies every 10.0 ps</span><br><span class="line">nstlog                  = 5000      ; update log file every 10.0 ps</span><br><span class="line">nstxout-compressed      = 5000      ; save coordinates every 10.0 ps</span><br><span class="line">; Bond parameters</span><br><span class="line">continuation            = yes       ; continuing from NPT </span><br><span class="line">constraint_algorithm    = lincs     ; holonomic constraints </span><br><span class="line">constraints             = h-bonds   ; bonds to H are constrained</span><br><span class="line">lincs_iter              = 1         ; accuracy of LINCS</span><br><span class="line">lincs_order             = 4         ; also related to accuracy</span><br><span class="line">; Neighbor searching and vdW</span><br><span class="line">cutoff-scheme           = Verlet</span><br><span class="line">ns_type                 = grid      ; search neighboring grid cells</span><br><span class="line">nstlist                 = 20        ; largely irrelevant with Verlet</span><br><span class="line">rlist                   = 1.2</span><br><span class="line">vdwtype                 = cutoff</span><br><span class="line">vdw-modifier            = force-switch</span><br><span class="line">rvdw-switch             = 1.0</span><br><span class="line">rvdw                    = 1.2       ; short-range van der Waals cutoff (in nm)</span><br><span class="line">; Electrostatics</span><br><span class="line">coulombtype             = PME       ; Particle Mesh Ewald for long-range electrostatics</span><br><span class="line">rcoulomb                = 1.2</span><br><span class="line">pme_order               = 4         ; cubic interpolation</span><br><span class="line">fourierspacing          = 0.16      ; grid spacing for FFT</span><br><span class="line">; Temperature coupling</span><br><span class="line">tcoupl                  = V-rescale                     ; modified Berendsen thermostat</span><br><span class="line">tc-grps                 = Protein_JZ4 Water_and_ions    ; two coupling groups - more accurate</span><br><span class="line">tau_t                   = 0.1   0.1                     ; time constant, in ps</span><br><span class="line">ref_t                   = 300   300                     ; reference temperature, one for each group, in K</span><br><span class="line">; Pressure coupling </span><br><span class="line">pcoupl                  = Parrinello-Rahman             ; pressure coupling is on for NPT</span><br><span class="line">pcoupltype              = isotropic                     ; uniform scaling of box vectors</span><br><span class="line">tau_p                   = 2.0                           ; time constant, in ps</span><br><span class="line">ref_p                   = 1.0                           ; reference pressure, in bar</span><br><span class="line">compressibility         = 4.5e-5                        ; isothermal compressibility of water, bar^-1</span><br><span class="line">; Periodic boundary conditions</span><br><span class="line">pbc                     = xyz       ; 3-D PBC</span><br><span class="line">; Dispersion correction is not used for proteins with the C36 additive FF</span><br><span class="line">DispCorr                = no </span><br><span class="line">; Velocity generation</span><br><span class="line">gen_vel                 = no        ; continuing from NPT equilibration</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">title                   = Protein-ligand complex MD simulation </span><br><span class="line">; Run parameters</span><br><span class="line">integrator              = md        ; leap-frog integrator</span><br><span class="line">nsteps                  = 5000000   ; 2 * 5000000 = 10000 ps (10 ns)</span><br><span class="line">dt                      = 0.002     ; 2 fs</span><br><span class="line">; Output control</span><br><span class="line">nstenergy               = 5000      ; save energies every 10.0 ps</span><br><span class="line">nstlog                  = 5000      ; update <span class="hljs-built_in">log</span> file every 10.0 ps</span><br><span class="line">nstxout-compressed      = 5000      ; save coordinates every 10.0 ps</span><br><span class="line">; Bond parameters</span><br><span class="line">continuation            = yes       ; continuing from NPT </span><br><span class="line">constraint_algorithm    = lincs     ; holonomic constraints </span><br><span class="line">constraints             = h-bonds   ; bonds to H are constrained</span><br><span class="line">lincs_iter              = 1         ; accuracy of LINCS</span><br><span class="line">lincs_order             = 4         ; also related to accuracy</span><br><span class="line">; Neighbor searching and vdW</span><br><span class="line">cutoff-scheme           = Verlet</span><br><span class="line">ns_type                 = grid      ; search neighboring grid cells</span><br><span class="line">nstlist                 = 20        ; largely irrelevant with Verlet</span><br><span class="line">rlist                   = 1.2</span><br><span class="line">vdwtype                 = cutoff</span><br><span class="line">vdw-modifier            = force-switch</span><br><span class="line">rvdw-switch             = 1.0</span><br><span class="line">rvdw                    = 1.2       ; short-range van der Waals cutoff (<span class="hljs-keyword">in</span> nm)</span><br><span class="line">; Electrostatics</span><br><span class="line">coulombtype             = PME       ; Particle Mesh Ewald <span class="hljs-keyword">for</span> long-range electrostatics</span><br><span class="line">rcoulomb                = 1.2</span><br><span class="line">pme_order               = 4         ; cubic interpolation</span><br><span class="line">fourierspacing          = 0.16      ; grid spacing <span class="hljs-keyword">for</span> FFT</span><br><span class="line">; Temperature coupling</span><br><span class="line">tcoupl                  = V-rescale                     ; modified Berendsen thermostat</span><br><span class="line">tc-grps                 = Protein_resi Water_and_ions    ; two coupling groups - more accurate</span><br><span class="line">tau_t                   = 0.1   0.1                     ; time constant, <span class="hljs-keyword">in</span> ps</span><br><span class="line">ref_t                   = 300   300                     ; reference temperature, one <span class="hljs-keyword">for</span> each group, <span class="hljs-keyword">in</span> K</span><br><span class="line">; Pressure coupling </span><br><span class="line">pcoupl                  = Parrinello-Rahman             ; pressure coupling is on <span class="hljs-keyword">for</span> NPT</span><br><span class="line">pcoupltype              = isotropic                     ; uniform scaling of box vectors</span><br><span class="line">tau_p                   = 2.0                           ; time constant, <span class="hljs-keyword">in</span> ps</span><br><span class="line">ref_p                   = 1.0                           ; reference pressure, <span class="hljs-keyword">in</span> bar</span><br><span class="line">compressibility         = 4.5e-5                        ; isothermal compressibility of water, bar^-1</span><br><span class="line">; Periodic boundary conditions</span><br><span class="line">pbc                     = xyz       ; 3-D PBC</span><br><span class="line">; Dispersion correction is not used <span class="hljs-keyword">for</span> proteins with the C36 additive FF</span><br><span class="line">DispCorr                = no </span><br><span class="line">; Velocity generation</span><br><span class="line">gen_vel                 = no        ; continuing from NPT equilibration</span><br></pre></td></tr></table></figure>
 <ul>
-<li>以上步骤完成后，运行100 ns MD：</li>
+<li>以上步骤完成后，运行10 ns MD：</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o md_0_100.tpr</span><br><span class="line"></span><br><span class="line">gmx mdrun -deffnm md_0_100</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o md_0_10.tpr</span><br><span class="line"></span><br><span class="line">gmx mdrun -deffnm md_0_10</span><br></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>　　直接运行代码吧：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">work_path=<span class="hljs-variable">$1</span></span><br><span class="line">mol_name=<span class="hljs-variable">$2</span></span><br><span class="line"></span><br><span class="line">mol_root=<span class="hljs-string">"<span class="hljs-variable">$work_path</span>/****/<span class="hljs-variable">$mol_name</span>"</span> <span class="hljs-comment">#路径地址，自行替换星号</span></span><br><span class="line"></span><br><span class="line">md_trr=<span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/md.trr"</span></span><br><span class="line">md_xtc=<span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/md.xtc"</span></span><br><span class="line">md_edr=<span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/md.edr"</span></span><br><span class="line">md_tpr=<span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/md.tpr"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 提取xtc轨迹(xtc精度稍低，缺少每个原子的速度和受力信息)</span></span><br><span class="line">gmx trjconv -f <span class="hljs-variable">$md_trr</span> -o <span class="hljs-variable">$md_xtc</span> &amp;&amp; \</span><br><span class="line"><span class="hljs-comment"># 提取体系total能量</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"15\n"</span> | gmx energy -f <span class="hljs-variable">$md_edr</span> -o <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_energy.xvg"</span> &amp;&amp; \</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 计算Protein rmsd,选两次protein</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"1\n1\n"</span> | gmx rms -f <span class="hljs-variable">$md_xtc</span> -s <span class="hljs-variable">$md_tpr</span> -o <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_rmsd_protein.xvg"</span> &amp;&amp; \</span><br><span class="line"><span class="hljs-comment"># 计算骨架 rmsd,选两次backbone</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"4\n4\n"</span> | gmx rms -f <span class="hljs-variable">$md_xtc</span> -s <span class="hljs-variable">$md_tpr</span> -o <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_rmsd_backbone.xvg"</span> &amp;&amp; \</span><br><span class="line"><span class="hljs-comment"># 计算Mol-pro rmsd，第一次protein，第二次mol，代表结构对蛋白做叠合，但只计算mol的rmsd</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"1\n13\n"</span> | gmx rms -f <span class="hljs-variable">$md_xtc</span> -s <span class="hljs-variable">$md_tpr</span> -o <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_rmsd_lig.xvg"</span> &amp;&amp; \</span><br><span class="line"><span class="hljs-comment"># 计算Mol rmsd，第一次mol，第二次mol</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"13\n13\n"</span> | gmx rms -f <span class="hljs-variable">$md_xtc</span> -s <span class="hljs-variable">$md_tpr</span> -o <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_rmsd_lig_lig.xvg"</span> &amp;&amp; \</span><br><span class="line"><span class="hljs-comment"># 氢键数目，第一次pro，第二次mol</span></span><br><span class="line"><span class="hljs-built_in">printf</span> <span class="hljs-string">"1\n13\n"</span> | gmx hbond -f <span class="hljs-variable">$md_xtc</span> -s <span class="hljs-variable">$md_tpr</span> -num <span class="hljs-string">"<span class="hljs-variable">$mol_root</span>/<span class="hljs-variable">$&#123;mol_name&#125;</span>_hbnum.xvg"</span></span><br></pre></td></tr></table></figure>
+<p>　　xvg可以直接用Qtgrace可视化，也可以自己用matplotlib绘图。</p>
+<h2 id="一键式脚本"><a href="#一键式脚本" class="headerlink" title="一键式脚本"></a>一键式脚本</h2><p>　　<a href="https://github.com/kotori-y/gmx_batch" target="_blank" rel="noopener">这里</a>有@kotori-y编写的一键MD脚本。</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.mdtutorials.com/gmx/complex/01_pdb2gmx.html" target="_blank" rel="noopener">Gromacs Tutorials</a>：官方教程，非常细致，现存所有所有教程都是对官方教程的汉化。</p>
+<p><a href="https://www.bilibili.com/video/BV1Qo4y1a7rH/" target="_blank" rel="noopener">速通版本-gromacs分子动力学模拟教程</a>：相当于上个教程视频化。</p>
 <p><a href="https://www.bilibili.com/video/BV1184y1K7u1/" target="_blank" rel="noopener">详细版本-用conda安装gromacs</a></p>
 <p><a href="https://www.bilibili.com/video/BV1VvtNeYEiV/" target="_blank" rel="noopener">中医药方向怎么发SCI？分子对接OUT了，快来学分子动力学模拟！</a>：其中有段写作可参考的话术。</p>
+<p><a href="https://www.youtube.com/playlist?list=PLtT9DCCOdTO02Wodedl16raERyYsI5XFC" target="_blank" rel="noopener">MDAnalysis</a></p>
 <p>……</p>
 
         </div>
@@ -318,6 +330,16 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+            
+            <div class="level-start">
+                <a class="level level-item has-link-grey  article-nav-prev" href="/2024/10/16/A high-throughput microfabricated platform for rapid quantification of metastatic potential/">
+                    <i class="level-item fas fa-chevron-left"></i>
+                    <span class="level-item">A high-throughput mic ...  metastatic potential</span>
+                </a>
+            </div>
+            
+            
         
         
             
@@ -399,7 +421,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        158
+                        159
                     </p>
                 </div>
             </div>
@@ -460,45 +482,69 @@
         <a class="is-flex" href="#sort-mol2-bonds-pl">
         <span class="has-mr-6">1.4</span>
         <span>sort_mol2_bonds.pl</span>
+        </a></li><li>
+        <a class="is-flex" href="#Qtgrace">
+        <span class="has-mr-6">1.5</span>
+        <span>Qtgrace</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#基本常识">
+        <span class="has-mr-6">2</span>
+        <span>基本常识</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#mol2">
+        <span class="has-mr-6">2.1</span>
+        <span>mol2</span>
+        </a></li><li>
+        <a class="is-flex" href="#pdb">
+        <span class="has-mr-6">2.2</span>
+        <span>pdb</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#操作步骤">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">3</span>
         <span>操作步骤</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#生成拓扑">
-        <span class="has-mr-6">2.1</span>
+        <span class="has-mr-6">3.1</span>
         <span>生成拓扑</span>
         </a></li><li>
         <a class="is-flex" href="#定义盒子">
-        <span class="has-mr-6">2.2</span>
+        <span class="has-mr-6">3.2</span>
         <span>定义盒子</span>
         </a></li><li>
         <a class="is-flex" href="#添加离子">
-        <span class="has-mr-6">2.3</span>
+        <span class="has-mr-6">3.3</span>
         <span>添加离子</span>
         </a></li><li>
         <a class="is-flex" href="#能量最小化">
-        <span class="has-mr-6">2.4</span>
+        <span class="has-mr-6">3.4</span>
         <span>能量最小化</span>
         </a></li><li>
         <a class="is-flex" href="#平衡">
-        <span class="has-mr-6">2.5</span>
+        <span class="has-mr-6">3.5</span>
         <span>平衡</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#约束配体">
-        <span class="has-mr-6">2.5.1</span>
+        <span class="has-mr-6">3.5.1</span>
         <span>约束配体</span>
         </a></li><li>
         <a class="is-flex" href="#恒温器">
-        <span class="has-mr-6">2.5.2</span>
+        <span class="has-mr-6">3.5.2</span>
         <span>恒温器</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#模拟">
-        <span class="has-mr-6">2.6</span>
+        <span class="has-mr-6">3.6</span>
         <span>模拟</span>
+        </a></li><li>
+        <a class="is-flex" href="#分析">
+        <span class="has-mr-6">3.7</span>
+        <span>分析</span>
         </a></li></ul></li><li>
+        <a class="is-flex" href="#一键式脚本">
+        <span class="has-mr-6">4</span>
+        <span>一键式脚本</span>
+        </a></li><li>
         <a class="is-flex" href="#参考链接">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">5</span>
         <span>参考链接</span>
         </a></li></ul>
         </div>
@@ -613,7 +659,7 @@
                 <span class="level-item">文献阅读</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">102</span>
+                <span class="level-item tag">103</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/昔情难追/">
@@ -681,6 +727,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2024/10/16/A high-throughput microfabricated platform for rapid quantification of metastatic potential/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="A high-throughput microfabricated platform for rapid quantification of metastatic potential">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-10-16T02:47:55.000Z">2024-10-16</time></div>
+                    <a href="/2024/10/16/A high-throughput microfabricated platform for rapid quantification of metastatic potential/" class="has-link-black-ter is-size-6">A high-throughput microfabrica</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -758,25 +823,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-05-25T04:45:34.000Z">2024-05-25</time></div>
-                    <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="has-link-black-ter is-size-6">A patient-specific lung cancer</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -788,6 +834,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2024/09/">
@@ -1441,6 +1498,25 @@
         
         <article class="media">
             
+            <a href="/2024/10/16/A high-throughput microfabricated platform for rapid quantification of metastatic potential/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="A high-throughput microfabricated platform for rapid quantification of metastatic potential">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-10-16T02:47:55.000Z">2024-10-16</time></div>
+                    <a href="/2024/10/16/A high-throughput microfabricated platform for rapid quantification of metastatic potential/" class="has-link-black-ter is-size-6">A high-throughput microfabrica</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2024/09/27/从零开始分子动力学模拟/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/refs/heads/master/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E6%8B%9F/fHLi1DtgbJOFZeV.jpg" alt="从零开始分子动力学模拟">
@@ -1515,25 +1591,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://raw.githubusercontent.com/IamCatkin/myblogphotos/master/A%20patient-specific%20lung%20cancer%20assembloid%20model%20with%20heterogeneous%20tumor%20microenvironments/41467_2024_47737_Fig1_HTML.webp" alt="A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-05-25T04:45:34.000Z">2024-05-25</time></div>
-                    <a href="/2024/05/25/A patient-specific lung cancer assembloid model with heterogeneous tumor microenvironments/" class="has-link-black-ter is-size-6">A patient-specific lung cancer</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/文献阅读/">文献阅读</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1545,6 +1602,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2024/09/">
